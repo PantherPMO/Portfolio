@@ -28,8 +28,11 @@
 *.json      text eol=lf
 *.yml       text eol=lf
 *.yaml      text eol=lf
-*.m         text eol=lf   # Power Query M exports
-*.dax       text eol=lf   # DAX measure exports
+# Power Query M exports
+*.m         text eol=lf
+
+# DAX measure exports
+*.dax       text eol=lf
 *.r         text eol=lf
 *.html      text eol=lf
 *.css       text eol=lf
