@@ -1,0 +1,63 @@
+# ============================================================
+# Data Analytics Portfolio — Python environment
+#
+# One environment for the whole portfolio. Python is used only
+# where it provides a genuine analytical advantage (see
+# _portfolio/CLAUDE.md § Tool Selection).
+#
+# Setup:
+#   python -m venv .venv
+#   .venv\Scripts\activate        (Windows)
+#   source .venv/bin/activate     (macOS / Linux)
+#   pip install -r requirements.txt
+#
+# Versions are pinned to minimums to keep the environment
+# reproducible without becoming brittle.
+# ============================================================
+
+# --- Core data handling -------------------------------------
+pandas>=2.2
+numpy>=1.26
+
+# --- Statistics & modelling ---------------------------------
+scipy>=1.13
+statsmodels>=0.14
+scikit-learn>=1.5
+
+# --- Visualisation ------------------------------------------
+matplotlib>=3.9
+seaborn>=0.13
+
+# --- File & data source I/O ---------------------------------
+openpyxl>=3.1          # .xlsx read/write
+xlsxwriter>=3.2        # formatted .xlsx output
+pyarrow>=16.0          # parquet / efficient CSV
+requests>=2.32         # public API extraction
+
+# --- Database connectivity (PostgreSQL) ---------------------
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+
+# --- Notebooks ----------------------------------------------
+jupyterlab>=4.2
+notebook>=7.2
+ipykernel>=6.29
+
+# --- Configuration ------------------------------------------
+python-dotenv>=1.0     # never hard-code credentials
+
+# --- Code quality -------------------------------------------
+ruff>=0.5
+black>=24.4
+
+# ============================================================
+# Project-specific additions
+# Install only where the analysis justifies it; record the
+# decision in that project's DECISIONS.md.
+#
+# Project 07 — Customer Lifetime Value
+#   lifetimes>=0.11.3        BG/NBD + Gamma-Gamma CLV models
+#
+# Project 05 — Predictive Cost
+#   (covered by scikit-learn + statsmodels)
+# ============================================================

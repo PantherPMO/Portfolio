@@ -1,0 +1,105 @@
+# ============================================================
+# Data Analytics Portfolio — .gitattributes
+#
+# Purpose:
+#   1. Normalise line endings (this repo is authored on Windows,
+#      reviewed on Linux/macOS — without this, diffs are noise).
+#   2. Mark binaries so git never attempts a text merge on them.
+#   3. Improve diff readability for the file types that matter.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# DEFAULT: let git decide, normalise text to LF in the repo
+# ------------------------------------------------------------
+* text=auto eol=lf
+
+
+# ------------------------------------------------------------
+# TEXT — explicitly tracked as text with LF
+# ------------------------------------------------------------
+*.md        text eol=lf diff=markdown
+*.txt       text eol=lf
+*.sql       text eol=lf
+*.py        text eol=lf diff=python
+*.ipynb     text eol=lf
+*.csv       text eol=lf
+*.tsv       text eol=lf
+*.json      text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.m         text eol=lf   # Power Query M exports
+*.dax       text eol=lf   # DAX measure exports
+*.r         text eol=lf
+*.html      text eol=lf
+*.css       text eol=lf
+*.js        text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+LICENSE         text eol=lf
+
+
+# ------------------------------------------------------------
+# WINDOWS-NATIVE SCRIPTS keep CRLF
+# ------------------------------------------------------------
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.ps1       text eol=crlf
+
+
+# ------------------------------------------------------------
+# BINARY — never diff, never merge, never normalise
+# ------------------------------------------------------------
+*.xlsx      binary
+*.xlsm      binary
+*.xlsb      binary
+*.xls       binary
+*.xltx      binary
+*.docx      binary
+*.doc       binary
+*.pptx      binary
+*.ppt       binary
+*.pdf       binary
+
+*.pbix      binary
+*.pbit      binary
+*.pbip      binary
+
+*.twbx      binary
+*.twb       binary
+*.hyper     binary
+*.tde       binary
+
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.webp      binary
+*.ico       binary
+*.svg       text eol=lf
+
+*.parquet   binary
+*.feather   binary
+*.db        binary
+*.sqlite    binary
+*.zip       binary
+*.gz        binary
+*.7z        binary
+
+*.ttf       binary
+*.otf       binary
+*.woff      binary
+*.woff2     binary
+
+
+# ------------------------------------------------------------
+# GITHUB LANGUAGE STATISTICS
+# Stop documentation and screenshots from swamping the language
+# bar, so the repo reads as SQL / Python rather than "Markdown".
+# ------------------------------------------------------------
+_portfolio/**       linguist-documentation
+*/docs/**           linguist-documentation
+**/screenshots/**   linguist-documentation
+**/figures/**       linguist-documentation
+_assets/**          linguist-documentation
+*.sql               linguist-detectable=true

@@ -1,0 +1,88 @@
+# Data Analytics Portfolio
+
+**Peters** — Data Analyst | SQL · Excel · Power BI · Tableau · Python
+
+---
+
+## About This Portfolio
+
+Eight end-to-end analytics projects, each built around a real business decision rather than a dataset.
+
+Every project starts from a defined business problem, uses a documented public dataset, and ends with recommendations that a stakeholder could act on. Each analytical claim is traceable to the query, formula, or model output that produced it — the evidence chain is documented in every project's `FINDINGS.md`.
+
+The tool used in each project was chosen because it fits the analytical problem, not to demonstrate breadth. Where a technology was deliberately *not* used, the reasoning is recorded.
+
+---
+
+## Projects
+
+| # | Project | Domain | Core Tools | Business Question | Status |
+|---|---------|--------|-----------|-------------------|--------|
+| 01 | Telecommunications Customer Churn & Revenue Analytics | Telecoms | SQL (PostgreSQL) | Which customers are leaving, why, and what revenue is at risk? | ⬜ Not started |
+| 02 | Warehouse Inventory & Supply Chain Performance | Logistics | SQL (PostgreSQL) | Where is working capital tied up, and which stock decisions are costing us? | ⬜ Not started |
+| 03 | Retail Sales & Customer Behaviour Analysis | Retail | Excel | What drives basket value, and which customer behaviours are worth encouraging? | ⬜ Not started |
+| 04 | Financial Performance & Budget Variance Analysis | Finance | Excel | Where are we off budget, is it price or volume, and is it recurring? | ⬜ Not started |
+| 05 | Commercial Pricing & Predictive Cost Analysis | Construction / Commercial | Excel + Python | What should we price this work at, and how confident are we in the cost estimate? | ⬜ Not started |
+| 06 | Sales Performance & Commercial Intelligence | Sales | Excel → Power BI | How is commercial performance tracking, and where should sales effort go next? | ⬜ Not started |
+| 07 | Customer Intelligence & Lifetime Value | Customer Analytics | Excel → Power BI / Tableau + Python | Which customers are worth the most over their lifetime, and how should we treat them differently? | ⬜ Not started |
+| 08 | Executive Operations Intelligence | Operations | Excel → Power BI | Is the operation performing, and what needs executive attention this month? | ⬜ Not started |
+
+*Status legend: ⬜ Not started · 🟡 In progress · 🟢 Quality gate passed*
+
+---
+
+## Capabilities Demonstrated
+
+| Capability | Where |
+|------------|-------|
+| Relational querying, CTEs, window functions | 01, 02 |
+| Data modelling (star schema) | 06, 07, 08 |
+| Financial modelling & variance analysis | 04, 05 |
+| Scenario & sensitivity analysis | 04, 05 |
+| Power Query / M transformations | 03–08 |
+| DAX measures & time intelligence | 06, 07, 08 |
+| Exploratory data analysis | All |
+| Statistical analysis | 05, 07 |
+| Predictive modelling | 05, 07 |
+| KPI design & definition | All |
+| Dashboard design for stakeholders | 06, 07, 08 |
+| Data storytelling & stakeholder communication | All (`STAKEHOLDER_STORY.md`) |
+| Evidence-based recommendation | All (`FINDINGS.md`) |
+
+---
+
+## How This Portfolio Is Organised
+
+```
+Data Portfolio/
+├── _portfolio/          Portfolio control centre — standards, registries, quality gates
+├── _assets/             Shared visual assets and brand palette
+└── NN-<tool>-<name>/    One folder per project
+```
+
+Every project follows the same seven-stage lifecycle and must pass a sixteen-point quality gate before it is considered complete. The standards are documented in [`_portfolio/`](_portfolio/).
+
+**Start here:** [Portfolio Charter](_portfolio/PORTFOLIO_CHARTER.md) · [Project Tracker](_portfolio/PROJECT_TRACKER.md) · [Dataset Registry](_portfolio/DATASET_REGISTRY.md)
+
+---
+
+## Data & Reproducibility
+
+All datasets are public and sourced from reputable providers (Kaggle, ONS, data.gov.uk, World Bank, public APIs, published company data). Every dataset is logged in the [Dataset Registry](_portfolio/DATASET_REGISTRY.md) with its source URL, licence, and date accessed.
+
+Where a real dataset could not support a required business case, synthetic data was used — clearly labelled as such, with the generation method and justification documented in the [Synthetic Data Log](_portfolio/SYNTHETIC_DATA_LOG.md). No synthetic dataset is presented as real.
+
+Large raw datasets are not committed to this repository. Each project's `data/raw/README.md` documents the source and how to obtain the data.
+
+---
+
+## Contact
+
+**Peters**
+📧 olawalemobolajipeters@gmail.com
+🔗 LinkedIn: *[to be added]*
+💻 GitHub: *[to be added]*
+
+---
+
+*Licensed under the MIT Licence. Datasets remain subject to their original licences.*

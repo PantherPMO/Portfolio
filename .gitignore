@@ -1,0 +1,210 @@
+# ============================================================
+# Data Analytics Portfolio — .gitignore
+#
+# PRINCIPLE
+# The repository must stay fast to clone and useful to review.
+# Commit the EVIDENCE of the work (code, logic, documentation,
+# screenshots, small deliverables). Exclude bulk, binaries that
+# cannot be reviewed on GitHub, and anything regenerable.
+#
+# See _portfolio/CLAUDE.md § Git Rules for the full policy.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# RAW & LARGE DATA
+# Raw data is documented, not committed. Every data/raw/ folder
+# must contain a README.md recording source, URL, licence and
+# date accessed — that README IS tracked (see un-ignores below).
+# ------------------------------------------------------------
+data/raw/*
+!data/raw/README.md
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/README.md
+!data/processed/.gitkeep
+
+# Bulk data formats, wherever they appear
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+*.bak
+*.dmp
+
+# Archives
+*.zip
+*.gz
+*.tar
+*.tgz
+*.rar
+*.7z
+
+# Large flat files are excluded by default.
+# To include a small dataset that licensing permits, force-add it:
+#   git add -f data/raw/small_reference_table.csv
+# and record the decision in the project's DECISIONS.md.
+
+
+# ------------------------------------------------------------
+# EXCEL
+# Final deliverable workbooks ARE committed (they are the work).
+# Working copies, temp files and autosaves are not.
+# ------------------------------------------------------------
+~$*.xlsx
+~$*.xlsm
+~$*.xls
+~$*.docx
+~$*.pptx
+*.tmp
+*.xlk
+*.bak.xlsx
+*_WIP.xlsx
+*_working.xlsx
+*_backup.xlsx
+*_old.xlsx
+*_v[0-9].xlsx
+*_draft.xlsx
+
+
+# ------------------------------------------------------------
+# POWER BI
+# .pbix files are large opaque binaries that cannot be reviewed
+# on GitHub. The reviewable artifacts are committed instead:
+#   powerbi/dax/MEASURES.md
+#   powerbi/model/DATA_MODEL.md
+#   powerbi/screenshots/*.png
+# Commit a .pbix ONLY when it is small and adds real value:
+#   git add -f powerbi/project.pbix
+# ------------------------------------------------------------
+*.pbix
+*.pbit
+*.pbids
+*.pbip
+.pbi/
+**/.pbi/
+
+
+# ------------------------------------------------------------
+# TABLEAU
+# Publish to Tableau Public and link it. Commit screenshots.
+# ------------------------------------------------------------
+*.twbx
+*.twb.bak
+*.tde
+*.hyper
+*.tds
+*.tdsx
+
+
+# ------------------------------------------------------------
+# PYTHON
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib60/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-meta/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# Testing / caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.cache/
+
+
+# ------------------------------------------------------------
+# CREDENTIALS — never commit
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.yaml
+config.local.*
+connection_strings.txt
+
+
+# ------------------------------------------------------------
+# OPERATING SYSTEM
+# ------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+# ------------------------------------------------------------
+# EDITORS & TOOLS
+# ------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+.claude/
+
+
+# ------------------------------------------------------------
+# GENERATED / INTERMEDIATE OUTPUTS
+# Anything a script can rebuild does not belong in git.
+# Exception: analysis/query_results/*.csv IS committed — those
+# are the evidence behind findings and must be reviewable.
+# ------------------------------------------------------------
+outputs/temp/
+outputs/scratch/
+**/scratch/
+**/temp/
+*.log
+logs/
