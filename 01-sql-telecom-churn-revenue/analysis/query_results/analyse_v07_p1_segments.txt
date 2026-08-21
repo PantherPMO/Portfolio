@@ -1,0 +1,25 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+ population_scope | value_tier | contract_type  |  n   | churned | churn_rate_pct | arr_at_risk_currency_units | long_distance_at_risk_currency_units | arr_total_currency_units | scope_churn_rate_pct | cell_size_flag | scope_order 
+------------------+------------+----------------+------+---------+----------------+----------------------------+--------------------------------------+--------------------------+----------------------+----------------+-------------
+ opening_base     | High       | Month-to-Month |  894 |     488 |          54.59 |                  566313.60 |                            151286.76 |               1034948.40 |                21.23 | reportable     |           1
+ opening_base     | High       | One Year       |  521 |     100 |          19.19 |                  123038.40 |                             30912.60 |                627566.40 |                21.23 | reportable     |           1
+ opening_base     | High       | Two Year       |  589 |      31 |           5.26 |                   39097.20 |                              9878.76 |                719284.80 |                21.23 | reportable     |           1
+ opening_base     | Mid        | Month-to-Month | 1182 |     466 |          39.42 |                  406459.20 |                            128954.88 |                980001.00 |                21.23 | reportable     |           1
+ opening_base     | Mid        | One Year       |  561 |      49 |           8.73 |                   40378.20 |                             14266.08 |                452491.20 |                21.23 | reportable     |           1
+ opening_base     | Mid        | Two Year       |  573 |      12 |           2.09 |                    9524.40 |                              3422.52 |                480721.80 |                21.23 | reportable     |           1
+ opening_base     | Low        | Month-to-Month |  531 |     106 |          19.96 |                   40717.80 |                             15078.48 |                178492.80 |                21.23 | reportable     |           1
+ opening_base     | Low        | One Year       |  442 |      15 |           3.39 |                    5535.00 |                              1969.56 |                130178.40 |                21.23 | reportable     |           1
+ opening_base     | Low        | Two Year       |  699 |       5 |           0.72 |                    1362.00 |                              1453.20 |                195723.60 |                21.23 | reportable     |           1
+ all_customers    | High       | Month-to-Month | 1000 |     573 |          57.30 |                  660796.80 |                            176191.20 |               1152907.20 |                26.54 | reportable     |           2
+ all_customers    | High       | One Year       |  522 |     100 |          19.16 |                  123038.40 |                             30912.60 |                628712.40 |                26.54 | reportable     |           2
+ all_customers    | High       | Two Year       |  590 |      31 |           5.25 |                   39097.20 |                              9878.76 |                720423.00 |                26.54 | reportable     |           2
+ all_customers    | Mid        | Month-to-Month | 1663 |     797 |          47.93 |                  682805.40 |                            230990.76 |               1371263.40 |                26.54 | reportable     |           2
+ all_customers    | Mid        | One Year       |  566 |      49 |           8.66 |                   40378.20 |                             14266.08 |                456882.00 |                26.54 | reportable     |           2
+ all_customers    | Mid        | Two Year       |  587 |      12 |           2.04 |                    9524.40 |                              3422.52 |                492478.80 |                26.54 | reportable     |           2
+ all_customers    | Low        | Month-to-Month |  947 |     285 |          30.10 |                  106563.00 |                             50147.88 |                317023.20 |                26.54 | reportable     |           2
+ all_customers    | Low        | One Year       |  462 |      17 |           3.68 |                    6004.80 |                              2340.72 |                135649.20 |                26.54 | reportable     |           2
+ all_customers    | Low        | Two Year       |  706 |       5 |           0.71 |                    1362.00 |                              1453.20 |                198060.00 |                26.54 | reportable     |           2
+(18 rows)
+

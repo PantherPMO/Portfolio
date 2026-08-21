@@ -1,0 +1,27 @@
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+ schemaname |        tablename        |            indexname             
+------------+-------------------------+----------------------------------
+ core       | bridge_customer_service | bridge_customer_service_pkey
+ core       | bridge_customer_service | ix_bridge_service
+ core       | dim_contract            | dim_contract_pkey
+ core       | dim_contract            | ix_contract_payment
+ core       | dim_contract            | ix_contract_type
+ core       | dim_customer            | dim_customer_pkey
+ core       | dim_location            | dim_location_pkey
+ core       | dim_location            | ix_location_zip
+ core       | dim_population          | dim_population_pkey
+ core       | dim_population          | dim_population_population_id_key
+ core       | dim_service             | dim_service_pkey
+ core       | fact_customer_status    | fact_customer_status_pkey
+ core       | fact_customer_status    | ix_status_churned
+ core       | fact_customer_status    | ix_status_monthly_charge
+ core       | fact_customer_status    | ix_status_tenure
+ core       | restricted_demographics | restricted_demographics_pkey
+(16 rows)
+

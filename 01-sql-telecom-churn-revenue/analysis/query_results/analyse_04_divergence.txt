@@ -1,0 +1,52 @@
+ population_scope |       result_designation        | value_tier | contract_type  |  n   | churned | churn_rate_pct | arr_at_risk_currency_units | long_distance_at_risk_currency_units | arr_total_currency_units | cell_size_flag 
+------------------+---------------------------------+------------+----------------+------+---------+----------------+----------------------------+--------------------------------------+--------------------------+----------------
+ opening_base     | PRIMARY RESULT - Opening cohort | High       | Month-to-Month |  894 |     488 |          54.59 |                  566313.60 |                            151286.76 |               1034948.40 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | High       | One Year       |  521 |     100 |          19.19 |                  123038.40 |                             30912.60 |                627566.40 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | High       | Two Year       |  589 |      31 |           5.26 |                   39097.20 |                              9878.76 |                719284.80 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid        | Month-to-Month | 1182 |     466 |          39.42 |                  406459.20 |                            128954.88 |                980001.00 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid        | One Year       |  561 |      49 |           8.73 |                   40378.20 |                             14266.08 |                452491.20 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid        | Two Year       |  573 |      12 |           2.09 |                    9524.40 |                              3422.52 |                480721.80 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low        | Month-to-Month |  531 |     106 |          19.96 |                   40717.80 |                             15078.48 |                178492.80 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low        | One Year       |  442 |      15 |           3.39 |                    5535.00 |                              1969.56 |                130178.40 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low        | Two Year       |  699 |       5 |           0.72 |                    1362.00 |                              1453.20 |                195723.60 | reportable
+(9 rows)
+
+ population_scope |       result_designation        |     segment_label     |  n   | churn_rate_pct | churn_index_vs_scope | arr_at_risk_currency_units | share_of_scope_arr_at_risk_pct | rank_by_churn_rate | rank_by_arr_at_risk | divergence_index | cell_size_flag 
+------------------+---------------------------------+-----------------------+------+----------------+----------------------+----------------------------+--------------------------------+--------------------+---------------------+------------------+----------------
+ opening_base     | PRIMARY RESULT - Opening cohort | High / Month-to-Month |  894 |          54.59 |                 2.57 |                  566313.60 |                          45.95 |                  1 |                   1 |                0 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid / Month-to-Month  | 1182 |          39.42 |                 1.86 |                  406459.20 |                          32.98 |                  2 |                   2 |                0 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | High / One Year       |  521 |          19.19 |                 0.90 |                  123038.40 |                           9.98 |                  4 |                   3 |                1 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low / Month-to-Month  |  531 |          19.96 |                 0.94 |                   40717.80 |                           3.30 |                  3 |                   4 |               -1 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid / One Year        |  561 |           8.73 |                 0.41 |                   40378.20 |                           3.28 |                  5 |                   5 |                0 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | High / Two Year       |  589 |           5.26 |                 0.25 |                   39097.20 |                           3.17 |                  6 |                   6 |                0 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Mid / Two Year        |  573 |           2.09 |                 0.10 |                    9524.40 |                           0.77 |                  8 |                   7 |                1 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low / One Year        |  442 |           3.39 |                 0.16 |                    5535.00 |                           0.45 |                  7 |                   8 |               -1 | reportable
+ opening_base     | PRIMARY RESULT - Opening cohort | Low / Two Year        |  699 |           0.72 |                 0.03 |                    1362.00 |                           0.11 |                  9 |                   9 |                0 | reportable
+(9 rows)
+
+ population_scope |            result_designation             |     segment_label     |  n   | churn_rate_pct | churn_index_vs_scope | arr_at_risk_currency_units | share_of_scope_arr_at_risk_pct | rank_by_churn_rate | rank_by_arr_at_risk | divergence_index | cell_size_flag 
+------------------+-------------------------------------------+-----------------------+------+----------------+----------------------+----------------------------+--------------------------------+--------------------+---------------------+------------------+----------------
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Mid / Month-to-Month  | 1663 |          47.93 |                 1.81 |                  682805.40 |                          40.90 |                  2 |                   1 |                1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | High / Month-to-Month | 1000 |          57.30 |                 2.16 |                  660796.80 |                          39.58 |                  1 |                   2 |               -1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | High / One Year       |  522 |          19.16 |                 0.72 |                  123038.40 |                           7.37 |                  4 |                   3 |                1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Low / Month-to-Month  |  947 |          30.10 |                 1.13 |                  106563.00 |                           6.38 |                  3 |                   4 |               -1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Mid / One Year        |  566 |           8.66 |                 0.33 |                   40378.20 |                           2.42 |                  5 |                   5 |                0 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | High / Two Year       |  590 |           5.25 |                 0.20 |                   39097.20 |                           2.34 |                  6 |                   6 |                0 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Mid / Two Year        |  587 |           2.04 |                 0.08 |                    9524.40 |                           0.57 |                  8 |                   7 |                1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Low / One Year        |  462 |           3.68 |                 0.14 |                    6004.80 |                           0.36 |                  7 |                   8 |               -1 | reportable
+ all_customers    | SENSITIVITY ANALYSIS ONLY - All customers | Low / Two Year        |  706 |           0.71 |                 0.03 |                    1362.00 |                           0.08 |                  9 |                   9 |                0 | reportable
+(9 rows)
+
+                      result_designation                      |     segment_label     | divergence_opening_base | divergence_all_customers | scope_sensitivity 
+--------------------------------------------------------------+-----------------------+-------------------------+--------------------------+-------------------
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | High / Month-to-Month |                       0 |                       -1 |                 1
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Mid / Month-to-Month  |                       0 |                        1 |                -1
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | High / One Year       |                       1 |                        1 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | High / Two Year       |                       0 |                        0 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Low / Month-to-Month  |                      -1 |                       -1 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Low / One Year        |                      -1 |                       -1 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Low / Two Year        |                       0 |                        0 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Mid / One Year        |                       0 |                        0 |                 0
+ SENSITIVITY TEST - primary (opening cohort) vs all customers | Mid / Two Year        |                       1 |                        1 |                 0
+(9 rows)
+

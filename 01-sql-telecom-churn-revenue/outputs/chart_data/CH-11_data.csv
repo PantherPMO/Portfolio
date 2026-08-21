@@ -1,0 +1,21 @@
+# chart=CH-11,source=analyse_07_early_life_churn.txt,block=2
+scope_cohort,scope_tier,lens_id,lens_name,segment_value,n,pct_of_scope_population,churned,churn_rate_pct,scope_churn_rate_pct,churn_index_vs_scope,arr_at_risk_currency_units,cell_size_flag
+in_period_acquisition,ALL,L1,Contract type,Month-to-Month,1003,95.43,595,59.32,56.80,1.04,436674.60,reportable
+in_period_acquisition,ALL,L1,Contract type,One Year,26,2.47,2,7.69,56.80,0.14,469.80,below_threshold
+in_period_acquisition,ALL,L1,Contract type,Two Year,22,2.09,0,0.00,56.80,0.00,,below_threshold
+in_period_acquisition,ALL,L2,Tenure band,1. In-period acquisition (1-3m),1051,100.00,597,56.80,56.80,1.00,437144.40,reportable
+in_period_acquisition,ALL,L3,Payment method,Bank Withdrawal,569,54.14,388,68.19,56.80,1.20,315106.20,reportable
+in_period_acquisition,ALL,L3,Payment method,Mailed Check,124,11.80,82,66.13,56.80,1.16,44460.60,reportable
+in_period_acquisition,ALL,L3,Payment method,Credit Card,358,34.06,127,35.47,56.80,0.62,77577.60,reportable
+in_period_acquisition,ALL,L4,Internet type,Fiber Optic,422,40.15,321,76.07,56.80,1.34,305710.80,reportable
+in_period_acquisition,ALL,L4,Internet type,Cable,136,12.94,80,58.82,56.80,1.04,48380.40,reportable
+in_period_acquisition,ALL,L4,Internet type,DSL,241,22.93,126,52.28,56.80,0.92,66213.00,reportable
+in_period_acquisition,ALL,L4,Internet type,No internet,252,23.98,70,27.78,56.80,0.49,16840.20,reportable
+in_period_acquisition,ALL,L5,Service intensity,3. Moderate (3-4),199,18.93,142,71.36,56.80,1.26,127165.20,reportable
+in_period_acquisition,ALL,L5,Service intensity,2. Light (1-2),509,48.43,330,64.83,56.80,1.14,242774.40,reportable
+in_period_acquisition,ALL,L5,Service intensity,4. Deep (5-8),49,4.66,31,63.27,56.80,1.11,32558.40,caveat_required
+in_period_acquisition,ALL,L5,Service intensity,1. None (0),294,27.97,94,31.97,56.80,0.56,34646.40,reportable
+in_period_acquisition,ALL,L6,Offer held,Offer E,457,43.48,282,61.71,56.80,1.09,203542.80,reportable
+in_period_acquisition,ALL,L6,Offer held,No offer,594,56.52,315,53.03,56.80,0.93,233601.60,reportable
+in_period_acquisition,ALL,L7,Referral behaviour,Has not referred,872,82.97,499,57.22,56.80,1.01,363506.40,reportable
+in_period_acquisition,ALL,L7,Referral behaviour,Has referred,179,17.03,98,54.75,56.80,0.96,73638.00,reportable

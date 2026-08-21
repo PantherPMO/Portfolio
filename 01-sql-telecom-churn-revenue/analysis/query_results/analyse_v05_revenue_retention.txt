@@ -1,0 +1,9 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+    scope     |           scope_note            | opening_arr_currency_units | retained_arr_currency_units | lost_arr_currency_units | revenue_retention_rate_pct | customer_retention_rate_pct | scope_order 
+--------------+---------------------------------+----------------------------+-----------------------------+-------------------------+----------------------------+-----------------------------+-------------
+ opening_base | PRIMARY — consistent with C-3 |                 4799408.40 |                  3566982.60 |              1232425.80 |                      74.32 |                       78.77 |           1
+ ALL          | Reconciliation only             |                 5473399.20 |                  3803829.00 |              1669570.20 |                      69.50 |                       73.46 |           2
+(2 rows)
+

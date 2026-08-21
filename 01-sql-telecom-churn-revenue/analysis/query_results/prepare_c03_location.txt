@@ -1,0 +1,8 @@
+TRUNCATE TABLE
+INSERT 0 7043
+ check_id |        description        | expected | actual | status 
+----------+---------------------------+----------+--------+--------
+ CLEAN-06 | dim_location rows         |     7043 |   7043 | PASS
+ CLEAN-07 | distinct zip codes in use |     1626 |   1626 | PASS
+(2 rows)
+

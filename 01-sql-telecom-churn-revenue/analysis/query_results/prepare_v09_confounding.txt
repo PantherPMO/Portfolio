@@ -1,0 +1,36 @@
+      check_name       | age_band | value_tier | customers | pct_within_tier 
+-----------------------+----------+------------+-----------+-----------------
+ age band x value_tier | 30-44    | High       |       537 | 25.4
+ age band x value_tier | 45-64    | High       |       659 | 31.2
+ age band x value_tier | 65+      | High       |       545 | 25.8
+ age band x value_tier | Under 30 | High       |       371 | 17.6
+ age band x value_tier | 30-44    | Low        |       663 | 31.3
+ age band x value_tier | 45-64    | Low        |       849 | 40.1
+ age band x value_tier | 65+      | Low        |       140 | 6.6
+ age band x value_tier | Under 30 | Low        |       463 | 21.9
+ age band x value_tier | 30-44    | Mid        |       743 | 26.4
+ age band x value_tier | 45-64    | Mid        |      1049 | 37.3
+ age band x value_tier | 65+      | Mid        |       457 | 16.2
+ age band x value_tier | Under 30 | Mid        |       567 | 20.1
+(12 rows)
+
+     check_name      | gender | value_tier | customers | pct_within_tier 
+---------------------+--------+------------+-----------+-----------------
+ gender x value_tier | Female | High       |      1048 | 49.6
+ gender x value_tier | Male   | High       |      1064 | 50.4
+ gender x value_tier | Female | Low        |      1017 | 48.1
+ gender x value_tier | Male   | Low        |      1098 | 51.9
+ gender x value_tier | Female | Mid        |      1423 | 50.5
+ gender x value_tier | Male   | Mid        |      1393 | 49.5
+(6 rows)
+
+        check_name         | is_senior_citizen | contract_type  | customers | pct_within_contract 
+---------------------------+-------------------+----------------+-----------+---------------------
+ senior citizen x contract | f                 | Month-to-Month |      3068 | 85.0
+ senior citizen x contract | t                 | Month-to-Month |       542 | 15.0
+ senior citizen x contract | f                 | One Year       |      1283 | 82.8
+ senior citizen x contract | t                 | One Year       |       267 | 17.2
+ senior citizen x contract | f                 | Two Year       |      1550 | 82.3
+ senior citizen x contract | t                 | Two Year       |       333 | 17.7
+(6 rows)
+

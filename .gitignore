@@ -17,13 +17,21 @@
 # must contain a README.md recording source, URL, licence and
 # date accessed — that README IS tracked (see un-ignores below).
 # ------------------------------------------------------------
-data/raw/*
-!data/raw/README.md
-!data/raw/.gitkeep
+# NOTE: patterns are written with a leading **/ because a pattern containing
+# a slash is anchored to the location of this .gitignore. Without **/, the
+# rule would only match <repo-root>/data/raw/ and would NOT match
+# <project>/data/raw/ — which is where raw data actually lives.
+**/data/raw/*
+!**/data/raw/README.md
+!**/data/raw/.gitkeep
 
-data/processed/*
-!data/processed/README.md
-!data/processed/.gitkeep
+**/data/processed/*
+!**/data/processed/README.md
+!**/data/processed/.gitkeep
+
+# Belt and braces: source workbooks are never committed while licensing is
+# unresolved. See 01-sql-telecom-churn-revenue/data/raw/README.md
+Telco_customer_churn*.xlsx
 
 # Bulk data formats, wherever they appear
 *.parquet

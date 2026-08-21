@@ -1,0 +1,5 @@
+# chart=CH-10,source=analyse_07_early_life_churn.txt,block=3
+scope,churned,arr_at_risk_currency_units,long_distance_at_risk_currency_units,pct_of_total_arr_at_risk
+opening_base,1272,1232425.80,357222.84,73.82
+in_period_acquisition,597,437144.40,162380.88,26.18
+ALL,1869,1669570.20,519603.72,100.00

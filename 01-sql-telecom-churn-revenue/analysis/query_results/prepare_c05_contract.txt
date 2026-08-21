@@ -1,0 +1,24 @@
+TRUNCATE TABLE
+INSERT 0 7043
+ check_id  |                        description                         | expected | actual | status 
+-----------+------------------------------------------------------------+----------+--------+--------
+ CLEAN-09  | dim_contract rows                                          |     7043 |   7043 | PASS
+ CLEAN-10  | offer = 'No offer' (V-10: literal 'None' token)            |     3877 |   3877 | PASS
+ CLEAN-11  | internet_type = 'No internet' (V-10: literal 'None' token) |     1526 |   1526 | PASS
+ CLEAN-10b | residual literal 'None' in offer or internet_type          |        0 |      0 | PASS
+(4 rows)
+
+     field     |    value    | customers 
+---------------+-------------+-----------
+ internet_type | Fiber Optic |      3035
+ internet_type | DSL         |      1652
+ internet_type | No internet |      1526
+ internet_type | Cable       |       830
+ offer         | No offer    |      3877
+ offer         | Offer B     |       824
+ offer         | Offer E     |       805
+ offer         | Offer D     |       602
+ offer         | Offer A     |       520
+ offer         | Offer C     |       415
+(10 rows)
+

@@ -1,0 +1,12 @@
+ check_id |                 description                  | duplicates | status 
+----------+----------------------------------------------+------------+--------
+ DUP-01   | dim_contract duplicate ids                   |          0 | PASS
+ DUP-01   | dim_customer duplicate ids                   |          0 | PASS
+ DUP-01   | dim_location duplicate ids                   |          0 | PASS
+ DUP-01   | fact_customer_status duplicate ids           |          0 | PASS
+ DUP-02   | dim_population duplicate zip codes           |          0 | PASS
+ DUP-03   | bridge duplicate (customer_id, service_code) |          0 | PASS
+ DUP-04   | dim_service duplicate codes                  |          0 | PASS
+ DUP-05   | null keys across core tables                 |          0 | PASS
+(8 rows)
+

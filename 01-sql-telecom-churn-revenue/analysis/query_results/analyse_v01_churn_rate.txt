@@ -1,0 +1,10 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+         scope         |                          scope_note                          | customers | churned | retained | churn_rate_pct | retention_rate_pct | cell_size_flag | scope_order 
+-----------------------+--------------------------------------------------------------+-----------+---------+----------+----------------+--------------------+----------------+-------------
+ opening_base          | Opening cohort (tenure >= 4) — PRIMARY KPI, C-3            |      5992 |    1272 |     4720 |          21.23 |              78.77 | reportable     |           1
+ in_period_acquisition | Acquired within the observation quarter (tenure <= 3)        |      1051 |     597 |      454 |          56.80 |              43.20 | reportable     |           2
+ ALL                   | Period-end base — reconciliation only, not the primary KPI |      7043 |    1869 |     5174 |          26.54 |              73.46 | reportable     |           3
+(3 rows)
+

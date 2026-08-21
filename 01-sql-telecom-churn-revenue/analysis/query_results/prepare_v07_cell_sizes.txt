@@ -1,0 +1,66 @@
+ scheme | value_tier | contract_type  |  n   | cell_size_flag 
+--------+------------+----------------+------+----------------
+ P1     | High       | Month-to-Month | 1000 | reportable
+ P1     | High       | One Year       |  522 | reportable
+ P1     | High       | Two Year       |  590 | reportable
+ P1     | Mid        | Month-to-Month | 1663 | reportable
+ P1     | Mid        | One Year       |  566 | reportable
+ P1     | Mid        | Two Year       |  587 | reportable
+ P1     | Low        | Month-to-Month |  947 | reportable
+ P1     | Low        | One Year       |  462 | reportable
+ P1     | Low        | Two Year       |  706 | reportable
+(9 rows)
+
+ scheme | revenue_decile |  n  | charge_min | charge_max | cell_size_flag 
+--------+----------------+-----+------------+------------+----------------
+ P2     |              1 | 705 | 18.25      | 20.05      | reportable
+ P2     |              2 | 705 | 20.05      | 25.05      | reportable
+ P2     |              3 | 705 | 25.05      | 45.85      | reportable
+ P2     |              4 | 704 | 45.90      | 58.85      | reportable
+ P2     |              5 | 704 | 58.90      | 70.35      | reportable
+ P2     |              6 | 704 | 70.35      | 79.10      | reportable
+ P2     |              7 | 704 | 79.10      | 85.50      | reportable
+ P2     |              8 | 704 | 85.50      | 94.25      | reportable
+ P2     |              9 | 704 | 94.30      | 102.60     | reportable
+ P2     |             10 | 704 | 102.65     | 118.75     | reportable
+(10 rows)
+
+         lens         |             segment             | n_high_tier | cell_size_flag  
+----------------------+---------------------------------+-------------+-----------------
+ L1 contract          | Month-to-Month                  |        1000 | reportable
+ L1 contract          | One Year                        |         522 | reportable
+ L1 contract          | Two Year                        |         590 | reportable
+ L2 tenure band       | 1. In-period acquisition (1-3m) |         108 | reportable
+ L2 tenure band       | 2. First year (4-12m)           |         204 | reportable
+ L2 tenure band       | 3. Second year (13-24m)         |         260 | reportable
+ L2 tenure band       | 4. Established (25-48m)         |         522 | reportable
+ L2 tenure band       | 5. Long tenure (49-72m)         |        1018 | reportable
+ L3 payment method    | Bank Withdrawal                 |        1476 | reportable
+ L3 payment method    | Credit Card                     |         596 | reportable
+ L3 payment method    | Mailed Check                    |          40 | caveat_required
+ L4 internet type     | Cable                           |          79 | caveat_required
+ L4 internet type     | DSL                             |          80 | caveat_required
+ L4 internet type     | Fiber Optic                     |        1953 | reportable
+ L5 service intensity | 2. Light (1-2)                  |          48 | caveat_required
+ L5 service intensity | 3. Moderate (3-4)               |         711 | reportable
+ L5 service intensity | 4. Deep (5-8)                   |        1353 | reportable
+ L6 offer             | No offer                        |        1138 | reportable
+ L6 offer             | Offer A                         |         256 | reportable
+ L6 offer             | Offer B                         |         337 | reportable
+ L6 offer             | Offer C                         |         134 | reportable
+ L6 offer             | Offer D                         |         131 | reportable
+ L6 offer             | Offer E                         |         116 | reportable
+ L7 referral          | Has not referred                |         970 | reportable
+ L7 referral          | Has referred                    |        1142 | reportable
+(25 rows)
+
+     cohort_class      | value_tier |  n   | cell_size_flag 
+-----------------------+------------+------+----------------
+ in_period_acquisition | High       |  108 | reportable
+ in_period_acquisition | Mid        |  500 | reportable
+ in_period_acquisition | Low        |  443 | reportable
+ opening_base          | High       | 2004 | reportable
+ opening_base          | Mid        | 2316 | reportable
+ opening_base          | Low        | 1672 | reportable
+(6 rows)
+

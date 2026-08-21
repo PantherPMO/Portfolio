@@ -1,0 +1,9 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+ check_id |                                                                 description                                                                 | expected | actual | status 
+----------+---------------------------------------------------------------------------------------------------------------------------------------------+----------+--------+--------
+ CLEAN-20 | analytical base rows                                                                                                                        |     7043 |   7043 | PASS
+ CLEAN-21 | V-11 INFO: monthly_charge values spanning >1 decile. NTILE splits ties by design; the tie-break makes that split DETERMINISTIC, not absent. |          |      5 | INFO
+(2 rows)
+

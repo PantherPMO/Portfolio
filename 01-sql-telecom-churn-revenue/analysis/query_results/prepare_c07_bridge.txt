@@ -1,0 +1,24 @@
+TRUNCATE TABLE
+INSERT 0 77473
+ check_id |                      description                      | expected | actual | status 
+----------+-------------------------------------------------------+----------+--------+--------
+ CLEAN-17 | bridge rows (7,043 x 11)                              |    77473 |  77473 | PASS
+ CLEAN-19 | services per customer (must be 11 for every customer) |       11 |     11 | PASS
+ CLEAN-18 | distinct customers in bridge                          |     7043 |   7043 | PASS
+(3 rows)
+
+ service_group | service_code |      service_name      | subscribed | total 
+---------------+--------------+------------------------+------------+-------
+ Core          | PHONE        | Phone Service          |       6361 |  7043
+ Core          | MULTI_LINE   | Multiple Lines         |       2971 |  7043
+ Core          | INTERNET     | Internet Service       |       5517 |  7043
+ Add-on        | ONLINE_SEC   | Online Security        |       2019 |  7043
+ Add-on        | ONLINE_BAK   | Online Backup          |       2429 |  7043
+ Add-on        | DEV_PROT     | Device Protection Plan |       2422 |  7043
+ Add-on        | TECH_SUP     | Premium Tech Support   |       2044 |  7043
+ Add-on        | UNLIM_DATA   | Unlimited Data         |       4745 |  7043
+ Entertainment | STREAM_TV    | Streaming TV           |       2707 |  7043
+ Entertainment | STREAM_MOV   | Streaming Movies       |       2732 |  7043
+ Entertainment | STREAM_MUS   | Streaming Music        |       2488 |  7043
+(11 rows)
+

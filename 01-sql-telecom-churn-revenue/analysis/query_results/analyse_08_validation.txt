@@ -1,0 +1,42 @@
+ check_id  |                             description                             |      expected       | actual | status 
+-----------+---------------------------------------------------------------------+---------------------+--------+--------
+ A-VAL-01  | Cohort scopes partition the base exactly                            | 7043                | 7043   | PASS
+ A-VAL-02a | Opening-cohort churn rate reproduces C-3 primary KPI                | 21.23               | 21.23  | PASS
+ A-VAL-02b | Period-end base rate reproduces 26.54                               | 26.54               | 26.54  | PASS
+ A-VAL-03  | Revenue at risk (ALL scope) = sum(monthly_charge) x 12 over churned | 0.00 diff           | 0.00   | PASS
+ A-VAL-04  | Decile revenue sums to base total recurring revenue                 | 0.00 diff           | 0.00   | PASS
+ A-VAL-05  | Pareto cumulative share reaches 100% at decile 1                    | 100.00              | 100.00 | PASS
+ A-VAL-06  | P2 decile membership sums to scope population (all_customers)       | 7043                | 7043   | PASS
+ A-VAL-07  | Every P2 row carries a cell_size_flag                               | 0 missing           | 0      | PASS
+ A-VAL-08a | P1 cells sum to opening-cohort population                           | 5992                | 5992   | PASS
+ A-VAL-08b | P1 cells sum to all-customer population                             | 7043                | 7043   | PASS
+ A-VAL-09  | Divergence ranks span 1..9 with no gaps, both scopes                | 9 per scope         | 9      | PASS
+ A-VAL-10  | Divergence index sums to zero within each scope (paired ranks)      | 0                   | 0,0    | PASS
+ A-VAL-11  | Each lens partitions its scope exactly (no double-count, no gap)    | 0 mismatches        | 0      | PASS
+ A-VAL-12  | All seven lenses present in every scope                             | 6 scopes x 7 lenses | 6      | PASS
+ A-VAL-13  | Every driver row carries n and cell_size_flag                       | 0 missing           | 0      | PASS
+ A-VAL-14  | Every High-tier lens row has an all-customer counterpart (AQ-06)    | 0 orphans           | 0      | PASS
+ A-VAL-15  | In-period acquisitions = 1051 (454 survived + 597 churned)          | 1051                | 1051   | PASS
+ A-VAL-16  | Numerator is a subset of its denominator in every driver cell       | 0 violations        | 0      | PASS
+(18 rows)
+
+ check_id |          view_name           | rows | expected_max | status 
+----------+------------------------------+------+--------------+--------
+ A-VAL-17 | vw_kpi_churn_rate            |    3 |            3 | PASS
+ A-VAL-17 | vw_kpi_revenue_at_risk       |    3 |            3 | PASS
+ A-VAL-17 | vw_kpi_revenue_concentration |   10 |           10 | PASS
+ A-VAL-17 | vw_segment_divergence        |   18 |           18 | PASS
+ A-VAL-17 | vw_segment_p1_value_contract |   18 |           18 | PASS
+ A-VAL-17 | vw_segment_p2_revenue_decile |   20 |           20 | PASS
+(6 rows)
+
+ check_id |                         description                          | expected | actual | status 
+----------+--------------------------------------------------------------+----------+--------+--------
+ A-VAL-18 | customers whose decile differs between two reads of the view |        0 |      0 | PASS
+(1 row)
+
+ check_id |                     description                     | expected | actual | status 
+----------+-----------------------------------------------------+----------+--------+--------
+ A-VAL-19 | prohibited references in analytics view definitions | 0        | 0      | PASS
+(1 row)
+

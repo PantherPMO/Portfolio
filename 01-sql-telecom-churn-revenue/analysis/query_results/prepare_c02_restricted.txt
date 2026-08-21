@@ -1,0 +1,9 @@
+TRUNCATE TABLE
+INSERT 0 7043
+ check_id |                   description                    | expected | actual | status 
+----------+--------------------------------------------------+----------+--------+--------
+ CLEAN-03 | restricted_demographics rows                     |     7043 |   7043 | PASS
+ CLEAN-04 | is_senior_citizen <=> age >= 65 (0 = consistent) |        0 |      0 | PASS
+ CLEAN-05 | is_under_30 <=> age < 30 (0 = consistent)        |        0 |      0 | PASS
+(3 rows)
+

@@ -1,0 +1,41 @@
+CREATE FUNCTION
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+COMMENT
+CREATE TABLE
+COMMENT
+CREATE TABLE
+COMMENT
+CREATE TABLE
+COMMENT
+CREATE TABLE
+COMMENT
+COMMENT
+CREATE TABLE
+COMMENT
+COMMENT
+COMMENT
+COMMENT
+CREATE TABLE
+COMMENT
+CREATE TABLE
+COMMENT
+       table_name        | columns 
+-------------------------+---------
+ bridge_customer_service |       3
+ dim_contract            |       8
+ dim_customer            |       4
+ dim_location            |       5
+ dim_population          |       3
+ dim_service             |       4
+ fact_customer_status    |      13
+ restricted_demographics |       5
+(8 rows)
+

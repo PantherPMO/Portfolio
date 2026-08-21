@@ -1,0 +1,22 @@
+ check_id |                              description                              |  expected   |   actual    | status 
+----------+-----------------------------------------------------------------------+-------------+-------------+--------
+ REC-03   | analytical base row count                                             | 7043        | 7043        | PASS
+ REC-04   | customer id sets identical across all four core tables                | 0           | 0           | PASS
+ REC-05   | churned customers                                                     | 1869        | 1869        | PASS
+ REC-06a  | customer_status = Stayed                                              | 4720        | 4720        | PASS
+ REC-06b  | customer_status = Churned                                             | 1869        | 1869        | PASS
+ REC-06c  | customer_status = Joined                                              | 454         | 454         | PASS
+ REC-08   | revenue identity: max abs diff (recomputed vs source), tolerance 0.01 | <= 0.01     | 0.000000    | PASS
+ REC-10   | sum(total_charges)                                                    | 16060725.24 | 16060725.24 | PASS
+ REC-11a  | min(monthly_charge)                                                   | 18.25       | 18.25       | PASS
+ REC-11b  | max(monthly_charge)                                                   | 118.75      | 118.75      | PASS
+ REC-12a  | min(tenure_months)                                                    | 1           | 1           | PASS
+ REC-12b  | max(tenure_months)                                                    | 72          | 72          | PASS
+ REC-12c  | tenure = 0 count                                                      | 0           | 0           | PASS
+(13 rows)
+
+ check_id | sum_monthly_charge | mean_monthly_charge | median_monthly_charge 
+----------+--------------------+---------------------+-----------------------
+ REC-09   | 456116.60          | 64.7617             | 70.35
+(1 row)
+

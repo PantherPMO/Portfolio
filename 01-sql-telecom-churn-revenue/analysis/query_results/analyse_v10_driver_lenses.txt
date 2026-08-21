@@ -1,0 +1,13 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+     scope_cohort      | scope_tier | lenses_present | segment_rows | all_seven_present 
+-----------------------+------------+----------------+--------------+-------------------
+ ALL                   | ALL        |              7 |           27 | PASS
+ ALL                   | High       |              7 |           25 | PASS
+ opening_base          | ALL        |              7 |           26 | PASS
+ opening_base          | High       |              7 |           24 | PASS
+ in_period_acquisition | ALL        |              7 |           19 | PASS
+ in_period_acquisition | High       |              7 |           16 | PASS
+(6 rows)
+

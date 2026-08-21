@@ -1,0 +1,44 @@
+ population_scope | revenue_decile | value_tier |  n  | churned | churn_rate_pct | churn_index_vs_scope | charge_min | charge_max | arr_at_risk_currency_units | cell_size_flag 
+------------------+----------------+------------+-----+---------+----------------+----------------------+------------+------------+----------------------------+----------------
+ opening_base     |              1 | Low        | 565 |      23 |           4.07 |                 0.19 |      18.25 |      20.05 |                    5403.60 | reportable
+ opening_base     |              2 | Low        | 572 |      22 |           3.85 |                 0.18 |      20.05 |      25.05 |                    5907.60 | reportable
+ opening_base     |              3 | Low        | 535 |      81 |          15.14 |                 0.71 |      25.05 |      45.85 |                   36303.60 | reportable
+ opening_base     |              4 | Mid        | 570 |     102 |          17.89 |                 0.84 |      45.90 |      58.85 |                   64002.00 | reportable
+ opening_base     |              5 | Mid        | 588 |      76 |          12.93 |                 0.61 |      58.90 |      70.35 |                   60363.00 | reportable
+ opening_base     |              6 | Mid        | 545 |     152 |          27.89 |                 1.31 |      70.35 |      79.10 |                  136800.60 | reportable
+ opening_base     |              7 | Mid        | 613 |     197 |          32.14 |                 1.51 |      79.10 |      85.50 |                  195196.20 | reportable
+ opening_base     |              8 | High       | 636 |     188 |          29.56 |                 1.39 |      85.50 |      94.25 |                  203013.00 | reportable
+ opening_base     |              9 | High       | 670 |     261 |          38.96 |                 1.84 |      94.30 |     102.60 |                  307440.00 | reportable
+ opening_base     |             10 | High       | 698 |     170 |          24.36 |                 1.15 |     102.65 |     118.75 |                  217996.20 | reportable
+(10 rows)
+
+ population_scope | revenue_decile | value_tier |  n  | churned | churn_rate_pct | churn_index_vs_scope | arr_at_risk_currency_units | cell_size_flag 
+------------------+----------------+------------+-----+---------+----------------+----------------------+----------------------------+----------------
+ all_customers    |              1 | Low        | 705 |      61 |           8.65 |                 0.33 |                   14363.40 | reportable
+ all_customers    |              2 | Low        | 705 |      68 |           9.65 |                 0.36 |                   17915.40 | reportable
+ all_customers    |              3 | Low        | 705 |     178 |          25.25 |                 0.95 |                   81651.00 | reportable
+ all_customers    |              4 | Mid        | 704 |     172 |          24.43 |                 0.92 |                  107223.00 | reportable
+ all_customers    |              5 | Mid        | 704 |     152 |          21.59 |                 0.81 |                  122948.40 | reportable
+ all_customers    |              6 | Mid        | 704 |     268 |          38.07 |                 1.43 |                  240160.80 | reportable
+ all_customers    |              7 | Mid        | 704 |     266 |          37.78 |                 1.42 |                  262375.80 | reportable
+ all_customers    |              8 | High       | 704 |     242 |          34.38 |                 1.30 |                  260974.80 | reportable
+ all_customers    |              9 | High       | 704 |     288 |          40.91 |                 1.54 |                  338913.60 | reportable
+ all_customers    |             10 | High       | 704 |     174 |          24.72 |                 0.93 |                  223044.00 | reportable
+(10 rows)
+
+    scope     | value_tier | outcome  | customers | arpu_monthly_currency_units | arpu_annual_currency_units | mean_monthly_long_distance | cell_size_flag 
+--------------+------------+----------+-----------+-----------------------------+----------------------------+----------------------------+----------------
+ opening_base | High       | Churned  |       619 |                       98.07 |                    1176.82 |                      25.86 | reportable
+ opening_base | High       | Retained |      1385 |                       99.48 |                    1193.75 |                      25.82 | reportable
+ opening_base | Mid        | Churned  |       527 |                       72.16 |                     865.96 |                      23.19 | reportable
+ opening_base | Mid        | Retained |      1789 |                       67.86 |                     814.34 |                      22.43 | reportable
+ opening_base | Low        | Churned  |       126 |                       31.49 |                     377.90 |                      12.24 | reportable
+ opening_base | Low        | Retained |      1546 |                       24.62 |                     295.46 |                      20.94 | reportable
+ ALL          | High       | Churned  |       704 |                       97.41 |                    1168.94 |                      25.68 | reportable
+ ALL          | High       | Retained |      1408 |                       99.38 |                    1192.55 |                      25.79 | reportable
+ ALL          | Mid        | Churned  |       858 |                       71.16 |                     853.97 |                      24.15 | reportable
+ ALL          | Mid        | Retained |      1958 |                       67.58 |                     810.99 |                      22.63 | reportable
+ ALL          | Low        | Churned  |       307 |                       30.93 |                     371.11 |                      14.64 | reportable
+ ALL          | Low        | Retained |      1808 |                       24.74 |                     296.90 |                      20.89 | reportable
+(12 rows)
+

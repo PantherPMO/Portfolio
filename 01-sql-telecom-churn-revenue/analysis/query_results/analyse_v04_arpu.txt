@@ -1,0 +1,19 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+    scope     | value_tier | outcome  | customers | arpu_monthly_currency_units | arpu_annual_currency_units | mean_monthly_long_distance | cell_size_flag | scope_order 
+--------------+------------+----------+-----------+-----------------------------+----------------------------+----------------------------+----------------+-------------
+ opening_base | High       | Churned  |       619 |                       98.07 |                    1176.82 |                      25.86 | reportable     |           1
+ opening_base | High       | Retained |      1385 |                       99.48 |                    1193.75 |                      25.82 | reportable     |           1
+ opening_base | Mid        | Churned  |       527 |                       72.16 |                     865.96 |                      23.19 | reportable     |           1
+ opening_base | Mid        | Retained |      1789 |                       67.86 |                     814.34 |                      22.43 | reportable     |           1
+ opening_base | Low        | Churned  |       126 |                       31.49 |                     377.90 |                      12.24 | reportable     |           1
+ opening_base | Low        | Retained |      1546 |                       24.62 |                     295.46 |                      20.94 | reportable     |           1
+ ALL          | High       | Churned  |       704 |                       97.41 |                    1168.94 |                      25.68 | reportable     |           2
+ ALL          | High       | Retained |      1408 |                       99.38 |                    1192.55 |                      25.79 | reportable     |           2
+ ALL          | Mid        | Churned  |       858 |                       71.16 |                     853.97 |                      24.15 | reportable     |           2
+ ALL          | Mid        | Retained |      1958 |                       67.58 |                     810.99 |                      22.63 | reportable     |           2
+ ALL          | Low        | Churned  |       307 |                       30.93 |                     371.11 |                      14.64 | reportable     |           2
+ ALL          | Low        | Retained |      1808 |                       24.74 |                     296.90 |                      20.89 | reportable     |           2
+(12 rows)
+

@@ -1,0 +1,3 @@
+# chart=CH-02,source=analyse_01_base_position.txt,block=3
+scope,scope_note,opening_arr_currency_units,retained_arr_currency_units,lost_arr_currency_units,revenue_retention_rate_pct,customer_retention_rate_pct
+opening_base,PRIMARY — consistent with C-3,4799408.40,3566982.60,1232425.80,74.32,78.77

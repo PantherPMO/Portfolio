@@ -1,0 +1,20 @@
+ check_id |                                description                                | expected_disagreements | actual | status 
+----------+---------------------------------------------------------------------------+------------------------+--------+--------
+ REC-13   | monthly_charge agreement (expect full agreement)                          | 0                      | 0      | PASS
+ REC-14   | churn_value agreement (expect full agreement)                             | 0                      | 0      | PASS
+ REC-15   | tenure disagreement — DEFECT, expect exactly 11                         | 11                     | 11     | PASS
+ REC-16   | merged Total Charges blank/non-numeric — DEFECT, expect exactly 11      | 11                     | 11     | PASS
+ REC-17a  | payment method reclassified Mailed check -> Credit Card — expect 1227   | 1227                   | 1227   | PASS
+ REC-17b  | merged 'Electronic check' (absent from source taxonomy) — expect 2365   | 2365                   | 2365   | PASS
+ REC-18   | Cable customers absorbed into DSL/Fiber by the merged file — expect 830 | 830                    | 830    | PASS
+(7 rows)
+
+     note      | merged_internet_service | source_internet_type | customers 
+---------------+-------------------------+----------------------+-----------
+ REC-18 detail | DSL                     | Cable                |       769
+ REC-18 detail | DSL                     | DSL                  |      1652
+ REC-18 detail | Fiber optic             | Cable                |        61
+ REC-18 detail | Fiber optic             | Fiber Optic          |      3035
+ REC-18 detail | No                      | No internet          |      1526
+(5 rows)
+

@@ -1,0 +1,11 @@
+# chart=CH-07,source=analyse_04_divergence.txt,block=2
+population_scope,result_designation,segment_label,n,churn_rate_pct,churn_index_vs_scope,arr_at_risk_currency_units,share_of_scope_arr_at_risk_pct,rank_by_churn_rate,rank_by_arr_at_risk,divergence_index,cell_size_flag
+opening_base,PRIMARY RESULT - Opening cohort,High / Month-to-Month,894,54.59,2.57,566313.60,45.95,1,1,0,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Mid / Month-to-Month,1182,39.42,1.86,406459.20,32.98,2,2,0,reportable
+opening_base,PRIMARY RESULT - Opening cohort,High / One Year,521,19.19,0.90,123038.40,9.98,4,3,1,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Low / Month-to-Month,531,19.96,0.94,40717.80,3.30,3,4,-1,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Mid / One Year,561,8.73,0.41,40378.20,3.28,5,5,0,reportable
+opening_base,PRIMARY RESULT - Opening cohort,High / Two Year,589,5.26,0.25,39097.20,3.17,6,6,0,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Mid / Two Year,573,2.09,0.10,9524.40,0.77,8,7,1,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Low / One Year,442,3.39,0.16,5535.00,0.45,7,8,-1,reportable
+opening_base,PRIMARY RESULT - Opening cohort,Low / Two Year,699,0.72,0.03,1362.00,0.11,9,9,0,reportable

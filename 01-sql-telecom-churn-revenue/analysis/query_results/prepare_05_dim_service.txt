@@ -1,0 +1,16 @@
+TRUNCATE TABLE
+TRUNCATE TABLE
+INSERT 0 11
+ service_group | services |                         codes                          
+---------------+----------+--------------------------------------------------------
+ Core          |        3 | PHONE, MULTI_LINE, INTERNET
+ Add-on        |        5 | ONLINE_SEC, ONLINE_BAK, DEV_PROT, TECH_SUP, UNLIM_DATA
+ Entertainment |        3 | STREAM_TV, STREAM_MOV, STREAM_MUS
+(3 rows)
+
+ check_id |                     description                      | expected | actual | status 
+----------+------------------------------------------------------+----------+--------+--------
+ SETUP-01 | dim_service row count                                |       11 |     11 | PASS
+ SETUP-02 | L5 add-on services (non-Core) — LOCKED at 8 by C-6 |        8 |      8 | PASS
+(2 rows)
+

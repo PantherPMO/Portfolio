@@ -1,0 +1,35 @@
+ check_id |                          description                          |   expected   | actual  | status 
+----------+---------------------------------------------------------------+--------------+---------+--------
+ VAL-01   | analytical base row count                                     | 7043         | 7043    | PASS
+ VAL-02   | row count after joining the bridge (fan-out control)          | 7043         | 7043    | PASS
+ VAL-03   | sum(annual_recurring_revenue) = sum(monthly_charge) x 12      | 0.0000       | 0.0000  | PASS
+ VAL-04a  | decile membership sums to 7043                                | 7043         | 7043    | PASS
+ VAL-04b  | decile sizes within Stage 2 range 695-717                     | within       | 704-705 | PASS
+ VAL-05a  | value tiers sum to 7043                                       | 7043         | 7043    | PASS
+ VAL-05b  | value_tier High maps exactly to deciles 8-10                  | 0 mismatches | 0       | PASS
+ VAL-06   | in-period acquisitions that survived = customer_status Joined | 454          | 454     | PASS
+ VAL-07   | opening-cohort churn rate (C-3 primary KPI)                   | 21.23        | 21.23   | PASS
+ VAL-08   | period-end base rate (reported alongside)                     | 26.54        | 26.54   | PASS
+(10 rows)
+
+ check_id | schema_name | object_name | problem 
+----------+-------------+-------------+---------
+(0 rows)
+
+ check_id |                       description                        | expected | actual | status 
+----------+----------------------------------------------------------+----------+--------+--------
+ VAL-09   | prohibited references in core/analytics view definitions | 0        | 0      | PASS
+(1 row)
+
+ check_id | table_schema |      table_name       |    column_name     
+----------+--------------+-----------------------+--------------------
+ VAL-09b  | raw          | merged_reconciliation | churn_reason
+ VAL-09b  | raw          | merged_reconciliation | churn_score
+ VAL-09b  | raw          | merged_reconciliation | cltv
+ VAL-09b  | raw          | status                | churn_category
+ VAL-09b  | raw          | status                | churn_reason
+ VAL-09b  | raw          | status                | churn_score
+ VAL-09b  | raw          | status                | cltv
+ VAL-09b  | raw          | status                | satisfaction_score
+(8 rows)
+

@@ -1,0 +1,8 @@
+# chart=CH-05,source=analyse_03_churn_by_decile.txt,block=3
+scope,value_tier,outcome,customers,arpu_monthly_currency_units,arpu_annual_currency_units,mean_monthly_long_distance,cell_size_flag
+opening_base,High,Churned,619,98.07,1176.82,25.86,reportable
+opening_base,High,Retained,1385,99.48,1193.75,25.82,reportable
+opening_base,Mid,Churned,527,72.16,865.96,23.19,reportable
+opening_base,Mid,Retained,1789,67.86,814.34,22.43,reportable
+opening_base,Low,Churned,126,31.49,377.90,12.24,reportable
+opening_base,Low,Retained,1546,24.62,295.46,20.94,reportable

@@ -1,0 +1,53 @@
+         field          |         value         | customers 
+------------------------+-----------------------+-----------
+ cohort_class           | opening_base          |      5992
+ cohort_class           | in_period_acquisition |      1051
+ contract_type          | Month-to-Month        |      3610
+ contract_type          | Two Year              |      1883
+ contract_type          | One Year              |      1550
+ customer_status        | Stayed                |      4720
+ customer_status        | Churned               |      1869
+ customer_status        | Joined                |       454
+ has_dependents         | false                 |      5416
+ has_dependents         | true                  |      1627
+ has_referred           | false                 |      3821
+ has_referred           | true                  |      3222
+ internet_type          | Fiber Optic           |      3035
+ internet_type          | DSL                   |      1652
+ internet_type          | No internet           |      1526
+ internet_type          | Cable                 |       830
+ is_married             | false                 |      3641
+ is_married             | true                  |      3402
+ is_paperless_billing   | true                  |      4171
+ is_paperless_billing   | false                 |      2872
+ offer                  | No offer              |      3877
+ offer                  | Offer B               |       824
+ offer                  | Offer E               |       805
+ offer                  | Offer D               |       602
+ offer                  | Offer A               |       520
+ offer                  | Offer C               |       415
+ payment_method         | Bank Withdrawal       |      3909
+ payment_method         | Credit Card           |      2749
+ payment_method         | Mailed Check          |       385
+ service_intensity_band | 4. Deep (5-8)         |      2177
+ service_intensity_band | 3. Moderate (3-4)     |      1737
+ service_intensity_band | 1. None (0)           |      1607
+ service_intensity_band | 2. Light (1-2)        |      1522
+ value_tier             | Mid                   |      2816
+ value_tier             | Low                   |      2115
+ value_tier             | High                  |      2112
+(36 rows)
+
+ addon_service_count | customers 
+---------------------+-----------
+                   0 |      1607
+                   1 |       693
+                   2 |       829
+                   3 |       857
+                   4 |       880
+                   5 |       826
+                   6 |       668
+                   7 |       458
+                   8 |       225
+(9 rows)
+

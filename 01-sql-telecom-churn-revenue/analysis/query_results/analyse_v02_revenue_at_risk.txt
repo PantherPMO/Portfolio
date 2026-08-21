@@ -1,0 +1,10 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+         scope         | customers | churned | arr_at_risk_currency_units | long_distance_at_risk_currency_units | arr_total_currency_units | arr_at_risk_pct_of_scope | mean_arr_per_churned_customer | cell_size_flag | scope_order 
+-----------------------+-----------+---------+----------------------------+--------------------------------------+--------------------------+--------------------------+-------------------------------+----------------+-------------
+ opening_base          |      5992 |    1272 |                 1232425.80 |                            357222.84 |               4799408.40 |                    25.68 |                        968.89 | reportable     |           1
+ in_period_acquisition |      1051 |     597 |                  437144.40 |                            162380.88 |                673990.80 |                    64.86 |                        732.24 | reportable     |           2
+ ALL                   |      7043 |    1869 |                 1669570.20 |                            519603.72 |               5473399.20 |                    30.50 |                        893.30 | reportable     |           3
+(3 rows)
+

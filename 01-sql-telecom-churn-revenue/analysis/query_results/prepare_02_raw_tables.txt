@@ -1,0 +1,23 @@
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+COMMENT
+ table_schema |      table_name       | columns 
+--------------+-----------------------+---------
+ raw          | demographics          |       9
+ raw          | location              |       9
+ raw          | merged_reconciliation |      33
+ raw          | population            |       3
+ raw          | services              |      30
+ raw          | status                |      11
+(6 rows)
+

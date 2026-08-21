@@ -1,0 +1,11 @@
+TRUNCATE TABLE
+INSERT 0 7043
+ check_id |                     description                      | expected | actual | status 
+----------+------------------------------------------------------+----------+--------+--------
+ CLEAN-12 | fact rows                                            |     7043 |   7043 | PASS
+ CLEAN-13 | churned customers                                    |     1869 |   1869 | PASS
+ CLEAN-14 | quarter is constant Q3                               |        1 |      1 | PASS
+ CLEAN-15 | REC-07: raw Churn Label vs Churn Value disagreements |        0 |      0 | PASS
+ CLEAN-16 | tenure = 0 rows (relational source has none)         |        0 |      0 | PASS
+(5 rows)
+

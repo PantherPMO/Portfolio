@@ -1,0 +1,8 @@
+TRUNCATE TABLE
+INSERT 0 7043
+ check_id |                       description                       | expected | actual | status 
+----------+---------------------------------------------------------+----------+--------+--------
+ CLEAN-01 | dim_customer rows                                       |     7043 |   7043 | PASS
+ CLEAN-02 | has_dependents <=> dependent_count > 0 (0 = consistent) |        0 |      0 | PASS
+(2 rows)
+

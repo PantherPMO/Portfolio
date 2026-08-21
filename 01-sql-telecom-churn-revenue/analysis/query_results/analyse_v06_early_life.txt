@@ -1,0 +1,11 @@
+DROP VIEW
+CREATE VIEW
+COMMENT
+    tenure_month    | acquisitions | churned | churn_rate_within_month_pct | pct_of_all_churn | pct_of_in_period_acquisitions | arr_at_risk_currency_units | long_distance_at_risk_currency_units | cell_size_flag 
+--------------------+--------------+---------+-----------------------------+------------------+-------------------------------+----------------------------+--------------------------------------+----------------
+ 1                  |          613 |     380 |                       61.99 |            20.33 |                         36.16 |                  265380.00 |                            103472.04 | reportable
+ 2                  |          238 |     123 |                       51.68 |             6.58 |                         11.70 |                   97304.40 |                             32550.72 | reportable
+ 3                  |          200 |      94 |                       47.00 |             5.03 |                          8.94 |                   74460.00 |                             26358.12 | reportable
+ TOTAL (months 1-3) |         1051 |     597 |                       56.80 |            31.94 |                         56.80 |                  437144.40 |                            162380.88 | reportable
+(4 rows)
+

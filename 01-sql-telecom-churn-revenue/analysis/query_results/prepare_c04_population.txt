@@ -1,0 +1,7 @@
+TRUNCATE TABLE
+INSERT 0 1671
+ check_id |     description     | expected | actual | status 
+----------+---------------------+----------+--------+--------
+ CLEAN-08 | dim_population rows |     1671 |   1671 | PASS
+(1 row)
+

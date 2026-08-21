@@ -1,0 +1,17 @@
+TRUNCATE TABLE
+COPY 7043
+COPY 7043
+COPY 1671
+COPY 7043
+COPY 7043
+COPY 7043
+ check_id |      table_name       | expected | actual | status 
+----------+-----------------------+----------+--------+--------
+ REC-01   | demographics          |     7043 |   7043 | PASS
+ REC-01   | location              |     7043 |   7043 | PASS
+ REC-01   | merged_reconciliation |     7043 |   7043 | PASS
+ REC-01   | population            |     1671 |   1671 | PASS
+ REC-01   | services              |     7043 |   7043 | PASS
+ REC-01   | status                |     7043 |   7043 | PASS
+(6 rows)
+

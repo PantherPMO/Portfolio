@@ -1,0 +1,13 @@
+CREATE SCHEMA
+CREATE SCHEMA
+CREATE SCHEMA
+COMMENT
+COMMENT
+COMMENT
+ schema_created 
+----------------
+ analytics
+ core
+ raw
+(3 rows)
+

@@ -1,0 +1,17 @@
+ check_id |                        description                         | violations | status 
+----------+------------------------------------------------------------+------------+--------
+ RI-01    | dim_location customer_ids not in dim_customer              |          0 | PASS
+ RI-02    | dim_contract customer_ids not in dim_customer              |          0 | PASS
+ RI-03    | fact_customer_status customer_ids not in dim_customer      |          0 | PASS
+ RI-04    | restricted_demographics customer_ids not in dim_customer   |          0 | PASS
+ RI-05    | dim_customer ids missing from any of the four child tables |          0 | PASS
+ RI-06    | dim_location zip codes not in dim_population (directional) |          0 | PASS
+ RI-07    | bridge customer_ids not in dim_customer                    |          0 | PASS
+ RI-08    | bridge service_codes not in dim_service                    |          0 | PASS
+(8 rows)
+
+ check_id |                             description                             | value 
+----------+---------------------------------------------------------------------+-------
+ RI-06b   | population zip codes with no customers (expected 45, informational) |    45
+(1 row)
+

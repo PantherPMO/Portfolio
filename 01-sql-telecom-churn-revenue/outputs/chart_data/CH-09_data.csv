@@ -1,0 +1,26 @@
+# chart=CH-09,source=analyse_06_drivers_comparison.txt,block=1
+lens_id,lens_name,segment_value,n_all,churn_rate_all_pct,index_all,n_high,churn_rate_high_pct,index_high,index_difference,high_cell_flag
+L1,Contract type,Month-to-Month,2607,40.66,1.92,894,54.59,1.77,-0.15,reportable
+L1,Contract type,One Year,1524,10.76,0.51,521,19.19,0.62,0.11,reportable
+L1,Contract type,Two Year,1861,2.58,0.12,589,5.26,0.17,0.05,reportable
+L2,Tenure band,2. First year (4-12m),1135,38.77,1.83,204,71.57,2.32,0.49,reportable
+L2,Tenure band,3. Second year (13-24m),1024,28.71,1.35,260,52.31,1.69,0.34,reportable
+L2,Tenure band,4. Established (25-48m),1594,20.39,0.96,522,34.29,1.11,0.15,reportable
+L2,Tenure band,5. Long tenure (49-72m),2239,9.51,0.45,1018,15.52,0.50,0.05,reportable
+L3,Payment method,Mailed Check,261,22.99,1.08,36,44.44,1.44,0.36,caveat_required
+L3,Payment method,Bank Withdrawal,3340,28.17,1.33,1389,35.28,1.14,-0.19,reportable
+L3,Payment method,Credit Card,2391,11.33,0.53,579,19.52,0.63,0.10,reportable
+L4,Internet type,Cable,694,19.16,0.90,74,48.65,1.57,0.67,caveat_required
+L4,Internet type,Fiber Optic,2613,35.02,1.65,1850,31.46,1.02,-0.63,reportable
+L4,Internet type,DSL,1411,12.83,0.60,80,1.25,0.04,-0.56,caveat_required
+L5,Service intensity,2. Light (1-2),1013,35.14,1.66,42,47.62,1.54,-0.12,caveat_required
+L5,Service intensity,4. Deep (5-8),2128,18.98,0.89,1322,25.04,0.81,-0.08,reportable
+L5,Service intensity,3. Moderate (3-4),1538,29.58,1.39,640,41.88,1.36,-0.03,reportable
+L6,Offer held,Offer D,602,26.74,1.26,131,54.96,1.78,0.52,reportable
+L6,Offer held,Offer E,348,41.38,1.95,64,71.88,2.33,0.38,caveat_required
+L6,Offer held,Offer C,415,22.89,1.08,134,37.31,1.21,0.13,reportable
+L6,Offer held,Offer A,520,6.73,0.32,256,12.11,0.39,0.07,reportable
+L6,Offer held,Offer B,824,12.26,0.58,337,19.58,0.63,0.05,reportable
+L6,Offer held,No offer,3283,22.42,1.06,1082,32.72,1.06,0.00,reportable
+L7,Referral behaviour,Has not referred,2949,25.30,1.19,884,38.57,1.25,0.06,reportable
+L7,Referral behaviour,Has referred,3043,17.29,0.81,1120,24.82,0.80,-0.01,reportable

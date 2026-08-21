@@ -1,0 +1,10 @@
+ check_id |       source_table        | raw_rows | core_rows | difference | status 
+----------+---------------------------+----------+-----------+------------+--------
+ REC-02   | demographics              |     7043 |      7043 |          0 | PASS
+ REC-02   | demographics (restricted) |     7043 |      7043 |          0 | PASS
+ REC-02   | location                  |     7043 |      7043 |          0 | PASS
+ REC-02   | population                |     1671 |      1671 |          0 | PASS
+ REC-02   | services -> dim_contract  |     7043 |      7043 |          0 | PASS
+ REC-02   | services+status -> fact   |     7043 |      7043 |          0 | PASS
+(6 rows)
+
