@@ -1,0 +1,9 @@
+category_code,category_name,storage_class
+HEAT,Heating & Boilers,Ambient racked
+RENW,Renewables & Heat Pumps,Bulk floor
+PIPE,Pipe & Fittings,Bulk floor
+VALV,Valves & Controls,Ambient racked
+ELEC,Electrical & Cable,Ambient racked
+VENT,Ventilation & Air Movement,Ambient racked
+DRAIN,Drainage & Water Management,Bulk floor
+TOOL,Tools & Consumables,Secure cage

@@ -1,0 +1,60 @@
+    supplier_type    | n_first_receipts | quoted_lead_time_days | mean_cycle_days | median_cycle_days | p25_cycle_days | p75_cycle_days | iqr_days | p90_cycle_days | longest_cycle_days | stddev_days | mean_overrun_vs_quoted_days | median_overrun_vs_quoted_days 
+---------------------+------------------+-----------------------+-----------------+-------------------+----------------+----------------+----------+----------------+--------------------+-------------+-----------------------------+-------------------------------
+ ALL TYPES           |             3853 |                  17.2 |            23.6 |              11.0 |            8.0 |           22.0 |     14.0 |           77.0 |                166 |        25.5 |                         6.4 |                           3.0
+ UK Manufacturer     |             2048 |                   7.0 |             8.6 |               8.0 |            8.0 |            9.0 |      1.0 |           10.0 |                 17 |         1.4 |                         1.6 |                           1.0
+ UK / EU Distributor |              941 |                  14.0 |            19.1 |              20.0 |           18.0 |           21.0 |      3.0 |           23.0 |                 40 |         4.2 |                         5.1 |                           6.0
+ Small Specialist    |              261 |                  21.0 |            28.3 |              28.0 |           28.0 |           30.0 |      2.0 |           33.0 |                 53 |         6.6 |                         7.3 |                           7.0
+ Far East Importer   |              603 |                  55.0 |            79.5 |              78.0 |           76.0 |           81.0 |      5.0 |           91.0 |                166 |        12.5 |                        24.5 |                          23.0
+(5 rows)
+
+    supplier_type    | n_first_receipts | mean_cycle_days | median_cycle_days | mean_minus_median_days | p90_cycle_days | longest_cycle_days | tail_length_days 
+---------------------+------------------+-----------------+-------------------+------------------------+----------------+--------------------+------------------
+ Far East Importer   |              603 |            79.5 |              78.0 |                    1.5 |           91.0 |                166 |             88.0
+ UK Manufacturer     |             2048 |             8.6 |               8.0 |                    0.6 |           10.0 |                 17 |              9.0
+ Small Specialist    |              261 |            28.3 |              28.0 |                    0.3 |           33.0 |                 53 |             25.0
+ UK / EU Distributor |              941 |            19.1 |              20.0 |                   -0.9 |           23.0 |                 40 |             20.0
+(4 rows)
+
+ supplier_code |           supplier_name           |    supplier_type    | n_first_receipts | quoted_lead_time_days | median_cycle_days | mean_cycle_days | iqr_days | stddev_days | median_overrun_vs_quoted_days | split_rate_pct | cell_note 
+---------------+-----------------------------------+---------------------+------------------+-----------------------+-------------------+-----------------+----------+-------------+-------------------------------+----------------+-----------
+ SELBY         | Selby Import Partners Ltd         | Far East Importer   |               43 |                  55.0 |              79.0 |            81.7 |      6.0 |        12.6 |                          24.0 |            9.3 | 
+ UPTON         | Upton Global Sourcing Ltd         | Far East Importer   |               55 |                  55.0 |              79.0 |            79.4 |      6.0 |        14.9 |                          24.0 |           16.4 | 
+ YARLT         | Yarlton Trading Company Ltd       | Far East Importer   |               51 |                  55.0 |              79.0 |            78.1 |      4.5 |        14.0 |                          24.0 |           13.7 | 
+ VERND         | Vernedale Import Company Ltd      | Far East Importer   |               56 |                  55.0 |              78.0 |            82.5 |      4.3 |        18.8 |                          23.0 |           12.5 | 
+ WROXH         | Wroxham Overseas Supply Ltd       | Far East Importer   |               68 |                  55.0 |              78.0 |            81.5 |      8.0 |        16.2 |                          23.0 |            8.8 | 
+ MERID         | Meridian Pacific Trading Ltd      | Far East Importer   |              287 |                  55.0 |              77.0 |            78.1 |      4.0 |         8.2 |                          22.0 |            9.8 | 
+ TANFD         | Tanfield Sourcing Ltd             | Far East Importer   |               43 |                  55.0 |              77.0 |            81.9 |      8.5 |        13.5 |                          22.0 |           14.0 | 
+ BEWLY         | Bewley Instrumentation Ltd        | Small Specialist    |               43 |                  21.0 |              28.0 |            27.4 |      3.0 |         6.5 |                           7.0 |           32.6 | 
+ CROMR         | Cromer Specialist Heating Ltd     | Small Specialist    |               38 |                  21.0 |              28.0 |            26.9 |      6.5 |         7.9 |                           7.0 |           26.3 | 
+ DUNKD         | Dunkeld Water Systems Ltd         | Small Specialist    |               10 |                  21.0 |              28.0 |            27.2 |      1.8 |         4.9 |                           7.0 |           10.0 | 
+ KELSO         | Kelso Valve & Control Ltd         | Small Specialist    |              170 |                  21.0 |              28.0 |            28.8 |      3.0 |         6.3 |                           7.0 |           22.9 | 
+ IRWEL         | Irwell Building Supplies plc      | UK / EU Distributor |               78 |                  14.0 |              20.0 |            19.4 |      3.0 |         4.7 |                           6.0 |           14.1 | 
+ JARVS         | Jarvis Wholesale Distribution Ltd | UK / EU Distributor |               54 |                  14.0 |              20.0 |            18.6 |      2.0 |         3.7 |                           6.0 |           16.7 | 
+ KENTM         | Kentmere Trade Distribution Ltd   | UK / EU Distributor |               89 |                  14.0 |              20.0 |            18.8 |      2.0 |         3.5 |                           6.0 |           16.9 | 
+ LANGD         | Langdale Industrial Supply Ltd    | UK / EU Distributor |               50 |                  14.0 |              20.0 |            19.3 |      3.0 |         5.6 |                           6.0 |           18.0 | 
+(15 rows)
+
+ warehouse_code | n_first_receipts | median_cycle_days | mean_cycle_days | iqr_days | stddev_days | mean_overrun_vs_quoted_days | median_overrun_vs_quoted_days 
+----------------+------------------+-------------------+-----------------+----------+-------------+-----------------------------+-------------------------------
+ LIV            |              291 |              22.0 |            42.5 |     66.5 |        34.7 |                        13.6 |                           7.0
+ BRS            |              562 |              10.0 |            24.4 |     17.0 |        26.8 |                         6.7 |                           3.0
+ DAV            |             2107 |              10.0 |            20.6 |     12.0 |        22.1 |                         5.4 |                           3.0
+ WAR            |              893 |              10.0 |            23.9 |     15.0 |        25.9 |                         6.3 |                           3.0
+(4 rows)
+
+    supplier_type    | split_lines | median_to_first_receipt_days | median_to_final_receipt_days | median_completion_lag_days | longest_completion_lag_days 
+---------------------+-------------+------------------------------+------------------------------+----------------------------+-----------------------------
+ Small Specialist    |          64 |                         28.0 |                         44.0 |                       15.0 |                          28
+ UK Manufacturer     |         203 |                          8.0 |                         23.0 |                       15.0 |                          27
+ Far East Importer   |          67 |                         77.0 |                         91.0 |                       14.0 |                          26
+ UK / EU Distributor |         148 |                         20.0 |                         33.0 |                       14.0 |                          26
+(4 rows)
+
+                        check_name                         | value |                 note                 
+-----------------------------------------------------------+-------+--------------------------------------
+ First receipts in the primary window (the KPI population) |  3853 | Matches file 13 total first receipts
+ Supplier-type rows sum to the network row                 |  3853 | PASS
+ Site rows sum to the network row                          |  3853 | PASS
+ First receipts excluded by the 2025-09-30 window (D-14)   |   463 | Reported, not silently dropped
+(4 rows)
+

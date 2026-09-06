@@ -1,0 +1,173 @@
+SET
+    supplier_type    | n_first_receipts | quoted_days | median_actual_days | p25_days | p75_days | iqr_days | p90_days | longest_days | stddev_days | mean_overrun_vs_quoted | median_overrun_vs_quoted 
+---------------------+------------------+-------------+--------------------+----------+----------+----------+----------+--------------+-------------+------------------------+--------------------------
+ UK Manufacturer     |             2048 |           7 |                  8 |        8 |        9 |        1 |       10 |           17 |         1.4 |                    1.6 |                      1.0
+ UK / EU Distributor |              941 |          14 |                 20 |       18 |       21 |        3 |       23 |           40 |         4.2 |                    5.1 |                      6.0
+ Small Specialist    |              261 |          21 |                 28 |       28 |       30 |        2 |       33 |           53 |         6.6 |                    7.3 |                      7.0
+ Far East Importer   |              603 |          55 |                 78 |       76 |       81 |        5 |       91 |          166 |        12.5 |                   24.5 |                     23.0
+(4 rows)
+
+ warehouse_code | n_first_receipts | median_actual_days | iqr_days | stddev_days | mean_overrun_vs_quoted | median_overrun_vs_quoted | importer_share_of_receipts_pct 
+----------------+------------------+--------------------+----------+-------------+------------------------+--------------------------+--------------------------------
+ LIV            |              291 |                 22 |       67 |        34.7 |                   13.6 |                      7.0 |                           42.3
+ BRS            |              562 |                 10 |       17 |        26.8 |                    6.7 |                      3.0 |                           16.9
+ WAR            |              893 |                 10 |       15 |        25.9 |                    6.3 |                      3.0 |                           17.1
+ DAV            |             2107 |                 10 |       12 |        22.1 |                    5.4 |                      3.0 |                           11.0
+(4 rows)
+
+ warehouse_code | receipts | monday | tuesday | wednesday | thursday | friday | monday_share_pct | monday_excess_points 
+----------------+----------+--------+---------+-----------+----------+--------+------------------+----------------------
+ LIV            |      324 |    129 |      62 |        48 |       35 |     50 |             39.8 |                 19.8
+ DAV            |     2383 |    498 |     465 |       528 |      451 |    441 |             20.9 |                  0.9
+ WAR            |     1006 |    172 |     224 |       179 |      211 |    220 |             17.1 |                 -2.9
+ BRS            |      622 |     89 |     121 |       114 |      146 |    152 |             14.3 |                 -5.7
+(4 rows)
+
+ warehouse_code | n_monday | mean_overrun_monday | median_overrun_monday | n_other_days | mean_overrun_other_days | median_overrun_other_days | monday_penalty_days 
+----------------+----------+---------------------+-----------------------+--------------+-------------------------+---------------------------+---------------------
+ LIV            |      113 |                16.8 |                  11.0 |          178 |                    11.6 |                       6.5 |                 5.2
+ BRS            |       75 |                 8.9 |                   4.0 |          487 |                     6.3 |                       1.0 |                 2.6
+ DAV            |      437 |                 7.3 |                   5.0 |         1670 |                     4.9 |                       1.0 |                 2.4
+ WAR            |      155 |                 5.8 |                   3.0 |          738 |                     6.4 |                       1.0 |                -0.6
+(4 rows)
+
+ supplier_code |             supplier_name             |    supplier_type    | sites_with_enough_data | total_receipts | daventry_overrun | n_dav | warrington_overrun | n_war | bristol_overrun | n_brs | livingston_overrun | n_liv | spread_across_sites 
+---------------+---------------------------------------+---------------------+------------------------+----------------+------------------+-------+--------------------+-------+-----------------+-------+--------------------+-------+---------------------
+ MERID         | Meridian Pacific Trading Ltd          | Far East Importer   |                      4 |            287 |             22.0 |   121 |               23.0 |    75 |            24.2 |    41 |               24.9 |    50 |                 2.9
+ NEWLY         | Newlyn Technical Products Ltd         | UK / EU Distributor |                      3 |            127 |              5.8 |    75 |                5.6 |    28 |             3.6 |    24 |                    |       |                 2.2
+ ARDEN         | Arden Heating Components Ltd          | UK Manufacturer     |                      4 |           1015 |              1.6 |   548 |                1.5 |   246 |             1.5 |   156 |                3.0 |    65 |                 1.5
+ PENRT         | Penruth Distribution Ltd              | UK / EU Distributor |                      3 |            211 |              5.3 |   104 |                5.0 |    61 |             4.5 |    46 |                    |       |                 0.9
+ KELSO         | Kelso Valve & Control Ltd             | Small Specialist    |                      3 |            170 |              7.6 |    99 |                8.0 |    41 |             8.3 |    30 |                    |       |                 0.6
+ FOXLY         | Foxley Drainage Systems Ltd           | UK Manufacturer     |                      2 |            119 |              1.2 |    76 |                1.8 |    43 |                 |       |                    |       |                 0.6
+ EASTN         | Easton Ventilation Products Ltd       | UK Manufacturer     |                      3 |            252 |              1.6 |   141 |                1.6 |    68 |             1.1 |    43 |                    |       |                 0.5
+ MARSD         | Marsden Group Distribution Ltd        | UK / EU Distributor |                      2 |            119 |              4.7 |    95 |                5.1 |    24 |                 |       |                    |       |                 0.4
+ BRAMW         | Bramwell Copper Works Ltd             | UK Manufacturer     |                      3 |            144 |              1.3 |    96 |                1.5 |    26 |             1.5 |    22 |                    |       |                 0.3
+ HALDN         | Haldane Sealants & Adhesives Ltd      | UK Manufacturer     |                      3 |            136 |              1.5 |    77 |                1.6 |    36 |             1.6 |    23 |                    |       |                 0.1
+ GRANH         | Granham Thermal Ltd                   | UK Manufacturer     |                      2 |             81 |              1.5 |    59 |                1.5 |    22 |                 |       |                    |       |                 0.1
+ CHARN         | Charnley Electrical Manufacturing Ltd | UK Manufacturer     |                      2 |            126 |              1.6 |    81 |                1.6 |    45 |                 |       |                    |       |                 0.0
+(12 rows)
+
+DROP VIEW
+CREATE VIEW
+                  measure                   | value 
+--------------------------------------------+-------
+ First receipts in the comparable window    |  3853
+ Receipts inside modelled cells (n >= 20)   |  3223
+ Coverage of the model, per cent            |  83.6
+ Supplier-and-site cells modelled           |    44
+ Mean absolute residual after fitting, days |  0.18
+(5 rows)
+
+ warehouse_code | receipts_modelled | supplier_cells | importer_share_of_cells_pct | naive_site_effect_days | fitted_site_effect_days | attributable_to_supplier_mix 
+----------------+-------------------+----------------+-----------------------------+------------------------+-------------------------+------------------------------
+ LIV            |               136 |              3 |                        52.2 |                   10.1 |                     1.8 |                          8.3
+ WAR            |               715 |             12 |                        10.5 |                   -0.3 |                     0.0 |                         -0.3
+ BRS            |               385 |              8 |                        10.6 |                   -0.2 |                    -0.1 |                         -0.1
+ DAV            |              1987 |             21 |                         7.5 |                   -0.5 |                    -0.1 |                         -0.4
+(4 rows)
+
+ supplier_code |    supplier_type    | receipts_modelled | site_cells | naive_supplier_effect_days | fitted_supplier_effect_days | attributable_to_site_mix 
+---------------+---------------------+-------------------+------------+----------------------------+-----------------------------+--------------------------
+ WROXH         | Far East Importer   |                21 |          1 |                       24.4 |                        22.6 |                      1.8
+ UPTON         | Far East Importer   |                28 |          1 |                       20.6 |                        20.8 |                     -0.2
+ MERID         | Far East Importer   |               287 |          4 |                       18.0 |                        17.7 |                      0.3
+ KELSO         | Small Specialist    |               170 |          3 |                        2.8 |                         2.8 |                      0.0
+ ORMSK         | UK / EU Distributor |                39 |          1 |                        1.1 |                         1.2 |                     -0.1
+ IRWEL         | UK / EU Distributor |                37 |          1 |                        0.8 |                         0.9 |                     -0.1
+ NEWLY         | UK / EU Distributor |               127 |          3 |                        0.3 |                         0.4 |                     -0.1
+ LANGD         | UK / EU Distributor |                50 |          1 |                        0.2 |                         0.3 |                     -0.1
+ PENRT         | UK / EU Distributor |               211 |          3 |                        0.0 |                         0.1 |                     -0.1
+ KENTM         | UK / EU Distributor |                71 |          1 |                       -0.2 |                        -0.1 |                     -0.1
+ MARSD         | UK / EU Distributor |               119 |          2 |                       -0.3 |                        -0.2 |                     -0.1
+ QUEND         | UK / EU Distributor |                47 |          1 |                       -0.4 |                        -0.3 |                     -0.1
+ RAVNS         | UK / EU Distributor |                39 |          1 |                       -0.5 |                        -0.4 |                     -0.1
+ JARVS         | UK / EU Distributor |                51 |          1 |                       -0.5 |                        -0.4 |                     -0.1
+ DERWT         | UK Manufacturer     |                53 |          1 |                       -3.3 |                        -3.2 |                     -0.1
+ HALDN         | UK Manufacturer     |               136 |          3 |                       -3.5 |                        -3.4 |                     -0.1
+ CHARN         | UK Manufacturer     |               126 |          2 |                       -3.5 |                        -3.4 |                     -0.1
+ EASTN         | UK Manufacturer     |               252 |          3 |                       -3.6 |                        -3.5 |                     -0.1
+ ARDEN         | UK Manufacturer     |              1015 |          4 |                       -3.4 |                        -3.5 |                      0.1
+ GRANH         | UK Manufacturer     |                81 |          2 |                       -3.6 |                        -3.5 |                     -0.1
+ FOXLY         | UK Manufacturer     |               119 |          2 |                       -3.6 |                        -3.6 |                      0.0
+ BRAMW         | UK Manufacturer     |               144 |          3 |                       -3.7 |                        -3.6 |                     -0.1
+(22 rows)
+
+ supplier_code |    supplier_type    | warehouse_code |  n  | cell_mean_overrun_days | grand_mean_days | supplier_effect_days | site_effect_days | residual_days | unexplained_magnitude 
+---------------+---------------------+----------------+-----+------------------------+-----------------+----------------------+------------------+---------------+-----------------------
+ NEWLY         | UK / EU Distributor | BRS            |  24 |                    3.6 |             5.1 |                  0.4 |             -0.1 |          -1.8 |                   1.8
+ MERID         | Far East Importer   | BRS            |  41 |                   24.2 |             5.1 |                 17.7 |             -0.1 |           1.5 |                   1.5
+ MERID         | Far East Importer   | DAV            | 121 |                   22.0 |             5.1 |                 17.7 |             -0.1 |          -0.7 |                   0.7
+ PENRT         | UK / EU Distributor | BRS            |  46 |                    4.5 |             5.1 |                  0.1 |             -0.1 |          -0.6 |                   0.6
+ NEWLY         | UK / EU Distributor | DAV            |  75 |                    5.8 |             5.1 |                  0.4 |             -0.1 |           0.5 |                   0.5
+ KELSO         | Small Specialist    | BRS            |  30 |                    8.3 |             5.1 |                  2.8 |             -0.1 |           0.4 |                   0.4
+ EASTN         | UK Manufacturer     | BRS            |  43 |                    1.1 |             5.1 |                 -3.5 |             -0.1 |          -0.4 |                   0.4
+ ARDEN         | UK Manufacturer     | LIV            |  65 |                    3.0 |             5.1 |                 -3.5 |              1.8 |          -0.4 |                   0.4
+ MERID         | Far East Importer   | LIV            |  50 |                   24.9 |             5.1 |                 17.7 |              1.8 |           0.3 |                   0.3
+ FOXLY         | UK Manufacturer     | WAR            |  43 |                    1.8 |             5.1 |                 -3.6 |              0.0 |           0.3 |                   0.3
+ PENRT         | UK / EU Distributor | DAV            | 104 |                    5.3 |             5.1 |                  0.1 |             -0.1 |           0.3 |                   0.3
+ BRAMW         | UK Manufacturer     | BRS            |  22 |                    1.5 |             5.1 |                 -3.6 |             -0.1 |           0.2 |                   0.2
+ MERID         | Far East Importer   | WAR            |  75 |                   23.0 |             5.1 |                 17.7 |              0.0 |           0.2 |                   0.2
+ FOXLY         | UK Manufacturer     | DAV            |  76 |                    1.2 |             5.1 |                 -3.6 |             -0.1 |          -0.2 |                   0.2
+ KELSO         | Small Specialist    | DAV            |  99 |                    7.6 |             5.1 |                  2.8 |             -0.1 |          -0.2 |                   0.2
+ MARSD         | UK / EU Distributor | WAR            |  24 |                    5.1 |             5.1 |                 -0.2 |              0.0 |           0.2 |                   0.2
+ NEWLY         | UK / EU Distributor | WAR            |  28 |                    5.6 |             5.1 |                  0.4 |              0.0 |           0.2 |                   0.2
+ MARSD         | UK / EU Distributor | DAV            |  95 |                    4.7 |             5.1 |                 -0.2 |             -0.1 |          -0.1 |                   0.1
+ ARDEN         | UK Manufacturer     | DAV            | 548 |                    1.6 |             5.1 |                 -3.5 |             -0.1 |           0.1 |                   0.1
+ ARDEN         | UK Manufacturer     | WAR            | 246 |                    1.5 |             5.1 |                 -3.5 |              0.0 |          -0.1 |                   0.1
+ BRAMW         | UK Manufacturer     | DAV            |  96 |                    1.3 |             5.1 |                 -3.6 |             -0.1 |          -0.1 |                   0.1
+ BRAMW         | UK Manufacturer     | WAR            |  26 |                    1.5 |             5.1 |                 -3.6 |              0.0 |           0.1 |                   0.1
+ CHARN         | UK Manufacturer     | DAV            |  81 |                    1.6 |             5.1 |                 -3.4 |             -0.1 |           0.1 |                   0.1
+ CHARN         | UK Manufacturer     | WAR            |  45 |                    1.6 |             5.1 |                 -3.4 |              0.0 |          -0.1 |                   0.1
+ EASTN         | UK Manufacturer     | DAV            | 141 |                    1.6 |             5.1 |                 -3.5 |             -0.1 |           0.1 |                   0.1
+ HALDN         | UK Manufacturer     | BRS            |  23 |                    1.6 |             5.1 |                 -3.4 |             -0.1 |           0.1 |                   0.1
+ KELSO         | Small Specialist    | WAR            |  41 |                    8.0 |             5.1 |                  2.8 |              0.0 |           0.1 |                   0.1
+ PENRT         | UK / EU Distributor | WAR            |  61 |                    5.0 |             5.1 |                  0.1 |              0.0 |          -0.1 |                   0.1
+ LANGD         | UK / EU Distributor | DAV            |  50 |                    5.3 |             5.1 |                  0.3 |             -0.1 |           0.0 |                   0.0
+ KENTM         | UK / EU Distributor | DAV            |  71 |                    4.8 |             5.1 |                 -0.1 |             -0.1 |           0.0 |                   0.0
+ JARVS         | UK / EU Distributor | DAV            |  51 |                    4.5 |             5.1 |                 -0.4 |             -0.1 |           0.0 |                   0.0
+ IRWEL         | UK / EU Distributor | DAV            |  37 |                    5.9 |             5.1 |                  0.9 |             -0.1 |           0.0 |                   0.0
+ HALDN         | UK Manufacturer     | WAR            |  36 |                    1.6 |             5.1 |                 -3.4 |              0.0 |           0.0 |                   0.0
+ HALDN         | UK Manufacturer     | DAV            |  77 |                    1.5 |             5.1 |                 -3.4 |             -0.1 |           0.0 |                   0.0
+ GRANH         | UK Manufacturer     | WAR            |  22 |                    1.5 |             5.1 |                 -3.5 |              0.0 |           0.0 |                   0.0
+ GRANH         | UK Manufacturer     | DAV            |  59 |                    1.5 |             5.1 |                 -3.5 |             -0.1 |           0.0 |                   0.0
+ ORMSK         | UK / EU Distributor | DAV            |  39 |                    6.2 |             5.1 |                  1.2 |             -0.1 |           0.0 |                   0.0
+ EASTN         | UK Manufacturer     | WAR            |  68 |                    1.6 |             5.1 |                 -3.5 |              0.0 |           0.0 |                   0.0
+ DERWT         | UK Manufacturer     | DAV            |  53 |                    1.8 |             5.1 |                 -3.2 |             -0.1 |           0.0 |                   0.0
+ WROXH         | Far East Importer   | LIV            |  21 |                   29.4 |             5.1 |                 22.6 |              1.8 |           0.0 |                   0.0
+ QUEND         | UK / EU Distributor | DAV            |  47 |                    4.6 |             5.1 |                 -0.3 |             -0.1 |           0.0 |                   0.0
+ RAVNS         | UK / EU Distributor | DAV            |  39 |                    4.6 |             5.1 |                 -0.4 |             -0.1 |           0.0 |                   0.0
+ UPTON         | Far East Importer   | DAV            |  28 |                   25.7 |             5.1 |                 20.8 |             -0.1 |           0.0 |                   0.0
+ ARDEN         | UK Manufacturer     | BRS            | 156 |                    1.5 |             5.1 |                 -3.5 |             -0.1 |           0.0 |                   0.0
+(44 rows)
+
+ livingston_receipts_modelled | network_grand_mean_days | livingston_mean_overrun_days | site_effect_days | livingston_monday_share_pct | other_sites_monday_share_pct | monday_penalty_days | days_attributable_to_batching | share_of_site_effect_pct 
+------------------------------+-------------------------+------------------------------+------------------+-----------------------------+------------------------------+---------------------+-------------------------------+--------------------------
+                          136 |                     5.1 |                         15.1 |              1.8 |                        38.8 |                         18.7 |                 5.2 |                          1.05 |                     58.1
+(1 row)
+
+ warehouse_code | n_first_receipts | quoted_days | median_actual_days | mean_overrun_days | on_time_pct | monday_share_pct 
+----------------+------------------+-------------+--------------------+-------------------+-------------+------------------
+ LIV            |               50 |          55 |                 78 |              24.9 |        80.0 |             36.0
+ BRS            |               41 |          55 |                 78 |              24.2 |        75.7 |             26.8
+ WAR            |               75 |          55 |                 77 |              23.0 |        86.7 |              8.0
+ DAV            |              121 |          55 |                 77 |              22.0 |        89.3 |             27.3
+(4 rows)
+
+ order_half_year | n_daventry | on_time_daventry_pct | n_livingston | on_time_livingston_pct 
+-----------------+------------+----------------------+--------------+------------------------
+ 2024H1          |         48 |                 93.8 |           21 |                   95.2
+ 2024H2          |         32 |                100.0 |           12 |                   83.3
+ 2025H1          |         29 |                 82.8 |           13 |                   61.5
+ 2025H2          |         12 |                 58.3 |            4 |                   50.0
+(4 rows)
+
+                              measure                               | value 
+--------------------------------------------------------------------+-------
+ First receipts, comparable window                                  |  3853
+ All receipts, comparable window                                    |  4335
+ Receipts with a negative lead time (must be 0)                     |     0
+ Weighted mean fitted site effect (near 0 if the fit converged)     |  0.00
+ Weighted mean fitted supplier effect (near 0 if the fit converged) | -0.01
+ Mean absolute residual, days                                       |  0.18
+(6 rows)
+

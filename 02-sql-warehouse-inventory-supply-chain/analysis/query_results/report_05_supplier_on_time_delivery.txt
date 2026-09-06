@@ -1,0 +1,75 @@
+                         population                         | receipts 
+------------------------------------------------------------+----------
+ Goods receipt lines                                        |     4853
+ Measurable against a promised date                         |     4741
+ In the comparable window (ordered on or before 2025-09-30) |     4241
+ First deliveries in the window                             |     3766
+ Second or later deliveries (split shipments)               |      537
+(5 rows)
+
+ n_first | on_time_first_receipt_pct | n_all | on_time_all_receipts_pct | n_lines | otif_pct | n_split_deliveries | split_delivery_rate_pct | first_over_all_points 
+---------+---------------------------+-------+--------------------------+---------+----------+--------------------+-------------------------+-----------------------
+    3766 |                      89.8 |  4241 |                     80.1 |    3768 |     79.1 |                482 |                    11.1 |                   9.6
+(1 row)
+
+    supplier_type    | n_first_measurable | on_time_first_receipt_pct | n_all_measurable | on_time_all_receipts_pct | n_lines_measurable | otif_pct | split_delivery_rate_pct | units_received_pct 
+---------------------+--------------------+---------------------------+------------------+--------------------------+--------------------+----------+-------------------------+--------------------
+ UK Manufacturer     |               2004 |                      95.4 |             2205 |                     86.7 |               2004 |     86.0 |                     9.0 |               99.8
+ UK / EU Distributor |                912 |                      87.9 |             1058 |                     76.7 |                912 |     75.1 |                    13.6 |               99.4
+ Far East Importer   |                595 |                      76.1 |              661 |                     69.3 |                597 |     68.0 |                    10.0 |               97.9
+ Small Specialist    |                255 |                      83.9 |              317 |                     68.8 |                255 |     65.5 |                    19.7 |               99.1
+(4 rows)
+
+    supplier_type    | order_half_year | n_first_measurable | on_time_first_receipt_pct | n_all_measurable | on_time_all_receipts_pct | n_lines_measurable | otif_pct | cell_note 
+---------------------+-----------------+--------------------+---------------------------+------------------+--------------------------+--------------------+----------+-----------
+ Far East Importer   | 2024H1          |                207 |                      83.6 |              223 |                     78.0 |                207 |     77.3 | 
+ Far East Importer   | 2024H2          |                180 |                      77.8 |              199 |                     71.4 |                180 |     70.6 | 
+ Far East Importer   | 2025H1          |                134 |                      73.1 |              153 |                     65.4 |                134 |     63.4 | 
+ Far East Importer   | 2025H2          |                 74 |                      56.8 |               86 |                     48.8 |                 76 |     44.7 | 
+ Small Specialist    | 2024H1          |                 65 |                      69.2 |               79 |                     59.5 |                 65 |     61.5 | 
+ Small Specialist    | 2024H2          |                 79 |                      84.8 |               97 |                     70.1 |                 79 |     65.8 | 
+ Small Specialist    | 2025H1          |                 78 |                      93.6 |               98 |                     74.5 |                 78 |     70.5 | 
+ Small Specialist    | 2025H2          |                 33 |                      87.9 |               43 |                     69.8 |                 33 |     60.6 | 
+ UK / EU Distributor | 2024H1          |                284 |                      87.3 |              329 |                     76.0 |                284 |     73.9 | 
+ UK / EU Distributor | 2024H2          |                269 |                      87.7 |              317 |                     76.0 |                269 |     75.1 | 
+ UK / EU Distributor | 2025H1          |                236 |                      87.3 |              274 |                     75.5 |                236 |     72.9 | 
+ UK / EU Distributor | 2025H2          |                123 |                      91.1 |              138 |                     82.6 |                123 |     82.1 | 
+ UK Manufacturer     | 2024H1          |                638 |                      95.9 |              689 |                     88.8 |                638 |     88.4 | 
+ UK Manufacturer     | 2024H2          |                620 |                      94.4 |              685 |                     85.4 |                620 |     84.5 | 
+ UK Manufacturer     | 2025H1          |                496 |                      95.2 |              554 |                     85.2 |                496 |     84.5 | 
+ UK Manufacturer     | 2025H2          |                250 |                      96.8 |              277 |                     87.4 |                250 |     86.8 | 
+(16 rows)
+
+    supplier_type    | receipts_in_window | receipts_excluded | on_time_in_window_pct | on_time_excluded_pct_unreliable 
+---------------------+--------------------+-------------------+-----------------------+---------------------------------
+ UK Manufacturer     |               2251 |               316 |                  86.7 |                            86.8
+ UK / EU Distributor |               1089 |               145 |                  76.7 |                            81.4
+ Small Specialist    |                325 |                37 |                  68.8 |                            80.0
+ Far East Importer   |                670 |                20 |                  69.3 |                            76.5
+(4 rows)
+
+    supplier_type    | q4_2025_order_lines | lines_never_received | never_received_pct 
+---------------------+---------------------+----------------------+--------------------
+ Far East Importer   |                  85 |                   68 |               80.0
+ Small Specialist    |                  46 |                   17 |               37.0
+ UK / EU Distributor |                 149 |                   20 |               13.4
+ UK Manufacturer     |                 322 |                   34 |               10.6
+(4 rows)
+
+ warehouse_code | n_first_measurable | on_time_first_receipt_pct | n_all_measurable | on_time_all_receipts_pct | n_lines_measurable | otif_pct | split_delivery_rate_pct 
+----------------+--------------------+---------------------------+------------------+--------------------------+--------------------+----------+-------------------------
+ BRS            |                549 |                      90.9 |              608 |                     82.2 |                550 |     81.1 |                     9.6
+ DAV            |               2054 |                      91.6 |             2324 |                     81.4 |               2055 |     80.4 |                    11.6
+ WAR            |                878 |                      90.1 |              991 |                     80.5 |                878 |     79.5 |                    11.2
+ LIV            |                285 |                      73.0 |              318 |                     66.0 |                285 |     65.3 |                    10.2
+(4 rows)
+
+    grain_level    |    supplier_type    | on_time_first_receipt_pct | on_time_all_receipts_pct | otif_pct | ordering_check 
+-------------------+---------------------+---------------------------+--------------------------+----------+----------------
+ 1 — network       | ALL TYPES           |                      89.8 |                     80.1 |     79.1 | PASS
+ 2 — supplier type | Far East Importer   |                      76.1 |                     69.3 |     68.0 | PASS
+ 2 — supplier type | Small Specialist    |                      83.9 |                     68.8 |     65.5 | PASS
+ 2 — supplier type | UK / EU Distributor |                      87.9 |                     76.7 |     75.1 | PASS
+ 2 — supplier type | UK Manufacturer     |                      95.4 |                     86.7 |     86.0 | PASS
+(5 rows)
+

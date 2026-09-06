@@ -1,0 +1,251 @@
+sku,product_name,category_code,brand,unit_of_measure,list_price_gbp,standard_cost_gbp,unit_weight_kg,unit_volume_m3,pallet_quantity,shelf_life_months,introduced_date,discontinued_date,hazardous_flag
+HEAT-1004,Calorna Expansion Vessel 6kW,HEAT,Calorna,EACH,354.0,228.6,18.067,0.0827,9,,2020-11-02,,False
+HEAT-1009,Thermex Flue Kit 15mm,HEAT,Thermex,EACH,938.0,595.6,36.445,0.5365,9,,2016-07-29,,False
+HEAT-1016,Thermex Combi Boiler 9kW,HEAT,Thermex,EACH,699.0,476.47,7.06,0.7285,155,,2012-09-22,2025-05-29,False
+HEAT-1022,Thermex Combi Boiler 300ml,HEAT,Thermex,EACH,312.0,209.23,19.738,0.8687,46,,2015-06-29,2025-09-19,False
+HEAT-1033,Ravenglass System Boiler 24kW,HEAT,Ravenglass,EACH,1239.0,794.74,16.689,0.231,53,,2015-04-27,,False
+HEAT-1039,Calorna Unvented Cylinder 125mm,HEAT,Calorna,EACH,373.0,240.54,20.835,0.3099,134,,2022-09-11,,False
+HEAT-1047,Ravenglass Expansion Vessel 18kW,HEAT,Ravenglass,EACH,651.0,414.29,22.69,0.7207,103,,2022-11-29,,False
+HEAT-1054,Thermex Flue Kit 6kW,HEAT,Thermex,EACH,731.0,496.23,,,161,,2011-05-21,,False
+HEAT-1059,Calorna Expansion Vessel 15mm,HEAT,Calorna,EACH,385.0,256.13,28.776,0.5262,82,,2012-11-10,,False
+HEAT-1064,Thermex Expansion Vessel 35mm,HEAT,Thermex,EACH,404.0,268.99,5.867,0.882,110,,2023-01-21,2025-05-19,False
+HEAT-1073,Calorna Unvented Cylinder 6.0mm2,HEAT,Calorna,EACH,574.0,380.48,45.153,0.0586,14,,2021-03-29,2025-05-22,False
+HEAT-1082,Thermex Unvented Cylinder 28mm,HEAT,Thermex,EACH,305.0,195.35,2.374,0.5401,69,,2015-06-06,,False
+HEAT-1089,Thermex System Boiler 6kW,HEAT,Thermex,EACH,715.0,482.1,43.667,0.1563,9,,2019-07-02,,False
+HEAT-1094,Thermex Expansion Vessel 300ml,HEAT,Thermex,EACH,791.0,523.0,19.581,0.3758,172,,2017-06-24,2025-02-04,False
+HEAT-1103,Ravenglass Flue Kit 28mm,HEAT,Ravenglass,EACH,309.0,202.99,14.124,0.1627,152,,2012-07-29,,False
+HEAT-1109,Thermex System Boiler 24kW,HEAT,Thermex,EACH,363.0,239.05,38.305,0.435,130,,2020-08-05,,False
+HEAT-1112,Calorna Expansion Vessel 125mm,HEAT,Calorna,EACH,478.0,311.76,39.903,0.4596,171,,2014-05-25,,False
+HEAT-1124,Ravenglass Expansion Vessel 32kW,HEAT,Ravenglass,EACH,967.0,623.89,38.789,0.4837,171,,2020-09-05,,False
+HEAT-1130,Calorna Combi Boiler 22mm,HEAT,Calorna,EACH,1030.0,659.33,9.551,0.5485,169,,2015-01-03,,False
+HEAT-1137,Thermex Combi Boiler 300ml,HEAT,Thermex,EACH,884.0,565.43,52.04,0.577,145,,2012-02-13,,False
+HEAT-1142,Thermex System Boiler 35mm,HEAT,Thermex,EACH,674.0,445.58,42.252,0.0614,48,,2017-08-22,,False
+HEAT-1151,Ravenglass Unvented Cylinder 6.0mm2,HEAT,Ravenglass,EACH,883.0,588.89,3.992,0.797,128,,2022-02-18,,False
+HEAT-1158,Calorna Flue Kit 22mm,HEAT,Calorna,EACH,1537.0,987.83,30.644,0.4236,77,,2014-05-04,,False
+HEAT-1161,Ravenglass Expansion Vessel 15mm,HEAT,Ravenglass,EACH,1167.0,785.68,47.857,0.0437,141,,2019-10-10,,False
+HEAT-1168,Thermex System Boiler 100mm,HEAT,Thermex,EACH,764.0,485.95,39.184,0.8949,176,,2013-05-23,,False
+HEAT-1175,Ravenglass Combi Boiler 22mm,HEAT,Ravenglass,EACH,385.0,251.58,37.486,0.5742,10,,2012-07-05,,False
+HEAT-1182,Calorna Unvented Cylinder 35mm,HEAT,Calorna,EACH,647.0,437.64,4.33,0.8452,38,,2012-10-08,,False
+HEAT-1192,Thermex Flue Kit 1.5m,HEAT,Thermex,EACH,359.0,240.74,30.531,0.3259,60,,2012-04-15,,False
+HEAT-1200,Calorna System Boiler 6kW,HEAT,Calorna,EACH,1333.0,888.18,35.147,0.3459,24,,2012-07-12,,False
+HEAT-1203,Ravenglass Unvented Cylinder 22mm,HEAT,Ravenglass,EACH,895.0,596.38,6.956,0.6942,131,,2017-10-14,,False
+HEAT-1211,Thermex Combi Boiler 125mm,HEAT,Thermex,EACH,563.0,382.09,5.26,0.6176,114,,2016-04-03,,False
+RENW-1000,Northaire Hot Water Cylinder 6.0mm2,RENW,Northaire,EACH,2516.0,1732.41,36.434,0.7085,88,,2014-08-20,,False
+RENW-1010,Northaire Inverter Module 9kW,RENW,Northaire,EACH,3749.0,2724.87,35.103,0.3072,63,,2020-07-28,,False
+RENW-1018,Thermex Hot Water Cylinder 300ml,RENW,Thermex,EACH,2378.0,1752.84,15.681,0.6796,165,,2011-12-10,,False
+RENW-1022,Solvara Air Source Heat Pump 150mm,RENW,Solvara,EACH,1685.0,1228.67,47.435,0.7418,123,,2018-05-01,,False
+RENW-1031,Solvara Hot Water Cylinder 24kW,RENW,Solvara,EACH,2990.0,2049.19,6.992,0.3564,58,,2019-07-18,,False
+RENW-1035,Thermex Buffer Tank 24kW,RENW,Thermex,EACH,1797.0,1324.16,40.746,0.0253,8,,2018-11-26,,False
+RENW-1042,Solvara Buffer Tank 9kW,RENW,Solvara,EACH,1027.0,753.33,59.044,0.1062,95,,2019-09-16,,False
+RENW-1053,Solvara Hot Water Cylinder 6.0mm2,RENW,Solvara,EACH,3359.0,2388.22,8.952,0.6553,103,,2021-03-16,,False
+RENW-1061,Thermex Inverter Module 1.5m,RENW,Thermex,EACH,2443.0,1723.87,12.821,0.7357,23,,2016-03-03,,False
+RENW-1068,Northaire Buffer Tank 9kW,RENW,Northaire,EACH,3923.0,2876.5,45.847,0.4375,135,,2014-05-08,,False
+RENW-1070,Thermex Inverter Module 6.0mm2,RENW,Thermex,EACH,1390.0,1012.88,15.707,0.2435,74,,2011-03-30,,False
+RENW-1081,Northaire Hot Water Cylinder 6kW,RENW,Northaire,EACH,2691.0,1901.27,42.048,0.8349,7,,2014-07-26,,False
+RENW-1087,Thermex Air Source Heat Pump 28mm,RENW,Thermex,EACH,1356.0,988.75,23.769,0.0746,162,,2011-04-14,,False
+RENW-1095,Thermex Buffer Tank 9kW,RENW,Thermex,EACH,3152.0,2202.8,7.008,0.0775,156,,2020-10-06,,False
+RENW-1100,Thermex Buffer Tank 2.5mm2,RENW,Thermex,EACH,928.0,653.86,47.869,0.6068,155,,2017-01-11,,False
+RENW-1105,Thermex Air Source Heat Pump 110mm,RENW,Thermex,EACH,3927.0,2697.46,26.75,0.5387,104,,2022-03-23,,False
+RENW-1112,Northaire Air Source Heat Pump 18kW,RENW,Northaire,EACH,950.0,671.77,55.064,0.4883,193,,2021-07-27,,False
+RENW-1122,Solvara Inverter Module 125mm,RENW,Solvara,EACH,1512.0,1080.9,35.913,0.0329,165,,2014-05-01,,False
+RENW-1127,Solvara Air Source Heat Pump 100mm,RENW,Solvara,EACH,1686.0,1225.18,59.624,0.8995,125,,2016-03-17,,False
+RENW-1134,Solvara Buffer Tank 24kW,RENW,Solvara,EACH,904.0,640.42,53.631,0.2285,134,,2022-11-30,,False
+RENW-1145,Thermex Hot Water Cylinder 15mm,RENW,Thermex,EACH,3311.0,2367.14,28.314,0.7418,80,,2014-01-28,,False
+RENW-1152,Solvara Inverter Module 1.5m,RENW,Solvara,EACH,2730.0,1862.52,0.246,0.7635,41,,2016-01-24,,False
+RENW-1158,Thermex Buffer Tank 24kW,RENW,Thermex,EACH,3962.0,2838.56,37.902,0.2877,48,,2019-05-19,,False
+RENW-1161,Thermex Buffer Tank 110mm,RENW,Thermex,EACH,900.0,642.62,17.993,0.7844,40,,2016-07-16,,False
+RENW-1171,Solvara Air Source Heat Pump 22mm,RENW,Solvara,EACH,917.0,664.62,45.54,0.587,143,,2012-11-29,,False
+RENW-1180,Northaire Buffer Tank 2.5mm2,RENW,Northaire,EACH,2741.0,1944.12,26.325,0.1946,135,,2012-08-10,,False
+RENW-1186,Northaire Air Source Heat Pump 300ml,RENW,Northaire,EACH,2014.0,1403.73,51.701,0.5381,21,,2014-08-16,,False
+RENW-1192,Thermex Hot Water Cylinder 6kW,RENW,Thermex,EACH,1587.0,1157.91,20.657,0.7865,13,,2019-06-19,,False
+RENW-1201,Northaire Buffer Tank 125mm,RENW,Northaire,EACH,1427.0,995.42,35.482,0.5393,74,,2014-08-17,,False
+RENW-1203,Solvara Inverter Module 6kW,RENW,Solvara,EACH,1083.0,739.1,49.648,0.5428,1,,2021-03-03,,False
+RENW-1212,Northaire Inverter Module 28mm,RENW,Northaire,EACH,2545.0,1860.42,41.143,0.0177,60,,2012-08-31,,False
+PIPE-1004,Flowline Compression Tee 24kW,PIPE,Flowline,EACH,2.71,1.63,35.198,0.1304,21,,2017-02-10,,False
+PIPE-1011,Flowline Push-Fit Elbow 35mm,PIPE,Flowline,EACH,0.85,0.53,58.632,0.3321,26,,2012-05-06,,False
+PIPE-1017,Bramwell Compression Tee 125mm,PIPE,Bramwell,EACH,0.96,0.62,2.462,0.3099,163,,2018-10-05,,False
+PIPE-1025,Flowline Solder Ring Coupler 100mm,PIPE,Flowline,EACH,3.52,2.21,49.106,0.1076,160,,2020-04-12,,False
+PIPE-1029,Flowline Compression Tee 15mm,PIPE,Flowline,EACH,7.21,4.32,21.079,0.0266,130,,2019-08-22,,False
+PIPE-1038,Bramwell Compression Tee 2.5mm2,PIPE,Bramwell,EACH,2.2,1.32,30.524,0.7745,63,,2023-05-03,,False
+PIPE-1044,Flowline Solder Ring Coupler 300ml,PIPE,Flowline,EACH,21.65,13.96,,,14,,2021-03-24,,False
+PIPE-1054,Cuprex Plastic Barrier Pipe 125mm,PIPE,Cuprex,METRE,0.77,0.46,,,147,,2012-06-11,,False
+PIPE-1061,Cuprex Push-Fit Elbow 35mm,PIPE,Cuprex,EACH,3.07,1.88,54.908,0.1146,114,,2012-11-26,,False
+PIPE-1064,Flowline Compression Tee 35mm,PIPE,Flowline,EACH,13.75,8.23,37.178,0.7655,78,,2018-01-08,,False
+PIPE-1070,Bramwell Copper Tube 35mm,PIPE,Bramwell,METRE,21.8,13.3,58.793,0.6277,162,,2012-11-26,,False
+PIPE-1079,Cuprex Compression Tee 35mm,PIPE,Cuprex,EACH,1.48,0.89,10.906,0.0202,140,,2021-06-08,,False
+PIPE-1088,Flowline Compression Tee 24kW,PIPE,Flowline,EACH,0.54,0.35,7.402,0.7122,157,,2016-05-17,,False
+PIPE-1094,Cuprex Solder Ring Coupler 28mm,PIPE,Cuprex,EACH,15.64,9.61,18.305,0.1593,33,,2018-05-02,,False
+PIPE-1101,Flowline Push-Fit Elbow 35mm,PIPE,Flowline,EACH,2.87,1.75,7.693,0.1304,58,,2019-12-10,,False
+PIPE-1109,Bramwell Copper Tube 1.5m,PIPE,Bramwell,METRE,5.67,3.46,51.047,0.3581,46,,2018-01-20,,False
+PIPE-1117,Cuprex Compression Tee 35mm,PIPE,Cuprex,EACH,11.98,7.23,57.509,0.3069,129,,2014-10-21,,False
+PIPE-1119,Cuprex Compression Tee 1.5m,PIPE,Cuprex,EACH,10.56,6.73,40.691,0.8471,66,,2020-02-09,,False
+PIPE-1126,Cuprex Copper Tube 32kW,PIPE,Cuprex,METRE,11.47,7.38,49.951,0.4595,167,,2015-03-21,,False
+PIPE-1135,Bramwell Copper Tube 6.0mm2,PIPE,Bramwell,METRE,6.79,4.09,44.475,0.6479,99,,2017-08-14,,False
+PIPE-1142,Bramwell Copper Tube 32kW,PIPE,Bramwell,METRE,0.67,0.43,18.023,0.7841,84,,2020-11-14,,False
+PIPE-1150,Flowline Plastic Barrier Pipe 35mm,PIPE,Flowline,METRE,0.58,0.37,43.407,0.6242,176,,2012-11-27,,False
+PIPE-1156,Flowline Copper Tube 22mm,PIPE,Flowline,METRE,0.76,0.49,10.84,0.8202,51,,2016-09-02,,False
+PIPE-1165,Cuprex Copper Tube 32kW,PIPE,Cuprex,METRE,21.91,13.83,11.324,0.3124,178,,2012-08-21,,False
+PIPE-1168,Bramwell Compression Tee 1.5m,PIPE,Bramwell,EACH,1.43,0.91,24.599,0.2937,16,,2023-08-02,,False
+PIPE-1175,Bramwell Plastic Barrier Pipe 6kW,PIPE,Bramwell,METRE,0.58,0.36,46.143,0.8165,69,,2011-03-01,,False
+PIPE-1186,Bramwell Solder Ring Coupler 24kW,PIPE,Bramwell,EACH,1.41,0.9,42.617,0.179,66,,2021-12-15,,False
+PIPE-1189,Flowline Compression Tee 100mm,PIPE,Flowline,EACH,1.74,1.1,6.784,0.8181,39,,2018-02-22,,False
+PIPE-1201,Cuprex Compression Tee 15mm,PIPE,Cuprex,EACH,20.05,11.96,59.398,0.3181,96,,2012-02-05,,False
+PIPE-1206,Flowline Compression Tee 2.5mm2,PIPE,Flowline,EACH,0.91,0.56,40.354,0.3174,91,,2012-03-31,,False
+PIPE-1214,Flowline Push-Fit Elbow 6kW,PIPE,Flowline,EACH,0.72,0.43,52.607,0.8423,50,,2012-07-08,,False
+VALV-1002,Vantor Zone Valve 24kW,VALV,Vantor,EACH,81.14,51.27,46.113,0.7603,110,,2018-09-26,2025-09-17,False
+VALV-1007,Derwent Pressure Reducing Valve 300ml,VALV,Derwent,EACH,18.76,11.88,4.226,0.1633,38,,2015-08-28,2025-09-04,False
+VALV-1014,Vantor Pressure Reducing Valve 110mm,VALV,Vantor,EACH,52.63,33.62,50.634,0.8469,148,,2011-07-14,2025-08-17,False
+VALV-1024,Derwent Zone Valve 6.0mm2,VALV,Derwent,EACH,176.0,114.73,32.505,0.7629,31,,2016-12-13,2025-12-20,False
+VALV-1030,Vantor Room Thermostat 2.5mm2,VALV,Vantor,EACH,39.55,25.23,17.988,0.5089,199,,2015-11-18,,False
+VALV-1037,Vantor Thermostatic Radiator Valve 35mm,VALV,Vantor,EACH,45.6,30.18,7.301,0.0399,139,,2019-06-05,,False
+VALV-1042,Derwent Room Thermostat 15mm,VALV,Derwent,EACH,17.55,11.43,23.216,0.4236,92,,2017-09-27,2025-10-01,False
+VALV-1052,Derwent Room Thermostat 15mm,VALV,Derwent,EACH,15.88,10.13,2.574,0.1757,177,,2016-04-19,,False
+VALV-1056,Derwent Pressure Reducing Valve 6kW,VALV,Derwent,EACH,37.2,24.57,58.126,0.1744,31,,2013-07-30,,False
+VALV-1065,Kelso Room Thermostat 100mm,VALV,Kelso,EACH,122.0,80.97,47.828,0.5556,45,,2015-11-10,,False
+VALV-1075,Kelso Thermostatic Radiator Valve 9kW,VALV,Kelso,EACH,40.98,27.11,51.302,0.6648,182,,2022-08-13,,False
+VALV-1080,Vantor Pressure Reducing Valve 32kW,VALV,Vantor,EACH,179.0,115.35,0.168,0.7792,163,,2019-12-16,,False
+VALV-1084,Derwent Pressure Reducing Valve 18kW,VALV,Derwent,EACH,163.0,101.98,31.384,0.1257,177,,2019-12-13,,False
+VALV-1091,Vantor Pressure Reducing Valve 110mm,VALV,Vantor,EACH,94.06,61.95,15.966,0.1061,160,,2011-06-29,,False
+VALV-1102,Derwent Pressure Reducing Valve 6kW,VALV,Derwent,EACH,97.67,60.81,58.846,0.6672,63,,2022-09-28,,False
+VALV-1110,Vantor Zone Valve 22mm,VALV,Vantor,EACH,16.84,10.72,2.819,0.1054,96,,2019-12-06,,False
+VALV-1113,Kelso Room Thermostat 6kW,VALV,Kelso,EACH,13.27,8.2,54.901,0.6181,34,,2016-09-22,,False
+VALV-1121,Kelso Pressure Reducing Valve 2.5mm2,VALV,Kelso,EACH,119.0,74.99,29.433,0.5476,154,,2017-06-23,,False
+VALV-1130,Vantor Room Thermostat 28mm,VALV,Vantor,EACH,28.62,17.94,39.033,0.4772,198,,2017-03-29,,False
+VALV-1137,Derwent Pressure Reducing Valve 6.0mm2,VALV,Derwent,EACH,92.76,59.24,48.015,0.7889,86,,2022-09-21,,False
+VALV-1140,Kelso Zone Valve 125mm,VALV,Kelso,EACH,27.4,17.44,59.159,0.4538,96,,2015-03-22,,False
+VALV-1152,Kelso Pressure Reducing Valve 100mm,VALV,Kelso,EACH,12.72,8.39,12.91,0.0469,174,,2017-12-07,,False
+VALV-1154,Vantor Thermostatic Radiator Valve 6kW,VALV,Vantor,EACH,94.69,59.99,40.81,0.7728,50,,2012-10-11,,False
+VALV-1163,Kelso Zone Valve 6.0mm2,VALV,Kelso,EACH,109.0,72.46,12.934,0.3163,67,,2016-11-07,,False
+VALV-1172,Derwent Pressure Reducing Valve 1.5m,VALV,Derwent,EACH,106.0,67.71,49.175,0.176,165,,2019-08-06,,False
+VALV-1175,Vantor Zone Valve 300ml,VALV,Vantor,EACH,58.58,36.37,11.745,0.6898,197,,2011-07-22,,False
+VALV-1187,Vantor Zone Valve 125mm,VALV,Vantor,EACH,17.77,11.0,44.117,0.2089,17,,2023-02-24,,False
+VALV-1192,Derwent Thermostatic Radiator Valve 22mm,VALV,Derwent,EACH,54.26,34.67,12.018,0.2451,45,,2011-11-09,,False
+VALV-1196,Kelso Thermostatic Radiator Valve 35mm,VALV,Kelso,EACH,54.72,36.29,39.933,0.3335,134,,2017-10-15,,False
+VALV-1204,Vantor Room Thermostat 32kW,VALV,Vantor,EACH,54.01,34.26,52.163,0.2147,165,,2014-02-17,,False
+VALV-1215,Kelso Thermostatic Radiator Valve 100mm,VALV,Kelso,EACH,33.29,20.91,10.609,0.7587,12,,2021-09-05,,False
+ELEC-1005,Lumair RCBO 9kW,ELEC,Lumair,EACH,38.78,25.87,53.06,0.0408,64,,2012-03-13,,False
+ELEC-1008,Lumair Socket Outlet 6kW,ELEC,Lumair,EACH,6.74,4.52,51.595,0.5938,14,,2014-09-16,,False
+ELEC-1014,Voltek SWA Cable 9kW,ELEC,Voltek,METRE,3.78,2.54,16.647,0.1526,104,,2017-08-30,,False
+ELEC-1025,Charnley Socket Outlet 100mm,ELEC,Charnley,EACH,44.99,29.5,26.14,0.6993,136,,2016-09-02,2025-07-21,False
+ELEC-1031,Voltek SWA Cable 22mm,ELEC,Voltek,METRE,2.83,1.92,29.085,0.0176,161,,2015-05-30,2025-11-22,False
+ELEC-1036,Lumair Twin & Earth Cable 100mm,ELEC,Lumair,METRE,3.26,2.27,7.816,0.0387,23,,2017-06-15,,False
+ELEC-1046,Lumair RCBO 6.0mm2,ELEC,Lumair,EACH,69.98,48.7,10.614,0.0362,77,,2021-09-28,2025-02-24,False
+ELEC-1049,Charnley Socket Outlet 150mm,ELEC,Charnley,EACH,48.2,33.84,34.731,0.7312,85,,2018-09-01,,False
+ELEC-1057,Charnley SWA Cable 22mm,ELEC,Charnley,METRE,5.48,3.86,45.351,0.6591,46,,2017-03-04,,False
+ELEC-1067,Lumair SWA Cable 2.5mm2,ELEC,Lumair,METRE,7.35,4.85,36.372,0.5377,91,,2022-03-31,,False
+ELEC-1075,Voltek SWA Cable 300ml,ELEC,Voltek,METRE,42.02,28.61,21.086,0.5509,93,,2011-06-01,,False
+ELEC-1081,Charnley SWA Cable 35mm,ELEC,Charnley,METRE,22.18,14.86,8.903,0.2348,91,,2011-09-26,,False
+ELEC-1088,Voltek RCBO 150mm,ELEC,Voltek,EACH,19.94,13.47,27.734,0.1062,146,,2016-06-07,,False
+ELEC-1094,Voltek Consumer Unit 110mm,ELEC,Voltek,EACH,4.58,3.01,45.898,0.8195,88,,2017-09-18,,False
+ELEC-1102,Voltek Twin & Earth Cable 100mm,ELEC,Voltek,METRE,15.9,11.12,27.724,0.7682,22,,2015-02-01,,False
+ELEC-1107,Voltek Twin & Earth Cable 35mm,ELEC,Voltek,METRE,3.34,2.25,48.278,0.2778,116,,2013-06-19,,False
+ELEC-1117,Voltek Socket Outlet 300ml,ELEC,Voltek,EACH,4.99,3.26,46.395,0.0742,58,,2019-01-19,,False
+ELEC-1119,Voltek RCBO 6.0mm2,ELEC,Voltek,EACH,98.77,65.49,58.477,0.5253,155,,2023-07-14,,False
+ELEC-1131,Lumair Socket Outlet 150mm,ELEC,Lumair,EACH,26.47,18.71,19.946,0.2763,13,,2018-11-09,,False
+ELEC-1134,Lumair SWA Cable 35mm,ELEC,Lumair,METRE,113.0,79.64,,,152,,2011-03-09,,False
+ELEC-1143,Charnley SWA Cable 15mm,ELEC,Charnley,METRE,23.25,16.11,13.514,0.3351,144,,2015-11-06,,False
+ELEC-1150,Lumair Consumer Unit 18kW,ELEC,Lumair,EACH,20.87,14.36,45.702,0.8636,83,,2016-10-18,,False
+ELEC-1158,Charnley Twin & Earth Cable 300ml,ELEC,Charnley,METRE,6.83,4.77,45.423,0.1592,64,,2022-06-13,,False
+ELEC-1162,Charnley RCBO 125mm,ELEC,Charnley,EACH,34.63,22.66,54.055,0.586,80,,2012-06-10,,False
+ELEC-1171,Voltek Consumer Unit 300ml,ELEC,Voltek,EACH,75.08,49.94,36.432,0.7806,101,,2017-12-10,,False
+ELEC-1176,Voltek RCBO 32kW,ELEC,Voltek,EACH,20.28,13.45,10.455,0.888,191,,2022-06-06,,False
+ELEC-1184,Voltek Twin & Earth Cable 6.0mm2,ELEC,Voltek,METRE,145.0,98.07,15.028,0.4244,128,,2019-09-09,,False
+ELEC-1194,Voltek SWA Cable 6kW,ELEC,Voltek,METRE,70.61,49.23,55.942,0.7036,148,,2012-11-09,,False
+ELEC-1197,Lumair Twin & Earth Cable 125mm,ELEC,Lumair,METRE,78.69,55.51,,,89,,2018-04-26,,False
+ELEC-1204,Charnley SWA Cable 300ml,ELEC,Charnley,METRE,25.2,17.76,31.048,0.8255,131,,2023-04-15,,False
+ELEC-1214,Charnley Consumer Unit 15mm,ELEC,Charnley,EACH,2.01,1.41,15.567,0.2412,109,,2020-03-30,,False
+ELEC-1217,Voltek Twin & Earth Cable 35mm,ELEC,Voltek,METRE,146.0,96.74,50.862,0.0166,178,,2012-11-23,,False
+VENT-1002,Easton Rigid Duct 28mm,VENT,Easton,METRE,90.7,58.73,51.404,0.4308,124,,2023-04-23,,False
+VENT-1009,Zephra MVHR Unit 150mm,VENT,Zephra,EACH,648.0,420.68,38.561,0.4779,62,,2022-11-11,,False
+VENT-1019,Easton In-Line Fan 15mm,VENT,Easton,EACH,83.23,54.98,0.175,0.474,75,,2017-07-20,,False
+VENT-1026,Zephra MVHR Unit 150mm,VENT,Zephra,EACH,82.46,53.54,11.428,0.059,138,,2015-09-06,,False
+VENT-1028,Airvane In-Line Fan 15mm,VENT,Airvane,EACH,591.0,378.71,43.901,0.7572,45,,2019-10-15,,False
+VENT-1040,Airvane Grille Set 1.5m,VENT,Airvane,EACH,40.47,25.52,54.945,0.2968,23,,2013-02-13,,False
+VENT-1043,Zephra Grille Set 6kW,VENT,Zephra,EACH,72.47,45.95,14.594,0.645,121,,2020-12-29,,False
+VENT-1053,Airvane In-Line Fan 15mm,VENT,Airvane,EACH,50.18,31.69,57.354,0.3981,53,,2016-10-14,,False
+VENT-1060,Zephra In-Line Fan 300ml,VENT,Zephra,EACH,177.0,117.84,7.999,0.3855,39,,2019-12-14,,False
+VENT-1066,Airvane Grille Set 6kW,VENT,Airvane,EACH,68.06,43.17,57.246,0.6723,136,,2022-03-27,,False
+VENT-1075,Zephra Grille Set 18kW,VENT,Zephra,EACH,290.0,182.12,54.662,0.0408,196,,2022-09-29,,False
+VENT-1080,Airvane Grille Set 6.0mm2,VENT,Airvane,EACH,120.0,79.68,2.149,0.5988,77,,2015-05-22,,False
+VENT-1084,Easton Extract Fan 300ml,VENT,Easton,EACH,58.5,39.02,37.058,0.3901,186,,2019-01-31,,False
+VENT-1095,Zephra Extract Fan 32kW,VENT,Zephra,EACH,219.0,139.7,39.597,0.7341,144,,2019-08-19,,False
+VENT-1103,Airvane MVHR Unit 125mm,VENT,Airvane,EACH,279.0,176.1,54.386,0.6966,6,,2012-12-27,,False
+VENT-1105,Easton MVHR Unit 9kW,VENT,Easton,EACH,248.0,157.7,36.727,0.1401,69,,2022-01-09,,False
+VENT-1115,Easton Grille Set 125mm,VENT,Easton,EACH,63.71,40.97,39.731,0.5435,97,,2021-03-02,,False
+VENT-1119,Easton Grille Set 22mm,VENT,Easton,EACH,903.0,586.62,38.304,0.0881,176,,2021-10-28,,False
+VENT-1129,Zephra Grille Set 6.0mm2,VENT,Zephra,EACH,77.39,50.67,12.946,0.6126,199,,2016-05-19,,False
+VENT-1134,Zephra Rigid Duct 2.5mm2,VENT,Zephra,METRE,64.98,43.25,49.206,0.2855,45,,2019-12-11,,False
+VENT-1141,Easton Grille Set 2.5mm2,VENT,Easton,EACH,244.0,158.31,17.826,0.2729,14,,2018-09-18,,False
+VENT-1149,Zephra Grille Set 28mm,VENT,Zephra,EACH,74.94,47.28,9.926,0.8734,120,,2018-06-22,,False
+VENT-1158,Airvane Grille Set 110mm,VENT,Airvane,EACH,177.0,111.46,50.383,0.1808,160,,2019-05-19,,False
+VENT-1161,Easton In-Line Fan 2.5mm2,VENT,Easton,EACH,554.0,353.85,7.732,0.3967,27,,2016-05-17,,False
+VENT-1168,Airvane Extract Fan 18kW,VENT,Airvane,EACH,312.0,195.33,54.587,0.4535,135,,2011-08-23,,False
+VENT-1176,Zephra Extract Fan 15mm,VENT,Zephra,EACH,68.01,44.22,36.911,0.5378,167,,2014-04-03,,False
+VENT-1185,Easton Extract Fan 100mm,VENT,Easton,EACH,111.0,69.94,30.731,0.623,124,,2013-08-31,,False
+VENT-1192,Airvane Rigid Duct 6kW,VENT,Airvane,METRE,802.0,501.07,55.843,0.0726,2,,2023-06-20,,False
+VENT-1199,Airvane MVHR Unit 22mm,VENT,Airvane,EACH,95.45,63.65,44.68,0.1746,73,,2019-01-10,,False
+VENT-1205,Zephra Extract Fan 2.5mm2,VENT,Zephra,EACH,37.92,24.17,44.228,0.2435,14,,2020-12-26,,False
+VENT-1214,Zephra Grille Set 9kW,VENT,Zephra,EACH,242.0,158.78,,,170,,2021-04-05,,False
+DRAIN-1005,Hydralt Bottle Gully 18kW,DRAIN,Hydralt,EACH,10.64,6.68,26.079,0.3399,84,,2021-02-23,,False
+DRAIN-1009,Hydralt Bottle Gully 32kW,DRAIN,Hydralt,EACH,11.05,6.72,25.965,0.5659,28,,2022-02-18,,False
+DRAIN-1016,Hydralt Inspection Chamber 22mm,DRAIN,Hydralt,EACH,117.0,75.38,51.957,0.3582,188,,2013-09-19,,False
+DRAIN-1025,Culvert Underground Pipe 9kW,DRAIN,Culvert,METRE,93.31,57.52,50.801,0.1976,28,,2022-03-11,,False
+DRAIN-1033,Hydralt Channel Drain 28mm,DRAIN,Hydralt,EACH,13.37,8.23,46.333,0.5946,88,,2023-03-17,,False
+DRAIN-1037,Hydralt Bottle Gully 24kW,DRAIN,Hydralt,EACH,36.47,23.44,42.97,0.7065,5,,2019-10-17,,False
+DRAIN-1047,Foxley Underground Pipe 150mm,DRAIN,Foxley,METRE,286.0,174.28,53.738,0.5088,21,,2018-08-04,,False
+DRAIN-1051,Foxley Bottle Gully 15mm,DRAIN,Foxley,EACH,193.0,117.0,54.436,0.8875,36,,2011-11-26,,False
+DRAIN-1056,Foxley Submersible Pump 6.0mm2,DRAIN,Foxley,EACH,35.81,22.69,57.911,0.7296,84,,2021-04-26,,False
+DRAIN-1068,Culvert Inspection Chamber 24kW,DRAIN,Culvert,EACH,15.41,9.6,45.454,0.8546,97,,2015-12-30,,False
+DRAIN-1075,Culvert Underground Pipe 28mm,DRAIN,Culvert,METRE,96.44,62.76,9.948,0.4962,188,,2023-06-03,,False
+DRAIN-1082,Foxley Submersible Pump 125mm,DRAIN,Foxley,EACH,9.35,5.98,,,111,,2017-05-29,,False
+DRAIN-1084,Culvert Underground Pipe 125mm,DRAIN,Culvert,METRE,10.84,6.84,59.758,0.6238,119,,2012-09-14,,False
+DRAIN-1095,Culvert Inspection Chamber 24kW,DRAIN,Culvert,EACH,166.0,107.81,40.036,0.448,192,,2021-04-05,,False
+DRAIN-1098,Hydralt Underground Pipe 300ml,DRAIN,Hydralt,METRE,57.45,36.37,30.775,0.408,128,,2020-10-24,,False
+DRAIN-1106,Culvert Channel Drain 32kW,DRAIN,Culvert,EACH,15.27,9.63,8.384,0.4874,150,,2011-03-31,,False
+DRAIN-1113,Culvert Channel Drain 1.5m,DRAIN,Culvert,EACH,24.68,15.28,55.435,0.1103,16,,2020-08-21,,False
+DRAIN-1122,Hydralt Inspection Chamber 28mm,DRAIN,Hydralt,EACH,59.69,37.39,14.439,0.7476,88,,2018-10-16,,False
+DRAIN-1130,Foxley Underground Pipe 125mm,DRAIN,Foxley,METRE,93.25,58.99,51.379,0.3464,86,,2013-02-21,,False
+DRAIN-1138,Foxley Inspection Chamber 18kW,DRAIN,Foxley,EACH,233.0,151.95,31.724,0.2707,113,,2013-07-22,,False
+DRAIN-1145,Hydralt Bottle Gully 300ml,DRAIN,Hydralt,EACH,22.29,13.78,,,4,,2016-03-28,,False
+DRAIN-1148,Foxley Underground Pipe 6.0mm2,DRAIN,Foxley,METRE,12.81,8.33,23.484,0.5935,195,,2023-07-20,,False
+DRAIN-1158,Hydralt Submersible Pump 9kW,DRAIN,Hydralt,EACH,121.0,77.02,36.643,0.0833,179,,2020-10-30,,False
+DRAIN-1161,Hydralt Inspection Chamber 32kW,DRAIN,Hydralt,EACH,11.17,7.23,52.829,0.771,4,,2015-12-23,,False
+DRAIN-1173,Culvert Channel Drain 9kW,DRAIN,Culvert,EACH,310.0,190.86,58.826,0.762,147,,2017-07-29,,False
+DRAIN-1179,Culvert Submersible Pump 6kW,DRAIN,Culvert,EACH,154.0,100.64,54.721,0.1303,67,,2018-09-12,,False
+DRAIN-1186,Culvert Channel Drain 32kW,DRAIN,Culvert,EACH,77.74,48.03,32.486,0.4804,20,,2021-07-31,,False
+DRAIN-1192,Hydralt Inspection Chamber 100mm,DRAIN,Hydralt,EACH,188.0,117.72,27.573,0.5216,41,,2022-10-09,,False
+DRAIN-1199,Culvert Underground Pipe 35mm,DRAIN,Culvert,METRE,8.11,5.1,3.499,0.0795,17,,2022-02-09,,False
+DRAIN-1204,Culvert Underground Pipe 6kW,DRAIN,Culvert,METRE,10.07,6.4,58.206,0.6561,182,,2023-05-30,,False
+DRAIN-1214,Foxley Submersible Pump 6kW,DRAIN,Foxley,EACH,54.05,32.7,30.74,0.3599,80,,2013-07-13,,False
+TOOL-1003,Gripwell Fixing Pack 9kW,TOOL,Gripwell,EACH,45.69,28.02,17.546,0.7973,85,18.0,2015-02-12,,False
+TOOL-1007,Haldane Silicone Sealant 32kW,TOOL,Haldane,EACH,3.0,1.84,13.661,0.2575,123,,2018-08-28,,False
+TOOL-1018,Sitemark Reciprocating Blade 15mm,TOOL,Sitemark,EACH,1.87,1.09,30.86,0.3316,73,24.0,2020-08-25,,False
+TOOL-1021,Haldane Nitrile Gloves 28mm,TOOL,Haldane,EACH,2.93,1.7,45.946,0.4548,58,,2015-04-11,,True
+TOOL-1031,Haldane Silicone Sealant 110mm,TOOL,Haldane,EACH,23.1,14.0,43.391,0.0437,46,,2020-06-14,,False
+TOOL-1037,Gripwell Reciprocating Blade 2.5mm2,TOOL,Gripwell,EACH,3.24,1.91,33.257,0.3989,162,24.0,2022-03-30,,False
+TOOL-1047,Sitemark Fixing Pack 18kW,TOOL,Sitemark,EACH,2.2,1.31,5.7,0.4391,33,,2015-04-15,,False
+TOOL-1051,Gripwell Fixing Pack 24kW,TOOL,Gripwell,EACH,1.66,1.03,56.664,0.6381,15,18.0,2017-07-01,,False
+TOOL-1056,Haldane Pipe Slice 6.0mm2,TOOL,Haldane,METRE,19.03,11.57,6.37,0.454,180,12.0,2019-11-03,,False
+TOOL-1067,Gripwell Pipe Slice 6kW,TOOL,Gripwell,METRE,12.5,7.22,29.18,0.7968,71,,2012-03-21,,False
+TOOL-1071,Haldane Fixing Pack 300ml,TOOL,Haldane,EACH,5.51,3.39,52.015,0.569,112,12.0,2015-11-12,,False
+TOOL-1077,Gripwell Nitrile Gloves 9kW,TOOL,Gripwell,EACH,3.97,2.41,57.682,0.6285,108,12.0,2020-11-28,,False
+TOOL-1087,Haldane Silicone Sealant 15mm,TOOL,Haldane,EACH,3.85,2.22,36.819,0.4061,61,12.0,2014-07-15,,False
+TOOL-1092,Gripwell Pipe Slice 18kW,TOOL,Gripwell,METRE,49.2,28.82,54.197,0.7619,133,18.0,2014-07-22,,False
+TOOL-1100,Haldane Reciprocating Blade 6.0mm2,TOOL,Haldane,EACH,37.35,22.18,46.501,0.1484,124,18.0,2012-02-04,,False
+TOOL-1110,Haldane Fixing Pack 100mm,TOOL,Haldane,EACH,34.74,20.14,20.162,0.3253,174,12.0,2019-01-10,,True
+TOOL-1115,Gripwell Fixing Pack 15mm,TOOL,Gripwell,EACH,1.68,1.01,7.623,0.5475,144,12.0,2011-04-11,,True
+TOOL-1124,Sitemark Fixing Pack 1.5m,TOOL,Sitemark,EACH,37.97,22.54,,,168,,2023-06-15,,False
+TOOL-1128,Gripwell Silicone Sealant 1.5m,TOOL,Gripwell,EACH,4.09,2.55,4.543,0.5266,144,24.0,2013-11-05,,True
+TOOL-1137,Gripwell Fixing Pack 2.5mm2,TOOL,Gripwell,EACH,33.85,20.8,0.435,0.8435,122,,2019-08-29,,False
+TOOL-1144,Haldane Silicone Sealant 18kW,TOOL,Haldane,EACH,2.26,1.36,32.034,0.4047,83,,2012-05-04,,False
+TOOL-1149,Haldane Nitrile Gloves 110mm,TOOL,Haldane,EACH,5.28,3.14,,,12,18.0,2018-01-25,,True
+TOOL-1155,Gripwell Pipe Slice 6kW,TOOL,Gripwell,METRE,53.33,33.09,28.903,0.3469,95,24.0,2016-02-04,,False
+TOOL-1163,Sitemark Fixing Pack 110mm,TOOL,Sitemark,EACH,11.08,6.83,13.444,0.0507,125,18.0,2018-02-08,,False
+TOOL-1171,Gripwell Fixing Pack 6kW,TOOL,Gripwell,EACH,27.22,16.45,38.483,0.6341,174,12.0,2017-10-27,,False
+TOOL-1175,Haldane Silicone Sealant 9kW,TOOL,Haldane,EACH,4.77,2.78,24.502,0.194,44,18.0,2017-05-14,,False
+TOOL-1182,Haldane Fixing Pack 18kW,TOOL,Haldane,EACH,4.04,2.36,23.784,0.4264,116,24.0,2018-04-03,,False
+TOOL-1192,Haldane Fixing Pack 28mm,TOOL,Haldane,EACH,6.72,4.02,23.334,0.6229,198,,2013-09-05,,True
+TOOL-1201,Haldane Reciprocating Blade 15mm,TOOL,Haldane,EACH,19.52,12.07,58.412,0.2953,48,12.0,2012-05-29,,False
+TOOL-1205,Sitemark Reciprocating Blade 6kW,TOOL,Sitemark,EACH,2.47,1.5,45.087,0.3543,131,24.0,2011-09-16,,False
+TOOL-1214,Haldane Pipe Slice 24kW,TOOL,Haldane,METRE,16.74,9.72,50.641,0.8583,176,,2011-08-09,,False
+TOOL-1219,Haldane Fixing Pack 100mm,TOOL,Haldane,EACH,1.5,0.87,42.075,0.0754,63,,2015-01-04,,False

@@ -1,0 +1,38 @@
+ warehouse_code |             warehouse_name              | average_stock_gbp | holding_cost_gbp | holding_cost_at_20pct_gbp | holding_cost_at_25pct_gbp | holding_cost_pct_of_cost_of_sales 
+----------------+-----------------------------------------+-------------------+------------------+---------------------------+---------------------------+-----------------------------------
+ ALL SITES      | All warehouses                          |        2043979.36 |        449675.46 |                 408795.87 |                 510994.84 |                              4.71
+ DAV            | Daventry National Distribution Centre   |         996883.15 |        219314.29 |                 199376.63 |                 249220.79 |                              4.70
+ LIV            | Livingston Regional Distribution Centre |         473538.63 |        104178.50 |                  94707.73 |                 118384.66 |                              7.76
+ WAR            | Warrington Regional Distribution Centre |         366299.16 |         80585.82 |                  73259.83 |                  91574.79 |                              3.91
+ BRS            | Bristol Regional Distribution Centre    |         207258.43 |         45596.85 |                  41451.69 |                  51814.61 |                              3.09
+(5 rows)
+
+ category_code |        category_name        | average_stock_gbp | inventory_turns | holding_cost_gbp | holding_cost_at_20pct_gbp | holding_cost_at_25pct_gbp | holding_cost_pct_of_cost_of_sales 
+---------------+-----------------------------+-------------------+-----------------+------------------+---------------------------+---------------------------+-----------------------------------
+ RENW          | Renewables & Heat Pumps     |         726834.32 |            5.25 |        159903.55 |                 145366.86 |                 181708.58 |                              4.19
+ HEAT          | Heating & Boilers           |         321201.85 |            2.73 |         70664.41 |                  64240.37 |                  80300.46 |                              8.05
+ ELEC          | Electrical & Cable          |         265370.17 |            5.87 |         58381.44 |                  53074.03 |                  66342.54 |                              3.75
+ PIPE          | Pipe & Fittings             |         225370.20 |            4.31 |         49581.44 |                  45074.04 |                  56342.55 |                              5.10
+ DRAIN         | Drainage & Water Management |         210394.94 |            5.26 |         46286.89 |                  42078.99 |                  52598.74 |                              4.18
+ VENT          | Ventilation & Air Movement  |         122878.95 |            5.12 |         27033.37 |                  24575.79 |                  30719.74 |                              4.30
+ VALV          | Valves & Controls           |          95447.21 |            4.11 |         20998.39 |                  19089.44 |                  23861.80 |                              5.36
+ TOOL          | Tools & Consumables         |          76481.72 |            2.61 |         16825.98 |                  15296.34 |                  19120.43 |                              8.42
+(8 rows)
+
+                            component                             | rate_pct | annual_cost_gbp |                               basis                               
+------------------------------------------------------------------+----------+-----------------+-------------------------------------------------------------------
+ Cost of capital — BoE Bank Rate 3.75% plus 2.25pp assumed margin |     6.00 |       122638.76 | Primary source for the Bank Rate only; the margin is assumed
+ Storage and handling                                             |     8.00 |       163518.35 | Industry convention; no cost data in the dataset
+ Service — insurance, stock-taking, systems                       |     3.00 |        61319.38 | Industry convention; no cost data in the dataset
+ Risk — damage, obsolescence, shrinkage                           |     5.00 |       102198.97 | Published benchmark, NOT this dataset's 7.9% observed loss (D-12)
+ Total                                                            |    22.00 |       449675.46 | Sensitivity reported at 20% and 25%
+(5 rows)
+
+                            check_name                            | difference_gbp |   result    
+------------------------------------------------------------------+----------------+-------------
+ Sites sum to network holding cost                                |           0.00 | PASS
+ Holding cost equals average stock x 22%, not closing stock x 22% |           0.00 | PASS
+ Understatement avoided by not using closing stock                |       73246.25 | INFORMATION
+ Components sum to the total                                      |           0.00 | PASS
+(4 rows)
+

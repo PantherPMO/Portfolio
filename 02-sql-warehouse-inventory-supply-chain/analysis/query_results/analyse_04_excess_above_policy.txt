@@ -1,0 +1,102 @@
+SET
+DROP VIEW
+CREATE VIEW
+                       measure                        | lines | value_gbp 
+------------------------------------------------------+-------+-----------
+ Stocked lines at the closing snapshot                |   515 |          
+ Lines at or below the reorder point (due to reorder) |    91 |          
+ Closing stock value, all lines                       |   515 |   1711042
+ Lines above the policy ceiling on hand               |   103 |    134701
+ Lines above the ceiling once the pipeline is counted |   201 |    397537
+(5 rows)
+
+          position_band           | lines | stock_value_gbp | excess_value_gbp | mean_cover_weeks 
+----------------------------------+-------+-----------------+------------------+------------------
+ 0 — no stock                     |    16 |               0 |                0 |              0.0
+ 1 — at or below half the ceiling |   125 |          269460 |                0 |              5.0
+ 2 — within the ceiling           |   272 |         1018555 |               11 |             20.7
+ 3 — up to 1.5x the ceiling       |    75 |          261475 |            31397 |             41.3
+ 4 — 1.5x to 2.5x                 |    18 |           60111 |            27751 |             39.7
+ 5 — over 2.5x the ceiling        |     9 |          101441 |            75542 |            122.7
+(6 rows)
+
+ warehouse_code | stocked_lines | lines_above_ceiling | closing_stock_gbp | excess_on_hand_gbp | excess_share_of_stock_pct | excess_with_pipeline_gbp | excess_holding_cost_gbp 
+----------------+---------------+---------------------+-------------------+--------------------+---------------------------+--------------------------+-------------------------
+ BRS            |            90 |                  26 |            209230 |              83272 |                      39.8 |                   170087 |                   18320
+ WAR            |           105 |                  20 |            301361 |              14124 |                       4.7 |                    57835 |                    3107
+ LIV            |            70 |                  19 |            397597 |              18449 |                       4.6 |                    44633 |                    4059
+ DAV            |           250 |                  38 |            802854 |              18856 |                       2.3 |                   124982 |                    4148
+(4 rows)
+
+ category_code |        category_name        | stocked_lines | closing_stock_gbp | excess_on_hand_gbp | excess_share_of_stock_pct | mean_cover_weeks 
+---------------+-----------------------------+---------------+-------------------+--------------------+---------------------------+------------------
+ PIPE          | Pipe & Fittings             |            94 |            239227 |              54997 |                      23.0 |             26.4
+ HEAT          | Heating & Boilers           |            54 |            257092 |              29987 |                      11.7 |             27.9
+ DRAIN         | Drainage & Water Management |            58 |            199361 |              20888 |                      10.5 |             18.6
+ ELEC          | Electrical & Cable          |            77 |            249486 |              13928 |                       5.6 |             14.7
+ TOOL          | Tools & Consumables         |            84 |             64823 |               5672 |                       8.7 |             26.4
+ VENT          | Ventilation & Air Movement  |            45 |            129267 |               3817 |                       3.0 |             27.5
+ RENW          | Renewables & Heat Pumps     |            40 |            500334 |               3509 |                       0.7 |              7.4
+ VALV          | Valves & Controls           |            63 |             71454 |               1904 |                       2.7 |             10.9
+(8 rows)
+
+ primary_supplier_type | stocked_lines | mean_quoted_lead_days | closing_stock_gbp | excess_on_hand_gbp | excess_share_of_stock_pct | excess_with_pipeline_gbp | mean_cover_weeks | mean_moq_to_quarterly_demand 
+-----------------------+---------------+-----------------------+-------------------+--------------------+---------------------------+--------------------------+------------------+------------------------------
+ Far East Importer     |            66 |                    55 |            150965 |              16366 |                      10.8 |                    44910 |             38.1 |                         2.58
+ UK Manufacturer       |           302 |                     7 |           1025550 |             101955 |                       9.9 |                   252265 |             18.4 |                         0.23
+ UK / EU Distributor   |           108 |                    14 |            485621 |              15918 |                       3.3 |                    79451 |             19.0 |                         0.40
+ Small Specialist      |            39 |                    21 |             48906 |                463 |                       0.9 |                    20911 |             10.8 |                         0.21
+(4 rows)
+
+ last_actual_source_type  | stocked_lines | closing_stock_gbp | excess_on_hand_gbp | share_of_all_excess_pct | excess_share_of_stock_pct | mean_moq_to_quarterly_demand 
+--------------------------+---------------+-------------------+--------------------+-------------------------+---------------------------+------------------------------
+ Far East Importer        |           142 |            450334 |             110495 |                    82.0 |                      24.5 |                         3.08
+ UK Manufacturer          |           242 |            736079 |              14724 |                    10.9 |                       2.0 |                         0.21
+ UK / EU Distributor      |           101 |            492150 |               9368 |                     7.0 |                       1.9 |                         0.38
+ Small Specialist         |            29 |             31601 |                115 |                     0.1 |                       0.4 |                         0.21
+ No receipt in the period |             1 |               878 |                  0 |                     0.0 |                       0.0 |                             
+(5 rows)
+
+         policy_currency         | stocked_lines | closing_stock_gbp | excess_on_hand_gbp | excess_share_of_stock_pct | mean_cover_weeks | mean_policy_age_months 
+---------------------------------+---------------+-------------------+--------------------+---------------------------+------------------+------------------------
+ Not reviewed for over 15 months |           121 |            381549 |              20294 |                       5.3 |             23.3 |                   23.2
+ Reviewed within 15 months       |           394 |           1329493 |             114407 |                       8.6 |             19.7 |                    7.4
+(2 rows)
+
+    sku     | category_code | warehouse_code | primary_supplier_code | primary_supplier_type | quantity_on_hand | quantity_on_order | policy_ceiling_units | stock_to_ceiling_ratio | excess_units_on_hand | excess_value_gbp | cover_weeks | minimum_order_quantity | issued_units_13w | policy_age_months 
+------------+---------------+----------------+-----------------------+-----------------------+------------------+-------------------+----------------------+------------------------+----------------------+------------------+-------------+------------------------+------------------+-------------------
+ PIPE-1201  | PIPE          | BRS            | HALDN                 | UK Manufacturer       |             5069 |                 0 |                  991 |                   5.12 |                 4078 |            40413 |        42.6 |                    448 |             1547 |               8.5
+ DRAIN-1095 | DRAIN         | BRS            | CHARN                 | UK Manufacturer       |              139 |                 0 |                   37 |                   3.76 |                  102 |             9066 |        43.0 |                     13 |               42 |               1.4
+ HEAT-1130  | HEAT          | LIV            | ARDEN                 | UK Manufacturer       |               31 |                 0 |                   20 |                   1.55 |                   11 |             7304 |        26.9 |                      2 |               15 |              22.6
+ HEAT-1016  | HEAT          | BRS            | EASTN                 | UK Manufacturer       |               28 |                 0 |                   10 |                   2.80 |                   18 |             6926 |             |                      6 |                0 |               1.3
+ ELEC-1046  | ELEC          | WAR            | JARVS                 | UK / EU Distributor   |              244 |                 0 |                   84 |                   2.90 |                  160 |             6051 |             |                     30 |                0 |               1.5
+ DRAIN-1016 | DRAIN         | BRS            | ARDEN                 | UK Manufacturer       |              122 |                 0 |                   36 |                   3.39 |                   86 |             5047 |       113.3 |                     11 |               14 |              11.8
+ HEAT-1064  | HEAT          | BRS            | EASTN                 | UK Manufacturer       |               27 |                 0 |                    8 |                   3.38 |                   19 |             4190 |       351.0 |                      2 |                1 |              27.5
+ DRAIN-1158 | DRAIN         | BRS            | FOXLY                 | UK Manufacturer       |              132 |                 0 |                   63 |                   2.10 |                   69 |             4125 |        13.5 |                     24 |              127 |              14.0
+ PIPE-1044  | PIPE          | LIV            | MERID                 | Far East Importer     |             2500 |                 0 |                 2146 |                   1.16 |                  354 |             3905 |        37.2 |                   1666 |              874 |               3.8
+ HEAT-1203  | HEAT          | BRS            | EASTN                 | UK Manufacturer       |               16 |                 0 |                    8 |                   2.00 |                    8 |             3814 |        20.8 |                      2 |               10 |               9.2
+ HEAT-1064  | HEAT          | WAR            | EASTN                 | UK Manufacturer       |               24 |                 0 |                    8 |                   3.00 |                   16 |             3408 |             |                      2 |                0 |               8.6
+ PIPE-1025  | PIPE          | BRS            | MERID                 | Far East Importer     |             2104 |                 0 |                  900 |                   2.34 |                 1204 |             2131 |        23.0 |                   2079 |             1191 |               3.5
+ RENW-1081  | RENW          | DAV            | KENTM                 | UK / EU Distributor   |                8 |                 0 |                    7 |                   1.14 |                    1 |             2070 |         9.5 |                      1 |               11 |              28.6
+ ELEC-1131  | ELEC          | BRS            | IRWEL                 | UK / EU Distributor   |              240 |                 0 |                  100 |                   2.40 |                  140 |             2043 |        20.5 |                     60 |              152 |               8.8
+ PIPE-1044  | PIPE          | DAV            | MERID                 | Far East Importer     |             1945 |                 0 |                 1801 |                   1.08 |                  144 |             1984 |        28.9 |                   1666 |              876 |               9.6
+ TOOL-1092  | TOOL          | DAV            | MERID                 | Far East Importer     |              271 |                 0 |                  210 |                   1.29 |                   61 |             1768 |        92.7 |                    182 |               38 |              14.0
+ PIPE-1025  | PIPE          | LIV            | MERID                 | Far East Importer     |             3517 |                 0 |                 2561 |                   1.37 |                  956 |             1759 |        64.9 |                   2079 |              705 |               6.3
+ RENW-1186  | RENW          | DAV            | HALDN                 | UK Manufacturer       |                8 |                 0 |                    7 |                   1.14 |                    1 |             1438 |        20.8 |                      1 |                5 |               5.3
+ DRAIN-1051 | DRAIN         | DAV            | PENRT                 | UK / EU Distributor   |               57 |                 0 |                   46 |                   1.24 |                   11 |             1388 |        35.3 |                      9 |               21 |              12.5
+ HEAT-1064  | HEAT          | LIV            | EASTN                 | UK Manufacturer       |               21 |                 0 |                   15 |                   1.40 |                    6 |             1300 |             |                      2 |                0 |               9.8
+(20 rows)
+
+ closing_stock_gbp | excess_on_hand_gbp | excess_share_pct | excess_with_pipeline_gbp | holding_cost_at_20pct_gbp | holding_cost_at_22pct_gbp | holding_cost_at_25pct_gbp 
+-------------------+--------------------+------------------+--------------------------+---------------------------+---------------------------+---------------------------
+           1711042 |             134701 |              7.9 |                   397537 |                     26940 |                     29634 |                     33675
+(1 row)
+
+     excess_status     |   slow_status   | lines | stock_value_gbp 
+-----------------------+-----------------+-------+-----------------
+ Above policy ceiling  | Not slow moving |    80 |          368737
+ Above policy ceiling  | Slow moving     |    23 |           70857
+ Within policy ceiling | Not slow moving |   390 |         1218932
+ Within policy ceiling | Slow moving     |    22 |           52516
+(4 rows)
+

@@ -1,0 +1,47 @@
+SET
+                       check_name                        | ledger_units | document_units | result 
+---------------------------------------------------------+--------------+----------------+--------
+ Goods receipt movements equal accepted receipt quantity |       589897 |         589897 | PASS
+ Sales issue movements equal despatched quantity         |       579078 |         579078 | PASS
+(2 rows)
+
+                     check_name                      | line_count | result 
+-----------------------------------------------------+------------+--------
+ Purchase order lines                                |       4457 | 
+ Lines over-received (received + rejected > ordered) |          0 | PASS
+ Lines marked Received in full that are not          |          0 | PASS
+ Receipts dated before their order date              |          0 | PASS
+(4 rows)
+
+ receipts_against_one_line | purchase_order_lines | share_pct 
+---------------------------+----------------------+-----------
+                         1 |                 3779 |      87.6
+                         2 |                  537 |      12.4
+(2 rows)
+
+                check_name                 | transfer_count | result 
+-------------------------------------------+----------------+--------
+ Transfer references                       |            422 | 
+ References that do not net to zero        |              0 | PASS
+ References not spanning exactly two sites |              0 | PASS
+(3 rows)
+
+                   check_name                    | breaches | result 
+-------------------------------------------------+----------+--------
+ Lines despatching more than ordered             |        0 | PASS
+ Cancelled lines despatching stock               |        0 | PASS
+ Despatched lines without a sales issue movement |        0 | PASS
+(3 rows)
+
+  movement_type   | movement_rows | net_units | gross_value_gbp 
+------------------+---------------+-----------+-----------------
+ Sales issue      |         30965 |   -579078 |     18217989.27
+ Goods receipt    |          4853 |    589897 |     18273621.75
+ Stock adjustment |          2036 |     -7845 |       376679.32
+ Opening balance  |           515 |     71435 |      1741919.43
+ Transfer in      |           422 |     27810 |       638734.17
+ Transfer out     |           422 |    -27810 |       638734.17
+ Write-off        |           294 |     -1330 |        63487.47
+ Customer return  |           245 |      4914 |       131216.70
+(8 rows)
+

@@ -1,0 +1,31 @@
+supplier_code,supplier_name,supplier_type,country,payment_terms_days,account_opened_date
+ARDEN,Arden Heating Components Ltd,UK Manufacturer,United Kingdom,60,2019-05-15
+BRAMW,Bramwell Copper Works Ltd,UK Manufacturer,United Kingdom,60,2022-04-26
+CHARN,Charnley Electrical Manufacturing Ltd,UK Manufacturer,United Kingdom,60,2016-12-31
+DERWT,Derwent Valve Company Ltd,UK Manufacturer,United Kingdom,60,2012-02-15
+EASTN,Easton Ventilation Products Ltd,UK Manufacturer,United Kingdom,60,2010-10-30
+FOXLY,Foxley Drainage Systems Ltd,UK Manufacturer,United Kingdom,60,2021-01-30
+GRANH,Granham Thermal Ltd,UK Manufacturer,United Kingdom,60,2018-05-11
+HALDN,Haldane Sealants & Adhesives Ltd,UK Manufacturer,United Kingdom,60,2017-10-25
+IRWEL,Irwell Building Supplies plc,UK / EU Distributor,United Kingdom,45,2016-12-15
+JARVS,Jarvis Wholesale Distribution Ltd,UK / EU Distributor,United Kingdom,45,2020-08-25
+KENTM,Kentmere Trade Distribution Ltd,UK / EU Distributor,United Kingdom,45,2014-03-12
+LANGD,Langdale Industrial Supply Ltd,UK / EU Distributor,United Kingdom,45,2021-01-04
+MARSD,Marsden Group Distribution Ltd,UK / EU Distributor,United Kingdom,45,2017-08-13
+NEWLY,Newlyn Technical Products Ltd,UK / EU Distributor,United Kingdom,45,2017-01-17
+ORMSK,Ormskirk Supply Partners Ltd,UK / EU Distributor,United Kingdom,45,2018-02-11
+PENRT,Penruth Distribution Ltd,UK / EU Distributor,United Kingdom,45,2016-01-03
+QUEND,Quendon Trade Supply Ltd,UK / EU Distributor,United Kingdom,45,2014-05-24
+RAVNS,Ravensworth Wholesale Ltd,UK / EU Distributor,United Kingdom,45,2012-06-18
+MERID,Meridian Pacific Trading Ltd,Far East Importer,China,90,2019-11-14
+SELBY,Selby Import Partners Ltd,Far East Importer,China,90,2021-11-30
+TANFD,Tanfield Sourcing Ltd,Far East Importer,China,90,2016-04-12
+UPTON,Upton Global Sourcing Ltd,Far East Importer,China,90,2016-10-10
+VERND,Vernedale Import Company Ltd,Far East Importer,China,90,2018-06-18
+WROXH,Wroxham Overseas Supply Ltd,Far East Importer,China,90,2019-06-11
+YARLT,Yarlton Trading Company Ltd,Far East Importer,China,90,2020-08-13
+KELSO,Kelso Valve & Control Ltd,Small Specialist,United Kingdom,30,2017-07-03
+ALNWK,Alnwick Precision Fittings Ltd,Small Specialist,United Kingdom,30,2016-11-19
+BEWLY,Bewley Instrumentation Ltd,Small Specialist,United Kingdom,30,2016-03-29
+CROMR,Cromer Specialist Heating Ltd,Small Specialist,United Kingdom,30,2015-12-07
+DUNKD,Dunkeld Water Systems Ltd,Small Specialist,United Kingdom,30,2011-01-21

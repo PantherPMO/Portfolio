@@ -1,0 +1,35 @@
+ warehouse_code |             warehouse_name              | average_stock_gbp | cost_of_sales_gbp | inventory_turns | days_inventory_outstanding | days_inventory_outstanding_unrounded_basis | weeks_of_cost_of_sales_held 
+----------------+-----------------------------------------+-------------------+-------------------+-----------------+----------------------------+--------------------------------------------+-----------------------------
+ ALL SITES      | All warehouses                          |        2043979.36 |        9550572.04 |            4.67 |                       78.2 |                                       78.1 |                        11.1
+ LIV            | Livingston Regional Distribution Centre |         473538.63 |        1342562.36 |            2.84 |                      128.5 |                                      128.7 |                        18.3
+ DAV            | Daventry National Distribution Centre   |         996883.15 |        4667524.85 |            4.68 |                       78.0 |                                       78.0 |                        11.1
+ WAR            | Warrington Regional Distribution Centre |         366299.16 |        2063307.71 |            5.63 |                       64.8 |                                       64.8 |                         9.2
+ BRS            | Bristol Regional Distribution Centre    |         207258.43 |        1477177.12 |            7.13 |                       51.2 |                                       51.2 |                         7.3
+(5 rows)
+
+ category_code |        category_name        | skus_stocked | average_stock_gbp | inventory_turns | days_inventory_outstanding 
+---------------+-----------------------------+--------------+-------------------+-----------------+----------------------------
+ TOOL          | Tools & Consumables         |           32 |          76481.72 |            2.61 |                      139.8
+ HEAT          | Heating & Boilers           |           31 |         321201.85 |            2.73 |                      133.7
+ VALV          | Valves & Controls           |           31 |          95447.21 |            4.11 |                       88.8
+ PIPE          | Pipe & Fittings             |           31 |         225370.20 |            4.31 |                       84.7
+ VENT          | Ventilation & Air Movement  |           31 |         122878.95 |            5.12 |                       71.3
+ RENW          | Renewables & Heat Pumps     |           31 |         726834.32 |            5.25 |                       69.5
+ DRAIN         | Drainage & Water Management |           31 |         210394.94 |            5.26 |                       69.4
+ ELEC          | Electrical & Cable          |           32 |         265370.17 |            5.87 |                       62.2
+(8 rows)
+
+ warehouse_code | from_rounded_turns | from_components | difference_days | rounding_check | dio_on_364_day_basis | calendar_convention_cost_days 
+----------------+--------------------+-----------------+-----------------+----------------+----------------------+-------------------------------
+ ALL SITES      |               78.2 |            78.1 |            0.10 | PASS           |                 77.9 |                          0.20
+ BRS            |               51.2 |            51.2 |            0.00 | PASS           |                 51.1 |                          0.13
+ DAV            |               78.0 |            78.0 |            0.00 | PASS           |                 77.7 |                          0.26
+ LIV            |              128.5 |           128.7 |            0.20 | PASS           |                128.4 |                          0.31
+ WAR            |               64.8 |            64.8 |            0.00 | PASS           |                 64.6 |                          0.18
+(5 rows)
+
+ rows_checked | rows_failing_reciprocal | result 
+--------------+-------------------------+--------
+           45 |                       0 | PASS
+(1 row)
+

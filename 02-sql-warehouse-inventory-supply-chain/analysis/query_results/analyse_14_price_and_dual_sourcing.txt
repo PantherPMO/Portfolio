@@ -1,0 +1,148 @@
+SET
+                            population                             |  n   
+-------------------------------------------------------------------+------
+ SKUs in the range                                                 |  250
+ SKUs with more than one approved source                           |   88
+ SKUs actually purchased from more than one supplier               |   85
+ Of those, with at least 4 purchase lines from each of two sources |  298
+ Purchase order lines in total                                     | 4457
+(5 rows)
+
+DROP VIEW
+CREATE VIEW
+                       method                        | n_before | n_after | skus_before | skus_after | price_before | price_after | change_pct 
+-----------------------------------------------------+----------+---------+-------------+------------+--------------+-------------+------------
+ Raw mean across all lines — INVALID, basket changed |      816 |     370 |          67 |         57 |       258.82 |      340.83 |       31.7
+ Like for like — median of SKU-level ratios          |      765 |     370 |          57 |         57 |              |             |       18.2
+(2 rows)
+
+ skus_priced_both_sides | p10_pct | p25_pct | median_pct | p75_pct | p90_pct | stddev_pct | skus_up_over_10pct | skus_broadly_flat | skus_down_over_10pct 
+------------------------+---------+---------+------------+---------+---------+------------+--------------------+-------------------+----------------------
+                     57 |    17.0 |    17.4 |       18.2 |    18.6 |    18.9 |        0.8 |                 57 |                 0 |                    0
+(1 row)
+
+ supplier_code |    supplier_type    | skus_both_sides | median_like_for_like_pct | p25_pct | p75_pct 
+---------------+---------------------+-----------------+--------------------------+---------+---------
+ ARDEN         | UK Manufacturer     |              57 |                     18.2 |    17.4 |    18.6
+ SELBY         | Far East Importer   |               7 |                      0.7 |     0.1 |     0.9
+ JARVS         | UK / EU Distributor |               6 |                      0.6 |    -0.4 |     1.1
+ MARSD         | UK / EU Distributor |              11 |                      0.4 |     0.1 |     0.9
+ PENRT         | UK / EU Distributor |              11 |                      0.4 |    -0.3 |     0.7
+ YARLT         | Far East Importer   |               4 |                      0.3 |     0.0 |     0.8
+ HALDN         | UK Manufacturer     |               9 |                      0.3 |    -0.3 |     0.6
+ IRWEL         | UK / EU Distributor |               5 |                      0.2 |    -0.6 |     0.2
+ MERID         | Far East Importer   |              43 |                      0.2 |    -0.1 |     0.8
+ BRAMW         | UK Manufacturer     |              15 |                      0.2 |    -0.4 |     0.7
+ RAVNS         | UK / EU Distributor |               6 |                      0.1 |    -0.8 |     0.6
+ DERWT         | UK Manufacturer     |               7 |                      0.1 |    -0.6 |     0.3
+ LANGD         | UK / EU Distributor |               5 |                      0.1 |    -0.5 |     0.6
+ ORMSK         | UK / EU Distributor |               6 |                      0.1 |    -0.5 |     0.5
+ GRANH         | UK Manufacturer     |               9 |                      0.0 |    -0.2 |     0.9
+ EASTN         | UK Manufacturer     |              17 |                      0.0 |    -0.5 |     0.2
+ QUEND         | UK / EU Distributor |               6 |                     -0.1 |    -0.4 |     0.4
+ TANFD         | Far East Importer   |               7 |                     -0.1 |    -0.5 |     1.0
+ NEWLY         | UK / EU Distributor |               7 |                     -0.2 |    -0.5 |     0.5
+ KELSO         | Small Specialist    |              13 |                     -0.2 |    -0.7 |     0.4
+ KENTM         | UK / EU Distributor |               6 |                     -0.2 |    -0.5 |     0.1
+ FOXLY         | UK Manufacturer     |               9 |                     -0.2 |    -0.3 |     0.0
+ VERND         | Far East Importer   |               8 |                     -0.4 |    -0.6 |     0.3
+ WROXH         | Far East Importer   |               7 |                     -0.4 |    -1.2 |     0.1
+ CHARN         | UK Manufacturer     |               9 |                     -0.8 |    -1.0 |     0.0
+ UPTON         | Far East Importer   |               7 |                     -1.1 |    -1.5 |    -0.2
+(26 rows)
+
+DROP VIEW
+CREATE VIEW
+                       measure                       |  n   | value_gbp 
+-----------------------------------------------------+------+-----------
+ SKUs with two comparable sources (4+ lines each)    |   60 |          
+ Median price premium of the dearer source, per cent |   60 |      30.2
+ Units bought from the dearer source                 | 1107 |    199081
+ Gross price gap on that volume                      |   60 |    983730
+(4 rows)
+
+    sku     | category_code | cheap_supplier | cheap_supplier_type | dear_supplier | cheap_unit_cost | dear_unit_cost | dear_premium_pct | cheap_moq | dear_moq | cheap_lead_days | dear_lead_days | units_2025 | annual_price_saving_gbp | one_off_working_capital_gbp | annual_holding_cost_gbp | annual_net_at_22pct_gbp | years_of_saving_tied_up 
+------------+---------------+----------------+---------------------+---------------+-----------------+----------------+------------------+-----------+----------+-----------------+----------------+------------+-------------------------+-----------------------------+-------------------------+-------------------------+-------------------------
+ RENW-1087  | RENW          | MERID          | Far East Importer   | ARDEN         |          782.58 |        1022.79 |             30.7 |        36 |        3 |              55 |              7 |        498 |                   69904 |                       64164 |                   14116 |                   55788 |                     0.9
+ RENW-1000  | RENW          | SELBY          | Far East Importer   | EASTN         |         1330.63 |        1702.80 |             28.0 |        42 |        4 |              55 |              7 |        389 |                   74248 |                       93352 |                   20537 |                   53710 |                     1.3
+ PIPE-1201  | PIPE          | TANFD          | Far East Importer   | HALDN         |            9.72 |          11.69 |             20.3 |      5061 |      448 |              55 |              7 |      37277 |                   49802 |                       70068 |                   15415 |                   34387 |                     1.4
+ ELEC-1049  | ELEC          | WROXH          | Far East Importer   | FOXLY         |           26.94 |          34.57 |             28.3 |       870 |       78 |              55 |              7 |       7697 |                   37990 |                       37937 |                    8346 |                   29644 |                     1.0
+ DRAIN-1158 | DRAIN         | WROXH          | Far East Importer   | FOXLY         |           59.93 |          78.75 |             31.4 |       264 |       24 |              55 |              7 |       2168 |                   24441 |                       24278 |                    5341 |                   19100 |                     1.0
+ PIPE-1165  | PIPE          | VERND          | Far East Importer   | ARDEN         |           10.88 |          16.49 |             51.5 |       510 |       48 |              55 |              7 |       5211 |                   17324 |                        9969 |                    2193 |                   15130 |                     0.6
+ ELEC-1184  | ELEC          | TANFD          | Far East Importer   | PENRT         |           79.71 |         104.72 |             31.4 |       273 |       42 |              55 |             14 |       2394 |                   21096 |                       30642 |                    6741 |                   14355 |                     1.5
+ HEAT-1142  | HEAT          | YARLT          | Far East Importer   | ARDEN         |          354.53 |         441.44 |             24.5 |        28 |        2 |              55 |              7 |        229 |                   15035 |                       15286 |                    3363 |                   11673 |                     1.0
+ DRAIN-1016 | DRAIN         | MERID          | Far East Importer   | ARDEN         |           57.55 |          74.74 |             29.9 |       120 |       11 |              55 |              7 |       1014 |                   14001 |                       10811 |                    2378 |                   11623 |                     0.8
+ PIPE-1119  | PIPE          | MERID          | Far East Importer   | EASTN         |            5.26 |           6.85 |             30.4 |      1876 |      144 |              55 |              7 |      12524 |                   12883 |                       13218 |                    2908 |                    9975 |                     1.0
+ DRAIN-1095 | DRAIN         | WROXH          | Far East Importer   | CHARN         |           86.93 |         107.94 |             24.2 |       144 |       13 |              55 |              7 |       1288 |                   12228 |                       20418 |                    4492 |                    7736 |                     1.7
+ HEAT-1203  | HEAT          | VERND          | Far East Importer   | EASTN         |          473.63 |         585.88 |             23.7 |        30 |        2 |              55 |              7 |        199 |                   11393 |                       19026 |                    4186 |                    7208 |                     1.7
+ HEAT-1124  | HEAT          | TANFD          | Far East Importer   | IRWEL         |          490.59 |         648.99 |             32.3 |        24 |        4 |              55 |             14 |        121 |                    9662 |                       11574 |                    2546 |                    7116 |                     1.2
+ VALV-1091  | VALV          | SELBY          | Far East Importer   | KELSO         |           49.27 |          68.70 |             39.4 |       112 |       11 |              55 |             21 |        991 |                    8549 |                        7036 |                    1548 |                    7001 |                     0.8
+ VENT-1214  | VENT          | MERID          | Far East Importer   | ARDEN         |          123.81 |         160.11 |             29.3 |        49 |        4 |              55 |              7 |        251 |                    7187 |                        6872 |                    1512 |                    5675 |                     1.0
+ HEAT-1016  | HEAT          | UPTON          | Far East Importer   | EASTN         |          380.74 |         466.07 |             22.4 |        66 |        6 |              55 |              7 |        216 |                   10497 |                       22237 |                    4892 |                    5605 |                     2.1
+ RENW-1095  | RENW          | UPTON          | Far East Importer   | BRAMW         |         1735.54 |        2135.15 |             23.0 |         9 |        1 |              55 |              7 |         37 |                    8792 |                       15387 |                    3385 |                    5407 |                     1.8
+ ELEC-1131  | ELEC          | VERND          | Far East Importer   | IRWEL         |           14.67 |          19.91 |             35.8 |       378 |       60 |              55 |             14 |       3197 |                    6615 |                        7601 |                    1672 |                    4943 |                     1.1
+ PIPE-1044  | PIPE          | MERID          | Far East Importer   | MARSD         |           11.03 |          14.77 |             33.9 |      1666 |      294 |              55 |             14 |      13184 |                    9111 |                       23901 |                    5258 |                    3852 |                     2.6
+ RENW-1161  | RENW          | MERID          | Far East Importer   | IRWEL         |          508.84 |         692.56 |             36.1 |        11 |        2 |              55 |             14 |         56 |                    4960 |                        5491 |                    1208 |                    3753 |                     1.1
+ ELEC-1088  | ELEC          | MERID          | Far East Importer   | HALDN         |           10.60 |          13.17 |             24.2 |       348 |       35 |              55 |              7 |       2437 |                    4427 |                        5056 |                    1112 |                    3315 |                     1.1
+ VALV-1192  | VALV          | WROXH          | Far East Importer   | KELSO         |           27.80 |          38.01 |             36.7 |       138 |       15 |              55 |             21 |       1100 |                    4084 |                        4558 |                    1003 |                    3081 |                     1.1
+ ELEC-1143  | ELEC          | UPTON          | Far East Importer   | BRAMW         |           12.79 |          16.28 |             27.2 |       288 |       28 |              55 |              7 |       1848 |                    4125 |                        4771 |                    1050 |                    3076 |                     1.2
+ TOOL-1092  | TOOL          | MERID          | Far East Importer   | PENRT         |           22.88 |          30.45 |             33.1 |       182 |       30 |              55 |             14 |       1320 |                    4169 |                        5131 |                    1129 |                    3040 |                     1.2
+ VALV-1084  | VALV          | MERID          | Far East Importer   | KELSO         |           81.53 |         110.95 |             36.1 |        84 |        9 |              55 |             21 |        688 |                    4722 |                        8282 |                    1822 |                    2900 |                     1.8
+ TOOL-1128  | TOOL          | SELBY          | Far East Importer   | ARDEN         |            2.07 |           2.55 |             23.2 |      1140 |      102 |              55 |              7 |       9933 |                    3411 |                        3778 |                     831 |                    2580 |                     1.1
+ PIPE-1070  | PIPE          | VERND          | Far East Importer   | EASTN         |           10.82 |          13.20 |             22.0 |       372 |       36 |              55 |              7 |       2565 |                    3656 |                        5468 |                    1203 |                    2453 |                     1.5
+ PIPE-1109  | PIPE          | MERID          | Far East Importer   | EASTN         |            2.73 |           3.41 |             24.7 |      1400 |      108 |              55 |              7 |       8691 |                    3286 |                        4884 |                    1074 |                    2212 |                     1.5
+ PIPE-1025  | PIPE          | MERID          | Far East Importer   | ORMSK         |            1.78 |           2.34 |             31.5 |      2079 |      318 |              55 |             14 |      16514 |                    3013 |                        4869 |                    1071 |                    1941 |                     1.6
+ VENT-1084  | VENT          | WROXH          | Far East Importer   | EASTN         |           31.01 |          39.39 |             27.0 |        48 |        4 |              55 |              7 |        470 |                    2158 |                        2599 |                     572 |                    1586 |                     1.2
+ VALV-1102  | VALV          | MERID          | Far East Importer   | ARDEN         |           49.13 |          61.11 |             24.4 |        84 |        7 |              55 |              7 |        457 |                    2624 |                        4844 |                    1066 |                    1558 |                     1.8
+ HEAT-1064  | HEAT          | MERID          | Far East Importer   | EASTN         |          215.91 |         273.15 |             26.5 |        24 |        2 |              55 |              7 |         71 |                    2376 |                        4391 |                     966 |                    1410 |                     1.8
+ VENT-1019  | VENT          | VERND          | Far East Importer   | MARSD         |           42.71 |          58.94 |             38.0 |        66 |       11 |              55 |             14 |        495 |                    2150 |                        3549 |                     781 |                    1370 |                     1.7
+ TOOL-1155  | TOOL          | MERID          | Far East Importer   | MARSD         |           26.62 |          35.92 |             34.9 |        72 |       12 |              55 |             14 |        500 |                    1841 |                        2294 |                     505 |                    1337 |                     1.2
+ TOOL-1110  | TOOL          | MERID          | Far East Importer   | HALDN         |           16.18 |          20.43 |             26.3 |       144 |       13 |              55 |              7 |       1182 |                    2049 |                        3575 |                     786 |                    1262 |                     1.7
+ TOOL-1067  | TOOL          | YARLT          | Far East Importer   | MARSD         |            5.90 |           7.44 |             26.1 |       258 |       48 |              55 |             14 |       2578 |                    1756 |                        2328 |                     512 |                    1243 |                     1.3
+ PIPE-1101  | PIPE          | TANFD          | Far East Importer   | ARDEN         |            1.43 |           1.81 |             27.0 |       666 |       60 |              55 |              7 |       6016 |                    1468 |                        1565 |                     344 |                    1124 |                     1.1
+ ELEC-1094  | ELEC          | UPTON          | Far East Importer   | KENTM         |            2.30 |           3.20 |             39.1 |       408 |       72 |              55 |             14 |       3139 |                    1366 |                        1197 |                     263 |                    1103 |                     0.9
+ VALV-1056  | VALV          | MERID          | Far East Importer   | EASTN         |           19.29 |          24.77 |             28.4 |        78 |        7 |              55 |              7 |        505 |                    1348 |                        1966 |                     432 |                     916 |                     1.5
+ PIPE-1061  | PIPE          | MERID          | Far East Importer   | KELSO         |            1.50 |           2.12 |             41.3 |       990 |      126 |              55 |             21 |       9639 |                    1295 |                        1995 |                     439 |                     856 |                     1.5
+ DRAIN-1106 | DRAIN         | MERID          | Far East Importer   | FOXLY         |            7.54 |           9.56 |             26.8 |       132 |       12 |              55 |              7 |       1048 |                    1166 |                        1492 |                     328 |                     837 |                     1.3
+ PIPE-1168  | PIPE          | MERID          | Far East Importer   | ARDEN         |            0.70 |           0.89 |             27.1 |      2118 |      217 |              55 |              7 |      16624 |                    1213 |                        2196 |                     483 |                     730 |                     1.8
+ DRAIN-1161 | DRAIN         | VERND          | Far East Importer   | NEWLY         |            5.70 |           7.80 |             36.8 |       154 |       24 |              55 |             14 |       1205 |                     958 |                        1142 |                     251 |                     706 |                     1.2
+ TOOL-1163  | TOOL          | MERID          | Far East Importer   | ARDEN         |            5.50 |           6.85 |             24.5 |       108 |        9 |              55 |              7 |        947 |                     855 |                         957 |                     211 |                     645 |                     1.1
+ VENT-1168  | VENT          | MERID          | Far East Importer   | PENRT         |          150.52 |         213.78 |             42.0 |        24 |        4 |              55 |             14 |         54 |                    1139 |                        2418 |                     532 |                     607 |                     2.1
+ ELEC-1008  | ELEC          | TANFD          | Far East Importer   | BRAMW         |            3.52 |           4.44 |             26.1 |       630 |       63 |              55 |              7 |       3239 |                    1122 |                        2497 |                     549 |                     573 |                     2.2
+ TOOL-1077  | TOOL          | YARLT          | Far East Importer   | ORMSK         |            1.96 |           2.59 |             32.1 |       240 |       42 |              55 |             14 |       2425 |                     642 |                         728 |                     160 |                     482 |                     1.1
+ DRAIN-1204 | DRAIN         | MERID          | Far East Importer   | PENRT         |            5.10 |           6.91 |             35.6 |        96 |       17 |              55 |             14 |        567 |                     590 |                         526 |                     116 |                     474 |                     0.9
+ DRAIN-1113 | DRAIN         | MERID          | Far East Importer   | BRAMW         |           11.65 |          15.44 |             32.6 |       114 |       10 |              55 |              7 |        619 |                     749 |                        1554 |                     342 |                     407 |                     2.1
+ VALV-1154  | VALV          | MERID          | Far East Importer   | DUNKD         |           47.46 |          68.09 |             43.5 |        28 |        3 |              55 |             21 |         98 |                     619 |                        1027 |                     226 |                     393 |                     1.7
+ TOOL-1018  | TOOL          | SELBY          | Far East Importer   | ARDEN         |            0.85 |           1.12 |             31.8 |       180 |       16 |              55 |              7 |       1506 |                     352 |                         238 |                      52 |                     299 |                     0.7
+ ELEC-1117  | ELEC          | MERID          | Far East Importer   | RAVNS         |            2.54 |           3.44 |             35.7 |       224 |       36 |              55 |             14 |       1363 |                     404 |                         628 |                     138 |                     266 |                     1.6
+ TOOL-1175  | TOOL          | YARLT          | Far East Importer   | EASTN         |            2.22 |           2.78 |             25.2 |       102 |        9 |              55 |              7 |        771 |                     227 |                         328 |                      72 |                     155 |                     1.4
+ PIPE-1189  | PIPE          | MERID          | Far East Importer   | GRANH         |            0.89 |           1.11 |             24.7 |       342 |       30 |              55 |              7 |       1930 |                     217 |                         365 |                      80 |                     136 |                     1.7
+ VALV-1152  | VALV          | VERND          | Far East Importer   | CROMR         |            6.56 |           9.63 |             46.9 |        66 |        7 |              55 |             21 |        589 |                     240 |                         553 |                     122 |                     118 |                     2.3
+ TOOL-1182  | TOOL          | MERID          | Far East Importer   | FOXLY         |            1.90 |           2.38 |             25.3 |        90 |        8 |              55 |              7 |        324 |                     105 |                         159 |                      35 |                      70 |                     1.5
+ TOOL-1021  | TOOL          | MERID          | Far East Importer   | DERWT         |            1.37 |           1.69 |             23.8 |       238 |       18 |              55 |              7 |       1656 |                     150 |                         449 |                      99 |                      52 |                     3.0
+ PIPE-1150  | PIPE          | WROXH          | Far East Importer   | QUEND         |            0.29 |           0.39 |             34.5 |       791 |      140 |              55 |             14 |       6864 |                     118 |                         318 |                      70 |                      48 |                     2.7
+ PIPE-1156  | PIPE          | MERID          | Far East Importer   | JARVS         |            0.38 |           0.54 |             40.8 |       154 |       24 |              55 |             14 |        630 |                      49 |                          52 |                      11 |                      37 |                     1.1
+ TOOL-1149  | TOOL          | MERID          | Far East Importer   | LANGD         |            2.44 |           3.24 |             32.6 |        90 |       16 |              55 |             14 |        532 |                      66 |                         236 |                      52 |                      14 |                     3.6
+(60 rows)
+
+ cheaper_source_type | skus | annual_price_saving_gbp | one_off_working_capital_gbp | annual_net_at_20pct_gbp | annual_net_at_22pct_gbp | annual_net_at_25pct_gbp | skus_net_negative | years_of_saving_tied_up 
+---------------------+------+-------------------------+-----------------------------+-------------------------+-------------------------+-------------------------+-------------------+-------------------------
+ Far East Importer   |   60 |                  492020 |                      604231 |                  371174 |                  359089 |                  340962 |                 0 |                    1.23
+(1 row)
+
+            buying_pattern             | skus | mean_premium_pct | units_from_cheap | units_from_dear | gross_gap_gbp | mean_moq_ratio_cheap_to_dear | mean_extra_lead_days 
+---------------------------------------+------+------------------+------------------+-----------------+---------------+------------------------------+----------------------
+ Bought mostly from the cheaper source |   40 |             31.9 |           156960 |           74978 |        417223 |                          8.8 |                   43
+ Bought mostly from the dearer source  |   20 |             28.9 |            65514 |          124103 |        566507 |                         10.7 |                   47
+(2 rows)
+
+                             measure                             |  value   
+-----------------------------------------------------------------+----------
+ Purchase order lines — source table                             |     4457
+ Arden purchase lines — all                                      |     1186
+ Arden SKUs priced on both sides of 2025-03-01                   |       57
+ Median like-for-like Arden change, per cent (expected near +18) |     18.2
+ Dual-source SKUs compared                                       |       60
+ Total purchase spend, all suppliers                             | 19217127
+(6 rows)
+

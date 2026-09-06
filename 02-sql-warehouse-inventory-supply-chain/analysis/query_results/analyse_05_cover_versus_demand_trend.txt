@@ -1,0 +1,130 @@
+SET
+DROP VIEW
+CREATE VIEW
+                      measure                      | lines | stock_value_gbp 
+---------------------------------------------------+-------+-----------------
+ Stocked lines at 2025-12-28                       |   515 |                
+ With a cover figure (issued in the last 13 weeks) |   481 |                
+ Cover over 12 months                              |    41 |          105273
+ Cover over 6 months                               |   103 |          398821
+ With a measurable demand slope                    |   514 |                
+(5 rows)
+
+ warehouse_code | quarters_observed | lines | stock_value_gbp 
+----------------+-------------------+-------+-----------------
+ BRS            |                 4 |     1 |            5955
+ BRS            |                 5 |     4 |           11331
+ BRS            |                 6 |    85 |          191945
+ DAV            |                 1 |     1 |             878
+ DAV            |                 2 |     3 |            2149
+ DAV            |                 3 |     1 |            5128
+ DAV            |                 4 |     2 |            6094
+ DAV            |                 5 |    10 |           21574
+ DAV            |                 6 |    17 |           18039
+ DAV            |                 7 |    36 |           69772
+ DAV            |                 8 |   180 |          679220
+ LIV            |                 6 |     1 |            4551
+ LIV            |                 7 |     2 |           11120
+ LIV            |                 8 |    67 |          381926
+ WAR            |                 6 |     2 |           14340
+ WAR            |                 7 |     6 |           13408
+ WAR            |                 8 |    97 |          273613
+(17 rows)
+
+        cover_band         | n_rising | n_flat | n_falling | stock_rising_gbp | stock_flat_gbp | stock_falling_gbp 
+---------------------------+----------+--------+-----------+------------------+----------------+-------------------
+ 0 — no stock              |       10 |      2 |         4 |                0 |              0 |                 0
+ 1 — under 2 months        |       53 |     82 |        46 |           307906 |         204404 |            134650
+ 2 — 2 to 6 months         |       31 |     84 |        66 |           156373 |         277713 |            134033
+ 3 — 6 to 12 months        |        4 |     28 |        30 |            15398 |         213267 |             64883
+ 4 — over 12 months        |        3 |      9 |        28 |            13338 |          22432 |             68624
+ 5 — no demand in 13 weeks |        2 |      9 |        23 |              467 |          17380 |             79295
+(6 rows)
+
+           quadrant           | lines | stock_value_gbp | share_of_stock_pct | mean_cover_weeks | holding_cost_gbp 
+------------------------------+-------+-----------------+--------------------+------------------+------------------
+ Neither extreme              |   302 |         1008224 |               62.5 |             16.1 |           221809
+ Thin stock on rising demand  |    63 |          307906 |               19.1 |              3.8 |            67739
+ Thin stock on falling demand |    50 |          134650 |                8.3 |              5.1 |            29623
+ Deep stock on falling demand |    58 |          133507 |                8.3 |             65.7 |            29372
+ Deep stock on rising demand  |     7 |           28736 |                1.8 |             93.2 |             6322
+(5 rows)
+
+                    mechanism                     | lines | stock_value_gbp | share_of_high_cover_pct 
+--------------------------------------------------+-------+-----------------+-------------------------
+ Lines with cover over 6 months                   |   103 |          398821 |                        
+ Slow demand (bottom quartile of trailing demand) |    36 |          132438 |                    35.0
+ Falling demand                                   |    58 |          133507 |                    56.3
+ Policy ceiling itself authorises over 6 months   |    88 |          298604 |                    85.4
+ Minimum order quantity over a quarter of demand  |    56 |          270524 |                    54.4
+ Matches none of the four                         |     1 |             372 |                     1.0
+(6 rows)
+
+ warehouse_code | high_cover_lines | high_cover_stock_gbp | mean_cover_weeks | n_slow_demand | n_falling_demand | n_policy_authorised | n_moq_constrained 
+----------------+------------------+----------------------+------------------+---------------+------------------+---------------------+-------------------
+ LIV            |               25 |               163756 |             55.6 |             5 |                9 |                  22 |                17
+ DAV            |               46 |               114618 |             66.4 |            26 |               34 |                  46 |                14
+ BRS            |               20 |                86780 |             63.4 |             4 |                9 |                  11 |                15
+ WAR            |               12 |                33666 |             48.9 |             1 |                6 |                   9 |                10
+(4 rows)
+
+ category_code |        category_name        | lines | n_rising | n_flat | n_falling | mean_slope_pct_of_quarter | mean_cover_weeks 
+---------------+-----------------------------+-------+----------+--------+-----------+---------------------------+------------------
+ RENW          | Renewables & Heat Pumps     |    40 |       25 |      9 |         6 |                       5.4 |              7.4
+ PIPE          | Pipe & Fittings             |    94 |       16 |     43 |        34 |                      -1.2 |             26.4
+ ELEC          | Electrical & Cable          |    77 |       14 |     35 |        28 |                      -1.7 |             14.7
+ VALV          | Valves & Controls           |    63 |       12 |     24 |        27 |                      -1.9 |             10.9
+ VENT          | Ventilation & Air Movement  |    45 |        6 |     26 |        13 |                      -2.3 |             27.5
+ DRAIN         | Drainage & Water Management |    58 |       10 |     24 |        24 |                      -3.3 |             18.6
+ TOOL          | Tools & Consumables         |    84 |       15 |     33 |        36 |                      -3.6 |             26.4
+ HEAT          | Heating & Boilers           |    54 |        5 |     20 |        29 |                      -6.3 |             27.9
+(8 rows)
+
+    sku     | category_code | warehouse_code | quarters_observed | quantity_on_hand | stock_value_gbp | cover_weeks | slope_pct_of_mean_quarter | policy_ceiling_weeks_cover | last_supplier_type  | moq_weeks_of_demand | policy_age_months | discontinued_date 
+------------+---------------+----------------+-------------------+------------------+-----------------+-------------+---------------------------+----------------------------+---------------------+---------------------+-------------------+-------------------
+ ELEC-1134  | ELEC          | LIV            |                 8 |              219 |           18906 |        71.2 |                     -14.8 |                       78.7 | UK / EU Distributor |                18.2 |               5.8 | 
+ PIPE-1044  | PIPE          | WAR            |                 8 |             1470 |           16567 |        28.9 |                      -8.8 |                       28.8 | Far East Importer   |                32.7 |              22.4 | 
+ DRAIN-1095 | DRAIN         | BRS            |                 6 |              139 |           12354 |        43.0 |                      -5.2 |                       11.5 | Far East Importer   |                44.6 |               1.4 | 
+ TOOL-1092  | TOOL          | DAV            |                 8 |              271 |            7854 |        92.7 |                      -9.2 |                       71.8 | UK / EU Distributor |                10.3 |              14.0 | 
+ PIPE-1165  | PIPE          | DAV            |                 8 |              357 |            5940 |       193.4 |                      -5.4 |                      174.4 | UK Manufacturer     |                26.0 |               3.3 | 
+ HEAT-1009  | HEAT          | DAV            |                 7 |                9 |            5788 |       117.0 |                     -16.5 |                      117.0 | UK / EU Distributor |                13.0 |               6.7 | 
+ VALV-1102  | VALV          | LIV            |                 8 |               70 |            4065 |        26.8 |                      -9.5 |                       22.9 | UK Manufacturer     |                 2.7 |               3.5 | 
+ HEAT-1054  | HEAT          | DAV            |                 5 |                8 |            3937 |       104.0 |                      -5.3 |                      117.0 | UK Manufacturer     |                13.0 |               4.6 | 
+ VENT-1214  | VENT          | DAV            |                 8 |               30 |            3728 |        78.0 |                      -5.1 |                       67.6 | Far East Importer   |               127.4 |               7.1 | 
+ VENT-1028  | VENT          | DAV            |                 4 |                8 |            3132 |       104.0 |                     -11.7 |                      143.0 | UK / EU Distributor |                13.0 |               7.1 | 
+ PIPE-1070  | PIPE          | DAV            |                 8 |              269 |            2911 |        38.0 |                     -12.0 |                       37.4 | Far East Importer   |                52.6 |               7.9 | 
+ PIPE-1109  | PIPE          | LIV            |                 8 |             1051 |            2890 |        31.0 |                      -5.0 |                       26.4 | Far East Importer   |                41.3 |               4.1 | 
+ HEAT-1109  | HEAT          | DAV            |                 6 |               10 |            2707 |        32.5 |                     -12.6 |                       29.2 | UK Manufacturer     |                 3.2 |              11.9 | 
+ HEAT-1047  | HEAT          | DAV            |                 5 |                8 |            2656 |       104.0 |                     -24.9 |                      117.0 | Far East Importer   |               117.0 |               2.4 | 
+ HEAT-1039  | HEAT          | DAV            |                 7 |               10 |            2642 |        43.3 |                      -7.2 |                       43.3 | UK / EU Distributor |                 8.7 |              13.5 | 
+ VENT-1168  | VENT          | DAV            |                 8 |               16 |            2476 |        41.6 |                     -10.8 |                       44.2 | Far East Importer   |                62.4 |               7.1 | 
+ DRAIN-1130 | DRAIN         | DAV            |                 8 |               42 |            2397 |        39.0 |                     -21.7 |                       39.9 | UK Manufacturer     |                 4.6 |               8.0 | 
+ PIPE-1109  | PIPE          | DAV            |                 8 |              865 |            2379 |        38.2 |                      -8.6 |                       30.2 | Far East Importer   |                61.9 |               3.9 | 
+ ELEC-1162  | ELEC          | DAV            |                 8 |               96 |            2281 |        65.7 |                      -9.9 |                       66.4 | UK / EU Distributor |                10.9 |              13.8 | 
+ PIPE-1061  | PIPE          | DAV            |                 8 |              969 |            1996 |        26.5 |                      -8.4 |                       32.4 | UK / EU Distributor |                 5.5 |               1.8 | 
+(20 rows)
+
+    sku     | category_code | warehouse_code | quarters_observed | quantity_on_hand | stock_value_gbp | cover_weeks | slope_pct_of_mean_quarter | reorder_point_units | issued_units_13w | weeks_since_last_issue | policy_age_months 
+------------+---------------+----------------+-------------------+------------------+-----------------+-------------+---------------------------+---------------------+------------------+------------------------+-------------------
+ TOOL-1128  | TOOL          | LIV            |                 8 |                0 |               0 |         0.0 |                       6.6 |                 161 |              693 |                      0 |               6.1
+ PIPE-1101  | PIPE          | WAR            |                 8 |              162 |             340 |         3.2 |                       5.7 |                  97 |              665 |                      0 |              20.7
+ PIPE-1064  | PIPE          | DAV            |                 8 |                0 |               0 |         0.0 |                      21.9 |                 117 |              694 |                      1 |              16.6
+ PIPE-1206  | PIPE          | WAR            |                 8 |              130 |              85 |         4.1 |                       8.1 |                  82 |              410 |                      4 |               9.8
+ PIPE-1004  | PIPE          | LIV            |                 8 |              111 |             178 |         2.7 |                      12.1 |                 209 |              544 |                      0 |              24.7
+ DRAIN-1179 | DRAIN         | LIV            |                 8 |               56 |            6740 |         2.6 |                       5.5 |                  58 |              277 |                      1 |              20.2
+ ELEC-1204  | ELEC          | WAR            |                 8 |              129 |            2216 |         7.4 |                       6.9 |                  44 |              226 |                      2 |               1.5
+ PIPE-1070  | PIPE          | WAR            |                 8 |               68 |             902 |         1.2 |                      24.4 |                  78 |              753 |                      0 |              11.7
+ PIPE-1189  | PIPE          | DAV            |                 6 |              126 |             113 |         3.5 |                       7.9 |                 104 |              467 |                      1 |              12.8
+ PIPE-1165  | PIPE          | BRS            |                 6 |              116 |            1934 |         3.4 |                      26.6 |                  75 |              441 |                      1 |               3.1
+ TOOL-1071  | TOOL          | LIV            |                 8 |               98 |             269 |         3.2 |                      19.3 |                 292 |              402 |                      1 |               3.5
+ ELEC-1184  | ELEC          | DAV            |                 8 |               41 |            4354 |         1.9 |                      16.9 |                  73 |              282 |                      1 |              17.1
+ ELEC-1184  | ELEC          | LIV            |                 8 |                0 |               0 |         0.0 |                      11.4 |                  98 |              168 |                      4 |               2.5
+ ELEC-1204  | ELEC          | BRS            |                 6 |               77 |            1347 |         4.7 |                      11.5 |                  27 |              215 |                      2 |               8.3
+ PIPE-1156  | PIPE          | DAV            |                 7 |               70 |              34 |         2.7 |                       6.0 |                 166 |              334 |                      2 |              19.6
+ PIPE-1142  | PIPE          | BRS            |                 6 |               58 |              25 |         2.3 |                      20.1 |                  75 |              324 |                      0 |              11.6
+ TOOL-1021  | TOOL          | LIV            |                 8 |               77 |             105 |         7.8 |                       5.4 |                  56 |              129 |                      1 |               8.4
+ DRAIN-1095 | DRAIN         | WAR            |                 8 |               36 |            3088 |         3.4 |                       8.7 |                  19 |              138 |                      1 |               1.7
+ TOOL-1163  | TOOL          | WAR            |                 8 |               33 |             268 |         4.6 |                       6.6 |                  20 |               94 |                      0 |              13.1
+ ELEC-1214  | ELEC          | BRS            |                 6 |               46 |              64 |         3.0 |                      18.4 |                  28 |              202 |                      0 |              28.5
+(20 rows)
+

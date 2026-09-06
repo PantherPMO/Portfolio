@@ -1,0 +1,13 @@
+SET
+CREATE VIEW
+ accounts_on_file | distinct_customers | duplicate_accounts | affected_customer_groups 
+------------------+--------------------+--------------------+--------------------------
+              500 |                469 |                 31 |                       31
+(1 row)
+
+       basis        | customers | top_10_share_pct 
+--------------------+-----------+------------------
+ Raw accounts       |       469 |             17.2
+ Resolved customers |       441 |             17.7
+(2 rows)
+

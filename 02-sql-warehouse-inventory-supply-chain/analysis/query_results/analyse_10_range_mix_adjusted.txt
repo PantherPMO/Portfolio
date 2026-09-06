@@ -1,0 +1,71 @@
+SET
+DROP VIEW
+CREATE VIEW
+ sites_stocking | skus | average_stock_gbp | share_of_network_stock_pct | cost_of_sales_gbp | inventory_turns 
+----------------+------+-------------------+----------------------------+-------------------+-----------------
+              1 |  145 |            646146 |                       31.6 |           2422108 |            3.75
+              2 |   15 |             66230 |                        3.2 |            232623 |            3.51
+              3 |   20 |             69868 |                        3.4 |            299940 |            4.29
+              4 |   70 |           1261735 |                       61.7 |           6595902 |            5.23
+(4 rows)
+
+ warehouse_code |        range_group        | skus | average_stock_gbp | share_of_site_stock_pct | cost_of_sales_gbp | share_of_site_cogs_pct | inventory_turns | days_inventory_outstanding 
+----------------+---------------------------+------+-------------------+-------------------------+-------------------+------------------------+-----------------+----------------------------
+ BRS            | Not stocked everywhere    |   20 |             19169 |                     9.2 |             73755 |                    5.0 |            3.85 |                         95
+ BRS            | Stocked at all four sites |   70 |            188089 |                    90.8 |           1403422 |                   95.0 |            7.46 |                         49
+ DAV            | Not stocked everywhere    |  180 |            705717 |                    70.8 |           2681411 |                   57.4 |            3.80 |                         96
+ DAV            | Stocked at all four sites |   70 |            291166 |                    29.2 |           1986113 |                   42.6 |            6.82 |                         54
+ LIV            | Stocked at all four sites |   70 |            473539 |                   100.0 |           1342562 |                  100.0 |            2.84 |                        129
+ WAR            | Not stocked everywhere    |   35 |             57358 |                    15.7 |            199504 |                    9.7 |            3.48 |                        105
+ WAR            | Stocked at all four sites |   70 |            308941 |                    84.3 |           1863804 |                   90.3 |            6.03 |                         61
+(7 rows)
+
+ warehouse_code | common_basket_skus | basket_share_of_site_stock_pct | turns_full_range | turns_common_basket | correction | dio_full_range | dio_common_basket 
+----------------+--------------------+--------------------------------+------------------+---------------------+------------+----------------+-------------------
+ LIV            |                 70 |                          100.0 |             2.84 |                2.84 |       0.00 |            129 |               129
+ WAR            |                 70 |                           84.3 |             5.63 |                6.03 |       0.40 |             65 |                61
+ DAV            |                 70 |                           29.2 |             4.68 |                6.82 |       2.14 |             78 |                54
+ BRS            |                 70 |                           90.8 |             7.13 |                7.46 |       0.33 |             51 |                49
+(4 rows)
+
+ warehouse_code | categories_stocked | network_weight_covered | average_stock_gbp | turns_as_reported | turns_mix_standardised | correction | dio_as_reported | dio_mix_standardised 
+----------------+--------------------+------------------------+-------------------+-------------------+------------------------+------------+-----------------+----------------------
+ LIV            |                  8 |                  1.000 |            473539 |              2.84 |                   2.86 |       0.02 |             129 |                  128
+ DAV            |                  8 |                  1.000 |            996883 |              4.68 |                   4.69 |       0.01 |              78 |                   78
+ WAR            |                  8 |                  1.000 |            366299 |              5.63 |                   5.65 |       0.02 |              65 |                   65
+ BRS            |                  8 |                  1.000 |            207258 |              7.13 |                   8.56 |       1.43 |              51 |                   43
+(4 rows)
+
+ warehouse_code | turns_as_reported | turns_common_basket | turns_mix_standardised | rank_as_reported | rank_common_basket | rank_standardised 
+----------------+-------------------+---------------------+------------------------+------------------+--------------------+-------------------
+ BRS            |              7.13 |                7.46 |                   8.56 |                1 |                  1 |                 1
+ WAR            |              5.63 |                6.03 |                   5.65 |                2 |                  3 |                 2
+ DAV            |              4.68 |                6.82 |                   4.69 |                3 |                  2 |                 3
+ LIV            |              2.84 |                2.84 |                   2.86 |                4 |                  4 |                 4
+(4 rows)
+
+          range_group          | skus | average_stock_gbp | share_of_daventry_stock_pct | cost_of_sales_gbp | share_of_daventry_cogs_pct | inventory_turns | days_inventory_outstanding 
+-------------------------------+------+-------------------+-----------------------------+-------------------+----------------------------+-----------------+----------------------------
+ Stocked only at Daventry      |  145 |            646146 |                        64.8 |           2422108 |                       51.9 |            3.75 |                         97
+ Stocked at two or three sites |   35 |             59571 |                         6.0 |            259304 |                        5.6 |            4.35 |                         84
+ Stocked at all four sites     |   70 |            291166 |                        29.2 |           1986113 |                       42.6 |            6.82 |                         54
+(3 rows)
+
+ warehouse_code | common_basket_weeks | unmet_rate_common_basket_pct | other_range_weeks | unmet_rate_other_range_pct | unmet_rate_all_pct 
+----------------+---------------------+------------------------------+-------------------+----------------------------+--------------------
+ DAV            |                1096 |                         2.71 |              1610 |                       2.31 |               2.60
+ LIV            |                1268 |                         1.20 |                 0 |                            |               1.20
+ BRS            |                 757 |                         0.58 |               152 |                       0.16 |               0.54
+ WAR            |                1048 |                         0.16 |               318 |                       1.05 |               0.30
+(4 rows)
+
+                          measure                           |   value    
+------------------------------------------------------------+------------
+ Average 2025 stock — vw_range_footprint                    | 2043979.36
+ Average 2025 stock — mv_inventory_week, must match file 01 | 2043979.36
+ Cost of sales 2025 — vw_range_footprint                    | 9550572.04
+ Cost of sales 2025 — mv_inventory_week                     | 9550572.04
+ SKU-site positions — vw_range_footprint                    |        515
+ SKU-site positions — replenishment_policy                  |        515
+(6 rows)
+

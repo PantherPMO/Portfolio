@@ -21,7 +21,7 @@ The tool used in each project was chosen because it fits the analytical problem,
 | # | Project | Domain | Core Tools | Business Question | Status |
 |---|---------|--------|-----------|-------------------|--------|
 | 01 | **[Telecommunications Revenue Retention](01-sql-telecom-churn-revenue/)** | Telecoms | SQL (PostgreSQL) | How much recurring revenue is at risk from churn, and where is that exposure concentrated? | 🟢 **Complete** |
-| 02 | Warehouse Inventory & Supply Chain Performance | Logistics | SQL (PostgreSQL) | Where is working capital tied up, and which stock decisions are costing us? | ⬜ Not started |
+| 02 | **[Warehouse Inventory & Supply Chain Performance](02-sql-warehouse-inventory-supply-chain/)** | Logistics | SQL (PostgreSQL) + Power BI | Where is working capital tied up, and which stock decisions are costing us? | 🟢 **Complete** |
 | 03 | Retail Sales & Customer Behaviour Analysis | Retail | Excel | What drives basket value, and which customer behaviours are worth encouraging? | ⬜ Not started |
 | 04 | Financial Performance & Budget Variance Analysis | Finance | Excel | Where are we off budget, is it price or volume, and is it recurring? | ⬜ Not started |
 | 05 | Commercial Pricing & Predictive Cost Analysis | Construction / Commercial | Excel + Python | What should we price this work at, and how confident are we in the cost estimate? | ⬜ Not started |
@@ -63,9 +63,9 @@ Data Portfolio/
 └── NN-<tool>-<name>/    One folder per project
 ```
 
-Every project follows the same seven-stage lifecycle and must pass a sixteen-point quality gate before it is considered complete. The standards are documented in [`_portfolio/`](_portfolio/).
+Every project follows the same process: define the business question, source and validate the data, model it, analyse it, and report what the evidence supports. Shared standards for SQL, KPI definitions and chart design are documented in [`_portfolio/`](_portfolio/).
 
-**Start here:** [Portfolio Charter](_portfolio/PORTFOLIO_CHARTER.md) · [Project Tracker](_portfolio/PROJECT_TRACKER.md) · [Dataset Registry](_portfolio/DATASET_REGISTRY.md)
+**Start here:** [Project 01: Telecom Customer Churn & Revenue Analysis](01-sql-telecom-churn-revenue/) · [Dataset Registry](_portfolio/DATASET_REGISTRY.md) · [SQL Standards](_portfolio/SQL_STANDARDS.md)
 
 ---
 

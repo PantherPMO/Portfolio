@@ -1,0 +1,501 @@
+customer_account,customer_name,customer_segment,region,postcode_district,primary_warehouse_code,account_opened_date,credit_limit_gbp,account_status
+C1001,Selwood Latimer Ltd,Counter Trade,Yorkshire,WA3,WAR,2016-05-20,10000.0,Active
+C1004,Ferrers Ollerton Maintenance Ltd,Counter Trade,Scotland,AB12,LIV,2020-03-27,120000.0,Active
+C1007,J R Duncombe Plumbing & Heating Ltd,Contractor,West Midlands,LE3,DAV,2021-06-26,10000.0,Active
+C1010,Selwood Trentham Maintenance Ltd,Contractor,North East,PR2,WAR,2014-12-01,10000.0,Active
+C1011,Ferrers Crowther Group Ltd,Contractor,West Midlands,NG7,DAV,2021-09-03,75000.0,Active
+C1013,Mowbray J R Maintenance Ltd,Builders' Merchant,East Midlands,NG7,DAV,2017-12-16,35000.0,Active
+C1015,Duncombe Bexley Ltd,Contractor,East of England,LE3,DAV,2014-05-17,75000.0,Active
+C1017,Whitmore Ferrers Services Ltd,Housebuilder,Yorkshire,BL4,WAR,2021-05-10,15000.0,Active
+C1019,Ferrers Selwood Ltd,Counter Trade,South West,TA6,BRS,2012-03-01,25000.0,Active
+C1021,Whitmore Fenwick Ltd,Contractor,East of England,PE1,DAV,2012-12-14,10000.0,Active
+C1022,Barrowby Bexley Services Ltd,Contractor,Scotland,KY11,LIV,2013-04-10,120000.0,Active
+C1024,Rannoch Penhale Plumbing & Heating Ltd,Contractor,Scotland,KY11,LIV,2015-12-01,15000.0,Active
+C1026,Whitmore Aldridge Ltd,Counter Trade,Yorkshire,M12,WAR,2015-08-07,25000.0,Active
+C1029,Cheveley Trentham Contracts Ltd,Contractor,Scotland,PA3,LIV,2014-09-27,75000.0,Active
+C1032,Aldridge Aldridge Contracts Ltd,Contractor,North East,M12,WAR,2013-05-01,35000.0,On hold
+C1033,Duncombe Penhale Services Ltd,Housebuilder,Scotland,AB12,LIV,2018-08-26,10000.0,Active
+C1034,Barrowby Bexley Contracts Ltd,Contractor,Yorkshire,M12,WAR,2021-06-12,5000.0,Active
+C1035,Kirkby Duncombe Plumbing & Heating Ltd,Contractor,East of England,PE1,DAV,2020-08-01,25000.0,Active
+C1038,Fenwick Whitmore Group Ltd,Counter Trade,Scotland,G52,LIV,2022-10-07,50000.0,Active
+C1040,Whitmore Mowbray Group Ltd,Contractor,Wales,BS2,BRS,2023-06-23,25000.0,Active
+C1042,Latimer Fenwick Ltd,Builders' Merchant,East of England,NN11,DAV,2017-03-03,75000.0,Active
+C1044,Whitmore Mowbray Group Ltd,Contractor,South West,GL1,BRS,2023-08-22,25000.0,Active
+C1046,Cheveley Mowbray Services Ltd,Contractor,South West,EX4,BRS,2018-02-02,75000.0,Active
+C1047,Salford Kirkby Group Ltd,Contractor,North East,CH5,WAR,2020-04-16,25000.0,Active
+C1050,Bexley Rannoch Plumbing & Heating Ltd,Contractor,East Midlands,CB4,DAV,2023-05-05,15000.0,Active
+C1051,Duncombe Penhale Ltd,Contractor,North West,WA5,WAR,2021-02-16,15000.0,Active
+C1052,Trentham Aldridge Plumbing & Heating Ltd,Counter Trade,East of England,LE3,DAV,2021-06-11,120000.0,Active
+C1055,Aldridge Fenwick Ltd,Facilities Management,North West,NE11,WAR,2021-09-27,75000.0,Active
+C1056,Salford Mowbray Ltd,Facilities Management,East of England,CV1,DAV,2019-06-29,10000.0,Active
+C1057,Salford Bexley Services Ltd,Contractor,Yorkshire,BL4,WAR,2012-01-26,50000.0,Active
+C1059,Barrowby Penhale Building Services Ltd,Contractor,Yorkshire,WA5,WAR,2018-01-18,35000.0,Active
+C1062,Bexley Penhale Ltd,Housebuilder,East Midlands,NN11,DAV,2017-03-05,25000.0,Active
+C1065,Penhale J R Building Services Ltd,Contractor,South West,TA6,BRS,2020-11-21,15000.0,Active
+C1066,Aldridge Crowther Ltd,Contractor,East of England,NG7,DAV,2023-09-17,75000.0,Active
+C1069,Barrowby Latimer Contracts Ltd,Contractor,Scotland,AB12,LIV,2021-12-31,75000.0,Active
+C1071,Datchet Trentham & Sons Ltd,Contractor,South West,BS2,BRS,2018-05-20,75000.0,Active
+C1072,Kirkby Kirkby Maintenance Ltd,Contractor,West Midlands,CV1,DAV,2016-01-09,25000.0,Active
+C1073,Cheveley J R Plumbing & Heating Ltd,Contractor,East Midlands,LE3,DAV,2022-01-03,35000.0,Active
+C1075,Crowther Mowbray Contracts Ltd,Builders' Merchant,North West,BL4,WAR,2022-08-08,5000.0,Active
+C1078,Duncombe Fenwick Building Services Ltd,Contractor,East of England,B18,DAV,2013-08-01,15000.0,Active
+C1081,Kirkby Ferrers Ltd,Contractor,North East,BL4,WAR,2022-04-02,50000.0,Active
+C1084,Penhale Fenwick Group Ltd,Facilities Management,East Midlands,NN1,DAV,2020-05-12,25000.0,Active
+C1085,Fenwick Latimer & Sons Ltd,Contractor,Scotland,AB12,LIV,2021-12-09,35000.0,Active
+C1086,Fenwick Ollerton & Sons Ltd,Builders' Merchant,North West,L24,WAR,2016-05-16,5000.0,Active
+C1087,Duncombe Selwood Maintenance Ltd,Contractor,South West,TA6,BRS,2021-02-03,50000.0,Active
+C1089,Bexley Duncombe Ltd,Contractor,East Midlands,B18,DAV,2019-02-03,10000.0,Active
+C1090,Cheveley Latimer & Sons Ltd,Facilities Management,Yorkshire,PR2,WAR,2022-12-06,25000.0,Active
+C1092,Crowther Crowther Contracts Ltd,Contractor,East of England,CB4,DAV,2019-11-03,25000.0,Active
+C1094,Cheveley Penhale Ltd,Counter Trade,East Midlands,NG7,DAV,2015-11-27,50000.0,Active
+C1097,J R Selwood Group Ltd,Contractor,East Midlands,CB4,DAV,2014-10-08,10000.0,Active
+C1098,Mowbray Aldridge Services Ltd,Facilities Management,West Midlands,NN11,DAV,2015-03-16,10000.0,Active
+C1101,Whitmore Fenwick Ltd,Counter Trade,North East,PR2,WAR,2020-03-20,10000.0,Active
+C1104,Trentham Trentham Ltd,Facilities Management,East of England,PE1,DAV,2020-10-14,120000.0,Active
+C1107,Selwood Whitmore Maintenance Ltd,Counter Trade,Wales,TA6,BRS,2021-10-08,120000.0,Active
+C1109,Penhale Mowbray Plumbing & Heating Ltd,Contractor,Scotland,AB12,LIV,2015-03-13,50000.0,Active
+C1110,Trentham Cheveley Ltd,Builders' Merchant,West Midlands,NN1,DAV,2018-05-15,10000.0,Active
+C1113,Ferrers Duncombe Services Ltd,Builders' Merchant,East of England,CB4,DAV,2020-02-10,50000.0,Active
+C1114,Cheveley Rannoch Contracts Ltd,Counter Trade,West Midlands,NG7,DAV,2017-04-25,75000.0,Active
+C1115,Cheveley Barrowby Services Ltd,Contractor,Wales,EX4,BRS,2023-05-17,25000.0,Active
+C1118,Ferrers Datchet & Sons Ltd,Counter Trade,East Midlands,LE3,DAV,2018-03-12,120000.0,Active
+C1120,Barrowby Duncombe Ltd,Builders' Merchant,West Midlands,CB4,DAV,2021-08-14,35000.0,Active
+C1123,Cheveley Duncombe Building Services Ltd,Builders' Merchant,North West,WA5,WAR,2020-11-08,35000.0,Active
+C1124,Fenwick Ferrers Building Services Ltd,Contractor,Scotland,G52,LIV,2013-07-25,35000.0,Active
+C1126,J R Aldridge Plumbing & Heating Ltd,Facilities Management,West Midlands,LE3,DAV,2016-02-09,10000.0,Active
+C1127,Selwood Penhale Services Ltd,Contractor,West Midlands,MK9,DAV,2015-10-05,50000.0,Active
+C1128,Duncombe Penhale Ltd,Contractor,Scotland,KY11,LIV,2019-11-03,120000.0,Active
+C1131,Fenwick Latimer Ltd,Contractor,Scotland,KY11,LIV,2013-10-27,75000.0,Active
+C1132,Barrowby Ollerton Group Ltd,Counter Trade,Wales,BS35,BRS,2012-05-18,25000.0,Active
+C1133,Selwood Salford Plumbing & Heating Ltd,Contractor,East of England,LE3,DAV,2018-08-19,75000.0,Active
+C1134,Salford Aldridge & Sons Ltd,Contractor,East of England,NN1,DAV,2018-09-29,5000.0,Active
+C1137,Ferrers J R Building Services Ltd,Facilities Management,East Midlands,NG7,DAV,2021-07-02,10000.0,Active
+C1138,Aldridge Ferrers Maintenance Ltd,Counter Trade,East of England,CV1,DAV,2020-11-30,5000.0,Active
+C1139,Whitmore Kirkby Building Services Ltd,Facilities Management,South West,BS2,BRS,2014-12-20,5000.0,Active
+C1140,Selwood Fenwick Services Ltd,Contractor,Wales,EX4,BRS,2014-08-13,120000.0,Active
+C1141,Datchet Penhale Ltd,Contractor,North West,BL4,WAR,2013-02-06,35000.0,Active
+C1143,Selwood Latimer Plumbing & Heating Ltd,Facilities Management,East Midlands,MK9,DAV,2019-12-25,120000.0,Active
+C1145,Datchet J R Ltd,Contractor,West Midlands,DE21,DAV,2012-11-30,120000.0,Active
+C1146,Barrowby Kirkby Plumbing & Heating Ltd,Facilities Management,East Midlands,NG7,DAV,2021-04-02,25000.0,Active
+C1147,Penhale Cheveley & Sons Ltd,Contractor,South West,CF24,BRS,2018-08-15,5000.0,Active
+C1148,Mowbray Datchet Group Ltd,Builders' Merchant,North East,BL4,WAR,2020-07-24,120000.0,Active
+C1151,Crowther Kirkby Contracts Ltd,Counter Trade,Wales,BA14,BRS,2022-06-08,35000.0,Active
+C1154,Ollerton Mowbray Maintenance Ltd,Contractor,Yorkshire,BL4,WAR,2022-12-12,5000.0,Active
+C1156,Aldridge Latimer Services Ltd,Housebuilder,Yorkshire,LS11,WAR,2013-08-07,25000.0,Active
+C1157,J R Datchet Services Ltd,Contractor,North East,LS11,WAR,2012-06-06,35000.0,Active
+C1159,Bexley Ferrers Maintenance Ltd,Contractor,Scotland,G52,LIV,2017-10-31,25000.0,Active
+C1160,Ollerton Datchet Ltd,Facilities Management,Scotland,PA3,LIV,2021-08-03,5000.0,Active
+C1162,Whitmore Duncombe Ltd,Builders' Merchant,Yorkshire,WA5,WAR,2016-12-22,35000.0,Active
+C1164,Selwood Fenwick Maintenance Ltd,Facilities Management,Yorkshire,BL4,WAR,2012-12-28,120000.0,Active
+C1167,Kirkby Aldridge Services Ltd,Contractor,South West,BS35,BRS,2021-11-15,5000.0,Active
+C1168,Rannoch Ollerton Contracts Ltd,Housebuilder,Scotland,AB12,LIV,2019-03-06,75000.0,Active
+C1169,Trentham Ferrers Services Ltd,Contractor,West Midlands,NN1,DAV,2023-10-09,10000.0,Active
+C1170,Aldridge Mowbray Contracts Ltd,Contractor,North East,M12,WAR,2022-08-27,10000.0,Active
+C1171,Salford Duncombe Group Ltd,Counter Trade,South West,BA14,BRS,2022-02-26,10000.0,Active
+C1174,Trentham Kirkby Building Services Ltd,Counter Trade,North West,S9,WAR,2020-06-16,15000.0,Active
+C1176,Duncombe Fenwick Building Services Ltd,Housebuilder,East of England,DE21,DAV,2023-04-13,5000.0,Active
+C1179,Datchet Bexley Ltd,Facilities Management,East of England,MK9,DAV,2022-08-01,75000.0,Active
+C1180,Bexley Ferrers Services Ltd,Contractor,Scotland,KY11,LIV,2015-05-14,35000.0,Active
+C1182,Rannoch Crowther & Sons Ltd,Contractor,North West,M12,WAR,2015-03-29,15000.0,Active
+C1183,Duncombe Datchet Ltd,Contractor,East of England,B18,DAV,2016-08-01,50000.0,Active
+C1184,Rannoch Trentham Plumbing & Heating Ltd,Contractor,East of England,DE21,DAV,2018-03-29,50000.0,Active
+C1187,Trentham Trentham Services Ltd,Counter Trade,East Midlands,B18,DAV,2014-04-12,10000.0,Active
+C1189,J R Fenwick Plumbing & Heating Ltd,Counter Trade,East of England,CV1,DAV,2014-02-27,15000.0,Active
+C1191,Trentham Whitmore & Sons Ltd,Builders' Merchant,East Midlands,LE3,DAV,2022-01-29,50000.0,Active
+C1193,Crowther Selwood Group Ltd,Contractor,North West,BL4,WAR,2017-03-27,50000.0,Active
+C1194,Salford Barrowby Ltd,Builders' Merchant,East Midlands,MK9,DAV,2013-03-03,75000.0,Active
+C1195,Cheveley Penhale Contracts Ltd,Counter Trade,East of England,NN1,DAV,2017-12-12,50000.0,Active
+C1198,Bexley Whitmore Ltd,Facilities Management,North East,BL4,WAR,2022-08-27,15000.0,Active
+C1201,Trentham Fenwick & Sons Ltd,Counter Trade,West Midlands,MK9,DAV,2012-10-29,15000.0,Active
+C1204,Cheveley Whitmore Contracts Ltd,Contractor,North West,WA5,WAR,2013-06-22,15000.0,Active
+C1207,Penhale Mowbray Services Ltd,Contractor,North East,WA3,WAR,2023-01-09,120000.0,Active
+C1208,Mowbray Salford Group Ltd,Contractor,North East,WA3,WAR,2019-05-27,5000.0,Active
+C1209,Whitmore Salford Ltd,Contractor,West Midlands,NG7,DAV,2021-08-23,120000.0,On hold
+C1211,Mowbray Mowbray Services Ltd,Counter Trade,East of England,MK9,DAV,2015-08-19,120000.0,Active
+C1212,Latimer Ferrers Ltd,Contractor,South West,CF24,BRS,2014-04-08,10000.0,Active
+C1215,Cheveley Fenwick & Sons Ltd,Builders' Merchant,North West,WA3,WAR,2015-11-10,15000.0,Active
+C1217,Trentham Salford Services Ltd,Contractor,East of England,DE21,DAV,2016-11-15,120000.0,Active
+C1218,Crowther Rannoch Plumbing & Heating Ltd,Facilities Management,East Midlands,NN1,DAV,2018-01-03,35000.0,Active
+C1219,Bexley Salford & Sons Ltd,Facilities Management,East of England,PE1,DAV,2015-01-19,120000.0,Active
+C1222,Selwood Rannoch Ltd,Contractor,Scotland,G52,LIV,2017-01-24,120000.0,Active
+C1225,Barrowby Crowther Contracts Ltd,Contractor,South West,GL1,BRS,2020-06-11,75000.0,Active
+C1227,Selwood Crowther & Sons Ltd,Facilities Management,East Midlands,PE1,DAV,2018-06-07,35000.0,Active
+C1230,Trentham Bexley Services Ltd,Counter Trade,North East,S9,WAR,2022-06-30,15000.0,Active
+C1232,Latimer Penhale Ltd,Contractor,West Midlands,LE3,DAV,2014-07-25,10000.0,On hold
+C1234,Mowbray Aldridge Building Services Ltd,Contractor,North West,CH5,WAR,2014-06-11,10000.0,Active
+C1235,Fenwick Duncombe Ltd,Facilities Management,East Midlands,PE1,DAV,2021-09-09,10000.0,Active
+C1236,Duncombe Rannoch Ltd,Contractor,West Midlands,PE1,DAV,2012-04-04,120000.0,Active
+C1238,Trentham Rannoch Group Ltd,Housebuilder,Wales,SN2,BRS,2019-04-23,35000.0,Active
+C1240,Ollerton Ollerton Services Ltd,Contractor,North West,WA3,WAR,2014-08-13,35000.0,Active
+C1242,Duncombe Rannoch Plumbing & Heating Ltd,Builders' Merchant,Scotland,ML1,LIV,2016-07-02,120000.0,Active
+C1243,Latimer Trentham Plumbing & Heating Ltd,Contractor,Yorkshire,NE11,WAR,2014-05-06,35000.0,Active
+C1244,Selwood Crowther Ltd,Contractor,North East,LS11,WAR,2022-10-11,35000.0,Active
+C1247,Barrowby Ollerton Maintenance Ltd,Builders' Merchant,Wales,CF24,BRS,2013-08-31,15000.0,Active
+C1249,Kirkby Cheveley Ltd,Counter Trade,East Midlands,LE3,DAV,2022-09-09,15000.0,Active
+C1251,Datchet Mowbray Building Services Ltd,Housebuilder,East Midlands,DE21,DAV,2022-10-20,35000.0,Active
+C1253,Penhale Ferrers Ltd,Facilities Management,East Midlands,PE1,DAV,2020-10-22,25000.0,Active
+C1254,Rannoch Selwood Ltd,Facilities Management,Scotland,KY11,LIV,2021-04-28,25000.0,Active
+C1255,Bexley Mowbray Maintenance Ltd,Contractor,East Midlands,NG7,DAV,2018-10-07,50000.0,Active
+C1257,Barrowby Kirkby Services Ltd,Contractor,East of England,NG7,DAV,2023-02-15,75000.0,Active
+C1258,Fenwick Ferrers Services Ltd,Contractor,South West,EX4,BRS,2017-03-24,25000.0,Active
+C1259,Selwood Selwood Contracts Ltd,Builders' Merchant,South West,BA14,BRS,2020-06-17,5000.0,Active
+C1262,J R Mowbray Ltd,Contractor,East of England,MK9,DAV,2020-05-31,10000.0,Active
+C1263,Rannoch Crowther Services Ltd,Contractor,Yorkshire,NE11,WAR,2013-03-10,15000.0,Active
+C1264,Selwood Trentham Services Ltd,Contractor,North East,BL4,WAR,2022-04-28,15000.0,Active
+C1266,Rannoch Kirkby Ltd,Contractor,Scotland,EH54,LIV,2018-04-16,50000.0,Active
+C1267,Bexley Barrowby Services Ltd,Contractor,Scotland,IV2,LIV,2021-12-13,5000.0,Active
+C1268,Selwood Fenwick Services Ltd,Contractor,Scotland,KY11,LIV,2019-07-19,5000.0,Active
+C1270,Crowther Salford Group Ltd,Contractor,East Midlands,NG7,DAV,2019-01-24,120000.0,Active
+C1273,Bexley Ferrers Contracts Ltd,Contractor,Wales,EX4,BRS,2019-12-31,50000.0,Active
+C1276,Rannoch Cheveley Plumbing & Heating Ltd,Contractor,East of England,NN11,DAV,2022-11-26,5000.0,Active
+C1278,Selwood Trentham Plumbing & Heating Ltd,Contractor,West Midlands,B18,DAV,2013-09-30,25000.0,Active
+C1279,Ollerton Whitmore Ltd,Contractor,Scotland,KY11,LIV,2018-12-18,5000.0,Active
+C1282,Rannoch Ollerton Group Ltd,Contractor,North West,PR2,WAR,2015-07-30,50000.0,Active
+C1284,Kirkby Cheveley Ltd,Contractor,East Midlands,NN11,DAV,2022-07-27,5000.0,Active
+C1287,Penhale Latimer Ltd,Counter Trade,North East,WA5,WAR,2021-03-25,50000.0,Active
+C1290,Duncombe Bexley Plumbing & Heating Ltd,Builders' Merchant,East of England,LE3,DAV,2016-12-15,5000.0,Active
+C1292,Duncombe Kirkby Contracts Ltd,Contractor,North West,L24,WAR,2016-10-18,120000.0,Active
+C1294,Duncombe Penhale Maintenance Ltd,Facilities Management,Wales,EX4,BRS,2014-01-22,75000.0,Active
+C1296,Rannoch Fenwick Contracts Ltd,Counter Trade,East Midlands,NG7,DAV,2023-08-31,120000.0,Active
+C1299,Mowbray Bexley & Sons Ltd,Counter Trade,West Midlands,B18,DAV,2018-02-23,10000.0,Active
+C1300,Ferrers Crowther Group Ltd,Contractor,East Midlands,NG7,DAV,2013-09-01,120000.0,Active
+C1302,Mowbray Fenwick Plumbing & Heating Ltd,Contractor,Wales,EX4,BRS,2018-01-05,50000.0,Active
+C1304,Crowther Trentham Services Ltd,Counter Trade,South West,CF24,BRS,2015-07-16,5000.0,Active
+C1305,Cheveley Duncombe Building Services Ltd,Facilities Management,Scotland,G52,LIV,2017-12-16,10000.0,Active
+C1307,J R Kirkby Ltd,Contractor,East of England,B18,DAV,2020-04-12,10000.0,Active
+C1310,Barrowby Salford Maintenance Ltd,Contractor,Wales,SA1,BRS,2012-05-28,10000.0,Active
+C1311,Duncombe Ferrers & Sons Ltd,Contractor,West Midlands,PE1,DAV,2013-05-29,50000.0,Active
+C1313,Selwood Barrowby Ltd,Counter Trade,Scotland,PA3,LIV,2014-12-13,50000.0,Active
+C1316,Whitmore Penhale Services Ltd,Contractor,West Midlands,CV1,DAV,2013-04-13,120000.0,Active
+C1319,Aldridge Rannoch Ltd,Counter Trade,West Midlands,MK9,DAV,2018-12-07,25000.0,Active
+C1320,Whitmore Ferrers Contracts Ltd,Facilities Management,East of England,CB4,DAV,2019-01-26,35000.0,Active
+C1321,Salford Kirkby Maintenance Ltd,Contractor,Scotland,AB12,LIV,2012-09-10,35000.0,Active
+C1323,Penhale J R Building Services Ltd,Contractor,West Midlands,NN11,DAV,2012-01-06,35000.0,Active
+C1326,J R Rannoch Maintenance Ltd,Contractor,North West,S9,WAR,2012-03-05,120000.0,On hold
+C1327,Salford Selwood Group Ltd,Contractor,East of England,B18,DAV,2020-05-31,10000.0,Active
+C1328,Latimer Rannoch Services Ltd,Builders' Merchant,South West,PL4,BRS,2021-11-25,50000.0,Active
+C1330,Crowther Cheveley Building Services Ltd,Facilities Management,Wales,BA14,BRS,2021-03-22,5000.0,Active
+C1333,J R Ferrers Contracts Ltd,Housebuilder,Scotland,G52,LIV,2013-02-11,10000.0,Active
+C1334,Mowbray Kirkby Ltd,Contractor,West Midlands,NG7,DAV,2016-10-30,10000.0,Active
+C1335,Penhale J R Group Ltd,Contractor,East of England,LE3,DAV,2014-09-15,75000.0,Active
+C1336,Penhale Bexley Plumbing & Heating Ltd,Contractor,Yorkshire,CH5,WAR,2013-10-11,25000.0,Active
+C1338,Aldridge Crowther Services Ltd,Facilities Management,South West,EX4,BRS,2014-08-21,25000.0,Active
+C1339,Datchet Whitmore Building Services Ltd,Facilities Management,South West,GL1,BRS,2016-06-09,75000.0,Active
+C1340,Mowbray Rannoch Contracts Ltd,Contractor,East Midlands,DE21,DAV,2013-12-21,120000.0,Active
+C1343,Whitmore Aldridge Services Ltd,Housebuilder,South West,EX4,BRS,2014-09-04,50000.0,Active
+C1346,Mowbray Barrowby Ltd,Builders' Merchant,Yorkshire,NE11,WAR,2022-04-30,25000.0,Active
+C1349,Trentham J R Plumbing & Heating Ltd,Contractor,North East,CH5,WAR,2013-04-20,5000.0,Active
+C1352,Aldridge Bexley Ltd,Builders' Merchant,South West,SA1,BRS,2020-08-16,75000.0,Active
+C1354,Barrowby Fenwick Contracts Ltd,Builders' Merchant,West Midlands,MK9,DAV,2017-02-18,10000.0,Active
+C1355,Trentham Cheveley Ltd,Contractor,Yorkshire,WA5,WAR,2021-02-16,35000.0,Active
+C1357,Salford Ferrers Ltd,Builders' Merchant,Scotland,IV2,LIV,2022-06-18,50000.0,Active
+C1360,Cheveley Aldridge Building Services Ltd,Contractor,North West,S9,WAR,2019-01-21,25000.0,Active
+C1363,Barrowby Bexley Maintenance Ltd,Counter Trade,East of England,CV1,DAV,2020-07-08,10000.0,Active
+C1366,Ferrers Datchet Maintenance Ltd,Contractor,West Midlands,CV1,DAV,2020-06-19,5000.0,Active
+C1367,Ollerton Cheveley Group Ltd,Contractor,West Midlands,LE3,DAV,2023-01-16,15000.0,Active
+C1370,Rannoch Barrowby Plumbing & Heating Ltd,Contractor,West Midlands,NN1,DAV,2016-07-11,120000.0,Active
+C1371,Kirkby Rannoch Contracts Ltd,Counter Trade,East Midlands,LE3,DAV,2012-07-28,35000.0,Active
+C1372,Bexley Bexley Ltd,Contractor,East Midlands,NN1,DAV,2018-11-08,10000.0,Active
+C1374,Fenwick Barrowby Ltd,Contractor,Wales,EX4,BRS,2012-06-09,120000.0,Active
+C1375,Ollerton Datchet Plumbing & Heating Ltd,Contractor,East of England,MK9,DAV,2014-03-28,35000.0,Active
+C1376,Fenwick Duncombe Maintenance Ltd,Builders' Merchant,North West,PR2,WAR,2022-06-18,15000.0,Active
+C1379,Ollerton Salford Ltd,Contractor,Scotland,IV2,LIV,2014-05-28,50000.0,Active
+C1382,Penhale Whitmore Ltd,Contractor,South West,BA14,BRS,2021-10-12,35000.0,Active
+C1385,Duncombe Datchet Building Services Ltd,Counter Trade,East Midlands,NG7,DAV,2022-06-14,50000.0,Active
+C1386,Rannoch Bexley Plumbing & Heating Ltd,Contractor,North West,NE11,WAR,2014-08-28,10000.0,Active
+C1387,Ferrers Latimer Group Ltd,Contractor,Wales,SA1,BRS,2016-03-06,10000.0,Active
+C1389,Ollerton Crowther Plumbing & Heating Ltd,Facilities Management,East Midlands,NN11,DAV,2018-05-02,35000.0,Active
+C1391,J R J R Ltd,Contractor,Yorkshire,S9,WAR,2013-05-22,35000.0,Active
+C1392,Trentham Mowbray Ltd,Contractor,North East,PR2,WAR,2014-07-03,75000.0,On hold
+C1395,Salford Ferrers & Sons Ltd,Contractor,Yorkshire,LS11,WAR,2016-04-23,35000.0,Active
+C1398,Trentham Salford Group Ltd,Builders' Merchant,North West,M12,WAR,2012-05-15,25000.0,Active
+C1399,Ollerton Crowther Group Ltd,Facilities Management,Scotland,AB12,LIV,2016-04-29,15000.0,Active
+C1401,Ollerton Barrowby Ltd,Builders' Merchant,East of England,PE1,DAV,2012-06-06,120000.0,Active
+C1402,Datchet Ferrers Ltd,Contractor,North East,M12,WAR,2014-07-18,75000.0,Active
+C1405,Aldridge Cheveley Ltd,Contractor,North East,LS11,WAR,2012-10-08,15000.0,Active
+C1406,Bexley J R Services Ltd,Contractor,North West,CH5,WAR,2019-01-11,25000.0,Active
+C1407,Crowther Barrowby Plumbing & Heating Ltd,Counter Trade,East of England,CB4,DAV,2015-05-25,25000.0,Active
+C1408,Cheveley Datchet Contracts Ltd,Contractor,Yorkshire,BL4,WAR,2015-10-16,25000.0,Active
+C1409,Datchet Ollerton Contracts Ltd,Facilities Management,North East,L24,WAR,2012-01-09,35000.0,Active
+C1410,Duncombe Latimer Group Ltd,Facilities Management,East Midlands,MK9,DAV,2017-04-21,50000.0,Active
+C1411,Kirkby Ollerton Ltd,Facilities Management,South West,PL4,BRS,2016-08-11,10000.0,Active
+C1413,Rannoch Trentham Maintenance Ltd,Builders' Merchant,East Midlands,CB4,DAV,2022-01-19,35000.0,Active
+C1416,Ollerton Bexley Ltd,Contractor,East Midlands,DE21,DAV,2018-02-16,35000.0,Active
+C1419,Bexley Fenwick Ltd,Counter Trade,East of England,LE3,DAV,2014-11-28,50000.0,Active
+C1422,Fenwick Trentham Maintenance Ltd,Counter Trade,Scotland,PA3,LIV,2015-02-08,10000.0,Active
+C1423,Whitmore Penhale & Sons Ltd,Contractor,Scotland,IV2,LIV,2018-07-30,25000.0,Active
+C1426,Mowbray Penhale Ltd,Facilities Management,West Midlands,MK9,DAV,2016-11-21,75000.0,Active
+C1427,Barrowby Bexley Ltd,Contractor,East Midlands,B18,DAV,2021-11-06,75000.0,Active
+C1429,Ferrers Datchet Ltd,Contractor,West Midlands,NN11,DAV,2022-01-23,75000.0,Active
+C1430,Ollerton Mowbray Maintenance Ltd,Builders' Merchant,Scotland,KY11,LIV,2014-08-27,50000.0,Active
+C1432,Trentham Selwood Ltd,Facilities Management,Scotland,G52,LIV,2018-06-19,35000.0,On hold
+C1434,Crowther Latimer Contracts Ltd,Contractor,East Midlands,PE1,DAV,2017-03-23,50000.0,Active
+C1435,Whitmore Fenwick Plumbing & Heating Ltd,Facilities Management,Scotland,DD2,LIV,2020-09-04,15000.0,Active
+C1437,Rannoch Bexley Plumbing & Heating Ltd,Contractor,West Midlands,LE3,DAV,2012-06-29,5000.0,Active
+C1440,Penhale Kirkby & Sons Ltd,Contractor,East of England,CB4,DAV,2016-05-25,120000.0,Active
+C1441,Mowbray Rannoch Ltd,Contractor,North East,L24,WAR,2023-02-16,10000.0,Active
+C1442,Duncombe Duncombe Services Ltd,Counter Trade,East Midlands,LE3,DAV,2013-08-07,25000.0,Active
+C1445,Cheveley Datchet Plumbing & Heating Ltd,Contractor,West Midlands,MK9,DAV,2023-06-02,25000.0,Active
+C1447,Cheveley Selwood Ltd,Builders' Merchant,East of England,NN11,DAV,2018-01-07,5000.0,Active
+C1450,Rannoch Selwood Maintenance Ltd,Facilities Management,North West,WA3,WAR,2018-09-09,25000.0,Active
+C1452,Bexley Selwood Ltd,Contractor,West Midlands,LE3,DAV,2021-11-01,120000.0,Active
+C1453,Cheveley Kirkby Building Services Ltd,Contractor,Wales,EX4,BRS,2020-08-12,5000.0,On hold
+C1454,Aldridge Rannoch Services Ltd,Contractor,North East,BL4,WAR,2022-06-07,50000.0,Active
+C1457,Trentham Rannoch Contracts Ltd,Counter Trade,West Midlands,CV1,DAV,2016-05-06,15000.0,Active
+C1460,Trentham Trentham Ltd,Counter Trade,Yorkshire,BL4,WAR,2017-11-18,75000.0,Active
+C1463,Mowbray Ferrers Plumbing & Heating Ltd,Facilities Management,South West,GL1,BRS,2021-09-27,75000.0,Active
+C1464,Selwood Bexley & Sons Ltd,Builders' Merchant,North East,WA3,WAR,2019-09-08,10000.0,Active
+C1466,Ollerton Duncombe Building Services Ltd,Contractor,Scotland,IV2,LIV,2013-10-22,25000.0,Active
+C1468,Datchet Crowther Plumbing & Heating Ltd,Facilities Management,East Midlands,PE1,DAV,2013-04-29,75000.0,Active
+C1470,Rannoch Aldridge Group Ltd,Contractor,East of England,LE3,DAV,2015-01-23,10000.0,Active
+C1471,Trentham Duncombe Ltd,Contractor,East of England,B18,DAV,2017-08-31,50000.0,Active
+C1474,Barrowby Whitmore Ltd,Contractor,North East,NE11,WAR,2020-01-22,15000.0,Active
+C1475,Salford Selwood Contracts Ltd,Contractor,South West,CF24,BRS,2014-03-29,5000.0,Active
+C1478,Bexley Ollerton Ltd,Builders' Merchant,Scotland,IV2,LIV,2015-05-19,120000.0,Active
+C1479,Penhale Penhale Ltd,Contractor,East Midlands,B18,DAV,2017-05-26,75000.0,Active
+C1482,Salford Ollerton Ltd,Counter Trade,North East,LS11,WAR,2021-10-24,50000.0,On hold
+C1483,Mowbray J R Contracts Ltd,Builders' Merchant,Scotland,ML1,LIV,2022-03-18,50000.0,Active
+C1484,Crowther Mowbray Ltd,Contractor,West Midlands,CB4,DAV,2021-11-21,120000.0,Active
+C1486,Ollerton Trentham Ltd,Contractor,West Midlands,MK9,DAV,2021-06-01,10000.0,Active
+C1488,Ferrers Salford Maintenance Ltd,Contractor,East Midlands,B18,DAV,2020-04-20,5000.0,Active
+C1491,Duncombe Bexley Ltd,Contractor,West Midlands,NN1,DAV,2021-05-01,50000.0,Active
+C1492,Latimer Cheveley Ltd,Counter Trade,North East,NE11,WAR,2022-07-08,15000.0,Active
+C1495,Latimer Datchet Ltd,Counter Trade,North East,NE11,WAR,2012-02-14,50000.0,Active
+C1497,Barrowby Ollerton Plumbing & Heating Ltd,Contractor,North West,M12,WAR,2018-03-29,10000.0,Active
+C1498,Aldridge Aldridge Ltd,Contractor,South West,GL1,BRS,2018-01-29,10000.0,Active
+C1501,Latimer J R Plumbing & Heating Ltd,Counter Trade,Wales,BA14,BRS,2019-07-31,35000.0,Active
+C1504,Fenwick Datchet Contracts Ltd,Builders' Merchant,Scotland,EH54,LIV,2013-02-05,50000.0,Active
+C1505,Ollerton Duncombe Building Services Ltd,Contractor,South West,CF24,BRS,2012-06-13,5000.0,Active
+C1508,Datchet Fenwick Ltd,Facilities Management,North West,L24,WAR,2012-10-26,35000.0,Active
+C1509,Kirkby Bexley Building Services Ltd,Contractor,East Midlands,MK9,DAV,2022-12-18,10000.0,Active
+C1512,Crowther Rannoch Ltd,Builders' Merchant,East of England,CV1,DAV,2022-07-20,75000.0,On hold
+C1515,Latimer Mowbray Group Ltd,Contractor,East Midlands,DE21,DAV,2020-04-24,35000.0,Active
+C1518,Trentham Datchet Ltd,Contractor,South West,SA1,BRS,2014-10-16,120000.0,Active
+C1521,Salford Ferrers Ltd,Builders' Merchant,East of England,NG7,DAV,2013-08-15,15000.0,Active
+C1522,Cheveley Kirkby Group Ltd,Contractor,Yorkshire,WA3,WAR,2012-07-15,75000.0,Active
+C1525,Cheveley Datchet Maintenance Ltd,Contractor,Wales,PL4,BRS,2012-09-10,25000.0,Active
+C1526,Penhale Salford Ltd,Counter Trade,Scotland,G52,LIV,2017-11-07,25000.0,Active
+C1527,Latimer Mowbray Group Ltd,Contractor,West Midlands,MK9,DAV,2022-07-05,50000.0,Active
+C1528,J R Salford Contracts Ltd,Contractor,Scotland,ML1,LIV,2013-09-24,35000.0,Active
+C1531,Salford Salford & Sons Ltd,Contractor,East Midlands,MK9,DAV,2014-11-09,35000.0,Active
+C1532,Salford Datchet Group Ltd,Contractor,East of England,CV1,DAV,2022-01-10,25000.0,Active
+C1533,Whitmore Bexley Ltd,Contractor,North East,NE11,WAR,2018-12-17,25000.0,On hold
+C1535,J R Duncombe Maintenance Ltd,Facilities Management,North West,WA5,WAR,2018-05-15,35000.0,Active
+C1538,Penhale Ollerton Ltd,Contractor,Yorkshire,S9,WAR,2016-03-20,50000.0,Active
+C1541,Kirkby Trentham Group Ltd,Contractor,Wales,BS2,BRS,2016-03-15,15000.0,Active
+C1543,Latimer Rannoch Ltd,Contractor,North West,S9,WAR,2013-04-23,120000.0,Active
+C1546,Rannoch Mowbray Building Services Ltd,Contractor,Wales,BS2,BRS,2013-09-04,15000.0,Active
+C1549,Whitmore Whitmore Maintenance Ltd,Contractor,East Midlands,PE1,DAV,2014-11-18,5000.0,Active
+C1551,Ferrers Cheveley Plumbing & Heating Ltd,Contractor,East Midlands,NG7,DAV,2015-03-05,10000.0,Active
+C1554,Duncombe Latimer Ltd,Contractor,East Midlands,MK9,DAV,2016-03-08,75000.0,Active
+C1557,Rannoch Ollerton Building Services Ltd,Counter Trade,South West,PL4,BRS,2018-05-31,25000.0,Active
+C1558,Rannoch Salford Ltd,Contractor,North West,BL4,WAR,2012-12-07,75000.0,Active
+C1559,Duncombe Latimer Contracts Ltd,Contractor,East Midlands,CV1,DAV,2019-01-19,10000.0,Active
+C1560,Ollerton J R Contracts Ltd,Counter Trade,North West,LS11,WAR,2020-01-11,120000.0,Active
+C1563,Mowbray Trentham Contracts Ltd,Housebuilder,East Midlands,NN11,DAV,2017-01-31,10000.0,Active
+C1565,Salford Ollerton Contracts Ltd,Facilities Management,West Midlands,CV1,DAV,2020-05-04,50000.0,Active
+C1566,Salford Ollerton Services Ltd,Counter Trade,Scotland,IV2,LIV,2018-08-04,75000.0,On hold
+C1568,Ollerton Latimer Services Ltd,Contractor,North East,M12,WAR,2013-04-16,75000.0,Active
+C1569,Ollerton Duncombe Ltd,Facilities Management,West Midlands,PE1,DAV,2014-09-15,10000.0,Active
+C1572,Penhale Crowther Building Services Ltd,Contractor,East of England,CB4,DAV,2021-07-17,50000.0,Active
+C1574,Latimer Penhale Ltd,Facilities Management,Scotland,KY11,LIV,2016-12-23,120000.0,Active
+C1577,Trentham Bexley Ltd,Counter Trade,East Midlands,NG7,DAV,2019-08-17,15000.0,Active
+C1578,Duncombe J R Ltd,Contractor,South West,SN2,BRS,2016-10-05,5000.0,Active
+C1581,Mowbray Kirkby Building Services Ltd,Contractor,North West,L24,WAR,2022-01-12,75000.0,Active
+C1584,Duncombe Duncombe Ltd,Builders' Merchant,Scotland,DD2,LIV,2019-11-16,10000.0,Active
+C1585,Ollerton Kirkby Services Ltd,Contractor,East Midlands,B18,DAV,2018-10-15,5000.0,Active
+C1587,Aldridge Kirkby Building Services Ltd,Builders' Merchant,East of England,B18,DAV,2012-04-10,75000.0,Active
+C1590,Crowther Fenwick Group Ltd,Contractor,South West,TA6,BRS,2014-08-13,25000.0,Active
+C1591,Duncombe Whitmore Ltd,Builders' Merchant,North West,NE11,WAR,2021-01-23,5000.0,Active
+C1593,Datchet Ollerton Maintenance Ltd,Builders' Merchant,East Midlands,NN1,DAV,2016-08-15,5000.0,Active
+C1594,Bexley Penhale Building Services Ltd,Contractor,West Midlands,B18,DAV,2015-11-10,35000.0,Active
+C1596,Barrowby Duncombe Group Ltd,Counter Trade,West Midlands,B18,DAV,2013-02-26,15000.0,Active
+C1597,J R J R Ltd,Contractor,North West,L24,WAR,2019-10-17,5000.0,Active
+C1599,Trentham Fenwick Group Ltd,Contractor,East Midlands,PE1,DAV,2014-05-12,5000.0,Active
+C1600,Barrowby Ollerton Ltd,Facilities Management,Scotland,KY11,LIV,2023-03-30,5000.0,Active
+C1602,Ollerton Selwood Contracts Ltd,Contractor,Wales,BS35,BRS,2017-06-13,15000.0,Active
+C1605,Rannoch Crowther Ltd,Builders' Merchant,East Midlands,LE3,DAV,2019-03-21,5000.0,Active
+C1607,Rannoch Kirkby Ltd,Housebuilder,Scotland,G52,LIV,2015-01-06,75000.0,Active
+C1610,Aldridge Whitmore Ltd,Contractor,West Midlands,PE1,DAV,2022-07-30,10000.0,Active
+C1613,Whitmore Aldridge Ltd,Contractor,East of England,DE21,DAV,2018-11-13,50000.0,Active
+C1616,Ollerton Fenwick Contracts Ltd,Contractor,East of England,LE3,DAV,2016-01-20,50000.0,Active
+C1619,Duncombe J R Plumbing & Heating Ltd,Housebuilder,Wales,BS2,BRS,2022-03-01,10000.0,Active
+C1622,Bexley J R Ltd,Contractor,West Midlands,CB4,DAV,2022-10-04,50000.0,On hold
+C1624,Rannoch Salford Ltd,Builders' Merchant,Yorkshire,CH5,WAR,2019-08-21,5000.0,Active
+C1626,Aldridge Selwood Contracts Ltd,Contractor,East Midlands,DE21,DAV,2013-03-29,10000.0,Active
+C1629,Duncombe J R Services Ltd,Contractor,East Midlands,NN1,DAV,2016-11-30,10000.0,Active
+C1632,Ollerton Duncombe Group Ltd,Facilities Management,East of England,NG7,DAV,2019-11-18,25000.0,Active
+C1634,Kirkby Salford & Sons Ltd,Builders' Merchant,Scotland,ML1,LIV,2012-02-09,75000.0,Active
+C1636,Bexley Barrowby Ltd,Housebuilder,East Midlands,LE3,DAV,2018-12-17,25000.0,Active
+C1637,Aldridge Crowther Building Services Ltd,Contractor,West Midlands,NN1,DAV,2013-12-10,10000.0,Active
+C1639,Trentham Cheveley Ltd,Facilities Management,West Midlands,NG7,DAV,2017-03-19,50000.0,Active
+C1641,Penhale Fenwick Ltd,Counter Trade,West Midlands,DE21,DAV,2015-09-21,5000.0,Active
+C1644,Ollerton Ferrers Ltd,Contractor,East of England,CB4,DAV,2018-07-07,50000.0,Active
+C1646,Barrowby Crowther Plumbing & Heating Ltd,Builders' Merchant,East Midlands,NG7,DAV,2021-06-27,35000.0,On hold
+C1648,Ferrers Mowbray Ltd,Builders' Merchant,West Midlands,LE3,DAV,2017-08-18,75000.0,Active
+C1651,Barrowby Mowbray Building Services Ltd,Contractor,North West,LS11,WAR,2019-10-04,75000.0,Active
+C1653,Fenwick Barrowby Building Services Ltd,Facilities Management,Yorkshire,CH5,WAR,2019-05-10,25000.0,Active
+C1656,Barrowby Rannoch & Sons Ltd,Counter Trade,North East,L24,WAR,2020-02-20,120000.0,Active
+C1659,Bexley Barrowby Services Ltd,Facilities Management,Wales,PL4,BRS,2017-10-15,120000.0,Active
+C1660,Penhale Datchet Ltd,Contractor,West Midlands,PE1,DAV,2020-09-11,5000.0,Active
+C1663,Trentham Selwood Building Services Ltd,Contractor,Scotland,AB12,LIV,2013-12-23,25000.0,Active
+C1664,Barrowby Crowther Plumbing & Heating Ltd,Contractor,South West,CF24,BRS,2022-04-23,5000.0,On hold
+C1666,Trentham Aldridge Ltd,Facilities Management,Scotland,AB12,LIV,2013-02-04,25000.0,On hold
+C1669,Penhale Crowther Building Services Ltd,Builders' Merchant,West Midlands,MK9,DAV,2012-01-10,35000.0,Active
+C1671,Rannoch Trentham Ltd,Contractor,Yorkshire,NE11,WAR,2021-09-01,50000.0,Active
+C1674,Ollerton Datchet Ltd,Contractor,South West,TA6,BRS,2023-10-08,15000.0,Active
+C1676,Ollerton Mowbray Group Ltd,Builders' Merchant,East Midlands,CV1,DAV,2017-12-20,5000.0,Active
+C1679,Mowbray J R Plumbing & Heating Ltd,Contractor,North West,M12,WAR,2015-09-26,5000.0,Active
+C1680,Duncombe Selwood Plumbing & Heating Ltd,Counter Trade,North East,WA5,WAR,2013-09-09,120000.0,Active
+C1681,Mowbray Latimer Ltd,Contractor,West Midlands,PE1,DAV,2018-07-21,10000.0,Active
+C1682,Fenwick Whitmore Services Ltd,Facilities Management,West Midlands,NG7,DAV,2013-01-11,10000.0,Active
+C1685,Salford Aldridge Ltd,Counter Trade,Scotland,PA3,LIV,2020-04-15,35000.0,Active
+C1687,Datchet Whitmore Ltd,Contractor,Scotland,EH54,LIV,2021-11-18,50000.0,Active
+C1689,Barrowby Datchet Ltd,Contractor,Scotland,AB12,LIV,2022-07-26,10000.0,Active
+C1691,Selwood Selwood Services Ltd,Facilities Management,Scotland,IV2,LIV,2013-06-11,10000.0,Active
+C1693,Datchet Salford Maintenance Ltd,Counter Trade,Scotland,ML1,LIV,2022-02-28,120000.0,Active
+C1694,Kirkby Duncombe Ltd,Contractor,Scotland,KY11,LIV,2019-11-24,10000.0,Active
+C1695,Ollerton Crowther Ltd,Contractor,West Midlands,CB4,DAV,2022-09-29,10000.0,Active
+C1697,Rannoch Cheveley Contracts Ltd,Contractor,South West,PL4,BRS,2019-10-06,10000.0,Active
+C1700,Mowbray Mowbray Maintenance Ltd,Contractor,West Midlands,NN11,DAV,2012-06-10,35000.0,Active
+C1702,Fenwick Whitmore & Sons Ltd,Contractor,North West,WA3,WAR,2015-04-21,50000.0,Active
+C1704,Kirkby Crowther Ltd,Contractor,East of England,NN11,DAV,2021-07-14,50000.0,Active
+C1705,Whitmore Duncombe Ltd,Contractor,Scotland,DD2,LIV,2015-01-14,75000.0,Active
+C1708,Whitmore Ferrers Ltd,Facilities Management,East of England,NN1,DAV,2019-05-23,50000.0,Active
+C1710,Latimer Ferrers Building Services Ltd,Counter Trade,West Midlands,NG7,DAV,2019-08-24,5000.0,Active
+C1713,Datchet Kirkby Group Ltd,Contractor,North East,NE11,WAR,2013-02-11,5000.0,Active
+C1715,Datchet Fenwick Services Ltd,Housebuilder,Scotland,EH54,LIV,2022-05-20,120000.0,Active
+C1716,Salford Ollerton Group Ltd,Housebuilder,Yorkshire,WA3,WAR,2017-04-13,75000.0,Active
+C1717,Ollerton J R Ltd,Builders' Merchant,South West,BS35,BRS,2016-03-08,5000.0,Active
+C1720,Datchet Penhale & Sons Ltd,Contractor,Yorkshire,S9,WAR,2017-01-26,10000.0,Active
+C1723,Latimer Cheveley Plumbing & Heating Ltd,Contractor,Scotland,IV2,LIV,2018-07-11,5000.0,Active
+C1724,Trentham Aldridge Contracts Ltd,Facilities Management,Yorkshire,CH5,WAR,2015-12-05,10000.0,Active
+C1726,Ollerton Penhale Building Services Ltd,Builders' Merchant,Scotland,DD2,LIV,2014-02-08,25000.0,Active
+C1728,Ferrers Ollerton Ltd,Contractor,East of England,DE21,DAV,2014-04-26,5000.0,Active
+C1730,Whitmore Rannoch Maintenance Ltd,Builders' Merchant,North West,LS11,WAR,2012-03-15,35000.0,Active
+C1733,Ollerton Rannoch Building Services Ltd,Contractor,South West,PL4,BRS,2016-03-25,35000.0,Active
+C1734,Cheveley Crowther Building Services Ltd,Contractor,East of England,CV1,DAV,2016-08-24,15000.0,Active
+C1737,Trentham Salford Ltd,Contractor,Wales,GL1,BRS,2022-04-03,10000.0,Active
+C1739,Datchet Datchet Building Services Ltd,Builders' Merchant,West Midlands,NN11,DAV,2020-07-19,50000.0,Active
+C1741,Salford Crowther & Sons Ltd,Contractor,South West,EX4,BRS,2017-05-24,15000.0,Active
+C1743,Mowbray Duncombe & Sons Ltd,Contractor,East Midlands,B18,DAV,2018-10-02,5000.0,Active
+C1744,Kirkby Ferrers Ltd,Facilities Management,East of England,NN1,DAV,2020-10-14,25000.0,Active
+C1746,Salford Selwood Contracts Ltd,Facilities Management,West Midlands,NG7,DAV,2014-10-17,10000.0,Active
+C1748,J R Cheveley Plumbing & Heating Ltd,Contractor,West Midlands,CB4,DAV,2022-08-01,120000.0,Active
+C1750,Duncombe Ferrers Plumbing & Heating Ltd,Contractor,Yorkshire,WA3,WAR,2015-05-14,5000.0,Active
+C1752,Aldridge Cheveley & Sons Ltd,Contractor,North East,BL4,WAR,2023-09-16,75000.0,Active
+C1755,Salford Datchet Maintenance Ltd,Facilities Management,West Midlands,CB4,DAV,2014-03-27,5000.0,Active
+C1757,Mowbray Crowther Ltd,Builders' Merchant,South West,SA1,BRS,2012-06-27,25000.0,Active
+C1760,Barrowby Aldridge Group Ltd,Facilities Management,East of England,CV1,DAV,2020-10-15,120000.0,Active
+C1763,Mowbray Ollerton & Sons Ltd,Contractor,Yorkshire,NE11,WAR,2013-02-16,120000.0,Active
+C1765,Kirkby Latimer Plumbing & Heating Ltd,Counter Trade,East of England,CV1,DAV,2017-06-30,75000.0,On hold
+C1767,Salford Cheveley Building Services Ltd,Counter Trade,West Midlands,NN1,DAV,2020-12-16,75000.0,Active
+C1768,Ollerton Mowbray Contracts Ltd,Contractor,Scotland,IV2,LIV,2017-06-30,35000.0,Active
+C1770,Datchet Ferrers Maintenance Ltd,Contractor,North West,S9,WAR,2021-02-19,50000.0,Active
+C1773,Crowther Whitmore Building Services Ltd,Contractor,South West,GL1,BRS,2019-01-01,50000.0,Active
+C1776,Salford Whitmore Ltd,Counter Trade,East Midlands,NN1,DAV,2021-09-14,5000.0,Active
+C1778,Cheveley Duncombe Ltd,Housebuilder,Scotland,ML1,LIV,2018-06-22,10000.0,Active
+C1781,Bexley Aldridge & Sons Ltd,Counter Trade,East Midlands,NN1,DAV,2017-06-07,5000.0,Active
+C1783,Bexley Fenwick Contracts Ltd,Counter Trade,Wales,SA1,BRS,2016-12-04,75000.0,Active
+C1785,Selwood Rannoch Ltd,Contractor,Wales,SA1,BRS,2015-07-12,120000.0,Active
+C1787,Cheveley Aldridge Building Services Ltd,Facilities Management,West Midlands,MK9,DAV,2017-12-16,5000.0,Active
+C1788,Rannoch Aldridge Services Ltd,Builders' Merchant,East of England,MK9,DAV,2020-04-26,10000.0,Active
+C1790,Latimer Aldridge Maintenance Ltd,Contractor,North West,PR2,WAR,2018-10-05,35000.0,Active
+C1791,J R Ollerton Building Services Ltd,Contractor,South West,PL4,BRS,2022-10-06,5000.0,Active
+C1793,Ollerton Latimer Plumbing & Heating Ltd,Builders' Merchant,South West,BS2,BRS,2014-08-18,35000.0,Active
+C1795,Cheveley Cheveley Group Ltd,Contractor,East Midlands,PE1,DAV,2013-12-02,15000.0,Active
+C1796,Salford J R Ltd,Contractor,East Midlands,CB4,DAV,2015-03-25,25000.0,Active
+C1798,Duncombe Ollerton Group Ltd,Contractor,East Midlands,NG7,DAV,2019-03-28,75000.0,Active
+C1800,Kirkby Datchet Services Ltd,Contractor,East Midlands,NN1,DAV,2017-06-06,5000.0,Active
+C1802,Trentham Ollerton Ltd,Builders' Merchant,Yorkshire,L24,WAR,2016-10-23,50000.0,Active
+C1803,Crowther Ollerton Contracts Ltd,Contractor,Scotland,G52,LIV,2019-10-10,75000.0,Active
+C1806,Salford Duncombe Ltd,Builders' Merchant,Yorkshire,WA5,WAR,2012-05-09,10000.0,Active
+C1808,Salford Selwood Maintenance Ltd,Counter Trade,Yorkshire,PR2,WAR,2012-10-10,35000.0,Active
+C1811,Barrowby Crowther Building Services Ltd,Contractor,West Midlands,PE1,DAV,2022-01-08,75000.0,Active
+C1813,Cheveley Cheveley Building Services Ltd,Contractor,Wales,BA14,BRS,2013-02-04,120000.0,Active
+C1814,Penhale Barrowby & Sons Ltd,Facilities Management,Scotland,IV2,LIV,2015-04-22,120000.0,Active
+C1817,Ferrers Kirkby Contracts Ltd,Contractor,Scotland,PA3,LIV,2017-10-13,50000.0,Active
+C1818,Rannoch Whitmore & Sons Ltd,Facilities Management,East of England,NN1,DAV,2013-07-06,25000.0,Active
+C1821,Rannoch Cheveley & Sons Ltd,Contractor,Scotland,KY11,LIV,2016-07-01,120000.0,Active
+C1822,Trentham Duncombe Contracts Ltd,Counter Trade,North East,NE11,WAR,2020-03-13,25000.0,Active
+C1823,Kirkby Barrowby Building Services Ltd,Builders' Merchant,Scotland,EH54,LIV,2015-12-07,35000.0,Active
+C1826,Aldridge Mowbray Ltd,Facilities Management,East Midlands,NG7,DAV,2017-12-21,75000.0,Active
+C1827,Crowther Trentham Ltd,Builders' Merchant,West Midlands,LE3,DAV,2016-11-16,15000.0,Active
+C1830,Fenwick Latimer Services Ltd,Housebuilder,West Midlands,MK9,DAV,2022-09-09,10000.0,Active
+C1831,Whitmore Rannoch Contracts Ltd,Contractor,North East,WA5,WAR,2021-05-09,35000.0,Active
+C1833,Ferrers Bexley Services Ltd,Contractor,North East,PR2,WAR,2021-04-14,75000.0,Active
+C1835,Aldridge Fenwick Group Ltd,Facilities Management,Scotland,DD2,LIV,2022-04-17,10000.0,Active
+C1837,Rannoch Cheveley Ltd,Counter Trade,North West,S9,WAR,2013-01-21,120000.0,Active
+C1839,Latimer Fenwick Services Ltd,Contractor,North East,LS11,WAR,2022-05-12,10000.0,Active
+C1841,Whitmore J R Contracts Ltd,Contractor,East Midlands,PE1,DAV,2014-04-27,25000.0,Active
+C1844,Latimer Ferrers Contracts Ltd,Contractor,Yorkshire,BL4,WAR,2012-01-06,15000.0,Active
+C1847,Barrowby Selwood Contracts Ltd,Contractor,Scotland,IV2,LIV,2021-01-21,10000.0,Active
+C1848,Mowbray Bexley Building Services Ltd,Contractor,North East,PR2,WAR,2019-02-13,50000.0,Active
+C1850,Rannoch Fenwick Group Ltd,Counter Trade,North East,S9,WAR,2015-09-28,25000.0,Active
+C1853,Fenwick Selwood Maintenance Ltd,Counter Trade,Scotland,KY11,LIV,2013-04-11,35000.0,On hold
+C1854,Bexley Salford Ltd,Contractor,East Midlands,LE3,DAV,2023-05-19,35000.0,Active
+C1856,Cheveley Whitmore Ltd,Facilities Management,Scotland,IV2,LIV,2012-03-09,50000.0,On hold
+C1859,Latimer Duncombe Ltd,Contractor,East Midlands,CB4,DAV,2021-01-21,15000.0,Active
+C1861,Fenwick Ferrers Plumbing & Heating Ltd,Housebuilder,East Midlands,CB4,DAV,2018-06-30,25000.0,Active
+C1864,Latimer Crowther & Sons Ltd,Contractor,East of England,B18,DAV,2016-07-22,50000.0,Active
+C1866,Bexley Fenwick Services Ltd,Contractor,North West,S9,WAR,2021-01-16,10000.0,Active
+C1867,Whitmore Aldridge Maintenance Ltd,Counter Trade,Scotland,G52,LIV,2014-01-27,75000.0,Active
+C1870,Trentham Datchet Group Ltd,Contractor,Wales,PL4,BRS,2019-12-13,25000.0,Active
+C1871,Rannoch Ferrers Contracts Ltd,Counter Trade,Yorkshire,CH5,WAR,2022-11-20,10000.0,Active
+C1872,Duncombe Ollerton Plumbing & Heating Ltd,Facilities Management,North East,BL4,WAR,2022-10-30,120000.0,Active
+C1874,Penhale Aldridge Plumbing & Heating Ltd,Counter Trade,South West,SA1,BRS,2020-04-25,25000.0,Active
+C1875,Datchet Mowbray Plumbing & Heating Ltd,Contractor,West Midlands,MK9,DAV,2018-09-22,35000.0,Active
+C1878,Ferrers Barrowby Maintenance Ltd,Contractor,Scotland,EH54,LIV,2015-07-16,120000.0,Active
+C1881,Aldridge Mowbray Plumbing & Heating Ltd,Facilities Management,West Midlands,NG7,DAV,2018-10-20,75000.0,Active
+C1882,Penhale Selwood Ltd,Facilities Management,East of England,B18,DAV,2017-11-21,25000.0,Active
+C1885,Salford Trentham Maintenance Ltd,Contractor,North East,M12,WAR,2023-05-29,5000.0,Active
+C1888,Barrowby Mowbray Ltd,Facilities Management,East Midlands,NG7,DAV,2020-03-14,75000.0,Active
+C1890,Salford Barrowby Maintenance Ltd,Contractor,West Midlands,NN11,DAV,2015-09-01,75000.0,Active
+C1892,Mowbray Penhale Ltd,Contractor,Scotland,ML1,LIV,2023-01-11,50000.0,Active
+C1895,Duncombe Selwood Contracts Ltd,Facilities Management,West Midlands,NN1,DAV,2012-07-16,120000.0,Active
+C1896,Penhale Datchet Contracts Ltd,Facilities Management,Yorkshire,M12,WAR,2014-09-10,25000.0,Active
+C1898,Kirkby Barrowby Contracts Ltd,Facilities Management,East of England,DE21,DAV,2015-10-13,10000.0,Active
+C1900,Aldridge Bexley Ltd,Counter Trade,Scotland,PA3,LIV,2020-09-03,35000.0,Active
+C1901,Ferrers Trentham Ltd,Contractor,West Midlands,DE21,DAV,2012-09-22,35000.0,Active
+C1904,Barrowby Whitmore Ltd,Facilities Management,Scotland,G52,LIV,2019-09-02,10000.0,Active
+C1907,Whitmore Ollerton Ltd,Counter Trade,South West,GL1,BRS,2012-03-12,15000.0,Active
+C1910,Latimer Rannoch Maintenance Ltd,Contractor,East of England,NN11,DAV,2012-06-20,35000.0,Active
+C1911,Bexley Trentham Ltd,Contractor,Scotland,AB12,LIV,2013-07-11,10000.0,Active
+C1912,Ferrers Ferrers Services Ltd,Facilities Management,North West,NE11,WAR,2022-12-23,5000.0,Active
+C1915,Latimer Ferrers & Sons Ltd,Counter Trade,South West,GL1,BRS,2014-04-18,120000.0,Active
+C1918,Selwood Cheveley Ltd,Facilities Management,North West,BL4,WAR,2020-05-28,120000.0,Active
+C1921,Aldridge Duncombe Ltd,Facilities Management,Scotland,DD2,LIV,2016-10-19,15000.0,Active
+C1923,Mowbray Fenwick Ltd,Contractor,East Midlands,PE1,DAV,2019-06-04,10000.0,Active
+C1924,Datchet Kirkby Plumbing & Heating Ltd,Contractor,Yorkshire,LS11,WAR,2018-06-22,50000.0,Active
+C1926,Latimer Ollerton Contracts Ltd,Facilities Management,West Midlands,MK9,DAV,2017-11-02,25000.0,Active
+C1928,Duncombe Latimer Group Ltd,Contractor,East of England,DE21,DAV,2015-06-12,50000.0,Active
+C1931,SALFORD WHITMORE LIMITED,Counter Trade,East Midlands,NN1,DAV,2022-09-14,5000.0,Active
+C1933,BARROWBY BEXLEY CONTRACTS LIMITED,Contractor,Yorkshire,M12,WAR,2026-08-06,5000.0,Active
+C1936,Selwood Trentham Plumbing & Heating Limited,Contractor,West Midlands,B18,DAV,2017-02-23,25000.0,Active
+C1938,Latimer Rannoch Maintenance Limited,Contractor,East of England,NN11,DAV,2013-02-06,35000.0,Active
+C1939,LATIMER FERRERS & SONS LIMITED,Counter Trade,South West,GL1,BRS,2017-05-25,120000.0,Active
+C1940,DATCHET MOWBRAY BUILDING SERVICES LIMITED,Housebuilder,East Midlands,DE21,DAV,2026-11-17,35000.0,Active
+C1941,Kirkby Barrowby Building Services Limited,Builders' Merchant,Scotland,EH54,LIV,2019-08-12,35000.0,Active
+C1944,Ferrers Selwood Limited,Counter Trade,South West,TA6,BRS,2013-06-03,25000.0,Active
+C1947,Trentham Salford Services Limited,Contractor,East of England,DE21,DAV,2019-07-05,120000.0,Active
+C1948,Salford Ferrers & Sons Limited,Contractor,Yorkshire,LS11,WAR,2018-02-17,35000.0,Active
+C1950,Fenwick Barrowby Building Services Limited,Facilities Management,Yorkshire,CH5,WAR,2020-11-16,25000.0,Active
+C1951,Kirkby Duncombe Limited,Contractor,Scotland,KY11,LIV,2025-05-02,10000.0,Active
+C1952,Barrowby Aldridge Group Limited,Facilities Management,East of England,CV1,DAV,2026-03-05,120000.0,Active
+C1955,Penhale Datchet Contracts Limited,Facilities Management,Yorkshire,M12,WAR,2015-09-13,25000.0,Active
+C1957,SALFORD FERRERS LIMITED,Builders' Merchant,Scotland,IV2,LIV,2026-08-19,50000.0,Active
+C1959,DATCHET WHITMORE LIMITED,Contractor,Scotland,EH54,LIV,2025-04-23,50000.0,Active
+C1960,TRENTHAM OLLERTON LIMITED,Builders' Merchant,Yorkshire,L24,WAR,2020-09-10,50000.0,Active
+C1961,SALFORD OLLERTON LIMITED,Counter Trade,North East,LS11,WAR,2027-03-22,50000.0,Active
+C1964,Salford Kirkby Maintenance Limited,Contractor,Scotland,AB12,LIV,2014-07-14,35000.0,Active
+C1967,Rannoch Ollerton Group Limited,Contractor,North West,PR2,WAR,2016-09-29,50000.0,Active
+C1970,OLLERTON SELWOOD CONTRACTS LIMITED,Contractor,Wales,BS35,BRS,2019-02-26,15000.0,Active
+C1971,DATCHET BEXLEY LIMITED,Facilities Management,East of England,MK9,DAV,2025-11-07,75000.0,Active
+C1972,Ollerton Cheveley Group Limited,Contractor,West Midlands,LE3,DAV,2027-03-30,15000.0,Active
+C1975,CROWTHER OLLERTON CONTRACTS LIMITED,Contractor,Scotland,G52,LIV,2020-12-05,75000.0,Active
+C1977,Aldridge Whitmore Limited,Contractor,West Midlands,PE1,DAV,2027-06-09,10000.0,Active
+C1979,Latimer Penhale Limited,Contractor,West Midlands,LE3,DAV,2016-04-03,10000.0,Active
+C1980,Selwood Penhale Services Limited,Contractor,West Midlands,MK9,DAV,2017-10-09,50000.0,Active
+C1983,Duncombe Ollerton Plumbing & Heating Limited,Facilities Management,North East,BL4,WAR,2027-11-24,120000.0,Active
+C1985,Duncombe Selwood Contracts Limited,Facilities Management,West Midlands,NN1,DAV,2015-08-31,120000.0,Active
+C1988,WHITMORE DUNCOMBE LIMITED,Builders' Merchant,Yorkshire,WA5,WAR,2020-12-13,35000.0,Active

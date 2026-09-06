@@ -1,0 +1,111 @@
+SET
+ warehouse_code |             warehouse_name              |  site_type  | opened_date | weeks_measured | skus_stocked | average_stock_gbp | cost_of_sales_gbp | inventory_turns | days_inventory_outstanding | mean_cover_weeks | holding_cost_gbp 
+----------------+-----------------------------------------+-------------+-------------+----------------+--------------+-------------------+-------------------+-----------------+----------------------------+------------------+------------------
+ LIV            | Livingston Regional Distribution Centre | Regional DC | 2019-09-02  |             52 |           70 |            473539 |           1342562 |            2.84 |                        129 |             36.7 |           104178
+ DAV            | Daventry National Distribution Centre   | National DC | 2011-03-07  |             52 |          250 |            996883 |           4667525 |            4.68 |                         78 |             27.2 |           219314
+ WAR            | Warrington Regional Distribution Centre | Regional DC | 2014-05-12  |             52 |          105 |            366299 |           2063308 |            5.63 |                         65 |             18.8 |            80586
+ BRS            | Bristol Regional Distribution Centre    | Regional DC | 2024-07-01  |             52 |           90 |            207258 |           1477177 |            7.13 |                         51 |             18.7 |            45597
+(4 rows)
+
+ warehouse_code | demand_lines | customers_served | demand_units | revenue_gbp | line_fill_rate_pct | unit_fill_rate_pct | unmet_units | unmet_value_gbp | unmet_share_of_demand_pct 
+----------------+--------------+------------------+--------------+-------------+--------------------+--------------------+-------------+-----------------+---------------------------
+ BRS            |         3092 |               70 |        68754 |     1958873 |              89.23 |              87.53 |        8577 |          216665 |                      9.96
+ DAV            |         6599 |              190 |       107297 |     5789276 |              92.30 |              92.02 |        8567 |          500673 |                      7.96
+ WAR            |         4260 |              112 |        88033 |     2692994 |              93.08 |              95.81 |        3688 |          179503 |                      6.25
+ LIV            |         2555 |               69 |        57435 |     1823115 |              94.68 |              95.09 |        2821 |          130788 |                      6.69
+(4 rows)
+
+ warehouse_code | average_stock_gbp | days_inventory_outstanding | line_fill_rate_pct | demand_lines | unmet_value_gbp | stock_per_pound_of_cogs | holding_cost_gbp 
+----------------+-------------------+----------------------------+--------------------+--------------+-----------------+-------------------------+------------------
+ LIV            |            473539 |                        129 |              94.68 |         2555 |          130788 |                   0.353 |           104178
+ DAV            |            996883 |                         78 |              92.30 |         6599 |          500673 |                   0.214 |           219314
+ WAR            |            366299 |                         65 |              93.08 |         4260 |          179503 |                   0.178 |            80586
+ BRS            |            207258 |                         51 |              89.23 |         3092 |          216665 |                   0.140 |            45597
+(4 rows)
+
+ category_code | daventry_turns | warrington_turns | bristol_turns | livingston_turns | network_turns 
+---------------+----------------+------------------+---------------+------------------+---------------
+ TOOL          |           2.19 |             3.88 |          3.74 |             1.70 |          2.61
+ HEAT          |           3.08 |             2.91 |          3.53 |             1.40 |          2.73
+ VALV          |           4.31 |             4.68 |          5.47 |             2.53 |          4.11
+ PIPE          |           5.46 |             4.70 |          5.81 |             2.25 |          4.31
+ VENT          |           4.46 |             6.80 |          8.72 |             3.65 |          5.12
+ RENW          |           5.11 |             6.03 |         13.01 |             3.18 |          5.25
+ DRAIN         |           4.41 |             7.52 |          8.42 |             3.89 |          5.26
+ ELEC          |           6.02 |             7.61 |          7.30 |             3.50 |          5.87
+(8 rows)
+
+DROP VIEW
+CREATE VIEW
+ warehouse_code | well_covered_weeks_with_demand | of_which_short | pct_of_weeks_short | demand_units_well_covered | unmet_units_well_covered | unmet_unit_rate_pct | unmet_value_gbp 
+----------------+--------------------------------+----------------+--------------------+---------------------------+--------------------------+---------------------+-----------------
+ DAV            |                           2706 |             33 |               1.22 |                     61808 |                     1610 |                2.60 |           68451
+ LIV            |                           1268 |              6 |               0.47 |                     45751 |                      547 |                1.20 |           24414
+ BRS            |                            909 |             13 |               1.43 |                     31075 |                      167 |                0.54 |            9920
+ WAR            |                           1366 |             11 |               0.81 |                     47930 |                      144 |                0.30 |            7199
+(4 rows)
+
+ warehouse_code | short_weeks | mean_weekly_demand_units | mean_demand_in_short_weeks | demand_spike_ratio | mean_units_on_hand_when_short | demand_to_stock_ratio 
+----------------+-------------+--------------------------+----------------------------+--------------------+-------------------------------+-----------------------
+ DAV            |          33 |                     22.8 |                      124.5 |               5.45 |                          83.1 |                  1.50
+ LIV            |           6 |                     36.1 |                      170.5 |               4.73 |                          87.8 |                  1.94
+ WAR            |          11 |                     35.1 |                       65.5 |               1.87 |                          53.4 |                  1.23
+ BRS            |          13 |                     34.2 |                       61.5 |               1.80 |                          47.1 |                  1.31
+(4 rows)
+
+ warehouse_code |   customer_segment    | demand_lines | share_of_site_lines_pct | mean_line_units | p95_line_units | unmet_line_rate_pct 
+----------------+-----------------------+--------------+-------------------------+-----------------+----------------+---------------------
+ BRS            | Housebuilder          |          247 |                     8.0 |            40.3 |            112 |               14.98
+ BRS            | Builders' Merchant    |          205 |                     6.6 |            22.1 |             76 |               13.66
+ BRS            | Facilities Management |          448 |                    14.5 |            20.2 |             75 |               10.94
+ BRS            | Contractor            |         2003 |                    64.8 |            20.8 |             78 |               10.13
+ BRS            | Counter Trade         |          189 |                     6.1 |            19.1 |             67 |                8.47
+ DAV            | Housebuilder          |          346 |                     5.2 |            30.9 |            118 |               13.58
+ DAV            | Facilities Management |          873 |                    13.2 |            15.8 |             64 |                7.79
+ DAV            | Counter Trade         |          469 |                     7.1 |            16.2 |             64 |                7.68
+ DAV            | Contractor            |         3639 |                    55.1 |            15.0 |             62 |                7.36
+ DAV            | Builders' Merchant    |         1272 |                    19.3 |            16.3 |             66 |                7.00
+ LIV            | Facilities Management |          362 |                    14.2 |            23.4 |             89 |                6.08
+ LIV            | Housebuilder          |          346 |                    13.5 |            32.2 |            122 |                5.49
+ LIV            | Contractor            |         1105 |                    43.2 |            20.4 |             73 |                5.34
+ LIV            | Counter Trade         |          253 |                     9.9 |            22.4 |             74 |                5.14
+ LIV            | Builders' Merchant    |          489 |                    19.1 |            19.7 |             77 |                4.70
+ WAR            | Housebuilder          |           70 |                     1.6 |            32.7 |            102 |               10.00
+ WAR            | Facilities Management |          339 |                     8.0 |            21.7 |             70 |                8.55
+ WAR            | Builders' Merchant    |          958 |                    22.5 |            19.9 |             74 |                7.52
+ WAR            | Contractor            |         2552 |                    59.9 |            20.4 |             72 |                6.50
+ WAR            | Counter Trade         |          341 |                     8.0 |            21.4 |             81 |                6.16
+(20 rows)
+
+ warehouse_code | well_covered_weeks | mean_units_on_hand | median_units_on_hand | lower_quartile_units | pct_well_covered_under_50_units 
+----------------+--------------------+--------------------+----------------------+----------------------+---------------------------------
+ DAV            |               2706 |              179.6 |                 43.0 |                 14.0 |                            53.7
+ BRS            |                909 |              273.9 |                 94.0 |                 35.0 |                            33.2
+ WAR            |               1366 |              316.4 |                118.0 |                 46.0 |                            26.9
+ LIV            |               1268 |              479.4 |                193.0 |                 72.0 |                            17.4
+(4 rows)
+
+  stock_depth_band  | dav_weeks | dav_unmet_rate_pct | other_weeks | other_sites_unmet_rate_pct 
+--------------------+-----------+--------------------+-------------+----------------------------
+ 1 — under 25 units |       977 |               2.18 |         352 |                       5.17
+ 2 — 25 to 100      |       853 |               4.62 |        1152 |                       3.02
+ 3 — 100 to 500     |       626 |               4.49 |        1390 |                       0.79
+ 4 — 500 or more    |       250 |               0.00 |         649 |                       0.00
+(4 rows)
+
+ warehouse_code | weeks_with_a_transfer_out | weeks_without | unmet_rate_transfer_weeks_pct | unmet_rate_other_weeks_pct | units_transferred_out 
+----------------+---------------------------+---------------+-------------------------------+----------------------------+-----------------------
+ BRS            |                         0 |          1940 |                               |                      12.48 |                      
+ DAV            |                       136 |          4211 |                          2.19 |                       8.18 |                 11545
+ LIV            |                         0 |          1613 |                               |                       4.88 |                      
+ WAR            |                         0 |          2554 |                               |                       4.48 |                      
+(4 rows)
+
+                        measure                         |   value    
+--------------------------------------------------------+------------
+ Average 2025 stock — sum of sites                      | 2043979.36
+ Average 2025 stock — network total, must match file 01 | 2043979.36
+ Unmet value 2025 — sum of sites                        | 1027628.75
+ Demand lines 2025 — sum of sites                       |      16506
+(4 rows)
+

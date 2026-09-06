@@ -1,0 +1,164 @@
+SET
+                         population                         | receipts | share_pct 
+------------------------------------------------------------+----------+-----------
+ Goods receipt lines                                        |     4853 |          
+ Measurable against a promised date                         |     4741 |      97.7
+ In the comparable window (ordered on or before 2025-09-30) |     4241 |      87.4
+ First deliveries in the window                             |     3766 |      77.6
+ Second or later deliveries (split shipments)               |      537 |      11.1
+(5 rows)
+
+DROP VIEW
+CREATE VIEW
+             measure             |  n   | on_time_pct |                 what_it_measures                 
+---------------------------------+------+-------------+--------------------------------------------------
+ First receipt against each line | 3766 |        89.8 | Did the supplier start on time
+ All receipts                    | 4241 |        80.1 | Every delivery, so a split shipment counts twice
+ Line complete on time (OTIF)    | 3768 |        79.1 | Full quantity received by the promised date
+(3 rows)
+
+    supplier_type    | order_half_year | n_first | on_time_first_pct | n_all | on_time_all_pct | n_lines | otif_pct 
+---------------------+-----------------+---------+-------------------+-------+-----------------+---------+----------
+ Far East Importer   | 2024H1          |     207 |              83.6 |   223 |            78.0 |     207 |     77.3
+ Far East Importer   | 2024H2          |     180 |              77.8 |   199 |            71.4 |     180 |     70.6
+ Far East Importer   | 2025H1          |     134 |              73.1 |   153 |            65.4 |     134 |     63.4
+ Far East Importer   | 2025H2          |      74 |              56.8 |    86 |            48.8 |      76 |     44.7
+ Small Specialist    | 2024H1          |      65 |              69.2 |    79 |            59.5 |      65 |     61.5
+ Small Specialist    | 2024H2          |      79 |              84.8 |    97 |            70.1 |      79 |     65.8
+ Small Specialist    | 2025H1          |      78 |              93.6 |    98 |            74.5 |      78 |     70.5
+ Small Specialist    | 2025H2          |      33 |              87.9 |    43 |            69.8 |      33 |     60.6
+ UK / EU Distributor | 2024H1          |     284 |              87.3 |   329 |            76.0 |     284 |     73.9
+ UK / EU Distributor | 2024H2          |     269 |              87.7 |   317 |            76.0 |     269 |     75.1
+ UK / EU Distributor | 2025H1          |     236 |              87.3 |   274 |            75.5 |     236 |     72.9
+ UK / EU Distributor | 2025H2          |     123 |              91.1 |   138 |            82.6 |     123 |     82.1
+ UK Manufacturer     | 2024H1          |     638 |              95.9 |   689 |            88.8 |     638 |     88.4
+ UK Manufacturer     | 2024H2          |     620 |              94.4 |   685 |            85.4 |     620 |     84.5
+ UK Manufacturer     | 2025H1          |     496 |              95.2 |   554 |            85.2 |     496 |     84.5
+ UK Manufacturer     | 2025H2          |     250 |              96.8 |   277 |            87.4 |     250 |     86.8
+(16 rows)
+
+ supplier_code |             supplier_name             |    supplier_type    | n_receipts | n_first | on_time_first_pct | on_time_all_pct | split_delivery_rate_pct | sites_supplied 
+---------------+---------------------------------------+---------------------+------------+---------+-------------------+-----------------+-------------------------+----------------
+ SELBY         | Selby Import Partners Ltd             | Far East Importer   |         44 |      40 |              62.5 |            56.8 |                     8.5 |              4
+ VERND         | Vernedale Import Company Ltd          | Far East Importer   |         62 |      55 |              65.5 |            59.7 |                    11.1 |              4
+ YARLT         | Yarlton Trading Company Ltd           | Far East Importer   |         58 |      51 |              66.7 |            58.6 |                    12.1 |              4
+ WROXH         | Wroxham Overseas Supply Ltd           | Far East Importer   |         74 |      68 |              67.6 |            62.2 |                     8.1 |              4
+ TANFD         | Tanfield Sourcing Ltd                 | Far East Importer   |         49 |      43 |              69.8 |            61.2 |                    12.2 |              4
+ UPTON         | Upton Global Sourcing Ltd             | Far East Importer   |         64 |      55 |              74.5 |            65.6 |                    14.1 |              4
+ ORMSK         | Ormskirk Supply Partners Ltd          | UK / EU Distributor |         97 |      85 |              77.6 |            69.1 |                    12.0 |              4
+ LANGD         | Langdale Industrial Supply Ltd        | UK / EU Distributor |         59 |      50 |              80.0 |            69.5 |                    15.3 |              1
+ KELSO         | Kelso Valve & Control Ltd             | Small Specialist    |        204 |     166 |              81.3 |            67.6 |                    18.7 |              3
+ MERID         | Meridian Pacific Trading Ltd          | Far East Importer   |        310 |     283 |              85.2 |            78.7 |                     8.9 |              4
+ PENRT         | Penruth Distribution Ltd              | UK / EU Distributor |        260 |     218 |              85.8 |            72.7 |                    15.7 |              4
+ IRWEL         | Irwell Building Supplies plc          | UK / EU Distributor |         86 |      75 |              88.0 |            79.1 |                    12.4 |              4
+ BEWLY         | Bewley Instrumentation Ltd            | Small Specialist    |         55 |      42 |              88.1 |            67.3 |                    24.6 |              4
+ NEWLY         | Newlyn Technical Products Ltd         | UK / EU Distributor |        152 |     134 |              88.8 |            78.3 |                    11.8 |              4
+ QUEND         | Quendon Trade Supply Ltd              | UK / EU Distributor |         51 |      46 |              89.1 |            82.4 |                     9.4 |              2
+ CROMR         | Cromer Specialist Heating Ltd         | Small Specialist    |         47 |      37 |              89.2 |            72.3 |                    20.8 |              3
+ DUNKD         | Dunkeld Water Systems Ltd             | Small Specialist    |         11 |      10 |              90.0 |            81.8 |                     9.1 |              1
+ KENTM         | Kentmere Trade Distribution Ltd       | UK / EU Distributor |        101 |      87 |              92.0 |            80.2 |                    14.4 |              2
+ MARSD         | Marsden Group Distribution Ltd        | UK / EU Distributor |        136 |     120 |              92.5 |            82.4 |                    11.6 |              4
+ RAVNS         | Ravensworth Wholesale Ltd             | UK / EU Distributor |         55 |      45 |              93.3 |            78.2 |                    18.2 |              3
+ EASTN         | Easton Ventilation Products Ltd       | UK Manufacturer     |        276 |     249 |              94.8 |            85.5 |                     9.6 |              4
+ ARDEN         | Arden Heating Components Ltd          | UK Manufacturer     |       1090 |     991 |              94.9 |            86.2 |                     9.1 |              4
+ CHARN         | Charnley Electrical Manufacturing Ltd | UK Manufacturer     |        163 |     144 |              95.1 |            84.0 |                    11.4 |              4
+ GRANH         | Granham Thermal Ltd                   | UK Manufacturer     |        102 |      93 |              95.7 |            87.3 |                     8.7 |              4
+ JARVS         | Jarvis Wholesale Distribution Ltd     | UK / EU Distributor |         61 |      52 |              96.2 |            82.0 |                    14.3 |              2
+ FOXLY         | Foxley Drainage Systems Ltd           | UK Manufacturer     |        155 |     144 |              96.5 |            89.7 |                     7.0 |              4
+ HALDN         | Haldane Sealants & Adhesives Ltd      | UK Manufacturer     |        164 |     144 |              96.5 |            84.8 |                    12.2 |              4
+ DERWT         | Derwent Valve Company Ltd             | UK Manufacturer     |         96 |      88 |              96.6 |            88.5 |                     8.0 |              4
+ BRAMW         | Bramwell Copper Works Ltd             | UK Manufacturer     |        159 |     151 |              96.7 |            91.8 |                     4.9 |              4
+(29 rows)
+
+ supplier_code |             supplier_name             |    supplier_type    | n_2024h1 | pct_2024h1 | n_2024h2 | pct_2024h2 | n_2025h1 | pct_2025h1 | n_2025h2 | pct_2025h2 | change_points | meets_minimum_n 
+---------------+---------------------------------------+---------------------+----------+------------+----------+------------+----------+------------+----------+------------+---------------+-----------------
+ MERID         | Meridian Pacific Trading Ltd          | Far East Importer   |      100 |       95.0 |       82 |       93.9 |       68 |       79.4 |       33 |       45.5 |         -49.5 | yes
+ SELBY         | Selby Import Partners Ltd             | Far East Importer   |       12 |       58.3 |       18 |       61.1 |        6 |      100.0 |        4 |       25.0 |         -33.3 | no — thin cell
+ LANGD         | Langdale Industrial Supply Ltd        | UK / EU Distributor |       15 |      100.0 |       16 |       75.0 |       11 |       63.6 |        8 |       75.0 |         -25.0 | no — thin cell
+ DUNKD         | Dunkeld Water Systems Ltd             | Small Specialist    |        5 |      100.0 |          |            |        1 |      100.0 |        4 |       75.0 |         -25.0 | no — thin cell
+ TANFD         | Tanfield Sourcing Ltd                 | Far East Importer   |       18 |       72.2 |       11 |       72.7 |       10 |       70.0 |        4 |       50.0 |         -22.2 | no — thin cell
+ YARLT         | Yarlton Trading Company Ltd           | Far East Importer   |       14 |       71.4 |       14 |       71.4 |       13 |       69.2 |       10 |       50.0 |         -21.4 | no — thin cell
+ CROMR         | Cromer Specialist Heating Ltd         | Small Specialist    |       11 |       81.8 |        8 |       87.5 |       14 |      100.0 |        4 |       75.0 |          -6.8 | no — thin cell
+ CHARN         | Charnley Electrical Manufacturing Ltd | UK Manufacturer     |       39 |      100.0 |       42 |       92.9 |       46 |       93.5 |       17 |       94.1 |          -5.9 | yes
+ EASTN         | Easton Ventilation Products Ltd       | UK Manufacturer     |       78 |       96.2 |       92 |       95.7 |       57 |       93.0 |       22 |       90.9 |          -5.2 | yes
+ MARSD         | Marsden Group Distribution Ltd        | UK / EU Distributor |       39 |       97.4 |       41 |       87.8 |       27 |       92.6 |       13 |       92.3 |          -5.1 | no — thin cell
+ DERWT         | Derwent Valve Company Ltd             | UK Manufacturer     |       25 |       96.0 |       27 |       96.3 |       24 |      100.0 |       12 |       91.7 |          -4.3 | no — thin cell
+ NEWLY         | Newlyn Technical Products Ltd         | UK / EU Distributor |       39 |       92.3 |       38 |       92.1 |       40 |       82.5 |       17 |       88.2 |          -4.1 | yes
+ WROXH         | Wroxham Overseas Supply Ltd           | Far East Importer   |       27 |       74.1 |       20 |       60.0 |       11 |       63.6 |       10 |       70.0 |          -4.1 | no — thin cell
+ HALDN         | Haldane Sealants & Adhesives Ltd      | UK Manufacturer     |       38 |       97.4 |       40 |       95.0 |       41 |       97.6 |       25 |       96.0 |          -1.4 | yes
+ RAVNS         | Ravensworth Wholesale Ltd             | UK / EU Distributor |       14 |      100.0 |       15 |       86.7 |       12 |       91.7 |        4 |      100.0 |           0.0 | no — thin cell
+ VERND         | Vernedale Import Company Ltd          | Far East Importer   |       18 |       83.3 |       16 |       50.0 |       15 |       53.3 |        6 |       83.3 |           0.0 | no — thin cell
+ BRAMW         | Bramwell Copper Works Ltd             | UK Manufacturer     |       45 |       93.3 |       51 |       98.0 |       32 |      100.0 |       23 |       95.7 |           2.3 | yes
+ ARDEN         | Arden Heating Components Ltd          | UK Manufacturer     |      335 |       95.8 |      308 |       93.2 |      228 |       93.9 |      120 |       98.3 |           2.5 | yes
+ FOXLY         | Foxley Drainage Systems Ltd           | UK Manufacturer     |       44 |       95.5 |       40 |       95.0 |       39 |       97.4 |       21 |      100.0 |           4.5 | yes
+ IRWEL         | Irwell Building Supplies plc          | UK / EU Distributor |       25 |       84.0 |       19 |       89.5 |       22 |       90.9 |        9 |       88.9 |           4.9 | no — thin cell
+ JARVS         | Jarvis Wholesale Distribution Ltd     | UK / EU Distributor |       20 |       95.0 |       18 |       94.4 |        8 |      100.0 |        6 |      100.0 |           5.0 | no — thin cell
+ GRANH         | Granham Thermal Ltd                   | UK Manufacturer     |       34 |       94.1 |       20 |       95.0 |       29 |       96.6 |       10 |      100.0 |           5.9 | no — thin cell
+ PENRT         | Penruth Distribution Ltd              | UK / EU Distributor |       55 |       83.6 |       62 |       83.9 |       63 |       85.7 |       38 |       92.1 |           8.5 | yes
+ QUEND         | Quendon Trade Supply Ltd              | UK / EU Distributor |       20 |       90.0 |       14 |       78.6 |        7 |      100.0 |        5 |      100.0 |          10.0 | no — thin cell
+ KENTM         | Kentmere Trade Distribution Ltd       | UK / EU Distributor |       31 |       87.1 |       20 |       95.0 |       23 |       91.3 |       13 |      100.0 |          12.9 | no — thin cell
+ BEWLY         | Bewley Instrumentation Ltd            | Small Specialist    |       13 |       76.9 |       13 |       92.3 |       12 |       91.7 |        4 |      100.0 |          23.1 | no — thin cell
+ ORMSK         | Ormskirk Supply Partners Ltd          | UK / EU Distributor |       26 |       53.8 |       26 |       92.3 |       23 |       87.0 |       10 |       80.0 |          26.2 | no — thin cell
+ UPTON         | Upton Global Sourcing Ltd             | Far East Importer   |       18 |       72.2 |       19 |       73.7 |       11 |       63.6 |        7 |      100.0 |          27.8 | no — thin cell
+ KELSO         | Kelso Valve & Control Ltd             | Small Specialist    |       36 |       58.3 |       58 |       82.8 |       51 |       92.2 |       21 |       90.5 |          32.1 | yes
+(29 rows)
+
+ supplier_code |        supplier_name         | order_half_year | n_first | on_time_first_pct | n_all | on_time_all_pct | mean_days_over_quoted | n_network | network_on_time_first_pct | points_above_network 
+---------------+------------------------------+-----------------+---------+-------------------+-------+-----------------+-----------------------+-----------+---------------------------+----------------------
+ KELSO         | Kelso Valve & Control Ltd    | 2024H1          |      36 |              58.3 |    44 |            50.0 |                   7.4 |      1194 |                      90.3 |                -32.0
+ KELSO         | Kelso Valve & Control Ltd    | 2024H2          |      58 |              82.8 |    70 |            70.0 |                   8.4 |      1148 |                      89.5 |                 -6.7
+ KELSO         | Kelso Valve & Control Ltd    | 2025H1          |      51 |              92.2 |    63 |            74.6 |                   7.9 |       944 |                      89.9 |                  2.3
+ KELSO         | Kelso Valve & Control Ltd    | 2025H2          |      21 |              90.5 |    27 |            74.1 |                   6.9 |       480 |                      88.5 |                  2.0
+ MERID         | Meridian Pacific Trading Ltd | 2024H1          |     100 |              95.0 |   105 |            91.4 |                  21.3 |      1194 |                      90.3 |                  4.7
+ MERID         | Meridian Pacific Trading Ltd | 2024H2          |      82 |              93.9 |    91 |            85.7 |                  21.1 |      1148 |                      89.5 |                  4.4
+ MERID         | Meridian Pacific Trading Ltd | 2025H1          |      68 |              79.4 |    75 |            73.3 |                  26.0 |       944 |                      89.9 |                -10.5
+ MERID         | Meridian Pacific Trading Ltd | 2025H2          |      33 |              45.5 |    39 |            38.5 |                  26.8 |       480 |                      88.5 |                -43.0
+(8 rows)
+
+    supplier_type    | lines_ordered_after_cutoff | lines_with_no_receipt | unreceived_pct | n_first_measurable | on_time_first_pct_truncated |             caveat              
+---------------------+----------------------------+-----------------------+----------------+--------------------+-----------------------------+---------------------------------
+ Far East Importer   |                         85 |                    68 |           80.0 |                 14 |                        85.7 | Not comparable — survivors only
+ Small Specialist    |                         46 |                    17 |           37.0 |                 28 |                       100.0 | Not comparable — survivors only
+ UK / EU Distributor |                        149 |                    20 |           13.4 |                129 |                        90.7 | Not comparable — survivors only
+ UK Manufacturer     |                        322 |                    34 |           10.6 |                277 |                        94.9 | Not comparable — survivors only
+(4 rows)
+
+    supplier_type    | suppliers | total_first_receipts | type_on_time_pct | worst_supplier_pct | best_supplier_pct | spread_within_type | stddev_within_type 
+---------------------+-----------+----------------------+------------------+--------------------+-------------------+--------------------+--------------------
+ Far East Importer   |         7 |                  595 |             76.1 |               62.5 |              85.2 |               22.7 |                7.6
+ UK / EU Distributor |        10 |                  912 |             87.9 |               77.6 |              96.2 |               18.5 |                5.8
+ Small Specialist    |         3 |                  245 |             83.9 |               81.3 |              89.2 |                7.9 |                4.3
+ UK Manufacturer     |         8 |                 2004 |             95.4 |               94.8 |              96.7 |                1.9 |                0.8
+(4 rows)
+
+    supplier_type    | largest_supplier | largest_supplier_receipts | order_half_year | n_all_suppliers | on_time_all_suppliers_pct | n_excluding_largest | on_time_excluding_largest_pct 
+---------------------+------------------+---------------------------+-----------------+-----------------+---------------------------+---------------------+-------------------------------
+ Far East Importer   | MERID            |                       315 | 2024H1          |             207 |                      83.6 |                 107 |                          72.9
+ Far East Importer   | MERID            |                       315 | 2024H2          |             180 |                      77.8 |                  98 |                          64.3
+ Far East Importer   | MERID            |                       315 | 2025H1          |             134 |                      73.1 |                  66 |                          66.7
+ Far East Importer   | MERID            |                       315 | 2025H2          |              74 |                      56.8 |                  41 |                          65.9
+ Small Specialist    | KELSO            |                       209 | 2024H1          |              65 |                      69.2 |                  29 |                          82.8
+ Small Specialist    | KELSO            |                       209 | 2024H2          |              79 |                      84.8 |                  21 |                          90.5
+ Small Specialist    | KELSO            |                       209 | 2025H1          |              78 |                      93.6 |                  27 |                          96.3
+ Small Specialist    | KELSO            |                       209 | 2025H2          |              33 |                      87.9 |                  12 |                          83.3
+ UK / EU Distributor | PENRT            |                       268 | 2024H1          |             284 |                      87.3 |                 229 |                          88.2
+ UK / EU Distributor | PENRT            |                       268 | 2024H2          |             269 |                      87.7 |                 207 |                          88.9
+ UK / EU Distributor | PENRT            |                       268 | 2025H1          |             236 |                      87.3 |                 173 |                          87.9
+ UK / EU Distributor | PENRT            |                       268 | 2025H2          |             123 |                      91.1 |                  85 |                          90.6
+ UK Manufacturer     | ARDEN            |                      1116 | 2024H1          |             638 |                      95.9 |                 303 |                          96.0
+ UK Manufacturer     | ARDEN            |                      1116 | 2024H2          |             620 |                      94.4 |                 312 |                          95.5
+ UK Manufacturer     | ARDEN            |                      1116 | 2025H1          |             496 |                      95.2 |                 268 |                          96.3
+ UK Manufacturer     | ARDEN            |                      1116 | 2025H2          |             250 |                      96.8 |                 130 |                          95.4
+(16 rows)
+
+                             measure                              | value  
+------------------------------------------------------------------+--------
+ Goods receipt lines — source table                               |   4853
+ Goods receipt lines — vw_receipt_performance                     |   4853
+ Purchase order lines — source table                              |   4457
+ Purchase order lines — vw_line_completion                        |   4457
+ Units received — goods_receipt_line                              | 589897
+ Units received — vw_line_completion (pre-aggregated, no fan-out) | 589897
+ Lines where received exceeds ordered (must be 0)                 |      0
+(7 rows)
+

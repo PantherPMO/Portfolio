@@ -1,0 +1,131 @@
+    supplier_type    | purchase_lines | lines_where_minimum_binds | minimum_binds_pct | lines_ordered_at_minimum | ordered_at_minimum_pct | mean_minimum_order_quantity | mean_policy_reorder_quantity | mean_quoted_lead_days 
+---------------------+----------------+---------------------------+-------------------+--------------------------+------------------------+-----------------------------+------------------------------+-----------------------
+ UK Manufacturer     |           1079 |                         0 |               0.0 |                        0 |                    0.0 |                          31 |                          116 |                     7
+ UK / EU Distributor |            522 |                        36 |               6.9 |                       55 |                   10.5 |                          34 |                           72 |                    14
+ Far East Importer   |            303 |                       298 |              98.3 |                      301 |                   99.3 |                         405 |                          149 |                    55
+ Small Specialist    |            159 |                         0 |               0.0 |                        0 |                    0.0 |                          10 |                           35 |                    21
+(4 rows)
+
+    supplier_type    | purchase_lines | units_ordered | minimum_increment_units | increment_share_of_units_pct | purchase_value_gbp | increment_value_gbp | increment_share_of_value_pct | buyer_discretion_value_gbp 
+---------------------+----------------+---------------+-------------------------+------------------------------+--------------------+---------------------+------------------------------+----------------------------
+ All sources         |           2063 |        306872 |                   77991 |                         25.4 |            9836842 |              995659 |                         10.1 |                     866300
+ Far East Importer   |            303 |        122829 |                   77810 |                         63.3 |            1635996 |              977541 |                         59.8 |                          3
+ UK / EU Distributor |            522 |         38504 |                     181 |                          0.5 |            2602625 |               18118 |                          0.7 |                      16182
+ UK Manufacturer     |           1079 |        139934 |                       0 |                          0.0 |            5370753 |                   0 |                          0.0 |                     850001
+ Small Specialist    |            159 |          5605 |                       0 |                          0.0 |             227468 |                   0 |                          0.0 |                        114
+(5 rows)
+
+ warehouse_code | purchase_lines | purchase_value_gbp | increment_value_gbp | increment_share_pct | import_line_share_pct | mean_quoted_lead_days 
+----------------+----------------+--------------------+---------------------+---------------------+-----------------------+-----------------------
+ BRS            |            407 |            1399914 |              336242 |                24.0 |                  14.3 |                  16.4
+ DAV            |           1058 |            5145435 |              251095 |                 4.9 |                  10.2 |                  15.2
+ LIV            |            158 |            1393978 |              224582 |                16.1 |                  41.1 |                  28.2
+ WAR            |            440 |            1897515 |              183740 |                 9.7 |                  16.4 |                  17.5
+(4 rows)
+
+ category_code |        category_name        | purchase_lines | purchase_value_gbp | increment_value_gbp | increment_share_pct 
+---------------+-----------------------------+----------------+--------------------+---------------------+---------------------
+ RENW          | Renewables & Heat Pumps     |            233 |            3994630 |              319488 |                 8.0
+ PIPE          | Pipe & Fittings             |            348 |            1008379 |              218018 |                21.6
+ ELEC          | Electrical & Cable          |            334 |            1560546 |              153798 |                 9.9
+ HEAT          | Heating & Boilers           |            178 |             853609 |               91324 |                10.7
+ DRAIN         | Drainage & Water Management |            256 |            1160343 |               67125 |                 5.8
+ VALV          | Valves & Controls           |            260 |             396816 |               66748 |                16.8
+ TOOL          | Tools & Consumables         |            272 |             202280 |               50912 |                25.2
+ VENT          | Ventilation & Air Movement  |            182 |             660240 |               28245 |                 4.3
+(8 rows)
+
+    supplier_type    | increment_bought_2025_gbp | mean_incremental_cycle_stock_gbp | annual_holding_cost_gbp | holding_cost_at_20pct_gbp | holding_cost_at_25pct_gbp 
+---------------------+---------------------------+----------------------------------+-------------------------+---------------------------+---------------------------
+ All sources         |                    995659 |                           497830 |                  109523 |                     99566 |                    124457
+ Far East Importer   |                    977541 |                           488771 |                  107530 |                     97754 |                    122193
+ UK / EU Distributor |                     18118 |                             9059 |                    1993 |                      1812 |                      2265
+ UK Manufacturer     |                         0 |                                0 |                       0 |                         0 |                         0
+ Small Specialist    |                         0 |                                0 |                       0 |                         0 |                         0
+(5 rows)
+
+               partition_bucket                | units | value_gbp | share_pct 
+-----------------------------------------------+-------+-----------+-----------
+ Closing stock at 2025-12-28                   | 77492 |   1711042 |     100.0
+ Bucket 1 — cover to the reorder point         | 38841 |    836830 |      48.9
+ Bucket 3 — above the policy ceiling (file 04) | 11941 |    134701 |       7.9
+ Bucket 2 — authorised by the policy ceiling   | 26710 |    739510 |      43.2
+(4 rows)
+
+          last_supplier_type           | positions | units_on_hand | stock_value_gbp | positions_where_minimum_bound | units_bounded_to_minimum | value_bounded_to_minimum_gbp | bound_share_of_stock_pct 
+---------------------------------------+-----------+---------------+-----------------+-------------------------------+--------------------------+------------------------------+--------------------------
+ All positions                         |       515 |         77492 |         1711042 |                           167 |                    30639 |                       336205 |                     19.6
+ Far East Importer                     |       165 |         46574 |          450449 |                           162 |                    30628 |                       335194 |                     74.4
+ UK / EU Distributor                   |        91 |         10600 |          474193 |                             5 |                       11 |                         1010 |                      0.2
+ No 2025 purchase against the position |         8 |           439 |           20568 |                             0 |                        0 |                            0 |                      0.0
+ Small Specialist                      |        29 |           677 |           31759 |                             0 |                        0 |                            0 |                      0.0
+ UK Manufacturer                       |       222 |         19202 |          734072 |                             0 |                        0 |                            0 |                      0.0
+(6 rows)
+
+ last_supplier_type | positions | mean_lead_days_used | mean_shortest_available_days | mean_extra_lead_days | pipeline_premium_gbp | annual_holding_cost_gbp 
+--------------------+-----------+---------------------+------------------------------+----------------------+----------------------+-------------------------
+ Far East Importer  |       134 |                55.0 |                         10.6 |                 44.4 |               276224 |                   60769
+ All sources        |       134 |                55.0 |                         10.6 |                 44.4 |               276224 |                   60769
+(2 rows)
+
+ warehouse_code | positions | stock_value_gbp | n_imported | import_share_of_positions_pct | import_share_of_value_pct | mean_lead_days_used | value_bounded_to_minimum_gbp | mean_cover_weeks 
+----------------+-----------+-----------------+------------+-------------------------------+---------------------------+---------------------+------------------------------+------------------
+ BRS            |        90 |          209230 |         38 |                          42.2 |                      64.3 |                29.0 |                       121131 |             20.9
+ LIV            |        70 |          397597 |         42 |                          60.9 |                      44.7 |                36.9 |                       105862 |             27.6
+ WAR            |       105 |          301361 |         40 |                          38.5 |                      29.3 |                27.3 |                        72303 |             13.3
+ DAV            |       250 |          802854 |         45 |                          18.4 |                       6.3 |                18.5 |                        36908 |             21.6
+(4 rows)
+
+ minimum_in_weeks_band | positions | stock_value_gbp | mean_cover_weeks | value_bounded_to_minimum_gbp | n_imported 
+-----------------------+-----------+-----------------+------------------+------------------------------+------------
+ 1 — up to 1 month     |       253 |          946051 |             10.1 |                            0 |          0
+ 2 — 1 to 3 months     |        78 |          235328 |             28.7 |                         8904 |         14
+ 3 — 3 to 6 months     |        54 |          135070 |             19.2 |                        81382 |         51
+ 4 — over 6 months     |        91 |          288967 |             39.2 |                       216111 |         90
+ 5 — no current demand |        34 |           97141 |                  |                        29807 |         10
+ 6 — no 2025 purchase  |         5 |            8484 |             94.9 |                            0 |          0
+(6 rows)
+
+                           measure                            | positions | value_gbp 
+--------------------------------------------------------------+-----------+-----------
+ Buy-ahead positions matched at the closing snapshot          |        87 |          
+ Excess units ordered in the February window                  |           |     12291
+ Units issued from those positions since receipt              |           |     27395
+ Closing stock on those positions at 2025-12-28               |        83 |    356048
+ Loose bound — ignores issues since receipt                   |        83 |    355381
+ Tight bound — nets off issues since receipt (file 15 method) |         8 |      6971
+ Of the tight bound, also above the policy ceiling            |           |      6432
+(7 rows)
+
+                         component                          | value_gbp |             time_basis             
+------------------------------------------------------------+-----------+------------------------------------
+ Minimum-order increment bought during 2025 (flow)          |    995659 | twelve months of purchasing
+ Average incremental cycle stock it leaves standing (level) |    497830 | one instant, derived from the flow
+ Annual holding cost on that level at 22%                   |    109523 | twelve months
+ Minimum-order bound in closing stock at 2025-12-28 (level) |    336205 | one instant, measured directly
+(4 rows)
+
+    sku     | category_code | warehouse_code | last_supplier_type | last_quantity_ordered | last_minimum_order_quantity | reorder_quantity_units | last_minimum_increment_units | minimum_in_weeks_of_demand | quantity_on_hand | stock_value_gbp | cover_weeks | value_bounded_to_minimum_gbp | last_quoted_lead_days | shortest_lead_days 
+------------+---------------+----------------+--------------------+-----------------------+-----------------------------+------------------------+------------------------------+----------------------------+------------------+-----------------+-------------+------------------------------+-----------------------+--------------------
+ PIPE-1201  | PIPE          | BRS            | Far East Importer  |                  5061 |                        5061 |                    763 |                         4298 |                       42.5 |             5069 |           50234 |        42.6 |                        42593 |                    55 |                  7
+ RENW-1000  | RENW          | LIV            | Far East Importer  |                    42 |                          42 |                     23 |                           19 |                       36.4 |               32 |           42441 |        27.7 |                        25200 |                    55 |                  7
+ RENW-1000  | RENW          | WAR            | Far East Importer  |                    42 |                          42 |                     16 |                           26 |                       17.1 |               11 |           14637 |         4.5 |                        14637 |                    55 |                  7
+ PIPE-1044  | PIPE          | WAR            | Far East Importer  |                  1666 |                        1666 |                    539 |                         1127 |                       32.7 |             1470 |           16567 |        28.9 |                        12701 |                    55 |                 14
+ ELEC-1049  | ELEC          | LIV            | Far East Importer  |                   870 |                         870 |                    478 |                          392 |                       30.6 |              632 |           17468 |        22.2 |                        10835 |                    55 |                  7
+ HEAT-1016  | HEAT          | BRS            | Far East Importer  |                    66 |                          66 |                      6 |                           60 |                            |               28 |           10774 |             |                        10774 |                    55 |                  7
+ DRAIN-1095 | DRAIN         | BRS            | Far East Importer  |                   144 |                         144 |                     25 |                          119 |                       44.6 |              139 |           12354 |        43.0 |                        10577 |                    55 |                  7
+ PIPE-1044  | PIPE          | LIV            | Far East Importer  |                  1666 |                        1666 |                    790 |                          876 |                       24.8 |             2500 |           27575 |        37.2 |                         9662 |                    55 |                 14
+ PIPE-1201  | PIPE          | LIV            | Far East Importer  |                  5061 |                        5061 |                   2399 |                         2662 |                       35.6 |              894 |            8663 |         6.3 |                         8663 |                    55 |                  7
+ DRAIN-1158 | DRAIN         | BRS            | Far East Importer  |                   264 |                         264 |                     46 |                          218 |                       27.0 |              132 |            7891 |        13.5 |                         7891 |                    55 |                  7
+ HEAT-1203  | HEAT          | BRS            | Far East Importer  |                    30 |                          30 |                      5 |                           25 |                       39.0 |               16 |            7628 |        20.8 |                         7628 |                    55 |                  7
+ RENW-1087  | RENW          | LIV            | Far East Importer  |                    36 |                          36 |                     27 |                            9 |                       21.3 |               14 |           10944 |         8.3 |                         7035 |                    55 |                  7
+ ELEC-1184  | ELEC          | WAR            | Far East Importer  |                   273 |                         273 |                     91 |                          182 |                       18.9 |               87 |            6940 |         6.0 |                         6940 |                    55 |                 14
+ HEAT-1203  | HEAT          | LIV            | Far East Importer  |                    30 |                          30 |                     15 |                           15 |                       18.6 |               12 |            5819 |         7.4 |                         5819 |                    55 |                  7
+ DRAIN-1095 | DRAIN         | LIV            | Far East Importer  |                   144 |                         144 |                     79 |                           65 |                       33.4 |              127 |           11331 |        29.5 |                         5799 |                    55 |                  7
+ DRAIN-1016 | DRAIN         | BRS            | Far East Importer  |                   120 |                         120 |                     24 |                           96 |                      111.4 |              122 |            7160 |       113.3 |                         5634 |                    55 |                  7
+ ELEC-1046  | ELEC          | WAR            | Far East Importer  |                   196 |                         196 |                     54 |                          142 |                            |              244 |            9228 |             |                         5370 |                    55 |                 14
+ ELEC-1046  | ELEC          | DAV            | Far East Importer  |                   196 |                         196 |                     54 |                          142 |                            |              129 |            4798 |             |                         4798 |                    55 |                 14
+ VALV-1084  | VALV          | WAR            | Far East Importer  |                    84 |                          84 |                     32 |                           52 |                       21.0 |               54 |            4361 |        13.5 |                         4199 |                    55 |                 21
+ HEAT-1064  | HEAT          | BRS            | Far East Importer  |                    24 |                          24 |                      5 |                           19 |                      312.0 |               27 |            5955 |       351.0 |                         4190 |                    55 |                  7
+(20 rows)
+

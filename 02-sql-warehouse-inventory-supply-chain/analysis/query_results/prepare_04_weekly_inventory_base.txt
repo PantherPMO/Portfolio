@@ -1,0 +1,27 @@
+SET
+DROP MATERIALIZED VIEW
+SELECT 51220
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+ANALYZE
+ snapshot_rows | base_rows | duplicated_keys | result 
+---------------+-----------+-----------------+--------
+         51220 |     51220 |               0 | PASS
+(1 row)
+
+                 measure                  | source_value | base_value 
+------------------------------------------+--------------+------------
+ Sales issue units                        |       576187 |     576187
+ Demand units (non-cancelled order lines) |       629434 |     627335
+ Closing stock value at 2025-12-28        |   1711041.86 | 1711041.86
+(3 rows)
+
+ warehouse_code | rows  | skus | weeks | rows_without_cover | mean_cover_weeks | mean_policy_age_months 
+----------------+-------+------+-------+--------------------+------------------+------------------------
+ BRS            |  7020 |   90 |    78 |                253 |             17.6 |                   10.8
+ DAV            | 26000 |  250 |   104 |               2209 |             22.8 |                   11.7
+ LIV            |  7280 |   70 |   104 |                147 |             33.4 |                   10.8
+ WAR            | 10920 |  105 |   104 |                216 |             16.3 |                   10.3
+(4 rows)
+

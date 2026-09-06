@@ -1,0 +1,121 @@
+              population              | positions | stock_value_gbp 
+--------------------------------------+-----------+-----------------
+ Stocked positions at 2025-12-28      |       515 |         1711042
+ With demand in the trailing 13 weeks |       481 |         1613900
+ With a known source actually used    |       514 |         1710163
+ With six or more quarters of demand  |       493 |         1657934
+ Assessable for alignment (all three) |       467 |         1586486
+(5 rows)
+
+ reorder_point_multiple_of_lead_time_demand | reorder_quantity_weeks_of_demand | calibration_lines | lines_assessed 
+--------------------------------------------+----------------------------------+-------------------+----------------
+                                       3.05 |                             9.41 |               204 |            467
+(1 row)
+
+ demand_direction | lines | mean_reorder_point_weeks | mean_lead_time_weeks | median_alignment_ratio | n_thin | n_in_line | n_deep | mean_policy_age_months | mean_cover_weeks 
+------------------+-------+--------------------------+----------------------+------------------------+--------+-----------+--------+------------------------+------------------
+ broadly flat     |   204 |                      8.3 |                  3.1 |                   1.00 |     54 |        92 |     58 |                   12.0 |             15.8
+ falling          |   168 |                     14.2 |                  3.2 |                   1.33 |     27 |        68 |     73 |                   10.2 |             27.3
+ rising           |    95 |                      5.2 |                  3.1 |                   0.68 |     40 |        41 |     14 |                   10.7 |              9.3
+(3 rows)
+
+   policy_age_band   | lines | mean_age_months | in_line_pct | thin_pct | deep_pct | median_alignment_ratio | mean_absolute_log_departure 
+---------------------+-------+-----------------+-------------+----------+----------+------------------------+-----------------------------
+ 1 — under 6 months  |   141 |             3.4 |        41.1 |     27.0 |     31.9 |                   1.05 |                       0.789
+ 2 — 6 to 12 months  |   156 |             8.9 |        43.6 |     27.6 |     28.8 |                   0.98 |                       0.754
+ 3 — 12 to 18 months |    75 |            13.8 |        41.3 |     22.7 |     36.0 |                   0.91 |                       0.734
+ 4 — over 18 months  |    95 |            23.9 |        46.3 |     24.2 |     29.5 |                   0.98 |                       0.700
+(4 rows)
+
+                     association                     | lines | correlation | slope_per_month | r_squared 
+-----------------------------------------------------+-------+-------------+-----------------+-----------
+ Policy age against absolute departure from the rule |   467 |      -0.066 |        -0.00540 |    0.0044
+(1 row)
+
+    review_recency    | alignment  | lines | cell_note | mean_age_months | stock_value_gbp | mean_cover_weeks | unmet_units_pct | days_at_zero_pct 
+----------------------+------------+-------+-----------+-----------------+-----------------+------------------+-----------------+------------------
+ 1 — within 15 months | aligned    |   152 |           |             7.7 |          571271 |             11.6 |            6.21 |             3.06
+ 1 — within 15 months | misaligned |   208 |           |             7.4 |          667649 |             23.7 |            9.02 |             4.06
+ 2 — over 15 months   | aligned    |    49 |           |            22.8 |          184260 |             12.4 |            5.46 |             3.53
+ 2 — over 15 months   | misaligned |    58 |           |            23.4 |          163306 |             24.0 |            6.75 |             4.01
+(4 rows)
+
+           alignment_band            | lines | stock_value_gbp | annual_holding_cost_gbp | mean_cover_weeks | mean_reorder_point_weeks | unmet_units_pct | unmet_value_2025_gbp | days_at_zero_pct | mean_policy_age_months 
+-------------------------------------+-------+-----------------+-------------------------+------------------+--------------------------+-----------------+----------------------+------------------+------------------------
+ 1 — set thin against current demand |   121 |          438994 |                   96579 |             13.3 |                      5.7 |           11.62 |               505019 |             7.28 |                   10.7
+ 2 — in line with the network rule   |   201 |          755531 |                  166217 |             11.8 |                      7.1 |            5.97 |               436474 |             3.18 |                   11.4
+ 3 — set deep against current demand |   145 |          391962 |                   86232 |             32.4 |                     17.1 |            2.79 |                41426 |             1.36 |                   11.0
+(3 rows)
+
+ category_code |        category_name        | lines | mean_age_months | mean_demand_slope_pct | median_alignment_ratio | n_recent | n_old | recent_in_line_pct | old_in_line_pct 
+---------------+-----------------------------+-------+-----------------+-----------------------+------------------------+----------+-------+--------------------+-----------------
+ RENW          | Renewables & Heat Pumps     |    40 |            12.1 |                   5.4 |                   0.81 |       31 |     9 |               58.1 |            44.4
+ VALV          | Valves & Controls           |    58 |             9.5 |                  -0.9 |                   0.89 |       51 |     7 |               37.3 |            71.4
+ ELEC          | Electrical & Cable          |    70 |            10.5 |                  -1.3 |                   0.85 |       53 |    17 |               45.3 |            23.5
+ PIPE          | Pipe & Fittings             |    86 |            11.1 |                  -1.3 |                   1.19 |       64 |    22 |               35.9 |            50.0
+ VENT          | Ventilation & Air Movement  |    40 |            13.1 |                  -1.8 |                   1.68 |       27 |    13 |               40.7 |             0.0
+ TOOL          | Tools & Consumables         |    81 |            10.7 |                  -3.4 |                   1.03 |       65 |    16 |               38.5 |            68.8
+ DRAIN         | Drainage & Water Management |    53 |            10.8 |                  -3.6 |                   0.89 |       41 |    12 |               31.7 |            58.3
+ HEAT          | Heating & Boilers           |    39 |            12.6 |                  -3.9 |                   1.07 |       28 |    11 |               67.9 |            63.6
+(8 rows)
+
+     review_method      | lines | mean_age_months | median_alignment_ratio | in_line_pct | mean_cover_weeks | unmet_units_pct | stock_value_gbp 
+------------------------+-------+-----------------+------------------------+-------------+------------------+-----------------+-----------------
+ Min/max                |   273 |            11.0 |                   0.96 |        43.2 |             18.3 |            8.68 |          795542
+ Periodic review        |   137 |            11.2 |                   1.00 |        40.9 |             18.2 |            6.35 |          617777
+ Manual buyer judgement |    57 |            11.3 |                   1.03 |        47.4 |             21.3 |            4.08 |          173167
+(3 rows)
+
+       grouping       | lines | mean_age_months | mean_reorder_point_weeks | mean_cover_weeks | median_alignment_ratio | thin_pct | days_at_zero_pct | unmet_units_pct 
+----------------------+-------+-----------------+--------------------------+------------------+------------------------+----------+------------------+-----------------
+ All other categories |   427 |            11.0 |                     10.3 |             19.7 |                   0.99 |     26.0 |             3.44 |            7.38
+ Renewables           |    40 |            12.1 |                      4.6 |              7.4 |                   0.81 |     25.0 |             6.20 |            8.62
+(2 rows)
+
+       cover_group       | lines | stock_value_gbp | n_set_deep | set_deep_pct | stock_where_set_deep_gbp | mean_policy_age_months | n_falling_demand 
+-------------------------+-------+-----------------+------------+--------------+--------------------------+------------------------+------------------
+ Cover 6 months or under |   374 |         1209594 |         93 |         24.9 |                   236220 |                   11.2 |              115
+ Cover over 6 months     |    93 |          376892 |         52 |         55.9 |                   155742 |                   10.6 |               53
+(2 rows)
+
+           alignment_band            | demand_direction | lines | stock_value_gbp | stock_above_rule_gbp | holding_cost_above_rule_gbp | unmet_value_2025_gbp 
+-------------------------------------+------------------+-------+-----------------+----------------------+-----------------------------+----------------------
+ 1 — set thin against current demand | broadly flat     |    54 |          224101 |                14688 |                        3231 |               242008
+ 1 — set thin against current demand | falling          |    27 |           37155 |                 3658 |                         805 |                27544
+ 1 — set thin against current demand | rising           |    40 |          177738 |                 4226 |                         930 |               235467
+ 1 — set thin against current demand |                  |   121 |          438994 |                22572 |                        4966 |               505019
+ 2 — in line with the network rule   | broadly flat     |    92 |          281477 |                 4729 |                        1040 |               150378
+ 2 — in line with the network rule   | falling          |    68 |          215551 |                 3333 |                         733 |                77763
+ 2 — in line with the network rule   | rising           |    41 |          258502 |                  149 |                          33 |               208333
+ 2 — in line with the network rule   |                  |   201 |          755531 |                 8211 |                        1806 |               436474
+ 3 — set deep against current demand | broadly flat     |    58 |          209277 |                46293 |                       10184 |                21601
+ 3 — set deep against current demand | falling          |    73 |          139014 |                33697 |                        7413 |                12501
+ 3 — set deep against current demand | rising           |    14 |           43671 |                 5143 |                        1132 |                 7324
+ 3 — set deep against current demand |                  |   145 |          391962 |                85133 |                       18729 |                41426
+                                     |                  |   467 |         1586486 |               115916 |                       25502 |               982919
+(13 rows)
+
+    sku     | category_code | warehouse_code | demand_direction | slope_pct_of_mean_quarter | reorder_point_units | rule_reorder_point_units | reorder_point_alignment_ratio | reorder_point_weeks | cover_weeks | stock_value_gbp | policy_age_months |     review_method      | last_supplier_type  | unmet_units_pct 
+------------+---------------+----------------+------------------+---------------------------+---------------------+--------------------------+-------------------------------+---------------------+-------------+-----------------+-------------------+------------------------+---------------------+-----------------
+ PIPE-1201  | PIPE          | BRS            | broadly flat     |                      -2.0 |                 228 |                     2850 |                          0.08 |                 1.9 |        42.6 |           50234 |               8.5 | Min/max                | Far East Importer   |           10.50
+ RENW-1053  | RENW          | DAV            | rising           |                      11.9 |                   9 |                       18 |                          0.50 |                 3.1 |         6.5 |           48618 |              10.8 | Manual buyer judgement | UK / EU Distributor |            7.44
+ RENW-1000  | RENW          | LIV            | broadly flat     |                      -2.9 |                   9 |                       28 |                          0.33 |                 7.8 |        27.7 |           42441 |               9.4 | Periodic review        | Far East Importer   |           14.85
+ RENW-1100  | RENW          | WAR            | rising           |                       8.2 |                  15 |                       27 |                          0.55 |                 1.7 |         5.8 |           40173 |               4.2 | Periodic review        | UK Manufacturer     |            0.00
+ PIPE-1044  | PIPE          | DAV            | broadly flat     |                      -4.1 |                1167 |                      411 |                          2.84 |                17.3 |        28.9 |           26802 |               9.6 | Periodic review        | UK / EU Distributor |            0.00
+ ELEC-1217  | ELEC          | LIV            | broadly flat     |                      -3.0 |                 159 |                       88 |                          1.81 |                11.1 |        15.8 |           23424 |              24.9 | Periodic review        | UK / EU Distributor |            0.00
+ DRAIN-1047 | DRAIN         | LIV            | broadly flat     |                       3.5 |                  41 |                       25 |                          1.63 |                 5.0 |        16.3 |           22980 |               5.0 | Min/max                | UK Manufacturer     |            3.96
+ HEAT-1130  | HEAT          | LIV            | broadly flat     |                      -2.5 |                   7 |                        4 |                          1.99 |                 6.1 |        26.9 |           20584 |              22.6 | Min/max                | UK Manufacturer     |            0.00
+ ELEC-1134  | ELEC          | LIV            | falling          |                     -14.8 |                 102 |                       19 |                          5.44 |                33.2 |        71.2 |           18906 |               5.8 | Min/max                | UK / EU Distributor |            0.00
+ ELEC-1049  | ELEC          | LIV            | broadly flat     |                       4.6 |                 149 |                      682 |                          0.22 |                 5.2 |        22.2 |           17468 |              20.3 | Manual buyer judgement | Far East Importer   |            4.27
+ RENW-1000  | RENW          | WAR            | broadly flat     |                      -2.9 |                   5 |                       59 |                          0.08 |                 2.0 |         4.5 |           14637 |               2.9 | Periodic review        | Far East Importer   |            8.26
+ ELEC-1217  | ELEC          | WAR            | broadly flat     |                       1.1 |                  98 |                      165 |                          0.60 |                 3.6 |         4.7 |           13069 |              14.0 | Periodic review        | UK / EU Distributor |            5.62
+ DRAIN-1095 | DRAIN         | BRS            | falling          |                      -5.2 |                  12 |                       77 |                          0.16 |                 3.7 |        43.0 |           12354 |               1.4 | Min/max                | Far East Importer   |           11.59
+ RENW-1068  | RENW          | DAV            | rising           |                      15.4 |                   3 |                        2 |                          1.83 |                 5.6 |         7.4 |           12115 |               6.4 | Min/max                | UK Manufacturer     |            0.00
+ RENW-1186  | RENW          | DAV            | broadly flat     |                      -2.3 |                   3 |                        1 |                          2.56 |                 7.8 |        20.8 |           11508 |               5.3 | Min/max                | UK Manufacturer     |            0.00
+ VENT-1119  | VENT          | LIV            | broadly flat     |                       2.2 |                  19 |                       11 |                          1.76 |                10.7 |        10.2 |           11381 |              25.8 | Min/max                | UK / EU Distributor |            0.00
+ DRAIN-1095 | DRAIN         | LIV            | rising           |                      14.9 |                  38 |                      103 |                          0.37 |                 8.8 |        29.5 |           11331 |               6.8 | Periodic review        | Far East Importer   |           40.71
+ RENW-1087  | RENW          | LIV            | rising           |                      12.6 |                   9 |                       41 |                          0.22 |                 5.3 |         8.3 |           10944 |              13.9 | Min/max                | Far East Importer   |           14.11
+ RENW-1018  | RENW          | DAV            | rising           |                       8.8 |                   3 |                        1 |                          2.56 |                 7.8 |        15.6 |           10856 |              16.5 | Manual buyer judgement | UK Manufacturer     |            0.00
+ RENW-1127  | RENW          | DAV            | broadly flat     |                       3.0 |                   3 |                        2 |                          1.83 |                 5.6 |        11.1 |            8717 |               5.1 | Periodic review        | UK Manufacturer     |            0.00
+(20 rows)
+

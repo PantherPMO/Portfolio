@@ -1,0 +1,95 @@
+SET
+ average_stock_gbp | lowest_week_gbp | highest_week_gbp | closing_stock_gbp | closing_vs_average_pct | weeks_measured 
+-------------------+-----------------+------------------+-------------------+------------------------+----------------
+           2043979 |         1600379 |          2598201 |           1711042 |                  -16.3 |             52
+(1 row)
+
+ warehouse_code |             warehouse_name              | weeks_measured | skus_stocked | average_stock_gbp | share_of_stock_pct | cost_of_sales_gbp | share_of_cogs_pct | inventory_turns | days_inventory_outstanding | holding_cost_gbp | holding_cost_low_gbp | holding_cost_high_gbp 
+----------------+-----------------------------------------+----------------+--------------+-------------------+--------------------+-------------------+-------------------+-----------------+----------------------------+------------------+----------------------+-----------------------
+ DAV            | Daventry National Distribution Centre   |             52 |          250 |            996883 |               48.8 |           4667525 |              48.9 |            4.68 |                         78 |           219314 |               199377 |                249221
+ LIV            | Livingston Regional Distribution Centre |             52 |           70 |            473539 |               23.2 |           1342562 |              14.1 |            2.84 |                        129 |           104178 |                94708 |                118385
+ WAR            | Warrington Regional Distribution Centre |             52 |          105 |            366299 |               17.9 |           2063308 |              21.6 |            5.63 |                         65 |            80586 |                73260 |                 91575
+ BRS            | Bristol Regional Distribution Centre    |             52 |           90 |            207258 |               10.1 |           1477177 |              15.5 |            7.13 |                         51 |            45597 |                41452 |                 51815
+(4 rows)
+
+ warehouse_code | share_of_stock_pct | share_of_cogs_pct | stock_share_minus_cogs_share | stock_above_proportional_gbp 
+----------------+--------------------+-------------------+------------------------------+------------------------------
+ LIV            |               23.2 |              14.1 |                          9.1 |                       186208
+ DAV            |               48.8 |              48.9 |                         -0.1 |                        -2044
+ WAR            |               17.9 |              21.6 |                         -3.7 |                       -75283
+ BRS            |               10.1 |              15.5 |                         -5.3 |                      -108882
+(4 rows)
+
+ category_code |        category_name        | skus | average_stock_gbp | share_of_stock_pct | cost_of_sales_gbp | share_of_cogs_pct | inventory_turns | days_inventory_outstanding | holding_cost_gbp 
+---------------+-----------------------------+------+-------------------+--------------------+-------------------+-------------------+-----------------+----------------------------+------------------
+ RENW          | Renewables & Heat Pumps     |   31 |            726834 |               35.6 |           3814943 |              39.9 |            5.25 |                         70 |           159904
+ HEAT          | Heating & Boilers           |   31 |            321202 |               15.7 |            877413 |               9.2 |            2.73 |                        134 |            70664
+ ELEC          | Electrical & Cable          |   32 |            265370 |               13.0 |           1558722 |              16.3 |            5.87 |                         62 |            58381
+ PIPE          | Pipe & Fittings             |   31 |            225370 |               11.0 |            971717 |              10.2 |            4.31 |                         85 |            49581
+ DRAIN         | Drainage & Water Management |   31 |            210395 |               10.3 |           1107063 |              11.6 |            5.26 |                         69 |            46287
+ VENT          | Ventilation & Air Movement  |   31 |            122879 |                6.0 |            628810 |               6.6 |            5.12 |                         71 |            27033
+ VALV          | Valves & Controls           |   31 |             95447 |                4.7 |            392068 |               4.1 |            4.11 |                         89 |            20998
+ TOOL          | Tools & Consumables         |   32 |             76482 |                3.7 |            199837 |               2.1 |            2.61 |                        140 |            16826
+(8 rows)
+
+ warehouse_code | category_code  | average_stock_gbp | cost_of_sales_gbp | inventory_turns 
+----------------+----------------+-------------------+-------------------+-----------------
+ ALL SITES      | ALL CATEGORIES |           2043979 |           9550572 |            4.67
+ BRS            | ALL CATEGORIES |            207258 |           1477177 |            7.13
+ BRS            | HEAT           |             41634 |            146853 |            3.53
+ BRS            | ELEC           |             38628 |            281950 |            7.30
+ BRS            | PIPE           |             35493 |            206220 |            5.81
+ BRS            | RENW           |             33390 |            434483 |           13.01
+ BRS            | DRAIN          |             23768 |            200099 |            8.42
+ BRS            | VALV           |             13313 |             72770 |            5.47
+ BRS            | VENT           |             11272 |             98252 |            8.72
+ BRS            | TOOL           |              9760 |             36549 |            3.74
+ DAV            | ALL CATEGORIES |            996883 |           4667525 |            4.68
+ DAV            | RENW           |            468232 |           2391889 |            5.11
+ DAV            | HEAT           |            150339 |            463505 |            3.08
+ DAV            | DRAIN          |             91178 |            402270 |            4.41
+ DAV            | ELEC           |             90251 |            543596 |            6.02
+ DAV            | VENT           |             65908 |            294139 |            4.46
+ DAV            | PIPE           |             61854 |            338017 |            5.46
+ DAV            | VALV           |             38990 |            168195 |            4.31
+ DAV            | TOOL           |             30130 |             65913 |            2.19
+ LIV            | ALL CATEGORIES |            473539 |           1342562 |            2.84
+ LIV            | RENW           |            129545 |            411892 |            3.18
+ LIV            | ELEC           |             74293 |            260112 |            3.50
+ LIV            | HEAT           |             72236 |            101466 |            1.40
+ LIV            | PIPE           |             71089 |            159957 |            2.25
+ LIV            | DRAIN          |             58686 |            228213 |            3.89
+ LIV            | VALV           |             23650 |             59930 |            2.53
+ LIV            | VENT           |             23614 |             86297 |            3.65
+ LIV            | TOOL           |             20426 |             34696 |            1.70
+ WAR            | ALL CATEGORIES |            366299 |           2063308 |            5.63
+ WAR            | RENW           |             95668 |            576678 |            6.03
+ WAR            | ELEC           |             62199 |            473063 |            7.61
+ WAR            | HEAT           |             56992 |            165588 |            2.91
+ WAR            | PIPE           |             56934 |            267522 |            4.70
+ WAR            | DRAIN          |             36762 |            276481 |            7.52
+ WAR            | VENT           |             22085 |            150122 |            6.80
+ WAR            | VALV           |             19495 |             91174 |            4.68
+ WAR            | TOOL           |             16165 |             62679 |            3.88
+(37 rows)
+
+ year | quarter | daventry_gbp | warrington_gbp | bristol_gbp | livingston_gbp | network_gbp 
+------+---------+--------------+----------------+-------------+----------------+-------------
+ 2024 | Q1      |       753568 |         259403 |             |         364732 |     1377703
+ 2024 | Q2      |       786797 |         277909 |             |         382441 |     1447147
+ 2024 | Q3      |       860657 |         337542 |      129472 |         390597 |     1718268
+ 2024 | Q4      |       845120 |         291873 |      225898 |         334276 |     1697167
+ 2025 | Q1      |      1040995 |         379316 |      250960 |         445647 |     2116917
+ 2025 | Q2      |      1128464 |         438808 |      181388 |         560478 |     2309137
+ 2025 | Q3      |       993387 |         349523 |      213354 |         508725 |     2064988
+ 2025 | Q4      |       824687 |         297550 |      183333 |         379305 |     1684875
+(8 rows)
+
+                     measure                     | value_gbp  
+-------------------------------------------------+------------
+ Average 2025 stock — network total              | 2043979.36
+ Average 2025 stock — sum of sites               | 2043979.36
+ Cost of sales 2025 — from mv_inventory_week     | 9550572.04
+ Cost of sales 2025 — direct from stock_movement | 9550572.04
+(4 rows)
+

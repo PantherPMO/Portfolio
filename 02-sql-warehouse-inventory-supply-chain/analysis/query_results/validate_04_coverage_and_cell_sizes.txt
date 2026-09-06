@@ -1,0 +1,128 @@
+SET
+ warehouse_code | opened_date | weeks_covered | skus_stocked | first_week | last_week  | snapshot_rows | expected_rows 
+----------------+-------------+---------------+--------------+------------+------------+---------------+---------------
+ BRS            | 2024-07-01  |            78 |           90 | 2024-07-07 | 2025-12-28 |          7020 |          7020
+ DAV            | 2011-03-07  |           104 |          250 | 2024-01-07 | 2025-12-28 |         26000 |         26000
+ LIV            | 2019-09-02  |           104 |           70 | 2024-01-07 | 2025-12-28 |          7280 |          7280
+ WAR            | 2014-05-12  |           104 |          105 | 2024-01-07 | 2025-12-28 |         10920 |         10920
+(4 rows)
+
+ sites_stocking | sku_count | share_of_range_pct 
+----------------+-----------+--------------------
+              1 |       145 |               58.0
+              2 |        15 |                6.0
+              3 |        20 |                8.0
+              4 |        70 |               28.0
+(4 rows)
+
+ supplier_code |             supplier_name             |    supplier_type    | purchase_orders | purchase_lines 
+---------------+---------------------------------------+---------------------+-----------------+----------------
+ ARDEN         | Arden Heating Components Ltd          | UK Manufacturer     |             409 |           1186
+ MERID         | Meridian Pacific Trading Ltd          | Far East Importer   |             104 |            334
+ EASTN         | Easton Ventilation Products Ltd       | UK Manufacturer     |             135 |            284
+ PENRT         | Penruth Distribution Ltd              | UK / EU Distributor |             124 |            269
+ KELSO         | Kelso Valve & Control Ltd             | Small Specialist    |              72 |            195
+ FOXLY         | Foxley Drainage Systems Ltd           | UK Manufacturer     |             102 |            174
+ BRAMW         | Bramwell Copper Works Ltd             | UK Manufacturer     |              99 |            173
+ CHARN         | Charnley Electrical Manufacturing Ltd | UK Manufacturer     |              93 |            170
+ HALDN         | Haldane Sealants & Adhesives Ltd      | UK Manufacturer     |             101 |            166
+ NEWLY         | Newlyn Technical Products Ltd         | UK / EU Distributor |              90 |            156
+ MARSD         | Marsden Group Distribution Ltd        | UK / EU Distributor |              53 |            142
+ GRANH         | Granham Thermal Ltd                   | UK Manufacturer     |              73 |            114
+ DERWT         | Derwent Valve Company Ltd             | UK Manufacturer     |              72 |            103
+ ORMSK         | Ormskirk Supply Partners Ltd          | UK / EU Distributor |              57 |            103
+ KENTM         | Kentmere Trade Distribution Ltd       | UK / EU Distributor |              55 |            102
+ IRWEL         | Irwell Building Supplies plc          | UK / EU Distributor |              64 |             95
+ WROXH         | Wroxham Overseas Supply Ltd           | Far East Importer   |              34 |             73
+ VERND         | Vernedale Import Company Ltd          | Far East Importer   |              38 |             62
+ JARVS         | Jarvis Wholesale Distribution Ltd     | UK / EU Distributor |              32 |             62
+ UPTON         | Upton Global Sourcing Ltd             | Far East Importer   |              31 |             59
+ YARLT         | Yarlton Trading Company Ltd           | Far East Importer   |              27 |             57
+ SELBY         | Selby Import Partners Ltd             | Far East Importer   |              32 |             56
+ LANGD         | Langdale Industrial Supply Ltd        | UK / EU Distributor |              25 |             56
+ QUEND         | Quendon Trade Supply Ltd              | UK / EU Distributor |              24 |             55
+ BEWLY         | Bewley Instrumentation Ltd            | Small Specialist    |              47 |             50
+ RAVNS         | Ravensworth Wholesale Ltd             | UK / EU Distributor |              29 |             50
+ TANFD         | Tanfield Sourcing Ltd                 | Far East Importer   |              36 |             49
+ CROMR         | Cromer Specialist Heating Ltd         | Small Specialist    |              36 |             48
+ DUNKD         | Dunkeld Water Systems Ltd             | Small Specialist    |               9 |             14
+ ALNWK         | Alnwick Precision Fittings Ltd        | Small Specialist    |               0 |              1
+(30 rows)
+
+    grouping_level    | cells | cells_under_10 | share_under_10_pct | smallest_cell | mean_cell 
+----------------------+-------+----------------+--------------------+---------------+-----------
+ supplier x quarter   |   226 |             75 |               33.2 |             1 |      21.5
+ supplier x half-year |   115 |              9 |                7.8 |             1 |      42.2
+(2 rows)
+
+    supplier_type    | orders_in_window | orders_excluded_q4 | excluded_q4_unreceived | q4_unreceived_pct 
+---------------------+------------------+--------------------+------------------------+-------------------
+ Far East Importer   |              267 |                 35 |                     27 |              77.1
+ Small Specialist    |              135 |                 29 |                     10 |              34.5
+ UK / EU Distributor |              477 |                 76 |                     10 |              13.2
+ UK Manufacturer     |              927 |                157 |                     13 |               8.3
+(4 rows)
+
+ warehouse_code | category_code  |   customer_segment    | order_lines 
+----------------+----------------+-----------------------+-------------
+ ALL SITES      | ALL CATEGORIES | Builders' Merchant    |        6011
+ ALL SITES      | ALL CATEGORIES | Contractor            |       18311
+ ALL SITES      | ALL CATEGORIES | Counter Trade         |        2398
+ ALL SITES      | ALL CATEGORIES | Facilities Management |        3931
+ ALL SITES      | ALL CATEGORIES | Housebuilder          |        2086
+ ALL SITES      | DRAIN          | ALL SEGMENTS          |        3425
+ ALL SITES      | ELEC           | ALL SEGMENTS          |        4866
+ ALL SITES      | HEAT           | ALL SEGMENTS          |        2714
+ ALL SITES      | PIPE           | ALL SEGMENTS          |        6283
+ ALL SITES      | RENW           | ALL SEGMENTS          |        4758
+ ALL SITES      | TOOL           | ALL SEGMENTS          |        4781
+ ALL SITES      | VALV           | ALL SEGMENTS          |        3055
+ ALL SITES      | VENT           | ALL SEGMENTS          |        2855
+ BRS            | ALL CATEGORIES | ALL SEGMENTS          |        4583
+ BRS            | DRAIN          | ALL SEGMENTS          |         472
+ BRS            | ELEC           | ALL SEGMENTS          |         749
+ BRS            | HEAT           | ALL SEGMENTS          |         327
+ BRS            | PIPE           | ALL SEGMENTS          |         999
+ BRS            | RENW           | ALL SEGMENTS          |         537
+ BRS            | TOOL           | ALL SEGMENTS          |         765
+ BRS            | VALV           | ALL SEGMENTS          |         398
+ BRS            | VENT           | ALL SEGMENTS          |         336
+ DAV            | ALL CATEGORIES | ALL SEGMENTS          |       14084
+ DAV            | DRAIN          | ALL SEGMENTS          |        1498
+ DAV            | ELEC           | ALL SEGMENTS          |        1844
+ DAV            | HEAT           | ALL SEGMENTS          |        1369
+ DAV            | PIPE           | ALL SEGMENTS          |        2130
+ DAV            | RENW           | ALL SEGMENTS          |        2667
+ DAV            | TOOL           | ALL SEGMENTS          |        1673
+ DAV            | VALV           | ALL SEGMENTS          |        1344
+ DAV            | VENT           | ALL SEGMENTS          |        1559
+ LIV            | ALL CATEGORIES | ALL SEGMENTS          |        5009
+ LIV            | DRAIN          | ALL SEGMENTS          |         526
+ LIV            | ELEC           | ALL SEGMENTS          |         776
+ LIV            | HEAT           | ALL SEGMENTS          |         327
+ LIV            | PIPE           | ALL SEGMENTS          |        1146
+ LIV            | RENW           | ALL SEGMENTS          |         620
+ LIV            | TOOL           | ALL SEGMENTS          |         835
+ LIV            | VALV           | ALL SEGMENTS          |         433
+ LIV            | VENT           | ALL SEGMENTS          |         346
+ WAR            | ALL CATEGORIES | ALL SEGMENTS          |        9061
+ WAR            | DRAIN          | ALL SEGMENTS          |         929
+ WAR            | ELEC           | ALL SEGMENTS          |        1497
+ WAR            | HEAT           | ALL SEGMENTS          |         691
+ WAR            | PIPE           | ALL SEGMENTS          |        2008
+ WAR            | RENW           | ALL SEGMENTS          |         934
+ WAR            | TOOL           | ALL SEGMENTS          |        1508
+ WAR            | VALV           | ALL SEGMENTS          |         880
+ WAR            | VENT           | ALL SEGMENTS          |         614
+(49 rows)
+
+                      population                      | item_count 
+------------------------------------------------------+------------
+ Renewables SKUs                                      |         31
+ Renewables stocked pairs                             |         40
+ Discontinued SKUs                                    |         13
+ SKUs with more than one approved source              |         88
+ SKUs actually purchased from more than one supplier  |         85
+ Replenishment policies not reviewed since 2024-09-30 |        121
+(6 rows)
+

@@ -1,0 +1,26 @@
+SET
+ movements_after_last_week |  earliest  |   latest   | net_units_excluded 
+---------------------------+------------+------------+--------------------
+                       203 | 2025-12-29 | 2025-12-31 |                501
+(1 row)
+
+                       check_name                       | row_count | result 
+--------------------------------------------------------+-----------+--------
+ Rows compared                                          |     51220 | 
+ Identity 1 — cumulative ledger equals snapshot on-hand |         0 | PASS
+ Identity 2 — week-on-week movement reconciles          |         0 | PASS
+ First snapshot week equals its own movements           |         0 | PASS
+(4 rows)
+
+ negative_balance_events | lowest_balance_reached | result 
+-------------------------+------------------------+--------
+                       0 |                      0 | PASS
+(1 row)
+
+                       check_name                        | breaches | result 
+---------------------------------------------------------+----------+--------
+ zero closing stock is recorded as at least one zero day |        0 | PASS
+ a full zero week closes at zero stock                   |        0 | PASS
+ stock_value equals on-hand x weighted average cost      |        0 | PASS
+(3 rows)
+

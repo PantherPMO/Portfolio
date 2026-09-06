@@ -1,0 +1,83 @@
+      table_name      | expected_rows | loaded_rows | result 
+----------------------+---------------+-------------+--------
+ calendar_week        |           104 |         104 | PASS
+ customer             |           500 |         500 | PASS
+ goods_receipt_line   |          4853 |        4853 | PASS
+ inventory_snapshot   |         51220 |       51220 | PASS
+ product              |           250 |         250 | PASS
+ product_category     |             8 |           8 | PASS
+ product_supplier     |           344 |         344 | PASS
+ purchase_order       |          2103 |        2103 | PASS
+ purchase_order_line  |          4457 |        4457 | PASS
+ replenishment_policy |           515 |         515 | PASS
+ sales_order          |         10027 |       10027 | PASS
+ sales_order_line     |         33422 |       33422 | PASS
+ stock_movement       |         39752 |       39752 | PASS
+ supplier             |            30 |          30 | PASS
+ warehouse            |             4 |           4 | PASS
+(15 rows)
+
+               relationship                | orphan_rows 
+-------------------------------------------+-------------
+ customer -> warehouse                     |           0
+ goods_receipt_line -> purchase_order_line |           0
+ inventory_snapshot -> calendar_week       |           0
+ product -> product_category               |           0
+ product_supplier -> product               |           0
+ product_supplier -> supplier              |           0
+ purchase_order_line -> purchase_order     |           0
+ replenishment_policy -> product           |           0
+ sales_order_line -> sales_order           |           0
+ stock_movement -> product                 |           0
+(10 rows)
+
+              column_name              | null_rows | total_rows | null_pct 
+---------------------------------------+-----------+------------+----------
+ product.unit_weight_kg                |        10 |        250 |      4.0
+ product.unit_volume_m3                |        10 |        250 |      4.0
+ product.shelf_life_months             |       229 |        250 |     91.6
+ product.discontinued_date             |       237 |        250 |     94.8
+ purchase_order.promised_delivery_date |        22 |       2103 |      1.0
+ sales_order.despatch_date             |        42 |      10027 |      0.4
+(6 rows)
+
+                   rule_checked                   | breaches 
+--------------------------------------------------+----------
+ Ledger pairs with no snapshot coverage           |        0
+ Movements dated outside 2024-01-01 to 2025-12-31 |        0
+ SKUs without exactly one primary source          |        0
+ Snapshot pairs with no replenishment policy      |        0
+ Snapshot rows dated before the site opened       |        0
+ Stocked pairs in policy with no snapshot row     |        0
+(6 rows)
+
+           column_name           |        value        | rows  
+---------------------------------+---------------------+-------
+ purchase_order.order_status     | Complete            |  1163
+ purchase_order.order_status     | Part received       |   880
+ purchase_order.order_status     | Outstanding         |    60
+ purchase_order_line.line_status | Received in full    |  3085
+ purchase_order_line.line_status | Part received       |  1231
+ purchase_order_line.line_status | Outstanding         |   141
+ sales_order.order_status        | Despatched          |  7663
+ sales_order.order_status        | Part despatched     |  2322
+ sales_order.order_status        | Cancelled           |    42
+ sales_order_line.line_status    | Despatched in full  | 29831
+ sales_order_line.line_status    | Not available       |  1772
+ sales_order_line.line_status    | Short shipped       |   889
+ sales_order_line.line_status    | Cancelled           |   685
+ sales_order_line.line_status    | Returned            |   245
+ stock_movement.movement_type    | Sales issue         | 30965
+ stock_movement.movement_type    | Goods receipt       |  4853
+ stock_movement.movement_type    | Stock adjustment    |  2036
+ stock_movement.movement_type    | Opening balance     |   515
+ stock_movement.movement_type    | Transfer in         |   422
+ stock_movement.movement_type    | Transfer out        |   422
+ stock_movement.movement_type    | Write-off           |   294
+ stock_movement.movement_type    | Customer return     |   245
+ supplier.supplier_type          | UK / EU Distributor |    10
+ supplier.supplier_type          | UK Manufacturer     |     8
+ supplier.supplier_type          | Far East Importer   |     7
+ supplier.supplier_type          | Small Specialist    |     5
+(26 rows)
+

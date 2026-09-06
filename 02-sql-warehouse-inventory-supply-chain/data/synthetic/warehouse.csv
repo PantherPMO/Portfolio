@@ -1,0 +1,5 @@
+warehouse_code,warehouse_name,region,postcode_district,site_type,opened_date,storage_capacity_pallets,warehouse_headcount
+DAV,Daventry National Distribution Centre,East Midlands,NN11,National DC,2011-03-07,8400,31
+WAR,Warrington Regional Distribution Centre,North West,WA5,Regional DC,2014-05-12,3200,17
+BRS,Bristol Regional Distribution Centre,South West,BS35,Regional DC,2024-07-01,2400,12
+LIV,Livingston Regional Distribution Centre,Scotland,EH54,Regional DC,2019-09-02,2000,9

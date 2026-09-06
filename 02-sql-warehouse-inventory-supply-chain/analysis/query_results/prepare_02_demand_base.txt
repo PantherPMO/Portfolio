@@ -1,0 +1,26 @@
+SET
+CREATE VIEW
+                       population                       | line_count | units  
+--------------------------------------------------------+------------+--------
+ sales_order_line rows                                  |      33422 |       
+ excluded — cancelled lines                             |        685 |  13089
+ retained in vw_demand_line                             |      32737 | 629434
+ of which returned after despatch                       |        245 |   4973
+ of which short or wholly unsupplied                    |       2667 |  50356
+ of which fall outside the weekly grid (29-31 Dec 2025) |        133 |   2099
+(6 rows)
+
+                      method                       | lines | demand_units | unmet_units | unmet_value_gbp 
+---------------------------------------------------+-------+--------------+-------------+-----------------
+ Naive filter — line_status = 'Despatched in full' | 29831 |       551709 |           0 |            0.00
+ Correct base — all non-cancelled lines            | 32737 |       629434 |       50356 |      2084118.91
+(2 rows)
+
+ warehouse_code | demand_lines | lines_not_supplied_in_full | line_fill_rate_pct | unit_fill_rate_pct | unmet_value_gbp 
+----------------+--------------+----------------------------+--------------------+--------------------+-----------------
+ BRS            |         3092 |                        333 |               89.2 |               87.5 |       216665.36
+ DAV            |         6599 |                        508 |               92.3 |               92.0 |       500673.15
+ LIV            |         2555 |                        136 |               94.7 |               95.1 |       130787.56
+ WAR            |         4260 |                        295 |               93.1 |               95.8 |       179502.68
+(4 rows)
+
