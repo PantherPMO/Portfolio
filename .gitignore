@@ -216,3 +216,13 @@ outputs/scratch/
 **/temp/
 *.log
 logs/
+
+# ---------------------------------------------------------------------------
+# Internal working material. Kept locally for future projects; not published.
+# ---------------------------------------------------------------------------
+_working/
+
+# ---------------------------------------------------------------------------
+# Internal portfolio control layer. Kept locally; not published.
+# ---------------------------------------------------------------------------
+_portfolio/
