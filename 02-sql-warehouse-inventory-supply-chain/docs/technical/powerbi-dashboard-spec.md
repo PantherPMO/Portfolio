@@ -6,7 +6,7 @@
 
 **Status:** Specification only. No `.pbix` has been built.
 **Source of truth:** the 35 SQL files, 32 committed results in `analysis/query_results/`, and
-decisions D-01 to D-40 in `docs/DECISIONS.md`.
+decisions D-01 to D-40 in `docs/technical/analytical-decisions.md`.
 **Scope rule:** every KPI, visual and callout in this document traces to an existing view or a
 committed result. Where the required detail does not exist, it is listed in
 §10 *Items requiring clarification* rather than invented.
@@ -358,7 +358,7 @@ misinterpretation in the whole dashboard.
   > at 0.68 of the network's own working rule and falling-demand lines at 1.33. Separately,
   > supplier minimums — not replenishment decisions — set the order quantity on 98.3% of importer
   > purchase lines.
-- **Source:** Static text from `docs/KEY_FINDINGS.md` F-01, F-03, F-04.
+- **Source:** Static text from `docs/findings.md` F-01, F-03, F-04.
 - **Interpretation note:** Do not make this text dynamic to the slicers. It is the network-level
   finding and would become false under a site filter.
 
@@ -374,7 +374,7 @@ misinterpretation in the whole dashboard.
   > opportunity — sits at two sites with unresolved service anomalies, where no broad inventory
   > reduction is recommended. Capital released is one-off; holding cost saved is annual; they are
   > never added.
-- **Source:** `docs/RECOMMENDATIONS.md` preamble; D-29, D-36, D-39.
+- **Source:** `docs/recommendations.md` preamble; D-29, D-36, D-39.
 
 ### Slicers on Page 1
 **Site** and **Category** only. No supplier slicer (F1/F2 have no supplier relationship, so it
@@ -1407,7 +1407,7 @@ not measurements. Charting them would weaken them.
 | Two disagreeing range-mix corrections | Both numbers would confuse an executive; the *warning not to rank on raw turnover* appears instead |
 | The £2,591 two-clock reconciliation | Appears in a tooltip, not a visual |
 | Arden like-for-like price method (Simpson's paradox) | Result (+18.2%) appears; the method does not |
-| Six rejected hypotheses in full | Three most consequential appear on P3-V7; the rest stay in `KEY_FINDINGS.md` |
+| Six rejected hypotheses in full | Three most consequential appear on P3-V7; the rest stay in `findings.md` |
 | Reproducibility and byte-identical rebuild evidence | Belongs in `README.md` |
 
 ---
@@ -1483,7 +1483,7 @@ be mislabelled either way.
 ☐ No dashboard text assigns a cause to Bristol's March–April shortfall.
 ☐ No calculated column or measure named "cause", "driver", "reason" or "root cause" exists for
 either site.
-☐ P5-V4 wording matches `docs/KEY_FINDINGS.md` F-U1 and F-U2 and is not paraphrased.
+☐ P5-V4 wording matches `docs/findings.md` F-U1 and F-U2 and is not paraphrased.
 ☐ The constraint marker appears on Daventry and Bristol on **every** page where their opportunity
 is shown — Pages 1, 2 and 5.
 ☐ Both are presented as **investigation priorities**, not failed analyses.
@@ -1617,7 +1617,7 @@ warning.
 makes that a build-time gate, and §3 P5-V4 forbids any computed cause field.
 
 ☑ **No new recommendation invented.** The dashboard presents the eight recommendations already in
-`docs/RECOMMENDATIONS.md` and adds none. P1-V5 and P5-V4 restate existing constraints verbatim.
+`docs/recommendations.md` and adds none. P1-V5 and P5-V4 restate existing constraints verbatim.
 
 ☑ **No factual contradiction found** between the reporting views, the committed results and the
 Stage 6 documentation during this review.
@@ -1625,4 +1625,4 @@ Stage 6 documentation during this review.
 ---
 
 *Specification only. Implementation awaits approval. Source of truth: 35 SQL files, 32 committed
-results in `analysis/query_results/`, and decisions D-01 to D-40 in `docs/DECISIONS.md`.*
+results in `analysis/query_results/`, and decisions D-01 to D-40 in `docs/technical/analytical-decisions.md`.*

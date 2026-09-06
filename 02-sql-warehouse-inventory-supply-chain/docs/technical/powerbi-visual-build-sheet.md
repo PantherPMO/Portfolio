@@ -1,7 +1,7 @@
 # Power BI Visual Build Sheet
 ## Project 02 — Warehouse Inventory & Supply Chain Performance
 
-**What this is.** The settings layer. `POWER_BI_STEP_BY_STEP_BUILD_GUIDE.md` tells you *what* each
+**What this is.** The settings layer. `powerbi-build-guide.md` tells you *what* each
 visual says and *why*; this sheet tells you which boxes to tick and what to type in them, so
 building is mechanical rather than a series of judgement calls.
 
@@ -542,13 +542,13 @@ gets a screenshot). The page also answered two questions, against the style guid
 one-question-per-page rule. Splitting fixes both, and no visual, measure or finding changes.
 
 **Neither of the first two changes a number, a measure, a field, an interaction rule or a finding.** Record them in
-`DECISIONS.md` only if you want the trail; they are presentation, not method.
+`analytical-decisions.md` only if you want the trail; they are presentation, not method.
 
 ## 5.1 One correction to make in the built report
 
 **K4 must read 78.2, not 78.1.** If it shows 78.1 it is bound to
 `days_inventory_outstanding_unrounded_basis`, which exists solely as a reconciliation check that
-the rounding is sound. The committed headline in `report_02` and `KEY_FINDINGS.md` is
+the rounding is sound. The committed headline in `report_02` and `findings.md` is
 `days_inventory_outstanding` = **78.2**.
 
 ---

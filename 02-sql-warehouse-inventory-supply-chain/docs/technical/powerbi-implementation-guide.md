@@ -5,7 +5,7 @@
 > new SQL and no new recommendations.
 
 **Status:** Build preparation. No `.pbix` exists yet.
-**Design source of truth:** `docs/POWER_BI_DASHBOARD_SPEC.md` (approved).
+**Design source of truth:** `docs/technical/powerbi-dashboard-spec.md` (approved).
 **Visual standards source of truth:** `_portfolio/STYLE_GUIDE.md` (inspected — see §0).
 **Analytical source of truth:** 32 committed results in `analysis/query_results/`, decisions D-01
 to D-40.
@@ -20,7 +20,7 @@ now resolves onto real values.
 
 It also contains **seven points where it conflicts with the approved specification**. Approved
 decision 5 instructs me to follow the style guide, so each is resolved in the style guide's
-favour. **Nothing in `POWER_BI_DASHBOARD_SPEC.md` has been edited** — the reconciliation lives
+favour. **Nothing in `powerbi-dashboard-spec.md` has been edited** — the reconciliation lives
 here, and every deviation is named.
 
 ### C-1 · Dual-axis chart — **binding conflict, spec visual redesigned**
@@ -1303,7 +1303,7 @@ category, peak demand month, peak shortage month, months trailing, peak zero-day
 and was corrected from the data (D-20). Two years gives one observation of each cycle.
 
 **P3-V7 · Evidence status panel** — three-column text panel: **Supported · Unresolved · Rejected**.
-Content exactly as `POWER_BI_DASHBOARD_SPEC.md` P3-V7, which reproduces `KEY_FINDINGS.md`.
+Content exactly as `powerbi-dashboard-spec.md` P3-V7, which reproduces `findings.md`.
 
 > **Policy age appears on Page 3 only inside the Rejected column.** It must not be a slicer, an
 > axis, or a legend on any visual on this page.
@@ -1468,7 +1468,7 @@ Tooltip: `service_consequence` and `unresolved_service_constraint` in full.
 conclusion. **A first-class section, not a footnote. Interactions: None** — the text is fixed and
 must never appear to change under a filter.
 
-Content **verbatim** from `POWER_BI_DASHBOARD_SPEC.md` P5-V4, which reproduces `KEY_FINDINGS.md`
+Content **verbatim** from `powerbi-dashboard-spec.md` P5-V4, which reproduces `findings.md`
 F-U1 and F-U2: the Daventry panel (2.60% unmet in well-covered weeks, 33 short weeks, £68,451, six
 tested-and-failed explanations, **no cause stated**, constrains £128,749); the Bristol panel (March–
 April peak, three explanations that do not fit, **no cause stated**, constrains £123,686, 59.1%
@@ -1583,7 +1583,7 @@ this dataset's 7.9% observed loss (D-12). Close via a Back button.
 
 ## 10. Validation procedure
 
-Run in order. Pass/fail; no partial passes. Record results in `powerbi/VALIDATION_LOG.md`.
+Run in order. Pass/fail; no partial passes. Record results in `docs/technical/powerbi-validation-log.md`.
 
 ### 10.1 KPI reconciliation
 
@@ -1672,7 +1672,7 @@ labelled.
 shortfall.
 ☐ No measure or calculated column named "cause", "driver", "reason" or "root cause" exists for
 either site.
-☐ P5-V4 wording matches `KEY_FINDINGS.md` F-U1/F-U2 verbatim, not paraphrased.
+☐ P5-V4 wording matches `findings.md` F-U1/F-U2 verbatim, not paraphrased.
 ☐ Constraint markers appear on Daventry and Bristol on **every** page where their opportunity is
 shown — 1, 2 and 5.
 ☐ Both presented as **investigation priorities**, not failed analyses.
@@ -1764,7 +1764,7 @@ Six things this guide cannot supply.
 
 ## 13. Verification of this guide
 
-☑ **Consistent with `POWER_BI_DASHBOARD_SPEC.md`** — same visuals and measures; Page 4 is built
+☑ **Consistent with `powerbi-dashboard-spec.md`** — same visuals and measures; Page 4 is built
 as two pages (4a / 4b, D-42), giving six in total. Same
 constraints. Seven style-guide conflicts documented in §0 and resolved in the style guide's favour
 per approved decision 5. The spec itself is unedited.

@@ -195,7 +195,7 @@ ran on. Every number in every document will reconcile.
 
 # Step 6 — You're ready for Power BI
 
-Go to `docs/POWER_BI_STEP_BY_STEP_BUILD_GUIDE.md`, Section 3, and use:
+Go to `docs/technical/powerbi-build-guide.md`, Section 3, and use:
 
 | Field | Value |
 |---|---|

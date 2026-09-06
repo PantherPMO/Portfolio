@@ -203,4 +203,4 @@ re-captured, before this log can be signed off.
 ---
 
 *Figures reconcile to committed PostgreSQL results in `analysis/query_results/`.
-Decisions D-01 to D-42 in `docs/DECISIONS.md`.*
+Decisions D-01 to D-42 in `docs/technical/analytical-decisions.md`.*

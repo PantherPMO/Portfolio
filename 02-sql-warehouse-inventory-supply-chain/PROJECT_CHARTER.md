@@ -129,7 +129,7 @@ Defined once in `_portfolio/KPI_LIBRARY.md` and referenced here, not redefined.
 |---|---|---|---|
 | Inventory Turnover | Cost of sales ÷ average inventory value | Site, category, SKU | Average of 52 weekly snapshots, never closing stock — the import sawtooth distorts closing (D-10) |
 | Days Inventory Outstanding | 365 ÷ turnover | Site, category | Preferred in stakeholder output |
-| Stock Holding Cost | Average inventory × annual holding rate | Site, category | **22% per annum**, derived and sourced in `docs/DECISIONS.md` D-11, with 20% and 25% sensitivity |
+| Stock Holding Cost | Average inventory × annual holding rate | Site, category | **22% per annum**, derived and sourced in `docs/technical/analytical-decisions.md` D-11, with 20% and 25% sensitivity |
 | Stockout Rate | Periods with zero stock ÷ total periods | SKU/site/week | Reported three ways — see AQ-06 |
 | On-Time Delivery / OTIF | Deliveries on time ÷ total deliveries | Supplier, half-year | Reported on both first-delivery and all-delivery bases (D-07) |
 | Order Cycle Time | Mean and median (receipt date − order date) | Supplier, site | Median reported alongside mean; the importer distribution has a long right tail |
@@ -229,7 +229,7 @@ All confirmed against the loaded database, and all preserved in the source table
 | Findings with full evidence chains | `analysis/FINDINGS.md` |
 | Charts | `visuals/`, to `_portfolio/STYLE_GUIDE.md` |
 | Stakeholder narrative including a written 5-minute presentation | `docs/STAKEHOLDER_STORY.md` |
-| Decisions log | `docs/DECISIONS.md` |
+| Decisions log | `docs/technical/analytical-decisions.md` |
 | Recruiter-first README | `README.md` |
 
 ## 16. Decision criteria for recommendations

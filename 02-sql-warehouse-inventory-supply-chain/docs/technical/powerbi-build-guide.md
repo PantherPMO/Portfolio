@@ -9,9 +9,9 @@
 **What it is not.** A design document. The design is already approved and frozen.
 
 **Authorities, in order:**
-1. `docs/POWER_BI_IMPLEMENTATION_GUIDE.md` — wins any conflict
-2. `docs/POWER_BI_DASHBOARD_SPEC.md` — the approved design
-3. `docs/DECISIONS.md`, `docs/KEY_FINDINGS.md`, `docs/RECOMMENDATIONS.md`, `README.md` — the analysis
+1. `docs/technical/powerbi-implementation-guide.md` — wins any conflict
+2. `docs/technical/powerbi-dashboard-spec.md` — the approved design
+3. `docs/technical/analytical-decisions.md`, `docs/findings.md`, `docs/recommendations.md`, `README.md` — the analysis
 
 **Estimated build time:** 8–12 hours for a first-time builder, spread across sessions. Sections 1–7
 (data) take roughly half; sections 8–15 (visuals) the other half.
@@ -20,7 +20,7 @@
 
 ## Correction notice — read before Section 9
 
-While preparing this guide I found **one factual error in `POWER_BI_IMPLEMENTATION_GUIDE.md` §7,
+While preparing this guide I found **one factual error in `powerbi-implementation-guide.md` §7,
 Page 1**, and I am flagging rather than silently propagating it.
 
 | | |
@@ -2795,7 +2795,7 @@ Page 5 should open filtered to Daventry, with the filter card visible and the ba
 
 # 16. Full Dashboard Validation
 
-Work through in order. Record results in `powerbi/VALIDATION_LOG.md`.
+Work through in order. Record results in `docs/technical/powerbi-validation-log.md`.
 
 ## 16.1 Data validation
 
@@ -3248,7 +3248,7 @@ own committed results is worse than one with a missing visual.
       `03_availability_replenishment.png` · `04_supplier_reliability_lead_time.png` ·
       `05_sourcing_economics.png` · `06_site_investigations_watchlist.png`
 - [ ] `.pbix` saved as `powerbi/calderfield_inventory_supply_chain.pbix`
-- [ ] `powerbi/VALIDATION_LOG.md` completed
+- [ ] `docs/technical/powerbi-validation-log.md` completed
 - [ ] Synthetic-data disclaimer visible on Page 1
 
 **The final test:** can a stakeholder answer *"how are we doing, and what needs my attention?"*
@@ -3256,6 +3256,6 @@ within ten seconds of opening Page 1 — **without** concluding "cut inventory e
 
 ---
 
-*Build manual only. Derived from `docs/POWER_BI_DASHBOARD_SPEC.md` and
-`docs/POWER_BI_IMPLEMENTATION_GUIDE.md`, which remain the authorities. No SQL, view, analysis file
+*Build manual only. Derived from `docs/technical/powerbi-dashboard-spec.md` and
+`docs/technical/powerbi-implementation-guide.md`, which remain the authorities. No SQL, view, analysis file
 or existing document was modified in producing this guide.*
