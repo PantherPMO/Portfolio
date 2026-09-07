@@ -7,9 +7,9 @@ Revenue at Risk.
 
 WHAT THIS SCRIPT IS
 -------------------
-The single reproducible source of every figure in outputs/figures/. It reads
+The single reproducible source of every figure in visuals/. It reads
 the committed, validated psql outputs in analysis/query_results/, writes the
-exact rows used by each chart to outputs/chart_data/ as an audit trail, then
+exact rows used by each chart to analysis/chart_data/ as an audit trail, then
 renders the charts.
 
 WHAT IT IS NOT
@@ -74,8 +74,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from psql_parse import Block, parse_file  # noqa: E402
 
 RESULTS = ROOT / "analysis" / "query_results"
-FIGURES = ROOT / "outputs" / "figures"
-CHART_DATA = ROOT / "outputs" / "chart_data"
+FIGURES = ROOT / "visuals"
+CHART_DATA = ROOT / "analysis" / "chart_data"
 
 # ---------------------------------------------------------------------------
 # House style - _portfolio/STYLE_GUIDE.md validated categorical palette
@@ -252,7 +252,7 @@ def ch01() -> None:
         fig, ax, "CH-01", "CH01_revenue_at_risk_opening_cohort.png",
         "Opening cohort (tenure >= 4 months), n = 5,992 customers, of whom 1,272 churned",
         [
-            f"Recurring revenue only (decision C-2). Long-distance revenue at risk of {money(ld)} "
+            f"Recurring revenue only (the revenue definition). Long-distance revenue at risk of {money(ld)} "
             "currency units is excluded from this figure and is material, not irrelevant.",
             "Annualisation is convention A-03 (supported by profiling check P-07, median ratio 1.0000) "
             "and remains a forward-looking assumption.",
@@ -380,7 +380,7 @@ def ch03() -> None:
             "DECILE CONVENTION: decile 1 = lowest monthly charge, decile 10 = highest. Both conventions "
             "exist in practice; this chart uses the one stated here throughout.",
             "Deciles are equal-frequency (704-705 customers each), not equal-value. Boundary ties are "
-            "split by a deterministic NTILE tie-break (correction V-11 / decision D-20).",
+            "split by a deterministic NTILE tie-break (correction V-11 / the decile tie-break).",
             "Recurring revenue only (C-2) - this is not total revenue concentration. Static snapshot: "
             "no statement about whether concentration is changing.",
             CURRENCY,
@@ -453,7 +453,7 @@ def ch04() -> None:
             "establishes that charge level causes any churn outcome.",
             "Single-dimension cut with no multivariate control. Charge level is related to contract type, "
             "service mix and tenure, none of which is held constant here.",
-            "Value-tier colours are the pre-registered C-6 cut points (deciles 8-10 High / 4-7 Mid / 1-3 Low), "
+            "Value-tier colours are the predefined reporting cut points (deciles 8-10 High / 4-7 Mid / 1-3 Low), "
             "fixed before results were seen.",
             "Source: analysis/query_results/analyse_03_churn_by_decile.txt, block 1.",
         ],
@@ -586,7 +586,7 @@ def ch06() -> None:
 
     finish(
         fig, ax, "CH-06", "CH06_divergence_primary_opening_cohort.png",
-        "PRIMARY RESULT - Opening cohort (tenure >= 4 months), nine pre-registered P1 segments "
+        "PRIMARY RESULT - Opening cohort (tenure >= 4 months), nine predefined P1 segments "
         "(value tier x contract type), all reportable (n = 442-1,182).",
         [
             "THIS IS A NEGATIVE FINDING, PRESENTED AS ONE. The project was designed to test whether a "
@@ -594,7 +594,7 @@ def ch06() -> None:
             "at this segmentation, it does not. The divergence index sums to zero (gate A-VAL-10).",
             "THE INDEX IS ORDINAL. A divergence of +/-1 conveys rank order only and must never be quoted "
             "without magnitudes - see CH-07 for the revenue-at-risk amounts and churn rates behind these ranks.",
-            "A-07 is locked (decision D-21). The all-customers version is a SENSITIVITY ANALYSIS ONLY and "
+            "A-07 is locked (the comparison population). The all-customers version is a SENSITIVITY ANALYSIS ONLY and "
             "is not shown here; in it, only two of nine segments change, each by one rank.",
             "Nine cells is a coarse partition. Divergence at finer granularity was NOT tested, and testing "
             "it now would be a post-hoc specification change that pre-registration forbids.",
@@ -658,7 +658,7 @@ def ch07() -> None:
 
     finish(
         fig, ax, "CH-07", "CH07_revenue_at_risk_by_segment.png",
-        "PRIMARY RESULT - Opening cohort (tenure >= 4 months), nine pre-registered P1 segments, "
+        "PRIMARY RESULT - Opening cohort (tenure >= 4 months), nine predefined P1 segments, "
         "all reportable (n = 442-1,182).",
         [
             "ASSOCIATION ONLY. Contract type is associated with these differing churn rates. Nothing here "
@@ -769,7 +769,7 @@ def ch08() -> None:
     )
 
     fig.suptitle(
-        "All seven pre-registered driver lenses - High value tier, opening cohort\n"
+        "All seven predefined driver lenses - High value tier, opening cohort\n"
         "Every lens is reported, including those that differentiate weakly",
         x=0.008, ha="left", fontsize=13, fontweight="bold", y=1.005,
     )
@@ -992,7 +992,7 @@ def ch10() -> None:
             "THESE 597 CUSTOMERS ARE NOT IN THE PRIMARY CHURN KPI NUMERATOR AND MUST NEVER BE ADDED TO IT. "
             "Decision C-3 keeps the two populations separate because they behave very differently "
             "(56.80% against 21.23%). This chart shows shares of a total, never a combined rate.",
-            "Revenue at risk correctly includes this cohort (decision C-2). The opening-cohort restriction "
+            "Revenue at risk correctly includes this cohort (the revenue definition). The opening-cohort restriction "
             "applies to the churn RATE only, never to revenue.",
             "The 68.06% opening-cohort share of churn events is the complement of the sourced 31.94%.",
             "Reconciles at register checks X-02, X-05, X-15 and X-16.",
@@ -1063,7 +1063,7 @@ def ch11() -> None:
         "In-period acquisitions (tenure <= 3 months), n = 1,051.",
         [
             "BELOW-THRESHOLD CELLS ARE COLLAPSED, NOT QUOTED. One Year (n = 26) and Two Year (n = 22) sit "
-            "below the pre-registered n = 30 reporting threshold. Their churn rates are not reportable and "
+            "below the predefined n = 30 reporting threshold. Their churn rates are not reportable and "
             "are deliberately not shown; bar width reflects customer counts only.",
             "INFERENCE, NOT OBSERVATION. The absence of Offers A-D suggests those offers are associated "
             "with existing rather than newly acquired customers. This is an inference from absence. The "

@@ -1,16 +1,16 @@
-# Case Study: Telecommunications Revenue Retention
+# Case Study
 
-### Prioritising retention investment by revenue at risk
+### Telecom Customer Churn & Revenue Analysis
 
-**A technical walkthrough of a pre-registered SQL analysis, including two hypotheses that did not
-hold.**
+**A technical walkthrough of the analysis, including the two tests that returned weak results.**
 
-This document is the deep read. The [README](../README.md) carries the story and the six headline
-figures. Here you will find the dataset selection argument, the correction register, the SQL that
+This document is the deep read. The [README](../README.md) carries the story and the headline figures,
+[Findings](findings.md) sets out each result with its interpretation and limitation, and
+[Recommendations](recommendations.md) sets out what follows from them. Here you will find the dataset selection argument, the correction register, the SQL that
 does the work, the four supporting charts, and the reasoning behind every locked decision.
 
 **Evidence sources.** Every figure quoted here traces to
-[`FINDING_EVIDENCE_REGISTER.md`](FINDING_EVIDENCE_REGISTER.md) and to a committed query output in
+[Findings and Evidence](technical/findings-and-evidence.md) and to a committed query output in
 `analysis/query_results/`. Nothing is recomputed in this document.
 
 ---
@@ -20,17 +20,17 @@ does the work, the four supporting charts, and the reasoning behind every locked
 1. [How the question was framed](#1-how-the-question-was-framed)
 2. [Choosing the dataset, and proving the alternative defective](#2-choosing-the-dataset-and-proving-the-alternative-defective)
 3. [What was excluded, and why it mattered](#3-what-was-excluded-and-why-it-mattered)
-4. [Pre-registration: the decisions locked before results](#4-pre-registration-the-decisions-locked-before-results)
+4. [Definitions fixed before results](#4-definitions-fixed-before-results)
 5. [The data architecture](#5-the-data-architecture)
 6. [The SQL that does the work](#6-the-sql-that-does-the-work)
-7. [Three defects, corrected by entry](#7-three-defects-corrected-by-entry)
+7. [Three issues found, corrected by entry](#7-three-issues-found-corrected-by-entry)
 8. [CH-01: the base position](#ch-01-the-base-position)
 9. [CH-03: revenue concentration](#ch-03-revenue-concentration)
 10. [CH-08: seven driver lenses](#ch-08-seven-driver-lenses)
 11. [CH-11: early-life composition](#ch-11-early-life-composition)
 12. [Validation](#12-validation)
 13. [The evidence chain](#13-the-evidence-chain)
-14. [What I would do differently](#14-what-i-would-do-differently)
+14. [What would be done differently](#14-what-would-be-done-differently)
 
 ---
 
@@ -43,7 +43,7 @@ The framing adopted instead: **not all churn warrants the same retention investm
 is not to minimise churn at any cost but to establish where retention attention would be worth
 directing, measured in annual recurring revenue rather than customer counts.
 
-Three things were excluded from scope at the charter stage and stayed excluded:
+Three things were excluded from scope at the outset and stayed excluded:
 
 - **Churn prediction.** A prediction model answers "who will leave", which is a different question
   from "where is the exposure".
@@ -63,7 +63,7 @@ Six workbooks were supplied: one merged file and five normalised tables covering
 location, population, services and status.
 
 The merged workbook is the more convenient source. It was rejected, and **the rejection was made on
-evidence rather than preference** (decision C-1 / D-06): a cross-check against the five-table source
+evidence rather than preference** : a cross-check against the five-table source
 found the merged file internally inconsistent. Convenience is not a reason to trust a file that
 disagrees with its own components.
 
@@ -80,12 +80,12 @@ analyst's choice imposed on the data; it is the structure already present in it.
 
 ## 3. What was excluded, and why it mattered
 
-Five fields were **structurally excluded**, meaning they are loaded to the `raw` layer for fidelity
+Five fields were **excluded at the database level**, meaning they are loaded to the `raw` layer for fidelity
 but never promoted to `core`, so no downstream query can reach them:
 
 | Field | Reason |
 |---|---|
-| `Satisfaction Score` | **Outcome-contaminated.** 100% churn at scores 1 to 2, 0% at 4 to 5, correlation -0.7546 against the outcome |
+| `Satisfaction Score` | **Recorded with knowledge of the outcome.** 100% churn at scores 1 to 2, 0% at 4 to 5, correlation -0.7546 against the outcome |
 | `Churn Score` | Vendor-supplied propensity score of unknown construction |
 | `CLTV` | Vendor-supplied derived value of unknown construction |
 | `Churn Reason` | Recorded after the outcome. Using it would produce circular findings |
@@ -102,12 +102,12 @@ A-VAL-19 scan `pg_views` definitions for prohibited references and fail the buil
 
 ---
 
-## 4. Pre-registration: the decisions locked before results
+## 4. Definitions fixed before results
 
-Twenty-two decisions are recorded in [`DECISIONS.md`](DECISIONS.md). Five determine whether the
-results can be trusted.
+The decisions that determine whether the results can be trusted are set out in
+[Methodology](methodology.md). Five matter most, and are summarised here with the reasoning.
 
-### C-2: what counts as revenue at risk
+### What counts as revenue at risk
 
 Revenue at risk is **annualised recurring revenue from all churned customers**. Long-distance revenue
 is quantified but held outside the headline, because a retention offer secures a subscription rather
@@ -117,7 +117,7 @@ The long-distance exposure is **519,603.72 currency units** across all churned c
 of the recurring figure again. It is stated everywhere it is excluded, so that the exclusion reads as
 a scoping decision rather than an oversight.
 
-### C-3: the churn denominator
+### The churn rate denominator
 
 The primary KPI uses the **opening cohort**, tenure >= 4 months, so numerator and denominator
 describe the same population.
@@ -130,28 +130,28 @@ the rate by construction. It was retracted rather than presented as a live optio
 > chosen on the strength of the result. The all-customer rate of 26.54% is retained as a
 > reconciliation measure and is never substituted for the primary 21.23%.
 
-### C-6: cut points and reporting thresholds
+### Value bands and reporting thresholds
 
 Value tiers: deciles 8 to 10 High, 4 to 7 Mid, 1 to 3 Low. Minimum reportable cell size n = 30, with
 a caveat band from 30 to 100 requiring `n` to be quoted alongside any rate. Seven driver lenses,
 named in advance.
 
-### A-07 / D-21: the divergence population
+### The comparison population for the ranking test
 
 **PRIMARY RESULT: opening cohort. SENSITIVITY ANALYSIS ONLY: all customers.**
 
 This was locked **before the divergence result existed**. It is carried as an explicit
-`result_designation` column on every row of the query output (decision D-22), so the designation
+`result_designation` column on every row of the query output , so the designation
 lives in the evidence artefact rather than in a section header that could drift.
 
 The sensitivity test earns its place: including in-period acquisitions swaps the top two positions on
 the revenue-at-risk ranking and leaves the remaining seven segments unchanged. The primary result is
 therefore robust to the scope decision, and that can be demonstrated rather than asserted.
 
-### The consequence of pre-registering
+### The consequence of fixing definitions in advance
 
 When the divergence result came back near-null, the tempting move was to re-cut at a finer
-granularity until something appeared. **Pre-registration forbids it.** A finer-grain test may well be
+granularity until something appeared. **The fixed specification does not allow it.** A finer-grain test may well be
 worth running, but it would need a fresh specification written before the data is re-cut, and it is
 listed as future work rather than smuggled into this analysis.
 
@@ -196,7 +196,7 @@ becoming a negative.
 
 ## 6. The SQL that does the work
 
-### Deterministic deciles (correction V-11, decision D-20)
+### Deterministic deciles (reproducible decile assignment)
 
 `NTILE` without a tie-break assigns tied values arbitrarily, so two runs can produce different
 deciles. The fix makes the assignment reproducible:
@@ -234,7 +234,7 @@ CROSS JOIN LATERAL (VALUES
 This also guarantees that every lens covers the same population, which is what makes the A-VAL-11
 partition check meaningful.
 
-### The literal `'None'` problem (correction V-10, decision D-19)
+### The literal `'None'` problem (the literal 'None' token)
 
 The source stores a **literal string** `'None'` where an analyst would expect a null. The fix maps
 the literal, the null and the empty string to one approved label:
@@ -261,19 +261,19 @@ does, in both scopes.
 
 ---
 
-## 7. Three defects, corrected by entry
+## 7. Three issues found, corrected by entry
 
 All three are recorded with the **original finding preserved**, not overwritten. The audit trail is
 part of the deliverable.
 
-### V-01: I was wrong, and the record says so
+### An early assumption did not survive verification
 
-My initial hypothesis about the relationship between `Customer Status` and tenure did not survive
-verification. It was corrected through an explicit correction entry (V-01-C) with the original
-retained verbatim, so the register demonstrates a hypothesis tested, found wrong and fixed, rather
-than a clean narrative that was never in doubt.
+An initial assessment of the relationship between `Customer Status` and tenure proved incorrect. It
+was corrected through an explicit correction entry with the original retained verbatim, so the record
+shows an assumption tested, found wrong and fixed, rather than a clean account that was never in
+doubt.
 
-### V-10: pandas silently ate a category
+### A category disappeared during file conversion
 
 Two cleaning checks failed. The root cause was not a SQL bug: **pandas had silently coerced the
 literal string `'None'` to `NaN`** during the CSV conversion step, so a real category had vanished
@@ -286,9 +286,9 @@ the data lives.
 The converter was subsequently rewritten on `openpyxl` with `data_only=True`, which also removed a
 dependency and handled the workbooks' `calcChain` correctly.
 
-### V-11: non-deterministic deciles
+### Non-deterministic deciles
 
-Mine. `NTILE` without a tie-break. Found by a validation check that compared decile assignment across
+`NTILE` without a tie-break. Found by a validation check that compared decile assignment across
 runs, fixed as shown in section 6, and recorded.
 
 ### A fourth issue, procedural
@@ -313,7 +313,7 @@ stays scannable.
 
 ### CH-01: the base position
 
-![Annual recurring revenue at risk, opening cohort](../outputs/figures/CH01_revenue_at_risk_opening_cohort.png)
+![Annual recurring revenue at risk, opening cohort](../visuals/CH01_revenue_at_risk_opening_cohort.png)
 
 **OBSERVED FACT (F-01.4, F-01.7, F-01.10).** Opening-cohort recurring revenue is **4,799,408.40
 currency units**. Of that, **1,232,425.80** is at risk, **25.68%**, leaving **3,566,982.60** retained,
@@ -327,7 +327,7 @@ currency units**. Of that, **1,232,425.80** is at risk, **25.68%**, leaving **3,
 
 ### CH-03: revenue concentration
 
-![Revenue share by monthly-charge decile](../outputs/figures/CH03_revenue_concentration_pareto.png)
+![Revenue share by monthly-charge decile](../visuals/CH03_revenue_concentration_pareto.png)
 
 **OBSERVED FACT (F-02.1, F-02.3, F-02.7).** The top decile holds **16.71%** of recurring revenue while
 holding 10.00% of customers. The top two deciles hold **31.84%**, the top three **45.71%**, and the
@@ -351,7 +351,7 @@ architecture.**
 
 This is the full AQ-05 diagnostic, and the reason the README's Finding 4 can be stated at all.
 
-![Churn index by segment, all seven lenses, High value tier](../outputs/figures/CH08_driver_lenses_high_tier.png)
+![Churn index by segment, all seven lenses, High value tier](../visuals/CH08_driver_lenses_high_tier.png)
 
 **Scope:** opening cohort by High value tier, **n = 2,004**, scope churn rate **30.89%**. Each lens
 partitions the tier to exactly 2,004 customers (A-VAL-11).
@@ -398,7 +398,7 @@ heavily interrelated**, since long-tenure customers are more likely to hold long
 
 ### CH-11: early-life composition
 
-![Contract and offer composition of in-period acquisitions](../outputs/figures/CH11_early_life_composition.png)
+![Contract and offer composition of in-period acquisitions](../visuals/CH11_early_life_composition.png)
 
 **OBSERVED FACT (F-07.6, F-07.10).** **95.43%** of in-period acquisitions (1,003 of 1,051) hold
 Month-to-Month contracts. Only **Offer E** (457 customers, 61.71% churn) and **"No offer"** (594
@@ -438,7 +438,7 @@ definition or an expectation to make a check pass.
 ### The chart gate
 
 Eleven charts, eight checks each, **88 of 88 PASS**. See
-[`COMMUNICATION_VALIDATION.md`](COMMUNICATION_VALIDATION.md).
+[Technical Notes](technical/technical-notes.md).
 
 Values are compared as **strings**, not floats, so a figure that has been re-rounded or reformatted
 fails rather than passing on numeric tolerance. The gate also scans every title, label and annotation
@@ -450,7 +450,7 @@ charts.
 
 Eleven charts inspected against the communication plan: **5 PASS, 5 MINOR FIX, 1 MAJOR FIX**, all
 fixes applied and re-verified, with audit CSVs confirmed byte-identical afterwards. See
-[`VISUAL_QA.md`](VISUAL_QA.md).
+[Technical Notes](technical/technical-notes.md).
 
 ---
 
@@ -485,16 +485,16 @@ the simpler claim that the business loses its most valuable customers.
 
 ---
 
-## 14. What I would do differently
+## 14. What would be done differently
 
 - **Run data quality checks in the database from the start.** The V-10 defect existed for an entire
   stage because a dataframe had silently removed a category. Checks against the loaded data would
   have caught it immediately.
 - **Set `ON_ERROR_STOP=1` from the first command, not after a silent failure.**
-- **Put scope in the data, not in section headers.** The `\echo` labelling defect existed because
+- **Put scope in the data, not in section headers.** The console-header labelling defect existed because
   labels lived in console output rather than in result columns. Explicit scope columns (D-22) make
   the artefact self-describing.
-- **Pre-register the granularity sensitivity too.** The divergence result is specific to a
+- **Define the granularity sensitivity in advance too.** The divergence result is specific to a
   nine-cell partition, and pre-registering a coarse and a fine variant would have allowed the
   granularity question to be answered rather than deferred.
 
@@ -515,3 +515,7 @@ described as high or low against an industry figure that has not been sourced.
 California, one quarter. Licensing unresolved; source workbooks are not committed. No licensing claim
 is made. All monetary values are unitless currency units. No causal claim is made anywhere in this
 project.</sub>
+
+---
+
+*Findings in full: [`findings.md`](findings.md). Recommendations: [`recommendations.md`](recommendations.md). Method and definitions: [`methodology.md`](methodology.md). Supporting technical documentation: [`technical/`](technical/).*

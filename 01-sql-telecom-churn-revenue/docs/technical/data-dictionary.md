@@ -21,7 +21,7 @@
 | Five tables (demographics, location, population, services, status) | ✅ **AUTHORITATIVE** — loaded into the database |
 | `Telco_customer_churn.xlsx` (merged, 33 columns) | ⚠️ **CROSS-CHECK ONLY** — contains defects (V-03 to V-06). **Must not be loaded into the schema** |
 
-Evidence for this precedence is in [`../docs/DATASET_VALIDATION.md`](../docs/DATASET_VALIDATION.md) §9.
+Evidence for this precedence is in [Data Quality](data-quality.md) §9.
 
 ---
 
@@ -89,12 +89,12 @@ Evidence for this precedence is in [`../docs/DATASET_VALIDATION.md`](../docs/DAT
 | 4 | `Referred a Friend` | str | 0 | Referral flag | Yes 3,222 / No 3,821 |
 | 5 | `Number of Referrals` | int | 0 | Referral count | ≥ 0 |
 | 6 | `Tenure in Months` | int | 0 | **Months with the company** | **1–72. No zeros** |
-| 7 | `Offer` | str | **0 true nulls** | Promotional offer held | A 520 · B 824 · C 415 · D 602 · E 805 · **literal `'None'` token × 3,877 → mapped to `'No offer'` (V-10)** |
+| 7 | `Offer` | str | **0 true nulls** | Promotional offer held | A 520 · B 824 · C 415 · D 602 · E 805 · **literal `'None'` token × 3,877 → mapped to `'No offer'` ** |
 | 8 | `Phone Service` | str | 0 | Home phone subscription | Yes 6,361 / No 682 |
 | 9 | `Avg Monthly Long Distance Charges` | float | 0 | Average monthly long-distance | 0.00–49.99. **Separate from `Monthly Charge`** |
 | 10 | `Multiple Lines` | str | 0 | Multiple telephone lines | Yes 2,971 / No 4,072 |
 | 11 | `Internet Service` | str | 0 | Internet subscription | Yes 5,517 / No 1,526 |
-| 12 | `Internet Type` | str | **0 true nulls** | Technology | Fiber Optic 3,035 · DSL 1,652 · Cable 830 · **literal `'None'` token × 1,526 ⟺ `Internet Service = 'No'` (verified) → mapped to `'No internet'` (V-10)** |
+| 12 | `Internet Type` | str | **0 true nulls** | Technology | Fiber Optic 3,035 · DSL 1,652 · Cable 830 · **literal `'None'` token × 1,526 ⟺ `Internet Service = 'No'` (verified) → mapped to `'No internet'` ** |
 | 13 | `Avg Monthly GB Download` | int | 0 | Average monthly data usage | ≥ 0 |
 | 14 | `Online Security` | str | 0 | Add-on | Yes 2,019 / No 5,024 |
 | 15 | `Online Backup` | str | 0 | Add-on | Yes 2,429 / No 4,614 |
@@ -127,7 +127,7 @@ Evidence for this precedence is in [`../docs/DATASET_VALIDATION.md`](../docs/DAT
 | 1 | `Customer ID` | str | 0 | FK → demographics | 7,043 distinct |
 | 2 | `Count` | int | 0 | BI artefact | Constant `1` — **drop** |
 | 3 | `Quarter` | str | 0 | Reporting quarter | Constant `Q3` |
-| 4 | `Satisfaction Score` | int | 0 | Satisfaction rating | 1–5. ❌ **EXCLUDED — outcome-contaminated (F-EX-08)** |
+| 4 | `Satisfaction Score` | int | 0 | Satisfaction rating | 1–5. ❌ **EXCLUDED — recorded with knowledge of the outcome (F-EX-08)** |
 | 5 | `Customer Status` | str | 0 | **Period-end status** | Stayed 4,720 · Churned 1,869 · **Joined 454** |
 | 6 | `Churn Label` | str | 0 | Churn indicator | Yes 1,869 / No 5,174 |
 | 7 | `Churn Value` | int | 0 | **Authoritative churn flag** | 1 = 1,869 · 0 = 5,174. **Perfect agreement with `Churn Label`** |
@@ -169,7 +169,7 @@ Annualisation (`× 12`) is therefore evidence-supported. Assumption A-03 stands,
 
 `Total Long Distance Charges` ≈ `Avg Monthly Long Distance Charges` × tenure independently (median ratio 1.0000, 90.3% within ±1%). **`Monthly Charge` is the recurring subscription only.**
 
-**Open decision (C-2), to be fixed at FRAME before any result is seen:** whether revenue at risk uses `Monthly Charge × 12` (recommended — the contractually recurring element a retention offer protects) or adds long distance.
+**Definition used:** revenue at risk is `Monthly Charge × 12`, the contractually recurring element a retention offer protects. Long-distance revenue is measured separately and reported alongside. See [Methodology](../methodology.md).
 
 ### `Total Charges` — resolved
 
@@ -177,13 +177,13 @@ Cumulative lifetime-to-date, not quarter-bounded. IBM's published description is
 
 ---
 
-## Derived Fields (to be created at PREPARE)
+## Derived Fields
 
 | Field | Type | Calculation | Purpose |
 |-------|------|-------------|---------|
 | `is_churned` | boolean | `Churn Value = 1` | Outcome flag |
 | `is_new_joiner` | boolean | `Customer Status = 'Joined'` | Denominator control — **C-3** |
-| `tenure_band` | text | `CASE` over `Tenure in Months` — **cut points fixed at FRAME, before results are seen** | Lifecycle segmentation |
+| `tenure_band` | text | `CASE` over `Tenure in Months` — **cut points fixed before results were reviewed** | Lifecycle segmentation |
 | `annualised_revenue` | numeric | `Monthly Charge × 12` | Revenue-at-risk basis — **subject to C-2** |
 | `revenue_decile` | int | `NTILE(10) OVER (ORDER BY monthly_charge, customer_id)` | Value segmentation. **Deterministic tie-break (V-11)** — without it, membership could shift between runs at the Mid/High boundary |
 | `service_count` | int | Count of `Yes` across the 8 add-on fields | Service intensity. Clean binary — no sentinel handling needed |
@@ -199,7 +199,7 @@ Cumulative lifetime-to-date, not quarter-bounded. IBM's published description is
 | Tenure | Whole months, 1–72 |
 | Churn | `Churn Value` authoritative; `Churn Label` verified in perfect agreement |
 | Churn denominator | **Undecided — C-3** |
-| Nulls | **Two conventions in the source.** `services` uses a literal `'None'` token (0 true nulls); `status` uses true nulls. Both are **structural**, never missing. Never impute. See V-10 |
+| Nulls | **Two conventions in the source.** `services` uses a literal `'None'` token (0 true nulls); `status` uses true nulls. Both are **structural**, never missing. Never impute. See [Data Quality](data-quality.md) |
 | Decile assignment | `NTILE(10) OVER (ORDER BY monthly_charge, customer_id)` — deterministic tie-break per V-11 |
 
 ---
@@ -212,7 +212,7 @@ Cumulative lifetime-to-date, not quarter-bounded. IBM's published description is
 | Duplicate customer IDs | **0** |
 | Null keys | **0** |
 | Orphan records | **0** in every relationship |
-| Genuine missing values | **0** — every absent value is structural (V-10) |
+| Genuine missing values | **0** — every absent value is structural  |
 | True null cells in `services` | **0** — uses a literal `'None'` token instead |
 | True null cells in `status` | 10,348 — genuinely empty cells |
 | Invalid charges (zero/negative) | **0** |

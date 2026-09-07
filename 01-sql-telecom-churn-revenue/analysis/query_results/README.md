@@ -6,7 +6,7 @@ source of truth for the whole project.**
 Every file here was produced by running `psql` against the local PostgreSQL 18.6 instance. Nothing in
 this directory was generated in any other environment, and no value here has been edited by hand.
 
-**43 files:** 24 PREPARE outputs, 18 ANALYSE outputs, and this README.
+**43 files:** 24 data preparation and validation outputs, 18 analysis outputs, and this README.
 
 ---
 
@@ -14,13 +14,11 @@ this directory was generated in any other environment, and no value here has bee
 
 | Prefix | Stage | Produced by |
 |---|---|---|
-| `prepare_*` | PREPARE | `sql/00_setup/`, `sql/01_cleaning/`, `sql/02_eda/` |
-| `analyse_v*` | ANALYSE | `sql/04_kpi_views/` — each view's own self-check output, one per view |
-| `analyse_0*` | ANALYSE | `sql/03_analysis/` — the question-by-question extracts and the validation gate |
+| `prepare_*` | Setup, preparation and validation | `sql/01_setup/`, `sql/02_preparation/`, `sql/03_validation/` |
+| `analyse_v*` | Reporting views | `sql/05_reporting_views/` — each view's own self-check output, one per view |
+| `analyse_0*` | Analysis | `sql/04_analysis/` — the question-by-question extracts and the validation gate |
 
-Output filenames map to their source script. Run order and the exact `psql` invocations are in
-[`../../sql/00_setup/README.md`](../../sql/00_setup/README.md) for PREPARE and
-[`../../sql/03_analysis/README.md`](../../sql/03_analysis/README.md) for ANALYSE.
+Output filenames map to their source script. Run order and the exact `psql` invocations are in [`../../sql/README.md`](../../sql/README.md).
 
 ---
 
@@ -35,14 +33,14 @@ Output filenames map to their source script. Run order and the exact `psql` invo
 | `analyse_05_drivers_high_value.txt` | **F-05** all seven driver lenses, High tier |
 | `analyse_06_drivers_comparison.txt` | **F-06** High tier vs base-wide |
 | `analyse_07_early_life_churn.txt` | **F-07** in-period acquisitions |
-| `analyse_08_validation.txt` | **A-VAL-01 to A-VAL-19, the gate. All PASS** |
+| `analyse_08_validation.txt` | **The 19-check validation gate. All PASS** |
 
 The ten `analyse_v*.txt` files are each view's self-check output. They confirm every view built at the
 expected grain.
 
 ---
 
-## Scope labels live in the data (decision D-22)
+## Scope labels live in the data
 
 `psql \echo` writes to stdout, not to the `-o` output file, so section headers never reached the
 committed evidence. Population scope is therefore carried as an **explicit column** in the result set
@@ -51,7 +49,7 @@ depending on the query.
 
 `analyse_04_divergence.txt` carries `result_designation` on every row, reading either
 **`PRIMARY RESULT - Opening cohort`** or **`SENSITIVITY ANALYSIS ONLY - All customers`**, so the
-locked A-07 designation is visible in the artefact rather than only in a document that could drift.
+locked population designation is visible in the artefact rather than only in a document that could drift.
 
 ---
 
@@ -59,10 +57,10 @@ locked A-07 designation is visible in the artefact rather than only in a documen
 
 `-v ON_ERROR_STOP=1` is used on every invocation. Without it, a failing statement writes its error to
 the console while the output file quietly captures whatever succeeded, which is exactly how a
-cross-check failure went unnoticed once during PREPARE.
+cross-check failure went unnoticed once during development.
 
 Where an approved fix required a script to be re-run, the corrected output **overwrites the original
-file of the same name**, so each script has exactly one current output. During the PREPARE repair,
+file of the same name**, so each script has exactly one current output. During that repair,
 six re-run outputs were briefly kept alongside the originals under a `run2_` prefix for comparison.
 They were confirmed byte-identical to the `prepare_*` files they duplicated and were removed at
 release; no `run2_` files remain.
@@ -72,12 +70,12 @@ release; no `run2_` files remain.
 ## How these files are consumed
 
 `scripts/build_charts.py` parses these outputs with `scripts/psql_parse.py` and writes the exact rows
-each chart used to `outputs/chart_data/`. **No chart value is typed by hand.** The parser asserts
+each chart used to `analysis/chart_data/`. **No chart value is typed by hand.** The parser asserts
 psql's own declared `(N rows)` footer against the number of rows it parsed and raises on mismatch,
 which is the tripwire for a truncated or partially written output file.
 
 `scripts/validate_charts.py` then checks every figure back against these outputs and against
-[`../../docs/FINDING_EVIDENCE_REGISTER.md`](../../docs/FINDING_EVIDENCE_REGISTER.md), comparing values
+[`../../docs/technical/findings-and-evidence.md`](../../docs/technical/findings-and-evidence.md), comparing values
 as strings rather than floats so a re-rounded figure fails rather than passing on tolerance.
 
 ---

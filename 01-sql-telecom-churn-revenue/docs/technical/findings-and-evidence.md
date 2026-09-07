@@ -1,16 +1,21 @@
-# Finding Evidence Register
+# Findings and Evidence
 
-## Project 01 — Telecommunications Revenue Retention: Prioritising Retention Investment by Revenue at Risk
+Every reported figure, traced to the query output it came from, with interpretation and inference
+kept separate from observed fact.
 
-**Stage:** 6 — COMMUNICATE (evidence chain)
+**Related:** [Methodology](../methodology.md) · [Data Quality](data-quality.md) · [Case Study](../case-study.md) · [Technical Notes](technical-notes.md)
+
+Telecom Customer Churn & Revenue Analysis
+
+**Scope:** evidence chain for every reported figure
 **Prepared:** 19 August 2026
-**Status:** 🔴 **EVIDENCE REGISTER ONLY — no recommendations, no charts, no narrative**
+**Status:** evidence record. Findings only; no recommendations.
 
 ---
 
 ## Evidence status
 
-**PREPARE and ANALYSE are locked.** No SQL, definition, population, calculation, segmentation rule, cut point, ranking or validation expectation has been modified in producing this register.
+**The data pipeline and the analysis are locked.** No SQL, definition, population, calculation, segmentation rule, cut point, ranking or validation expectation has been modified in producing this register.
 
 **All validation gates passed:** A-VAL-01 through A-VAL-19 report PASS in `analyse_08_validation.txt`, including the three critical controls — locked KPI reproduction (A-VAL-02a/b), driver-lens population integrity (A-VAL-11), and the prohibited-field scan (A-VAL-19).
 
@@ -26,7 +31,7 @@ Every figure below is quoted directly from a committed output file. **Nothing ha
 | **F-06** | High-value vs base-wide | `analyse_06_drivers_comparison.txt` | ✅ A-VAL-14 PASS |
 | **F-07** | Early-life churn | `analyse_07_early_life_churn.txt` | ✅ A-VAL-15 PASS |
 
-**Numbering:** the seven-group structure is retained exactly as specified. I see no evidence-based reason to add, merge or split a finding group. One structural observation is noted at F-04 regarding the sensitivity analysis; it does not warrant a separate ID.
+**Numbering:** the seven-group structure is retained as defined. No evidence supports adding, merging or splitting a finding group. One structural observation is noted at F-04 regarding the sensitivity analysis; it does not warrant a separate ID.
 
 ### Standing constraints on every statement below
 
@@ -34,7 +39,7 @@ Every figure below is quoted directly from a committed output file. **Nothing ha
 - **The data is fictional.** IBM describes it as *"a fictional telco company that provided home phone and Internet services to 7043 customers in California in Q3."* No statement here is evidence about any real operator or market.
 - **Single observation window.** `Quarter` is present but constant `Q3`. No trend exists and tenure must not be read as a time series.
 - **Licence unresolved** (D-09). No licensing claim is made anywhere.
-- **Excluded fields.** `Satisfaction Score`, `Churn Score`, `CLTV`, `Churn Reason` and `Churn Category` were structurally excluded and contributed to nothing below.
+- **Excluded fields.** `Satisfaction Score`, `Churn Score`, `CLTV`, `Churn Reason` and `Churn Category` were excluded at the database level and contributed to nothing below.
 - **No retention activity data.** The dataset contains no campaign, offer-made, contact or save records. Nothing here observes what the business actually did.
 
 ---
@@ -126,7 +131,7 @@ The smooth decile-by-decile decline in F-02.7, with no step change, indicates th
 - **Concentration is measured on recurring revenue only** (C-2). Long-distance revenue is excluded from this curve, so it does not describe total revenue concentration.
 - **Static snapshot.** Concentration at a point in time; no statement about whether it is changing.
 - **Currency unknown**; all values unitless.
-- The High/Mid/Low tier boundaries are the pre-registered C-6 cut points (deciles 8–10 / 4–7 / 1–3), fixed before results were seen.
+- The High/Mid/Low tier boundaries are the predefined C-6 cut points (deciles 8–10 / 4–7 / 1–3), fixed before results were seen.
 
 ## Business implication
 
@@ -223,7 +228,7 @@ The distribution of churn across the value range is established and is **not the
 
 **The central analytical construct of this project returns a near-null result, and that must be reported as the finding.**
 
-The two prioritisations — ranking by churn rate and ranking by revenue at risk — **agree almost completely** on this population. The top two segments are identical under both. No cell moves more than one rank position. The project was designed to test whether a churn-led prioritisation would materially diverge from a revenue-led one; on the opening cohort, using the pre-registered P1 segmentation, **it does not**.
+The two prioritisations — ranking by churn rate and ranking by revenue at risk — **agree almost completely** on this population. The top two segments are identical under both. No cell moves more than one rank position. The project was designed to test whether a churn-led prioritisation would materially diverge from a revenue-led one; on the opening cohort, using the predefined P1 segmentation, **it does not**.
 
 F-04.4 is the substantive positional fact: nearly four-fifths of opening-cohort recurring revenue at risk sits in two of the nine cells, both Month-to-Month.
 
@@ -233,7 +238,7 @@ F-04.10 shows contract type separating churn rates by roughly a factor of ten wi
 
 - **INFERENCE F-04.a:** the near-null divergence suggests that on this dataset, at this segmentation granularity, a churn-rate-led prioritisation would arrive at approximately the same segment ordering as a revenue-led one. *This is an inference about two prioritisation methods, not evidence about any operator's actual allocation — the dataset contains no retention activity data.*
 - **INFERENCE F-04.b:** the concentration in F-04.4 suggests prioritisation effort would concentrate on a small number of cells under either logic. **The data does not establish what intervention, if any, would be appropriate.**
-- **INFERENCE F-04.c:** the result may be sensitive to segmentation granularity — nine cells is a coarse partition, and divergence could differ at a finer grain. **This was not tested**, and testing it now would be a post-hoc specification change, which the pre-registration forbids.
+- **INFERENCE F-04.c:** the result may be sensitive to segmentation granularity — nine cells is a coarse partition, and divergence could differ at a finer grain. **This was not tested**, and testing it now would be a post-hoc specification change, which the the fixed specification does not allow.
 
 ## Sensitivity analysis — All customers
 
@@ -264,7 +269,7 @@ This is a useful, honest outcome of having locked A-07 in advance: the sensitivi
 - **The index is ordinal.** A divergence of ±1 conveys rank order only. It is reported here alongside churn rates, revenue-at-risk magnitudes and `n`, and must never be quoted alone (C-6).
 - **Fictional data.** Any divergence — or its absence — is a property of IBM's data-generation logic, not evidence about a real operator. **This finding demonstrates that the method works and what it returns; it does not establish that misallocation does or does not exist anywhere real.**
 - **No retention activity data.** BQ-04 was reworded at Stage 2 precisely because actual allocation is unobservable. This compares two *hypothetical* prioritisation logics.
-- **Nine cells is coarse.** The result is specific to the pre-registered P1 segmentation.
+- **Nine cells is coarse.** The result is specific to the predefined P1 segmentation.
 - **No causal content.** Contract type is *associated with* differing churn rates; nothing here establishes that contract type causes them, and contract choice is plausibly related to unobserved customer characteristics.
 - **Currency unknown.**
 
@@ -279,7 +284,7 @@ On this evidence, **the choice between a churn-led and a revenue-led prioritisat
 **Source:** `analyse_05_drivers_high_value.txt` (three blocks) · View: `vw_driver_lenses`
 **Scope:** opening cohort × High value tier · **n = 2,004** · **scope churn rate = 30.89%**
 
-**All seven pre-registered lenses are reported below, including those showing weak or non-differentiating results.**
+**All seven predefined lenses are reported below, including those showing weak or non-differentiating results.**
 
 ## Observed facts
 
@@ -386,11 +391,11 @@ The five caveat-flagged cells (L3 Mailed Check, L4 Cable, L4 DSL, L5 Light, L6 O
 - **L6 direction is unknown** — see INFERENCE F-05.b. This is the most easily misread lens in the register.
 - **Structural absences are not zero results.** L4 "No internet" and L5 "None" are absent from the High tier by construction, not because their churn is zero.
 - **No causal claims.** Every relationship is an association within a single fictional quarter.
-- **Excluded fields.** `Churn Reason` was structurally excluded, so no lens here is contaminated by an outcome-derived label.
+- **Excluded fields.** `Churn Reason` was excluded at the database level, so no lens here is contaminated by an outcome-derived label.
 
 ## Business implication
 
-Seven dimensions have been examined against a pre-registered specification, with the strength of each recorded, including the weak ones. Contract type, tenure band and offer held **warrant the most investigative attention**; the offer lens in particular **warrants investigation of direction before it is discussed at all**. None of this establishes what should be done.
+Seven dimensions have been examined against a predefined specification, with the strength of each recorded, including the weak ones. Contract type, tenure band and offer held **warrant the most investigative attention**; the offer lens in particular **warrants investigation of direction before it is discussed at all**. None of this establishes what should be done.
 
 ---
 
@@ -487,7 +492,7 @@ F-07.11 is effectively null: indices of 1.01 and 0.96 against a scope rate of 56
 - **INFERENCE F-07.a:** the concentration in Month-to-Month contracts (95.43%) is consistent with new customers typically starting on rolling terms. **The data does not establish acquisition practice**, and this composition alone would produce a higher aggregate churn rate for the cohort given the contract-type association observed at F-05.
 - **INFERENCE F-07.b:** the absence of Offers A–D suggests those offers are associated with existing rather than newly acquired customers. **This is an inference from absence.** The dataset has no offer date, eligibility rule or assignment logic, so no conclusion about offer policy is available.
 - **INFERENCE F-07.c:** the declining month-1-to-3 rates are **consistent with** either genuinely elevated first-month risk or with differing observation exposure across the three groups. **These two explanations cannot be distinguished with a single-quarter snapshot.**
-- **INFERENCE F-07.d:** early-life churn and established-base churn plausibly represent different phenomena warranting different treatment. *This was the pre-registered rationale for separating them (C-3); this finding is consistent with it, not proof of it.*
+- **INFERENCE F-07.d:** early-life churn and established-base churn plausibly represent different phenomena warranting different treatment. *This was the predefined rationale for separating them (C-3); this finding is consistent with it, not proof of it.*
 
 ## Limitations and caveats
 
@@ -571,11 +576,11 @@ One point of **apparent** tension is worth stating plainly rather than leaving f
 
 ## Recommended next step
 
-Before any narrative is written, I would suggest agreeing **which findings carry the story and which are context**, because two results push against the project's original framing:
+Before any narrative is written, **which findings carry the story and which are context** should be settled, because two results push against the project's original framing:
 
 - **F-04** returns a near-null divergence — the central construct did not find what it was designed to detect
 - **F-06** shows most driver dimensions behaving similarly in the High tier and base-wide
 
-Both are legitimate, well-evidenced outcomes. How prominently they feature is a judgement call about honesty versus narrative convenience, and it should be made deliberately and in advance rather than settled while drafting.
+Both are legitimate, well-evidenced outcomes. How prominently they feature is a judgement about honesty versus narrative convenience, and is settled deliberately in advance rather than while drafting.
 
 **Still open and not to be closed by assumption:** B-5 (a sourced margin range, required before AQ-07) and B-6 (a churn benchmark source, or the KPI ships without one and says so).

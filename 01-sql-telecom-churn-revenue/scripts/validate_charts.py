@@ -13,8 +13,8 @@ Eight checks per chart, matching the COMMUNICATE stage brief:
                      comparison, so a re-rounded value fails.
   V2  Scope        - the chart's audit CSV contains only rows of the declared
                      population scope, checked on the output's own scope column.
-  V3  Prohibited   - no structurally excluded field (Satisfaction Score, Churn
-                     Score, CLTV, Churn Reason, Churn Category) and no restricted
+  V3  Prohibited   - no field excluded at the database level (Satisfaction Score,
+                     Churn Score, CLTV, Churn Reason, Churn Category) and no restricted
                      protected characteristic appears in the chart's data.
   V4  Causation    - no causal verb appears in any title, label or annotation.
   V5  Null honesty - the divergence chart states the null result in its own title.
@@ -35,8 +35,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FIGURES = ROOT / "outputs" / "figures"
-CHART_DATA = ROOT / "outputs" / "chart_data"
+FIGURES = ROOT / "visuals"
+CHART_DATA = ROOT / "analysis" / "chart_data"
 
 # Excluded fields (structural exclusions) and restricted protected characteristics.
 PROHIBITED = [
