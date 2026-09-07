@@ -2,8 +2,7 @@
 # Data Analytics Portfolio — Python environment
 #
 # One environment for the whole portfolio. Python is used only
-# where it provides a genuine analytical advantage (see
-# _portfolio/CLAUDE.md § Tool Selection).
+# where it provides a genuine analytical advantage.
 #
 # Setup:
 #   python -m venv .venv

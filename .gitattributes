@@ -100,7 +100,6 @@ LICENSE         text eol=lf
 # Stop documentation and screenshots from swamping the language
 # bar, so the repo reads as SQL / Python rather than "Markdown".
 # ------------------------------------------------------------
-_portfolio/**       linguist-documentation
 */docs/**           linguist-documentation
 **/screenshots/**   linguist-documentation
 **/figures/**       linguist-documentation

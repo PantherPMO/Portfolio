@@ -58,26 +58,25 @@ The tool used in each project was chosen because it fits the analytical problem,
 
 ```
 Data Portfolio/
-├── _portfolio/          Portfolio control centre — standards, registries, quality gates
 ├── _assets/             Shared visual assets and brand palette
 └── NN-<tool>-<name>/    One folder per project
 ```
 
-Every project follows the same process: define the business question, source and validate the data, model it, analyse it, and report what the evidence supports. Shared standards for SQL, KPI definitions and chart design are documented in [`_portfolio/`](_portfolio/).
+Every project follows the same process: define the business question, source and validate the data, model it, analyse it, and report what the evidence supports. The same standards for SQL style, KPI definition and chart design are applied across all of them, and each project documents how they were applied to its own work.
 
-**Start here:** [Project 01: Telecom Customer Churn & Revenue Analysis](01-sql-telecom-churn-revenue/) · [Dataset Registry](_portfolio/DATASET_REGISTRY.md) · [SQL Standards](_portfolio/SQL_STANDARDS.md)
+**Start here:** [Project 01: Telecommunications Revenue Retention](01-sql-telecom-churn-revenue/) · [Project 02: Warehouse Inventory & Supply Chain Performance](02-sql-warehouse-inventory-supply-chain/)
 
 ---
 
 ## Data & Reproducibility
 
-All datasets are public and sourced from reputable providers (Kaggle, ONS, data.gov.uk, World Bank, public APIs, published company data). Every dataset is logged in the [Dataset Registry](_portfolio/DATASET_REGISTRY.md) with its source URL, date accessed, and licence status.
+All datasets are public and sourced from reputable providers (Kaggle, ONS, data.gov.uk, World Bank, public APIs, published company data). Each project records its dataset's source, date accessed and licence status in its own data documentation.
 
-**Licence status is recorded as found, not assumed.** Where a licence could not be established, the registry records it as unresolved, no licensing claim is made, and the raw files are excluded from this repository. Project 01's dataset is one such case.
+**Licence status is recorded as found, not assumed.** Where a licence could not be established, it is recorded as unresolved, no licensing claim is made, and the raw files are excluded from this repository. Project 01's dataset is one such case.
 
-Where a real dataset could not support a required business case, synthetic data was used — clearly labelled as such, with the generation method and justification documented in the [Synthetic Data Log](_portfolio/SYNTHETIC_DATA_LOG.md). No synthetic dataset is presented as real.
+Where a real dataset could not support a required business case, synthetic data was used, clearly labelled as such, with the generation method and justification documented in the project that uses it. No synthetic dataset is presented as real.
 
-Large raw datasets are not committed to this repository. Each project's `data/raw/README.md` documents the source and how to obtain the data.
+Large raw datasets are not committed to this repository. Each project's `data/` documentation records the source and how to obtain the data.
 
 ---
 
