@@ -5,9 +5,7 @@ kept separate from observed fact.
 
 **Related:** [Methodology](../methodology.md) · [Data Quality](data-quality.md) · [Case Study](../case-study.md) · [Technical Notes](technical-notes.md)
 
-Telecom Customer Churn & Revenue Analysis
-
-**Scope:** evidence chain for every reported figure
+**Scope:** every reported figure, with its source file and block
 **Prepared:** 19 August 2026
 **Status:** evidence record. Findings only; no recommendations.
 
@@ -33,7 +31,7 @@ Every figure below is quoted directly from a committed output file. **Nothing ha
 
 **Numbering:** the seven-group structure is retained as defined. No evidence supports adding, merging or splitting a finding group. One structural observation is noted at F-04 regarding the sensitivity analysis; it does not warrant a separate ID.
 
-### Standing constraints on every statement below
+### Constraints that apply to everything below
 
 - **Currency is unknown.** Profiling check P-15 found no currency symbol, code or number format in any source file. All monetary figures are quoted as **currency units** and must never be labelled £, $, USD or GBP.
 - **The data is fictional.** IBM describes it as *"a fictional telco company that provided home phone and Internet services to 7043 customers in California in Q3."* No statement here is evidence about any real operator or market.
@@ -228,7 +226,7 @@ The distribution of churn across the value range is established and is **not the
 
 **The central analytical construct of this project returns a near-null result, and that must be reported as the finding.**
 
-The two prioritisations — ranking by churn rate and ranking by revenue at risk — **agree almost completely** on this population. The top two segments are identical under both. No cell moves more than one rank position. The project was designed to test whether a churn-led prioritisation would materially diverge from a revenue-led one; on the opening cohort, using the predefined P1 segmentation, **it does not**.
+The two prioritisations — ranking by churn rate and ranking by revenue at risk — **agree almost completely** on this population. The top two segments are identical under both. No cell moves more than one rank position. The work set out to test whether a churn-led prioritisation would materially diverge from a revenue-led one; on the opening cohort, using the predefined P1 segmentation, **it does not**.
 
 F-04.4 is the substantive positional fact: nearly four-fifths of opening-cohort recurring revenue at risk sits in two of the nine cells, both Month-to-Month.
 
@@ -238,7 +236,7 @@ F-04.10 shows contract type separating churn rates by roughly a factor of ten wi
 
 - **INFERENCE F-04.a:** the near-null divergence suggests that on this dataset, at this segmentation granularity, a churn-rate-led prioritisation would arrive at approximately the same segment ordering as a revenue-led one. *This is an inference about two prioritisation methods, not evidence about any operator's actual allocation — the dataset contains no retention activity data.*
 - **INFERENCE F-04.b:** the concentration in F-04.4 suggests prioritisation effort would concentrate on a small number of cells under either logic. **The data does not establish what intervention, if any, would be appropriate.**
-- **INFERENCE F-04.c:** the result may be sensitive to segmentation granularity — nine cells is a coarse partition, and divergence could differ at a finer grain. **This was not tested**, and testing it now would be a post-hoc specification change, which the the fixed specification does not allow.
+- **INFERENCE F-04.c:** the result may be sensitive to segmentation granularity — nine cells is a coarse partition, and divergence could differ at a finer grain. **This was not tested**, and testing it now would mean choosing a specification after seeing the answer.
 
 ## Sensitivity analysis — All customers
 
@@ -565,7 +563,7 @@ One point of **apparent** tension is worth stating plainly rather than leaving f
 | **F-01** | ✅ **READY** | Clean counts and rates, all reconciled, all validated. The only discipline required is keeping the 21.23% / 26.54% distinction explicit and never pairing a rate with a mismatched revenue figure |
 | **F-02** | ✅ **READY** | Straightforward descriptive distribution, fully validated. Requires stating the decile convention (1 = lowest) on every output, since both conventions exist in practice |
 | **F-03** | ⚠️ **READY WITH CAVEAT** | All cells reportable and validated. **Caveat:** the pattern is non-monotonic and the decile-10 dip is unexplained. It must be presented as observed shape, not as a value–risk relationship, and the F-01.9 / F-03.9 relationship must be handled as described above |
-| **F-04** | ⚠️ **READY WITH CAVEAT** | Fully validated, and the A-07 designation is now visible on every row. **Caveat:** the project's central construct returns a near-null result — maximum divergence of one rank. This is a legitimate finding and must be reported as such rather than presented as though divergence had been demonstrated. The ordinal index must never be quoted without its magnitudes |
+| **F-04** | ⚠️ **READY WITH CAVEAT** | Fully validated, and the A-07 designation is now visible on every row. **Caveat:** the central question of the project returns a near-null result — maximum divergence of one rank. This is a legitimate finding and must be reported as such rather than presented as though divergence had been demonstrated. The ordinal index must never be quoted without its magnitudes |
 | **F-05** | ⚠️ **READY WITH CAVEAT** | All seven lenses present, each partitioning to 2,004. **Caveats:** five cells require `n` to be stated; L4's DSL rate rests on a single churned customer; **L6's direction is unestablished and is the most easily misread item in the register**; structural absences must not be read as zero results |
 | **F-06** | ⚠️ **READY WITH CAVEAT** | Validated, zero orphans. **Caveat:** four of seven lenses show little differentiation between scopes. This partially realises charter risk R-04 and weakens a stated project premise. It must be reported plainly, and L4's exception rests partly on small cells |
 | **F-07** | ⚠️ **READY WITH CAVEAT** | Validated and correctly separated from the opening cohort. **Caveats:** two cells below threshold must not be quoted; the monthly rates are **not** a survival curve; and no onboarding cause may be asserted — the dataset contains no onboarding data of any kind |
@@ -578,7 +576,7 @@ One point of **apparent** tension is worth stating plainly rather than leaving f
 
 Before any narrative is written, **which findings carry the story and which are context** should be settled, because two results push against the project's original framing:
 
-- **F-04** returns a near-null divergence — the central construct did not find what it was designed to detect
+- **F-04** returns a near-null divergence: the test did not find what it was built to detect
 - **F-06** shows most driver dimensions behaving similarly in the High tier and base-wide
 
 Both are legitimate, well-evidenced outcomes. How prominently they feature is a judgement about honesty versus narrative convenience, and is settled deliberately in advance rather than while drafting.

@@ -4,11 +4,11 @@
 
 **Stage:** 1 — DEFINE
 **Status:** ✅ **APPROVED** by Peters, 19 August 2026
-**Dataset status:** ✅ **VERIFIED AND APPROVED** — Stage 2 complete, see [`docs/DATASET_VALIDATION.md`](docs/DATASET_VALIDATION.md)
-**Decisions applied:** C-1, C-2 approved 19 Aug 2026 — see [`docs/DECISIONS.md`](docs/DECISIONS.md)
-**FRAME specification:** proposed, awaiting approval — see [`docs/FRAME_SPECIFICATION.md`](docs/FRAME_SPECIFICATION.md)
+**Dataset status:** ✅ **VERIFIED AND APPROVED** — Stage 2 complete, see [`docs/technical/data-quality.md`](docs/technical/data-quality.md)
+**Decisions applied:** C-1, C-2 approved 19 Aug 2026 — see [`docs/methodology.md`](docs/methodology.md)
+**FRAME specification:** proposed, awaiting approval — see [`docs/methodology.md`](docs/methodology.md)
 
-> **Analysis may not begin until all six pre-conditions in the sign-off section are met.** See `_portfolio/CLAUDE.md` §2.1.
+> **Analysis may not begin until all six pre-conditions in the sign-off section are met.**
 
 ---
 
@@ -16,7 +16,7 @@
 
 This project was originally proposed as "Telecommunications Customer Churn & Revenue Analytics." It was deliberately reframed at DEFINE stage.
 
-**Why:** churn analysis is the most saturated project type in the analytics portfolio landscape, and conventional churn analysis has three defects for this purpose. Churn *rate* is not the business's unit of account — retention functions are funded to protect revenue, not to reduce a percentage. Churn *prediction* is not a SQL problem, and forcing a classifier into SQL would violate the tool-selection principle in `CLAUDE.md` §3. And "why do customers leave" is descriptive: it produces findings, not decisions.
+**Why:** churn analysis is the most saturated project type in the analytics portfolio landscape, and conventional churn analysis has three defects for this purpose. Churn *rate* is not the business's unit of account — retention functions are funded to protect revenue, not to reduce a percentage. Churn *prediction* is not a SQL problem, and forcing a classifier into SQL would violate the principle that the tool should follow the question. And "why do customers leave" is descriptive: it produces findings, not decisions.
 
 **The analytical spine:**
 
@@ -156,7 +156,7 @@ Tenure-band cohort analysis · revenue concentration (Pareto) via window functio
 
 ## 9. Out of Scope
 
-Each exclusion is a deliberate decision, to be recorded in `docs/DECISIONS.md` and defended in the README.
+Each exclusion is a deliberate decision, to be recorded in `docs/methodology.md` and defended in the README.
 
 | Excluded | Why |
 |---|---|
@@ -180,7 +180,7 @@ Each exclusion is a deliberate decision, to be recorded in `docs/DECISIONS.md` a
 
 ## 10. Candidate KPIs
 
-Consistent with `_portfolio/KPI_LIBRARY.md`. Benchmarks marked *[to source]* must carry a citation before use — an unsourced benchmark is an invented figure.
+Consistent with the standard KPI definitions used across the portfolio. Benchmarks marked *[to source]* must carry a citation before use — an unsourced benchmark is an invented figure.
 
 | KPI | Formula | Grain | Decision it supports | Status |
 |---|---|---|---|---|
@@ -202,7 +202,7 @@ Four additions to `KPI_LIBRARY.md` to be confirmed at FRAME.
 
 ## 11. Business Questions
 
-Support status assessed against the verified schema in [`docs/DATASET_VALIDATION.md`](docs/DATASET_VALIDATION.md) §D. **Three require rewording before the gate.**
+Support status assessed against the verified schema in [`docs/technical/data-quality.md`](docs/technical/data-quality.md). **Three require rewording before the gate.**
 
 | ID | Business question | Why the stakeholder cares | Support |
 |---|---|---|---|
@@ -269,7 +269,7 @@ Support status assessed against the verified schema in [`docs/DATASET_VALIDATION
 | Data dictionary | `data/DATA_DICTIONARY.md` |
 | Dataset validation audit trail | `docs/DATASET_VALIDATION.md` |
 | Scored quality gate | `QUALITY_GATE.md` |
-| Interview brief section | `_portfolio/INTERVIEW_BRIEF.md` |
+| Interview brief section | Held outside this repository |
 
 ---
 
@@ -359,7 +359,7 @@ Churn analysis is the most common project in the field, and doing it conventiona
 |---|---|---|
 | 1 | Business problem defined | ✅ **Approved** 19 Aug 2026 — §2 |
 | 2 | Dataset identified | 🔶 **Conditionally approved** — pending file verification |
-| 3 | Dataset source documented | ✅ **Verified** — IBM primary source, `docs/DATASET_VALIDATION.md` |
+| 3 | Dataset source documented | ✅ **Verified** — IBM primary source, `docs/technical/data-quality.md` |
 | 4 | Analytical questions defined | 🟡 §12 — AQ-01 and AQ-07 rescoped, awaiting confirmation |
 | 5 | Business questions defined | 🟡 §11 — BQ-01, BQ-04, BQ-06 reworded, awaiting confirmation |
 | 6 | Methodology agreed | 🟡 §13 — approved in principle; final form depends on P-07 |

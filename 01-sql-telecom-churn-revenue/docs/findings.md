@@ -1,84 +1,70 @@
 # Findings
 
-Seven finding groups, in the order the analysis produced them. Each is set out the same way: what was observed, what it means, what it implies for a retention decision, what limits it, and where the number came from.
+Seven findings, in the order the work produced them. Two of them came back weak, and both are here in full: they were the questions worth asking, and a weak answer to a good question is still worth reporting.
 
-Two of the seven returned weak or null results. They are here at full length, in their original position, because the project was designed to test them and the result of a test is the finding whether or not it is the one that was expected.
+Everything below is an association observed in a single quarter of one fictional dataset. Nothing establishes cause. There are no campaign, offer, contact or save records in the data, so no statement is made about what any operator did or what any retention effort achieved. All monetary values are unitless.
 
-**Standing constraints on everything below.** Every relationship reported is an association observed in a single quarter of one fictional dataset. Nothing here establishes cause. The dataset contains no campaign, offer-made, contact or save records, so retention activity is unobservable and no statement is made about what any operator did or should spend. All monetary values are unitless. No external churn benchmark is asserted, because none was sourced.
-
-Full evidence chains, with block-level source references for every figure, are in [`technical/findings-and-evidence.md`](technical/findings-and-evidence.md).
+Block-level source references for every figure are in [`technical/findings-and-evidence.md`](technical/findings-and-evidence.md).
 
 ---
 
-## 1. Revenue exposure is larger than customer exposure
+## 1. The revenue exposure is bigger than the customer exposure
 
-**Observed fact.** In the opening cohort of 5,992 customers, 1,272 churned, a rate of 21.23%. Annual recurring revenue at risk is 1,232,425.80, which is 25.68% of the cohort's 4,799,408.40 of recurring revenue. Revenue retention is therefore 74.32% against customer retention of 78.77%. Across all 7,043 customers the figures are 1,869 churned, 26.54%, and 1,669,570.20 of recurring revenue at risk. Annual long-distance revenue at risk is a further 519,603.72, quantified but held outside the headline.
+Of the 5,992 customers in the established base, 1,272 left during the quarter, a churn rate of 21.23%. They carried 1,232,425.80 of annual recurring revenue with them, 25.68% of the cohort's 4,799,408.40. So revenue retention comes out at 74.32% while customer retention is 78.77%.
 
-**Interpretation.** Revenue retention sitting below customer retention is arithmetic rather than assumption: it can only happen if the customers who left carried, on average, higher recurring revenue than those who stayed. Had leavers been an average slice of the base, the two percentages would coincide.
+That 4.45 point gap is arithmetic, not interpretation. It can only appear if the customers who left were, on average, worth more per month than the ones who stayed. Had leavers been a representative slice of the base, the two percentages would be the same number.
 
-**Business implication.** A prioritisation built on customer counts and a prioritisation built on revenue do not describe the same exposure on this data. Establishing which lens a retention discussion is using is a precondition for the discussion, not a detail within it.
+The practical consequence is that a retention plan built on headcount and one built on revenue are not looking at the same problem. Deciding which lens is in use has to come before any target is set.
 
-**Limitation.** One quarter, so no trend, and tenure must not be substituted for a time axis. The churn rate uses the opening cohort while revenue at risk uses all churned customers, by design; quoting 1,232,425.80 beside 26.54% would be a mismatch. Annualisation is a stated convention. The 4.45 percentage point gap is not decomposed into price, service mix and tenure effects, and no such decomposition is claimed.
+Across all 7,043 customers the equivalent figures are 1,869 churned, 26.54%, and 1,669,570.20 of recurring revenue at risk. A further 519,603.72 of annual long-distance revenue is at risk and is quantified but kept out of the headline, because a retention offer holds a subscription rather than a usage volume.
 
-**Evidence.** `analyse_01_base_position.txt`, blocks 1 to 3.
+Two cautions. The churn rate uses the established base and revenue at risk uses every churned customer, deliberately, so the two must not be quoted against each other's scope. And with one quarter of data there is no trend: whether 21.23% is rising or falling cannot be said, and tenure is not a substitute for a time axis.
 
----
+*Source: `analyse_01_base_position.txt`.*
 
-## 2. Revenue is moderately concentrated, not sharply
+## 2. Revenue is only moderately concentrated
 
-**Observed fact.** The top monthly-charge decile holds 16.71% of recurring revenue while holding 10.00% of customers. The top two deciles hold 31.84%, the top three 45.71%, and the bottom three 11.89%. Revenue share falls smoothly from 16.71% to 3.03%, a ratio of roughly 5.5 to 1, with no step change anywhere in the curve.
+The highest-charge decile holds 16.71% of recurring revenue while holding 10.00% of customers. The top two deciles hold 31.84%, the top three 45.71%, and the bottom three 11.89%. Share falls smoothly from 16.71% down to 3.03%, a ratio of about 5.5 to 1, with no step anywhere in the curve.
 
-**Interpretation.** This is well short of the pattern often assumed in subscription businesses, where a small minority of accounts carries most of the revenue. Half the base holds 69.91% and the other half holds 30.09%. The smooth decile-by-decile decline, with no discontinuity, is consistent with a single continuous pricing structure rather than distinct product tiers, though the data does not establish the operator's pricing architecture.
+That is a long way from the pattern subscription businesses often assume, where a small minority of accounts carries most of the money. Half the base holds 69.91% and the other half holds 30.09%. The absence of any discontinuity also suggests a single continuous pricing structure rather than distinct product tiers, though the data cannot confirm how the operator actually prices.
 
-**Business implication.** This bounds how much a value-based targeting strategy could achieve before any targeting is designed. In a base where the top decile held 40% of revenue, concentrating retention attention there would have obvious mechanical leverage. Here it has considerably less.
+This matters mainly as a constraint on everything that follows. In a base where the top decile held 40% of revenue, concentrating retention effort there would have obvious mechanical leverage. Here it has much less, and that is worth knowing before designing any targeting.
 
-**Limitation.** Deciles are equal-frequency, not equal-value, and decile 1 is the lowest charge here, since both conventions exist in practice. Concentration is measured on recurring revenue only, so this is not total revenue concentration. Static snapshot, with no statement about whether concentration is changing.
+Deciles here are equal-frequency rather than equal-value, decile 1 is the lowest charge, and the curve covers recurring revenue only, so it is not a picture of total revenue concentration.
 
-**Evidence.** `analyse_02_revenue_concentration.txt`, blocks 1 and 2.
-
----
+*Source: `analyse_02_revenue_concentration.txt`.*
 
 ## 3. Churn peaks in the upper middle of the value range, not at the top
 
-**Observed fact.** Churn by decile in the opening cohort runs 4.07, 3.85, 15.14, 17.89, 12.93, 27.89, 32.14, 29.56, 38.96, 24.36 for deciles 1 to 10. Decile 9 is the highest at 38.96%. Decile 10 sits at 24.36%, lower than deciles 6, 7, 8 and 9. Recurring revenue at risk peaks at decile 9 with 307,440.00. The same shape holds on all customers, at a higher level throughout.
+Churn by decile in the established base runs 4.07, 3.85, 15.14, 17.89, 12.93, 27.89, 32.14, 29.56, 38.96 and 24.36 for deciles 1 through 10. The peak is decile 9 at 38.96%, carrying 307,440.00 of recurring revenue at risk. Decile 10, the highest-charge customers, sits at 24.36%, below deciles 6, 7, 8 and 9. The same shape appears across all customers at a higher level throughout, so it is not an artefact of the cohort choice.
 
-Within value tiers, average monthly recurring revenue for churned and retained customers is 98.07 against 99.48 in the High tier, 72.16 against 67.86 in the Mid tier, and 31.49 against 24.62 in the Low tier.
+Average monthly recurring revenue for leavers and stayers sharpens the picture. In the High tier the two are 98.07 and 99.48, effectively level. In the Mid tier they are 72.16 and 67.86, and in the Low tier 31.49 and 24.62, with leavers ahead in both. The revenue-weighted effect from finding 1 is therefore coming from the middle and the bottom of the base, not the top.
 
-**Interpretation.** Churn is not monotonically increasing with customer value. It rises through the middle of the distribution, peaks at decile 9 and falls at decile 10. The tier figures refine finding 1 in a way that matters: within the High tier, leavers and stayers carry almost identical recurring revenue, so the revenue-weighted effect seen in finding 1 arises principally in the Mid and Low tiers, where leavers do carry more revenue than stayers.
+Anyone planning retention work on the belief that the business is losing its best customers would be aiming at the part of the distribution where the evidence is weakest. The decile 9 concentration and the decile 10 dip are both worth understanding before that plan is written.
 
-**Business implication.** The claim that the business is losing its most valuable customers is not what this data shows, and a retention programme designed on that premise would be aimed at the wrong part of the base. The decile 9 concentration and the decile 10 dip are both worth investigating before a prioritisation is settled.
+None of this says that charge level drives churn. Charge level travels with contract type, service mix and tenure, and this cut holds none of them constant. The decile 10 dip has no explanation here and none is offered.
 
-**Limitation.** Association only. Charge level coincides with churn rate differences; nothing establishes that it drives them, and charge level is itself correlated with contract type, service mix and tenure, none of which is controlled for in this cut. Deciles are relative, not absolute price bands. The decile 10 dip is unexplained and no explanation is offered.
+*Source: `analyse_03_churn_by_decile.txt`.*
 
-**Evidence.** `analyse_03_churn_by_decile.txt`, blocks 1 to 3.
+## 4. A weak result: ranking by churn and ranking by revenue give almost the same answer
 
----
+This was the question the project was built around, and the answer was close to no.
 
-## 4. Weak result: a churn-led and a revenue-led prioritisation reach almost the same answer
+Nine segments were formed by crossing value tier with contract type, then ranked twice over the same population, once by churn rate and once by annual recurring revenue at risk. Across all nine, the two rankings never disagree by more than a single place. Four segments shift by one, five do not move. The top two are the same under either ranking: High value on Month-to-Month, at 894 customers, 54.59% churn and 566,313.60 at risk, and Mid value on Month-to-Month, at 1,182 customers, 39.42% and 406,459.20.
 
-This was the central construct of the project. It returned a near-null result, and that is the finding.
+Those two segments hold 78.93% of the established base's recurring revenue at risk between them.
 
-**Observed fact.** Nine segments were formed by crossing value tier with contract type and ranked twice over the same population, once by churn rate and once by annual recurring revenue at risk. The maximum absolute difference between the two rankings across all nine segments is one rank position. Four segments differ by one place, five do not move at all. The top two are identical under both rankings: High value with Month-to-Month contracts, at n = 894, 54.59% churn and 566,313.60 at risk, and Mid value with Month-to-Month, at n = 1,182, 39.42% and 406,459.20.
+The more useful fact here turned out to be the concentration rather than the divergence. Nearly four-fifths of the exposure sits in two of nine cells, and both ways of ranking find them. A team choosing between a churn-led and a revenue-led prioritisation would, on this data, arrive at the same place either way, which is worth knowing before commissioning the more complicated of the two.
 
-Those two segments together hold 78.93% of opening-cohort recurring revenue at risk.
+Repeating the test across all customers, planned in advance as a sensitivity check, swaps the top two positions on the revenue ranking and leaves the other seven segments untouched. The result holds regardless of which population is used.
 
-Repeating the test on all customers, designated a sensitivity analysis before results were seen, swaps the top two positions on the revenue ranking and leaves the other seven segments unchanged.
+The index behind this is ordinal: a one-place difference conveys order and nothing more, and it should never be quoted without the rates, revenue figures and cell sizes underneath it. Nine cells is also a coarse partition, and a finer cut might behave differently. That was not tested, for reasons set out in [`methodology.md`](methodology.md). And since the data is fictional, this shows what the method returns rather than establishing anything about real misallocation.
 
-**Interpretation.** The project was designed to test whether prioritising by churn rate would materially diverge from prioritising by revenue at risk. On this population, at this segmentation granularity, it does not. The substantive positional fact is not the divergence but its absence alongside the concentration: nearly four-fifths of the revenue exposure sits in two of nine cells, and both prioritisation logics find them.
+*Source: `analyse_04_divergence.txt`.*
 
-The sensitivity result is worth its place. It shows the primary result is robust to the population decision, which can be demonstrated only because that decision was locked before either result existed.
+## 5. Contract type and tenure separate churn most sharply, and they overlap
 
-**Business implication.** On this evidence, the choice between a churn-led and a revenue-led prioritisation would not materially change which segments receive attention. That is a useful thing for a decision-maker to know before commissioning work to build the more complex of the two.
-
-**Limitation.** The divergence index is ordinal. A difference of one rank conveys order only and must never be quoted without the underlying rates, revenue figures and cell sizes. Nine cells is a coarse partition and the result is specific to it; divergence could differ at a finer grain, which was not tested, because testing it now would be a specification change made after seeing the result. Any divergence or its absence is a property of the data-generation logic behind a fictional dataset, so this demonstrates that the method works and what it returns, not that misallocation does or does not exist anywhere real.
-
-**Evidence.** `analyse_04_divergence.txt`, blocks 1 to 4.
-
----
-
-## 5. Within the high-value tier, contract type and tenure separate churn most widely
-
-**Observed fact.** Seven dimensions, named in advance, were cut across the 2,004 opening-cohort customers in the High value tier, whose churn rate is 30.89%. Each dimension partitions the tier to exactly 2,004 customers. The range within each:
+Seven dimensions, chosen in advance, were cut across the 2,004 established-base customers in the High value tier, whose own churn rate is 30.89%. Each dimension splits the tier into exactly 2,004 customers.
 
 | Dimension | Range within the High tier |
 |---|---|
@@ -90,56 +76,50 @@ The sensitivity result is worth its place. It shows the primary result is robust
 | Service intensity | Deep 25.04% to Light 47.62% |
 | Referral behaviour | Has referred 24.82% to has not referred 38.57% |
 
-Tenure band declines monotonically across all four of its bands, from 71.57% in the first year to 15.52% at long tenure. Referral behaviour spans 13.75 percentage points, the narrowest of the seven, and is reported at that magnitude rather than omitted.
+Month-to-Month customers churn far more heavily than Two Year customers here, and churn falls steadily across all four tenure bands, from 71.57% in the first year to 15.52% at long tenure. Tenure is the cleanest gradient of the seven. Both dimensions are also entangled with each other, since customers who have been around longer are more likely to be on longer contracts, and neither cut isolates an independent effect.
 
-**Interpretation.** Month-to-Month customers show substantially higher churn in this dataset than customers on longer contracts, and the same holds for shorter-tenure customers against longer-tenure ones. These are the two dimensions most strongly associated with churn within the tier. They are also heavily interrelated, since long-tenure customers are more likely to hold long contracts, and neither cut isolates an independent contribution.
+Referral behaviour spans 13.75 percentage points, the narrowest range of the seven. It is reported at that size rather than left out.
 
-Offer held has the widest observed churn spread of the seven, but direction and assignment mechanism are unresolved. The dataset records only which offer a customer holds, with no date, no reason and no outcome. If offers are extended to customers already considered at risk, the association runs opposite to the intuitive reading. This is the most easily misread item in the project and warrants investigation of direction before it is discussed at all.
+Offer held has the widest spread of all, and it is the least usable thing in the analysis. The data records which offer a customer holds and nothing else: no date, no reason, no outcome. If offers go to customers already thought to be at risk, the relationship runs the opposite way to the obvious reading. Until that direction is established the dimension should stay out of any prioritisation.
 
-**Business implication.** Contractual commitment and relationship length are the dimensions that would most naturally frame a retention conversation on this base, with the caution that they overlap and that neither is shown to be a lever. The offer dimension is not usable for prioritisation until its direction is established.
+Five cells need their size quoted with the rate: Mailed Check at 36, Light service intensity at 42, Offer E at 64, Cable at 74 and DSL at 80. The DSL figure of 1.25% rests on one churned customer in eighty and should not be treated as a stable estimate. Where a category is absent from the High tier it is absent by construction, not because nobody in it churned.
 
-**Limitation.** All seven are single-dimension cuts with no multivariate control. Five cells need their size quoted alongside the rate: Mailed Check at 36, Light service intensity at 42, Offer E at 64, Cable at 74 and DSL at 80. The DSL rate of 1.25% rests on a single churned customer in 80 and is not a stable estimate. Structural absences are not zero results: categories that cannot appear in the High tier by construction are absent for that reason, not because their churn is zero.
+*Source: `analyse_05_drivers_high_value.txt`.*
 
-**Evidence.** `analyse_05_drivers_high_value.txt`, block 1.
+## 6. A weak result: the high-value tier has no driver profile of its own
 
----
+Comparing the same seven dimensions between the High tier and the base as a whole, using churn indices so the two scopes' different base rates cannot manufacture a difference, the largest gap across all 24 comparisons is 0.67. Contract type, service intensity and referral behaviour all come in below 0.16 at their widest and at or below 0.10 on average. Contract type, the strongest dimension inside the tier, is among the most similar between scopes at 0.15.
 
-## 6. Weak result: the high-value tier is not characterised by a distinctive driver profile
+Internet type is the exception, and a real one: all three of its segments move substantially and in different directions, Cable rising from 0.90 to 1.57 while Fiber Optic falls from 1.65 to 1.02 and DSL from 0.60 to 0.04.
 
-**Observed fact.** The same seven dimensions were compared between the High tier and the base as a whole, using churn indices rather than raw rates so that the two scopes' differing base rates do not manufacture differences. Across all 24 comparisons the largest single index difference is 0.67. Contract type, service intensity and referral behaviour all show maximum differences below 0.16 and mean differences at or below 0.10. Contract type, the strongest dimension inside the tier, shows one of the smallest differences between scopes at 0.15. Internet type is the clear exception: all three of its segments shift substantially and in different directions, Cable rising from 0.90 to 1.57 while Fiber Optic falls from 1.65 to 1.02 and DSL from 0.60 to 0.04.
+For most dimensions, then, a base-wide driver profile describes the High tier well enough, and a separate high-value diagnostic would largely reproduce work already done. The charter flagged this possibility before any analysis ran, as a risk to the premise that high-value churn behaves distinctively. For three of the seven dimensions that risk materialised.
 
-**Interpretation.** For most dimensions examined, a base-wide driver profile would describe the High tier adequately and a separate high-value analysis adds little. This partially realises a risk stated in the project charter before any analysis ran: that if high-value churn drivers proved identical to base-wide drivers, the project's central premise would weaken. For three of the seven dimensions that condition is substantially met.
+These are descriptive index differences with no significance testing behind them, so "large" and "small" are relative to each other and nothing else. The High tier is a subset of all customers, so this compares a part against its whole and differences are damped by construction. And the internet type exception leans on two cells of 74 and 80 customers.
 
-**Business implication.** Whether high-value customers need a distinct diagnostic treatment is now an evidence-based question rather than an assumption, and on most dimensions the answer here is no. That bears directly on whether segment-specific analysis is worth commissioning, which is a spending decision even though no spend is quantified.
+*Source: `analyse_06_drivers_comparison.txt`.*
 
-**Limitation.** These are descriptive index differences with no significance testing and no confidence intervals, so large and small are relative to each other rather than to any threshold. The High tier is a subset of all customers, so this compares a part with its whole and differences are attenuated by construction. The internet type exception rests partly on two caveat-flagged cells of 74 and 80 customers.
+## 7. New customers behave differently enough to need separate handling
 
-**Evidence.** `analyse_06_drivers_comparison.txt`, blocks 1 to 3.
+1,051 customers joined during the observation quarter and 597 of them left within it, a churn rate of 56.80% against the established base's 21.23%. They account for 31.94% of all churn events and 437,144.40 of recurring revenue at risk, 26.18% of the total.
 
----
+The composition explains part of the gap. 95.43% of this group is on Month-to-Month contracts, and given the contract association in finding 5 that alone would push the rate up. Only two offer categories appear at all: Offer E at 457 customers and 61.71%, and no offer at 594 customers and 53.03%. Offers A through D are entirely absent, which suggests they attach to existing rather than new customers, though with no offer date or eligibility rule in the data that stays an inference from absence.
 
-## 7. Newly acquired customers behave differently enough to need separate treatment
+Around a third of all churn events and a quarter of the revenue exposure therefore sit in a population that is not answering the same question as base retention. It deserves its own analysis and probably its own owner.
 
-**Observed fact.** 1,051 customers were acquired within the observation quarter and 597 of them churned, a rate of 56.80% against the opening cohort's 21.23%. These 597 represent 31.94% of all churn events and 437,144.40 of recurring revenue at risk, 26.18% of the total. 95.43% of the cohort holds Month-to-Month contracts. Only two offer categories appear at all: Offer E at 457 customers and 61.71%, and no offer at 594 customers and 53.03%. Offers A through D are entirely absent.
+Some care is needed with this group. These customers must not be folded into the established-base churn rate, since keeping numerator and denominator on one population is the point of the cohort. The month-one to month-three rates of 61.99%, 51.68% and 47.00% are not a survival curve: each month is a different intake observed for a different length of time inside a single quarter, and reading them as retention over time would be a mistake. Two contract cells fall below the reporting threshold at 26 and 22 customers, so their rates are not quoted. And there is nothing in this dataset about activation, installation, complaints, service quality or first contact, so no onboarding problem can be identified here and asserting one would be a causal claim the data cannot carry.
 
-**Interpretation.** This population behaves differently enough from the established base that combining them into a single churn rate would describe neither. The Month-to-Month concentration is consistent with new customers typically starting on rolling terms, and that composition alone would produce a higher aggregate rate given the contract association in finding 5. The absence of Offers A through D is an inference from absence: it suggests those offers are associated with existing rather than new customers, but the dataset has no offer date, eligibility rule or assignment logic, so no conclusion about offer policy is available.
-
-**Business implication.** Roughly a third of churn events and a quarter of the recurring revenue exposure sit in a population that is not answering the same question as base retention. It warrants separate analytical attention and plausibly separate ownership.
-
-**Limitation.** This population must never be merged into the opening-cohort churn KPI; keeping the numerator and denominator on the same population is the reason the cohort exists. The month-one to month-three rates of 61.99%, 51.68% and 47.00% are not a survival curve: each month is a different acquisition group observed for a different length of time within a single quarter, and reading them as retention over time would be a methodological error. Two contract cells sit below the reporting threshold at 26 and 22 customers and their rates are not quoted. The dataset holds no activation, installation, complaint, service-quality or first-contact records, so nothing here identifies an onboarding problem and asserting one would be an unsupported causal claim.
-
-**Evidence.** `analyse_07_early_life_churn.txt`, blocks 1 to 3.
+*Source: `analyse_07_early_life_churn.txt`.*
 
 ---
 
 ## Reconciliation
 
-Seventeen cross-finding arithmetic checks hold exactly. The cohorts sum to the base at 5,992 + 1,051 = 7,043, the churn counts at 1,272 + 597 = 1,869, and revenue at risk at 1,232,425.80 + 437,144.40 = 1,669,570.20. The primary churn KPI is 21.23% at every appearance and the all-customer rate of 26.54% is never substituted for it. Each of the seven driver dimensions partitions the High tier to exactly 2,004 customers.
+Seventeen arithmetic checks across the findings hold exactly. The cohorts sum to the base at 5,992 + 1,051 = 7,043, the churn counts at 1,272 + 597 = 1,869, and revenue at risk at 1,232,425.80 + 437,144.40 = 1,669,570.20. The primary churn rate reads 21.23% at every appearance and the all-customer 26.54% is never put in its place. Each of the seven dimensions splits the High tier into exactly 2,004 customers.
 
-One point of apparent tension is stated here rather than left for a reader to find. Finding 1 shows churned customers carrying above-average recurring revenue overall, while finding 3 shows High-tier leavers and stayers at near parity. These are consistent: the revenue-weighted effect arises in the Mid and Low tiers. Any narrative must reflect that rather than the simpler claim that the highest-value customers are the ones leaving.
+One apparent contradiction is worth naming rather than leaving for a reader to trip over. Finding 1 shows churned customers carrying above-average recurring revenue overall, while finding 3 shows High-tier leavers and stayers at near parity. Both are true: the revenue-weighted effect comes from the Mid and Low tiers. Any summary has to reflect that rather than the easier claim that the highest-value customers are the ones leaving.
 
-Nineteen analysis validation checks pass, including one that scans view definitions directly and fails the build if a prohibited field has reached the analytics layer.
+Nineteen validation checks pass, including one that reads the view definitions directly and fails the build if an excluded field has reached the analytics layer.
 
 ---
 
-*Method: [`methodology.md`](methodology.md). Actions: [`recommendations.md`](recommendations.md). Full evidence register: [`technical/findings-and-evidence.md`](technical/findings-and-evidence.md).*
+*Method and definitions: [`methodology.md`](methodology.md). What follows from these findings: [`recommendations.md`](recommendations.md). Full evidence register: [`technical/findings-and-evidence.md`](technical/findings-and-evidence.md).*

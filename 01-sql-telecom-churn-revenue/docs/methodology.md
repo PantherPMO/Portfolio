@@ -1,8 +1,7 @@
 # Methodology
 
-How the analysis was scoped, defined and executed. This document consolidates the project scope, the
-analytical definitions, the segmentation framework and the decisions that determine whether the
-results can be trusted.
+How the analysis was scoped, defined and executed: the question, the definitions behind every number,
+the segmentation framework, and the decisions that determine whether the results can be trusted.
 
 **Related:** [Findings](findings.md) · [Recommendations](recommendations.md) · [Case Study](case-study.md) ·
 [Data Quality](technical/data-quality.md) · [Findings and Evidence](technical/findings-and-evidence.md) ·
@@ -169,7 +168,7 @@ available for descriptive and fairness checks only and are never used to target 
 
 ## 6. Key decisions
 
-Twenty-two decisions are recorded during the project. These are the ones that determine the results.
+Twenty-two decisions were recorded along the way. These are the ones that determine the results.
 
 | Decision | Choice | Why |
 |---|---|---|

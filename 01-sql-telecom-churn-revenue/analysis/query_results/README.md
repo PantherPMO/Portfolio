@@ -15,8 +15,8 @@ this directory was generated in any other environment, and no value here has bee
 | Prefix | Stage | Produced by |
 |---|---|---|
 | `prepare_*` | Setup, preparation and validation | `sql/01_setup/`, `sql/02_preparation/`, `sql/03_validation/` |
-| `analyse_v*` | Reporting views | `sql/05_reporting_views/` — each view's own self-check output, one per view |
-| `analyse_0*` | Analysis | `sql/04_analysis/` — the question-by-question extracts and the validation gate |
+| `analyse_v*` | Reporting views | `sql/05_reporting_views/`. Each view's own self-check output, one per view |
+| `analyse_0*` | Analysis | `sql/04_analysis/`. The question-by-question extracts and the validation gate |
 
 Output filenames map to their source script. Run order and the exact `psql` invocations are in [`../../sql/README.md`](../../sql/README.md).
 
@@ -59,11 +59,8 @@ locked population designation is visible in the artefact rather than only in a d
 the console while the output file quietly captures whatever succeeded, which is exactly how a
 cross-check failure went unnoticed once during development.
 
-Where an approved fix required a script to be re-run, the corrected output **overwrites the original
-file of the same name**, so each script has exactly one current output. During that repair,
-six re-run outputs were briefly kept alongside the originals under a `run2_` prefix for comparison.
-They were confirmed byte-identical to the `prepare_*` files they duplicated and were removed at
-release; no `run2_` files remain.
+Where a fix required a script to be re-run, the corrected output **overwrites the original file of
+the same name**, so each script has exactly one current output.
 
 ---
 

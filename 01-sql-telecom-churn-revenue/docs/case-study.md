@@ -4,14 +4,13 @@
 
 **A technical walkthrough of the analysis, including the two tests that returned weak results.**
 
-This document is the deep read. The [README](../README.md) carries the story and the headline figures,
-[Findings](findings.md) sets out each result with its interpretation and limitation, and
-[Recommendations](recommendations.md) sets out what follows from them. Here you will find the dataset selection argument, the correction register, the SQL that
-does the work, the four supporting charts, and the reasoning behind every locked decision.
+The [README](../README.md) carries the headline figures, [Findings](findings.md) sets out each result
+in turn, and [Recommendations](recommendations.md) sets out what follows from them. This document covers
+the working underneath: why the dataset was chosen, what was excluded and why, the SQL that does the
+heavy lifting, the issues found and corrected along the way, and four charts that support the results.
 
-**Evidence sources.** Every figure quoted here traces to
-[Findings and Evidence](technical/findings-and-evidence.md) and to a committed query output in
-`analysis/query_results/`. Nothing is recomputed in this document.
+Every figure quoted here comes from a committed query output in `analysis/query_results/`, traced
+through [Findings and Evidence](technical/findings-and-evidence.md).
 
 ---
 
@@ -29,7 +28,7 @@ does the work, the four supporting charts, and the reasoning behind every locked
 10. [CH-08: seven driver lenses](#ch-08-seven-driver-lenses)
 11. [CH-11: early-life composition](#ch-11-early-life-composition)
 12. [Validation](#12-validation)
-13. [The evidence chain](#13-the-evidence-chain)
+13. [How every claim traces to source](#13-how-every-claim-traces-to-source)
 14. [What would be done differently](#14-what-would-be-done-differently)
 
 ---
@@ -140,20 +139,21 @@ named in advance.
 
 **PRIMARY RESULT: opening cohort. SENSITIVITY ANALYSIS ONLY: all customers.**
 
-This was locked **before the divergence result existed**. It is carried as an explicit
-`result_designation` column on every row of the query output , so the designation
-lives in the evidence artefact rather than in a section header that could drift.
+This was settled **before the divergence result was seen**. It travels as an explicit
+`result_designation` column on every row of the query output, so the designation sits in the data
+itself rather than in a section header that could drift away from it.
 
-The sensitivity test earns its place: including in-period acquisitions swaps the top two positions on
-the revenue-at-risk ranking and leaves the remaining seven segments unchanged. The primary result is
-therefore robust to the scope decision, and that can be demonstrated rather than asserted.
+The sensitivity test does real work: including in-period acquisitions swaps the top two positions on
+the revenue-at-risk ranking and leaves the remaining seven segments unchanged. The primary result
+therefore holds regardless of the scope decision, which is something that can be shown rather than
+asserted.
 
-### The consequence of fixing definitions in advance
+### What fixing definitions in advance costs
 
-When the divergence result came back near-null, the tempting move was to re-cut at a finer
-granularity until something appeared. **The fixed specification does not allow it.** A finer-grain test may well be
-worth running, but it would need a fresh specification written before the data is re-cut, and it is
-listed as future work rather than smuggled into this analysis.
+When the divergence result came back weak, the tempting move was to re-cut at a finer granularity
+until something appeared. Doing that would have meant choosing a specification after seeing the
+answer. A finer-grained test may well be worth running, but it needs its own definitions written
+before the data is re-cut, so it is listed as further work instead.
 
 ---
 
@@ -263,8 +263,8 @@ does, in both scopes.
 
 ## 7. Three issues found, corrected by entry
 
-All three are recorded with the **original finding preserved**, not overwritten. The audit trail is
-part of the deliverable.
+In each case the original finding is preserved alongside the correction rather than overwritten, so
+the record shows what was believed, what was tested, and what changed.
 
 ### An early assumption did not survive verification
 
@@ -454,9 +454,9 @@ fixes applied and re-verified, with audit CSVs confirmed byte-identical afterwar
 
 ---
 
-## 13. The evidence chain
+## 13. How every claim traces to source
 
-Every claim in this project traces along a fixed chain:
+Every claim traces back through a fixed chain:
 
 ```
 BQ-nn  business question

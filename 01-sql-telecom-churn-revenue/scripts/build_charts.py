@@ -78,7 +78,7 @@ FIGURES = ROOT / "visuals"
 CHART_DATA = ROOT / "analysis" / "chart_data"
 
 # ---------------------------------------------------------------------------
-# House style - _portfolio/STYLE_GUIDE.md validated categorical palette
+# House style - the portfolio's validated categorical palette
 # ---------------------------------------------------------------------------
 
 BLUE = "#2A78D6"

@@ -2,7 +2,7 @@
 
 A PostgreSQL analysis of a telecommunications base losing 21.23% of its established customers in a quarter, carrying 1,232,425.80 of annual recurring revenue with them. The work establishes where the revenue exposure actually sits, tests whether a revenue-led prioritisation would differ from a churn-led one, and reports the two tests that returned weak results alongside the five that did not.
 
-> The operator is fictional and the dataset is IBM's published sample telecommunications data, 7,043 customers in California over one quarter. The deliverable is the analytical method, not a claim about any real business. All monetary values are unitless.
+> The operator is fictional and the dataset is IBM's published sample telecommunications data, 7,043 customers in California over one quarter. What it demonstrates is the analytical method; nothing here is a claim about any real business. All monetary values are unitless.
 
 ---
 
@@ -39,13 +39,13 @@ PostgreSQL 18 | SQL | Python (matplotlib) | Data modelling | Cohort analysis | S
 
 **Revenue is moderately concentrated, which bounds what targeting can achieve.** The top decile holds 16.71% of recurring revenue against 10.00% of customers, and the curve falls smoothly from 16.71% to 3.03% with no step change. This is well short of the pattern subscription businesses often assume, and it limits how much mechanical leverage a value-based strategy has here.
 
-**A churn-led and a revenue-led prioritisation reach almost the same answer.** This was the project's central construct and it returned a near-null result. Ranking nine value-by-contract segments twice, once by churn rate and once by revenue at risk, the maximum difference is one rank position and five of nine segments do not move at all. The top two are identical under both: High and Mid value customers on Month-to-Month contracts, holding 78.93% of the opening cohort's revenue at risk between them.
+**A churn-led and a revenue-led prioritisation reach almost the same answer.** This was the question the work was built around, and the answer came back close to no. Ranking nine value-by-contract segments twice, once by churn rate and once by revenue at risk, the maximum difference is one rank position and five of nine segments do not move at all. The top two are identical under both: High and Mid value customers on Month-to-Month contracts, holding 78.93% of the opening cohort's revenue at risk between them.
 
 **Contract type and tenure separate churn most widely, and they overlap.** Within the high-value tier, Month-to-Month customers show substantially higher churn in this dataset than Two Year customers, 54.59% against 5.26%, and churn declines monotonically across all four tenure bands from 71.57% in the first year to 15.52% at long tenure. The two dimensions are heavily interrelated and neither cut isolates an independent contribution.
 
 **The offer dimension has the widest spread and is the least usable.** Offer held spans 12.11% to 71.88% within the high-value tier, wider than any other dimension. Direction and assignment mechanism are unresolved: the dataset records only which offer is held, with no date, reason or outcome, so an offer extended to customers already considered at risk would produce this pattern with the relationship running the other way.
 
-**The high-value tier has no distinctive driver profile.** Comparing the same seven dimensions between the top tier and the base as a whole, contract type, service intensity and referral behaviour all differ by less than 0.16 on the churn index. A base-wide driver profile describes the top tier adequately on most dimensions, which weakens a premise the project was built on and is reported rather than minimised.
+**The high-value tier has no distinctive driver profile.** Comparing the same seven dimensions between the top tier and the base as a whole, contract type, service intensity and referral behaviour all differ by less than 0.16 on the churn index. A base-wide driver profile describes the top tier well enough on most dimensions, which undercuts one of the premises the work started from.
 
 ## Recommendations
 
@@ -85,7 +85,7 @@ All eleven charts are in [`visuals/`](visuals/), each built from a committed que
 
 **Exclusions enforced structurally.** Five fields are loaded to the raw layer for fidelity and never promoted, so no downstream query can reach them. Satisfaction score is the one that matters: it correlates at -0.75 with the outcome and shows 100% churn at the lowest scores, because it was recorded with knowledge of the outcome. A model built on it would have looked outstanding and been worthless. Protected characteristics are quarantined in a table no analytical view joins, and a validation check scans view definitions directly to enforce it.
 
-**Definitions fixed before results.** Revenue at risk, the churn denominator, the value tier cut points, the minimum reportable cell size and the primary-versus-sensitivity designation for the divergence test were all locked before the relevant results existed. When the divergence result came back near-null, re-cutting at a finer granularity until something appeared was not available, and the finer test is listed as future work with a specification still to be written.
+**Definitions fixed in advance.** Revenue at risk, the churn denominator, the value tier cut points, the minimum reportable cell size and the choice of primary versus sensitivity population were all settled in writing before the relevant results were seen. That has a visible cost: when the ranking test came back weak, re-cutting at a finer granularity until something appeared would have meant choosing a specification after seeing the answer, so the finer test is listed as further work with its own definitions still to be written.
 
 **Segmentation.** Nine value-by-contract segments, ten monthly-charge deciles assigned with a deterministic tie-break, and seven driver dimensions named in advance and unpivoted into a single relation so that every dimension covers the same population by construction.
 
