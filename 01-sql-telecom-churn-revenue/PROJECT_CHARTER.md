@@ -2,15 +2,6 @@
 
 ## Telecommunications Revenue Retention: Prioritising Retention Investment by Revenue at Risk
 
-**Stage:** 1 — DEFINE
-**Status:** ✅ **APPROVED** by Peters, 19 August 2026
-**Dataset status:** ✅ **VERIFIED AND APPROVED** — Stage 2 complete, see [`docs/technical/data-quality.md`](docs/technical/data-quality.md)
-**Decisions applied:** C-1, C-2 approved 19 Aug 2026 — see [`docs/methodology.md`](docs/methodology.md)
-**FRAME specification:** proposed, awaiting approval — see [`docs/methodology.md`](docs/methodology.md)
-
-> **Analysis may not begin until all six pre-conditions in the sign-off section are met.**
-
----
 
 ## Framing Decision
 
@@ -42,9 +33,9 @@ Three characteristics shape the commercial problem:
 
 - **Acquisition costs substantially exceed retention costs** in subscription telecoms — a widely observed pattern, to be evidenced with a cited source at FRAME stage rather than asserted.
 - **Regulatory friction has fallen.** Ofcom's end-of-contract notification and switching reforms have made switching easier and made contract-end a predictable moment of elevated risk.
-- **Revenue is concentrated.** In most subscriber bases a minority of customers generate a disproportionate share of recurring revenue, so aggregate churn statistics systematically obscure where commercial exposure sits.
+- **Revenue is concentrated.** In most subscriber bases, a minority of customers generate a disproportionate share of recurring revenue, so aggregate churn statistics systematically obscure where commercial exposure sits.
 
-In this environment retention is not a customer-service function. It is a revenue-protection function competing for capital against acquisition and network investment, and it must justify its budget in the same commercial terms.
+In this environment, retention is not a customer-service function. It is a revenue-protection function competing for capital against acquisition and network investment, and it must justify its budget in the same commercial terms.
 
 ---
 
@@ -52,11 +43,11 @@ In this environment retention is not a customer-service function. It is a revenu
 
 > The retention function has a finite annual budget and no evidence-based basis for allocating it.
 
-Current practice is that retention effort is triggered by **churn signals** — contract end date, inbound cancellation contact, tenure milestones — rather than by **commercial exposure**. Every at-risk customer is treated as equivalently worth the same intervention.
+Current practice is that retention effort is triggered by **churn signals** — contract end date, inbound cancellation contact, tenure milestones — rather than by **commercial exposure**. Every at-risk customer is treated as equally worth the same intervention.
 
 This produces three failures at once:
 
-- **Over-investment in low-value risk.** High-cost retention offers extended where the expected retained value does not justify the discount.
+- **Over-investment in low-value risk.** High-cost retention offers are extended where the expected retained value does not justify the discount.
 - **Under-investment in high-value risk.** High-revenue customers whose risk indicators are subtler receive no proactive contact until they call to cancel, by which point the offer needed to retain them is far more expensive.
 - **No defensible budget case.** The function cannot state what its spend protects, so it cannot argue for more, or defend it when cut.
 
